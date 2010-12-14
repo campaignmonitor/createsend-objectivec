@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* CreateSend_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */; };
+		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
+		D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8CE1DB012B7515A002D871F /* Tests.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,10 +18,23 @@
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D8CE1D8212B74EAB002D871F /* CreateSendTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateSendTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8CE1D8412B74EAB002D871F /* CreateSendTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreateSendTests-Info.plist"; sourceTree = "<group>"; };
+		D8CE1D8B12B74ED0002D871F /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = External/GHUnit/GHUnit.framework; sourceTree = "<group>"; };
+		D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = External/GHUnit/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
+		D8CE1DB012B7515A002D871F /* Tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
+		D8CE1DC712B75291002D871F /* CreateSendTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSendTests_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8CE1D8012B74EAB002D871F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libCreateSend.a */,
+				D8CE1D8212B74EAB002D871F /* CreateSendTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -40,10 +56,12 @@
 		0867D691FE84028FC02AAC07 /* CreateSend */ = {
 			isa = PBXGroup;
 			children = (
+				D8CE1D8812B74EB6002D871F /* External */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				D8CE1D0512B73F04002D871F /* Configuration */,
+				D8CE1D8412B74EAB002D871F /* CreateSendTests-Info.plist */,
 			);
 			name = CreateSend;
 			sourceTree = "<group>";
@@ -59,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */,
+				D8CE1DC712B75291002D871F /* CreateSendTests_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -69,8 +88,26 @@
 				D8CE1D0712B73F28002D871F /* Debug.xcconfig */,
 				D8CE1D0812B73F2F002D871F /* Release.xcconfig */,
 				D8CE1D0612B73F19002D871F /* Shared.xcconfig */,
+				D8CE1DB012B7515A002D871F /* Tests.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D8CE1D8812B74EB6002D871F /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE1D8912B74EBE002D871F /* GHUnit */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		D8CE1D8912B74EBE002D871F /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE1D8B12B74ED0002D871F /* GHUnit.framework */,
+				D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */,
+			);
+			name = GHUnit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +141,24 @@
 			productReference = D2AAC07E0554694100DB518D /* libCreateSend.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		D8CE1D8112B74EAB002D871F /* CreateSendTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8CE1D8712B74EAB002D871F /* Build configuration list for PBXNativeTarget "CreateSendTests" */;
+			buildPhases = (
+				D8CE1D7E12B74EAB002D871F /* Resources */,
+				D8CE1D7F12B74EAB002D871F /* Sources */,
+				D8CE1D8012B74EAB002D871F /* Frameworks */,
+				D8CE1DA612B74FE8002D871F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CreateSendTests;
+			productName = CreateSendTests;
+			productReference = D8CE1D8212B74EAB002D871F /* CreateSendTests.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -125,15 +180,52 @@
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* CreateSend */,
+				D8CE1D8112B74EAB002D871F /* CreateSendTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8CE1D7E12B74EAB002D871F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8CE1DA612B74FE8002D871F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh External/GHUnit/RunTests.sh";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC07B0554694100DB518D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8CE1D7F12B74EAB002D871F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +273,20 @@
 			};
 			name = Release;
 		};
+		D8CE1D8512B74EAB002D871F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8CE1DB012B7515A002D871F /* Tests.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D8CE1D8612B74EAB002D871F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8CE1DB012B7515A002D871F /* Tests.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -198,6 +304,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8CE1D8712B74EAB002D871F /* Build configuration list for PBXNativeTarget "CreateSendTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8CE1D8512B74EAB002D871F /* Debug */,
+				D8CE1D8612B74EAB002D871F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
