@@ -1,0 +1,53 @@
+//
+//  Shared.xcconfig
+//  CreateSend
+//
+//  Created by Nathan de Vries on 14/12/10.
+//  Copyright 2010 Nathan de Vries. All rights reserved.
+//
+
+PRODUCT_NAME = CreateSend
+
+
+SDKROOT                    = iphoneos
+IPHONEOS_DEPLOYMENT_TARGET = 3.0
+
+
+ARCHS        = $(ARCHS_STANDARD_32_BIT)
+DSTROOT      = /tmp/$(PRODUCT_NAME).dst
+INSTALL_PATH = /usr/local/lib
+
+
+OTHER_LDFLAGS = -framework Foundation
+
+
+ALWAYS_SEARCH_USER_PATHS = NO
+
+
+RUN_CLANG_STATIC_ANALYZER = YES
+
+
+GCC_VERSION                  = com.apple.compilers.llvm.clang.1_0
+GCC_MODEL_TUNING             = G5
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_PREFIX_HEADER            = $(PRODUCT_NAME)_Prefix.pch
+
+
+GCC_TREAT_WARNINGS_AS_ERRORS              = YES
+GCC_WARN_64_TO_32_BIT_CONVERSION          = YES
+GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES
+GCC_WARN_ABOUT_MISSING_NEWLINE            = YES
+GCC_WARN_ABOUT_MISSING_PROTOTYPES         = YES
+GCC_WARN_ABOUT_RETURN_TYPE                = YES
+GCC_WARN_CHECK_SWITCH_STATEMENTS          = YES
+GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED  = YES
+GCC_WARN_MISSING_PARENTHESES              = YES
+GCC_WARN_SHADOW                           = YES
+GCC_WARN_SIGN_COMPARE                     = YES
+GCC_WARN_STRICT_SELECTOR_MATCH            = YES
+GCC_WARN_TYPECHECK_CALLS_TO_PRINTF        = YES
+GCC_WARN_UNDECLARED_SELECTOR              = YES
+GCC_WARN_UNUSED_FUNCTION                  = YES
+GCC_WARN_UNUSED_LABEL                     = YES
+GCC_WARN_UNUSED_VALUE                     = YES
+GCC_WARN_UNUSED_VARIABLE                  = YES

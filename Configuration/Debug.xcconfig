@@ -1,0 +1,16 @@
+//
+//  Debug.xcconfig
+//  CreateSend
+//
+//  Created by Nathan de Vries on 14/12/10.
+//  Copyright 2010 Nathan de Vries. All rights reserved.
+//
+
+#include "Shared.xcconfig"
+
+
+COPY_PHASE_STRIP = NO
+
+GCC_ENABLE_FIX_AND_CONTINUE = YES
+GCC_DYNAMIC_NO_PIC          = NO
+GCC_OPTIMIZATION_LEVEL      = 0
