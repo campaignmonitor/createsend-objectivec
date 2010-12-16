@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* CreateSend_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */; };
+		D889681012B9D58D007C5783 /* CSAPIKeyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */; };
+		D889681112B9D58D007C5783 /* CSAPIKeyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D889680E12B9D58D007C5783 /* CSAPIKeyRequest.h */; };
+		D889681212B9D58D007C5783 /* CSAPIKeyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */; };
+		D889681512B9D65E007C5783 /* CSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889681412B9D65E007C5783 /* CSAPIRequest.m */; };
+		D889681612B9D65E007C5783 /* CSAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D889681312B9D65E007C5783 /* CSAPIRequest.h */; };
+		D889681712B9D65E007C5783 /* CSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889681412B9D65E007C5783 /* CSAPIRequest.m */; };
+		D889682912B9E12E007C5783 /* CSDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D889682812B9E12E007C5783 /* CSDebuggingMacros.h */; };
+		D889687C12B9E638007C5783 /* CSAccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D889687B12B9E638007C5783 /* CSAccountTests.m */; };
+		D88968E012B9F08F007C5783 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */; };
+		D88968E112B9F08F007C5783 /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */; };
+		D88968E212B9F08F007C5783 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8CE1DB012B7515A002D871F /* Tests.xcconfig */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
@@ -24,6 +35,15 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSend_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libCreateSend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCreateSend.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D889680E12B9D58D007C5783 /* CSAPIKeyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIKeyRequest.h; sourceTree = "<group>"; };
+		D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIKeyRequest.m; sourceTree = "<group>"; };
+		D889681312B9D65E007C5783 /* CSAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIRequest.h; sourceTree = "<group>"; };
+		D889681412B9D65E007C5783 /* CSAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIRequest.m; sourceTree = "<group>"; };
+		D889682812B9E12E007C5783 /* CSDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDebuggingMacros.h; sourceTree = "<group>"; };
+		D889684D12B9E369007C5783 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = External/YAJL/YAJL.framework; sourceTree = "<group>"; };
+		D889687B12B9E638007C5783 /* CSAccountTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAccountTests.m; sourceTree = "<group>"; };
+		D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -87,6 +107,7 @@
 		0867D691FE84028FC02AAC07 /* CreateSend */ = {
 			isa = PBXGroup;
 			children = (
+				D8CE1E3212B7570D002D871F /* Tests */,
 				D8CE1D8812B74EB6002D871F /* External */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
@@ -100,6 +121,12 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D889680E12B9D58D007C5783 /* CSAPIKeyRequest.h */,
+				D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */,
+				D889681312B9D65E007C5783 /* CSAPIRequest.h */,
+				D889681412B9D65E007C5783 /* CSAPIRequest.m */,
+				D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */,
+				D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -109,8 +136,17 @@
 			children = (
 				AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */,
 				D8CE1DC712B75291002D871F /* CreateSendTests_Prefix.pch */,
+				D889682812B9E12E007C5783 /* CSDebuggingMacros.h */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		D889683412B9E305007C5783 /* YAJL */ = {
+			isa = PBXGroup;
+			children = (
+				D889684D12B9E369007C5783 /* YAJL.framework */,
+			);
+			name = YAJL;
 			sourceTree = "<group>";
 		};
 		D8CE1D0512B73F04002D871F /* Configuration */ = {
@@ -127,6 +163,7 @@
 		D8CE1D8812B74EB6002D871F /* External */ = {
 			isa = PBXGroup;
 			children = (
+				D889683412B9E305007C5783 /* YAJL */,
 				D8CE1DF312B75454002D871F /* ASIHTTPRequest */,
 				D8CE1D8912B74EBE002D871F /* GHUnit */,
 				D8CE1E1612B75498002D871F /* Reachability */,
@@ -179,6 +216,14 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		D8CE1E3212B7570D002D871F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D889687B12B9E638007C5783 /* CSAccountTests.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -187,6 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* CreateSend_Prefix.pch in Headers */,
+				D889681112B9D58D007C5783 /* CSAPIKeyRequest.h in Headers */,
+				D889681612B9D65E007C5783 /* CSAPIRequest.h in Headers */,
+				D889682912B9E12E007C5783 /* CSDebuggingMacros.h in Headers */,
+				D88968E112B9F08F007C5783 /* NSString+URLEncoding.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +336,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D889681212B9D58D007C5783 /* CSAPIKeyRequest.m in Sources */,
+				D889681712B9D65E007C5783 /* CSAPIRequest.m in Sources */,
+				D88968E212B9F08F007C5783 /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +356,10 @@
 				D8CE1E0F12B7546D002D871F /* ASIInputStream.m in Sources */,
 				D8CE1E1012B7546D002D871F /* ASINetworkQueue.m in Sources */,
 				D8CE1E1A12B754A0002D871F /* Reachability.m in Sources */,
+				D889681012B9D58D007C5783 /* CSAPIKeyRequest.m in Sources */,
+				D889681512B9D65E007C5783 /* CSAPIRequest.m in Sources */,
+				D889687C12B9E638007C5783 /* CSAccountTests.m in Sources */,
+				D88968E012B9F08F007C5783 /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +370,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1D0712B73F28002D871F /* Debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External/YAJL\"",
+				);
 			};
 			name = Debug;
 		};
@@ -321,6 +381,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1D0812B73F2F002D871F /* Release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External/YAJL\"",
+				);
 			};
 			name = Release;
 		};
@@ -355,6 +419,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1DB012B7515A002D871F /* Tests.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External/YAJL\"",
+				);
 			};
 			name = Debug;
 		};
@@ -362,6 +430,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1DB012B7515A002D871F /* Tests.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External/YAJL\"",
+				);
 			};
 			name = Release;
 		};

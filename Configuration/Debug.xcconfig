@@ -8,6 +8,7 @@
 
 #include "Shared.xcconfig"
 
+OTHER_CFLAGS  = -DCSDEBUG=1
 
 COPY_PHASE_STRIP = NO
 

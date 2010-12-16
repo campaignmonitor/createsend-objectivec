@@ -24,10 +24,13 @@ INSTALL_PATH = $(HOME)/Applications
 
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/External/GHUnit"
 
-FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework GHUnit
+FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework YAJL -framework GHUnit
 LIBRARY_FLAGS   = -lz
 GENERAL_FLAGS   = -ObjC -all_load
 OTHER_LDFLAGS   = $(FRAMEWORK_FLAGS) $(LIBRARY_FLAGS) $(GENERAL_FLAGS)
+
+
+OTHER_CFLAGS  = -DCSDEBUG=1
 
 
 ALWAYS_SEARCH_USER_PATHS = NO
