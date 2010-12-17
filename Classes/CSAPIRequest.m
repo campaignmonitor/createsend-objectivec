@@ -19,8 +19,8 @@ static NSString* defaultAPIKey = nil;
 @implementation CSAPIRequest
 
 
-@synthesize requestObject;
-@synthesize parsedResponse;
+@synthesize requestObject=_requestObject;
+@synthesize parsedResponse=_parsedResponse;
 
 
 - (id)initWithURL:(NSURL *)newURL {
@@ -80,8 +80,10 @@ static NSString* defaultAPIKey = nil;
   [self prepareRequestObject];
 
   if (self.requestObject) {
-    NSData* JSONRequestBody = [[self.requestObject yajl_JSONString] dataUsingEncoding:NSUTF8StringEncoding];
-    [self appendPostData:JSONRequestBody];
+    NSString* JSONRequestBody = [self.requestObject yajl_JSONString];
+    [self appendPostData:[JSONRequestBody dataUsingEncoding:NSUTF8StringEncoding]];
+
+    CSDLog(@"JSONRequestBody = %@", JSONRequestBody);
   }
 
   self.username = self.username ?: [[self class] defaultAPIKey];
@@ -103,15 +105,19 @@ static NSString* defaultAPIKey = nil;
   @try {
     self.parsedResponse = [[self responseData] yajl_JSON];
 
-    CSDLog(@"parsedResponse = %@", self.parsedResponse);
-
     if (self.responseStatusCode != 200 && self.responseStatusCode != 201) {
       [self failWithError:[NSError errorWithDomain:kCSAPIRequestErrorDomain
                                               code:[[self.parsedResponse valueForKey:@"Code"] integerValue]
                                           userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
                                                     [self.parsedResponse valueForKey:@"Message"], NSLocalizedDescriptionKey,
                                                     nil]]];
+    } else {
+      if (self.parsedResponse == nil) {
+        self.parsedResponse = [self responseString];
+      }
     }
+
+    CSDLog(@"parsedResponse = %@", self.parsedResponse);
   }
   @catch (NSException * e) {
     [self failWithError:[NSError errorWithDomain:kCSAPIRequestErrorDomain
@@ -164,8 +170,8 @@ static NSString* defaultAPIKey = nil;
 
 
 - (void)dealloc {
-  [requestObject release];
-  [parsedResponse release];
+  [_requestObject release];
+  [_parsedResponse release];
 
   [super dealloc];
 }

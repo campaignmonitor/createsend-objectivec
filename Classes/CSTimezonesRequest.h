@@ -1,5 +1,5 @@
 //
-//  CSCountriesRequest.h
+//  CSTimezonesRequest.h
 //  CreateSend
 //
 //  Created by Nathan de Vries on 17/12/10.
@@ -9,14 +9,13 @@
 #import "CSAPIRequest.h"
 
 
-@interface CSCountriesRequest : CSAPIRequest
+@interface CSTimezonesRequest : CSAPIRequest
 
 
-@property (retain) NSArray* countries;
+@property (retain) NSArray* timezones;
 
 
 + (id)request;
-+ (id)requestWithAPIKey:(NSString *)APIKey;
 
 
 @end

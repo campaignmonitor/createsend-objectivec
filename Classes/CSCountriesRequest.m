@@ -20,13 +20,6 @@
 }
 
 
-+ (id)requestWithAPIKey:(NSString *)APIKey {
-  CSCountriesRequest* request = [self request];
-  request.username = APIKey;
-  return request;
-}
-
-
 - (void)handleParsedResponse {
   self.countries = self.parsedResponse;
 }

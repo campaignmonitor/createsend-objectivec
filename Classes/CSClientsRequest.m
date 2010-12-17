@@ -20,13 +20,6 @@
 }
 
 
-+ (id)requestWithAPIKey:(NSString *)APIKey {
-  CSClientsRequest* request = [self request];
-  request.username = APIKey;
-  return request;
-}
-
-
 - (void)handleParsedResponse {
   NSMutableArray* clients = [NSMutableArray array];
 

@@ -20,13 +20,6 @@
 }
 
 
-+ (id)requestWithAPIKey:(NSString *)APIKey {
-  CSSystemDateRequest* request = [self request];
-  request.username = APIKey;
-  return request;
-}
-
-
 - (void)handleParsedResponse {
   NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
   NSLocale* locale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease];

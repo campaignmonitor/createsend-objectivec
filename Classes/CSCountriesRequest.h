@@ -1,5 +1,5 @@
 //
-//  CSClientsRequest.h
+//  CSCountriesRequest.h
 //  CreateSend
 //
 //  Created by Nathan de Vries on 17/12/10.
@@ -7,17 +7,15 @@
 //
 
 #import "CSAPIRequest.h"
-#import "CSClient.h"
 
 
-@interface CSClientsRequest : CSAPIRequest
+@interface CSCountriesRequest : CSAPIRequest
 
 
-@property (retain) NSArray* clients;
+@property (retain) NSArray* countries;
 
 
 + (id)request;
-+ (id)requestWithAPIKey:(NSString *)APIKey;
 
 
 @end

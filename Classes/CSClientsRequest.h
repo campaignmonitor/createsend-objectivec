@@ -1,5 +1,5 @@
 //
-//  CSSystemDateRequest.h
+//  CSClientsRequest.h
 //  CreateSend
 //
 //  Created by Nathan de Vries on 17/12/10.
@@ -7,16 +7,16 @@
 //
 
 #import "CSAPIRequest.h"
+#import "CSClient.h"
 
 
-@interface CSSystemDateRequest : CSAPIRequest
+@interface CSClientsRequest : CSAPIRequest
 
 
-@property (retain) NSDate* systemDate;
+@property (retain) NSArray* clients;
 
 
 + (id)request;
-+ (id)requestWithAPIKey:(NSString *)APIKey;
 
 
 @end

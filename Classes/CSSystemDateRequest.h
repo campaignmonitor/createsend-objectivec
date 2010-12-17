@@ -1,5 +1,5 @@
 //
-//  CSTimezonesRequest.h
+//  CSSystemDateRequest.h
 //  CreateSend
 //
 //  Created by Nathan de Vries on 17/12/10.
@@ -9,14 +9,13 @@
 #import "CSAPIRequest.h"
 
 
-@interface CSTimezonesRequest : CSAPIRequest
+@interface CSSystemDateRequest : CSAPIRequest
 
 
-@property (retain) NSArray* timezones;
+@property (retain) NSDate* systemDate;
 
 
 + (id)request;
-+ (id)requestWithAPIKey:(NSString *)APIKey;
 
 
 @end

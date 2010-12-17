@@ -16,16 +16,8 @@
 @implementation CSCampaignTests
 
 
-- (void)performRequest:(CSAPIRequest *)request forTestWithSelector:(SEL)selector {
-  [self prepare];
-
-  [request setCompletionBlock:^{ [self notify:kGHUnitWaitStatusSuccess forSelector:selector]; }];
-  [request setFailedBlock:^{ [self notify:kGHUnitWaitStatusFailure forSelector:selector]; }];
-
-  [request startAsynchronous];
-
-  [self waitForStatus:kGHUnitWaitStatusSuccess timeout:5.0];
-}
+- (void)setUp { [CSAPIRequest setDefaultAPIKey:kCSTestsValidAPIKey]; }
+- (void)tearDown { [CSAPIRequest setDefaultAPIKey:nil]; }
 
 
 # pragma mark -
@@ -43,7 +35,6 @@
                                                                     textURLString:@"http://example.com/campaigncontent/index.txt"
                                                                           listIDs:[NSArray array]
                                                                        segmentIDs:[NSArray array]];
-  request.username = kCSTestsValidAPIKey;
 
   [self performRequest:request forTestWithSelector:_cmd];
 
