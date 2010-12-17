@@ -41,6 +41,7 @@ static NSString* defaultAPIKey = nil;
   return [self requestWithAPISlug:APISlug queryParameters:nil];
 }
 
+
 + (id)requestWithAPISlug:(NSString *)APISlug
          queryParameters:(NSDictionary *)queryParameters {
 
@@ -113,7 +114,7 @@ static NSString* defaultAPIKey = nil;
                                                     nil]]];
     } else {
       if (self.parsedResponse == nil) {
-        self.parsedResponse = [self responseString];
+        self.parsedResponse = [[self responseString] substringWithRange:NSMakeRange(1, [[self responseString] length] - 2)];
       }
     }
 
@@ -135,17 +136,19 @@ static NSString* defaultAPIKey = nil;
 - (void)requestFinished {
   CSDLog(@"%@", self);
 
-  NSString* contentType = [[self responseHeaders] objectForKey:@"Content-Type"];
+  if ([[self responseData] length] > 0) {
+    NSString* contentType = [[self responseHeaders] objectForKey:@"Content-Type"];
 
-	if ([contentType isEqualToString:@"application/json; charset=utf-8"]) {
-    [self parseJSONResponse];
+    if ([contentType isEqualToString:@"application/json; charset=utf-8"]) {
+      [self parseJSONResponse];
 
-	} else {
-    [self failWithError:[NSError errorWithDomain:kCSAPIRequestErrorDomain
-                                            code:CSAPIRequestInvalidContentTypeErrorType
-                                        userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                  @"Invalid Content-Type", NSLocalizedDescriptionKey,
-                                                  nil]]];
+    } else {
+      [self failWithError:[NSError errorWithDomain:kCSAPIRequestErrorDomain
+                                              code:CSAPIRequestInvalidContentTypeErrorType
+                                          userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                    [NSString stringWithFormat:@"Invalid Content-Type (%@)", contentType], NSLocalizedDescriptionKey,
+                                                    nil]]];
+    }
   }
 
 	if (![self error]) {

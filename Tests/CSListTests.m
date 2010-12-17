@@ -7,6 +7,8 @@
 //
 
 #import "CSListCreateRequest.h"
+#import "CSListDeleteRequest.h"
+
 #import "NSString+UUIDAdditions.h"
 
 
@@ -25,17 +27,28 @@
 # pragma mark CSListCreateRequest
 
 
-- (void)testCSListCreateRequest {
-  CSListCreateRequest* request = [CSListCreateRequest requestWithClientID:kCSTestsValidClientID
-                                                                    title:[NSString UUIDString]
-                                                          unsubscribePage:@"http://example.com/unsubscribe"
-                                                  confirmationSuccessPage:@"http://example.com/success"
-                                                       shouldConfirmOptIn:YES];
+- (void)testListCreationAndDeletion {
+  // Create the list
 
-  [self performRequest:request forTestWithSelector:_cmd];
+  CSListCreateRequest* createRequest = [CSListCreateRequest requestWithClientID:kCSTestsValidClientID
+                                                                          title:[NSString UUIDString]
+                                                                unsubscribePage:@"http://example.com/unsubscribe"
+                                                        confirmationSuccessPage:@"http://example.com/success"
+                                                             shouldConfirmOptIn:YES];
 
-  GHAssertNil(request.error, nil);
-  GHAssertNotNil(request.listID, nil);
+  [self performRequest:createRequest forTestWithSelector:_cmd];
+
+  GHAssertNil(createRequest.error, nil);
+  GHAssertNotNil(createRequest.listID, nil);
+
+
+  // Delete the list
+
+  CSListDeleteRequest* deleteRequest = [CSListDeleteRequest requestWithListID:createRequest.listID];
+
+  [self performRequest:deleteRequest forTestWithSelector:_cmd];
+
+  GHAssertNil(deleteRequest.error, nil);
 }
 
 

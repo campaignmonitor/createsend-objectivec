@@ -48,6 +48,9 @@
 		D8896B5212BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */; };
 		D8896B5312BB3465007C5783 /* NSString+UUIDAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896B5012BB3465007C5783 /* NSString+UUIDAdditions.h */; };
 		D8896B5412BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */; };
+		D8896C1212BB4636007C5783 /* CSListDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */; };
+		D8896C1312BB4636007C5783 /* CSListDeleteRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */; };
+		D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8CE1DB012B7515A002D871F /* Tests.xcconfig */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
@@ -93,6 +96,8 @@
 		D8896B2912BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GHAsyncTestCase+ASIHTTPRequestAdditions.m"; path = "../Tests/GHAsyncTestCase+ASIHTTPRequestAdditions.m"; sourceTree = "<group>"; };
 		D8896B5012BB3465007C5783 /* NSString+UUIDAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUIDAdditions.h"; sourceTree = "<group>"; };
 		D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUIDAdditions.m"; sourceTree = "<group>"; };
+		D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListDeleteRequest.h; sourceTree = "<group>"; };
+		D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListDeleteRequest.m; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -260,6 +265,8 @@
 			children = (
 				D8896AE612BB27ED007C5783 /* CSListCreateRequest.h */,
 				D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */,
+				D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */,
+				D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -361,6 +368,7 @@
 				D8896AB912BB20B6007C5783 /* CSCampaignCreateRequest.h in Headers */,
 				D8896AE912BB27ED007C5783 /* CSListCreateRequest.h in Headers */,
 				D8896B5312BB3465007C5783 /* NSString+UUIDAdditions.h in Headers */,
+				D8896C1312BB4636007C5783 /* CSListDeleteRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +482,7 @@
 				D8896AEA12BB27ED007C5783 /* CSListCreateRequest.m in Sources */,
 				D8896AF712BB2B2B007C5783 /* CSListTests.m in Sources */,
 				D8896B5412BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */,
+				D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +515,7 @@
 				D8896AF612BB2B2B007C5783 /* CSListTests.m in Sources */,
 				D8896B2A12BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m in Sources */,
 				D8896B5212BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */,
+				D8896C1212BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
