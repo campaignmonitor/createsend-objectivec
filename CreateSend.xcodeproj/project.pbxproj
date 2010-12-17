@@ -278,10 +278,10 @@
 		D8CE1D8812B74EB6002D871F /* External */ = {
 			isa = PBXGroup;
 			children = (
-				D889683412B9E305007C5783 /* YAJL */,
 				D8CE1DF312B75454002D871F /* ASIHTTPRequest */,
 				D8CE1D8912B74EBE002D871F /* GHUnit */,
 				D8CE1E1612B75498002D871F /* Reachability */,
+				D889683412B9E305007C5783 /* YAJL */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -516,10 +516,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1D0712B73F28002D871F /* Debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/External/YAJL\"",
-				);
 			};
 			name = Debug;
 		};
@@ -565,10 +561,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1DB012B7515A002D871F /* Tests.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/External/YAJL\"",
-				);
 			};
 			name = Debug;
 		};
@@ -579,6 +571,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/YAJL\"",
+					"\"$(SRCROOT)/External/OCHamcrest\"",
 				);
 			};
 			name = Release;

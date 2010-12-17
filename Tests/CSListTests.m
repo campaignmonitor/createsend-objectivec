@@ -17,8 +17,8 @@
 @implementation CSListTests
 
 
-- (void)setUp { [CSAPIRequest setDefaultAPIKey:kCSTestsValidAPIKey]; }
-- (void)tearDown { [CSAPIRequest setDefaultAPIKey:nil]; }
+- (void)setUpClass { [CSAPIRequest setDefaultAPIKey:kCSTestsValidAPIKey]; }
+- (void)tearDownClass { [CSAPIRequest setDefaultAPIKey:nil]; }
 
 
 # pragma mark -
@@ -34,8 +34,8 @@
 
   [self performRequest:request forTestWithSelector:_cmd];
 
-  GHAssertNil(request.error, @"");
-  GHAssertNotNil(request.listID, @"");
+  GHAssertNil(request.error, nil);
+  GHAssertNotNil(request.listID, nil);
 }
 
 

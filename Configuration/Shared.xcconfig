@@ -18,6 +18,8 @@ DSTROOT      = /tmp/$(PRODUCT_NAME).dst
 INSTALL_PATH = /usr/local/lib
 
 
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/External/YAJL"
+
 FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework YAJL
 LIBRARY_FLAGS   = -lz
 GENERAL_FLAGS   = -ObjC -all_load
