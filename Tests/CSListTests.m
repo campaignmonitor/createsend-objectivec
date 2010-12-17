@@ -8,6 +8,7 @@
 
 #import "CSListCreateRequest.h"
 #import "CSListDeleteRequest.h"
+#import "CSClientListsRequest.h"
 
 #import "NSString+UUIDAdditions.h"
 
@@ -23,32 +24,37 @@
 - (void)tearDownClass { [CSAPIRequest setDefaultAPIKey:nil]; }
 
 
-# pragma mark -
-# pragma mark CSListCreateRequest
-
-
-- (void)testListCreationAndDeletion {
-  // Create the list
+- (void)testLists {
+  // Create a list
 
   CSListCreateRequest* createRequest = [CSListCreateRequest requestWithClientID:kCSTestsValidClientID
                                                                           title:[NSString UUIDString]
                                                                 unsubscribePage:@"http://example.com/unsubscribe"
                                                         confirmationSuccessPage:@"http://example.com/success"
                                                              shouldConfirmOptIn:YES];
-
   [self performRequest:createRequest forTestWithSelector:_cmd];
 
   GHAssertNil(createRequest.error, nil);
   GHAssertNotNil(createRequest.listID, nil);
 
 
-  // Delete the list
+  // Get a list of all the lists
 
-  CSListDeleteRequest* deleteRequest = [CSListDeleteRequest requestWithListID:createRequest.listID];
+  CSClientListsRequest* listRequest = [CSClientListsRequest requestWithClientID:kCSTestsValidClientID];
+  [self performRequest:listRequest forTestWithSelector:_cmd];
 
-  [self performRequest:deleteRequest forTestWithSelector:_cmd];
+  GHAssertNil(listRequest.error, nil);
+  GHAssertTrue([listRequest.lists count] > 0, nil);
 
-  GHAssertNil(deleteRequest.error, nil);
+
+  // Delete the lists
+
+  for (CSList* list in listRequest.lists) {
+    CSListDeleteRequest* deleteRequest = [CSListDeleteRequest requestWithListID:list.listID];
+    [self performRequest:deleteRequest forTestWithSelector:_cmd];
+
+    GHAssertNil(deleteRequest.error, nil);
+  }
 }
 
 

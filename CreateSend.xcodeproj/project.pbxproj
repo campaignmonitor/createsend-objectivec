@@ -51,6 +51,12 @@
 		D8896C1212BB4636007C5783 /* CSListDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */; };
 		D8896C1312BB4636007C5783 /* CSListDeleteRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */; };
 		D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */; };
+		D8896CBD12BB54FA007C5783 /* CSClientListsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */; };
+		D8896CBE12BB54FA007C5783 /* CSClientListsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896CBB12BB54FA007C5783 /* CSClientListsRequest.h */; };
+		D8896CBF12BB54FA007C5783 /* CSClientListsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */; };
+		D8896CC412BB5597007C5783 /* CSList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CC312BB5597007C5783 /* CSList.m */; };
+		D8896CC512BB5597007C5783 /* CSList.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896CC212BB5597007C5783 /* CSList.h */; };
+		D8896CC612BB5597007C5783 /* CSList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CC312BB5597007C5783 /* CSList.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8CE1DB012B7515A002D871F /* Tests.xcconfig */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
@@ -98,6 +104,10 @@
 		D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUIDAdditions.m"; sourceTree = "<group>"; };
 		D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListDeleteRequest.h; sourceTree = "<group>"; };
 		D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListDeleteRequest.m; sourceTree = "<group>"; };
+		D8896CBB12BB54FA007C5783 /* CSClientListsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSClientListsRequest.h; sourceTree = "<group>"; };
+		D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSClientListsRequest.m; sourceTree = "<group>"; };
+		D8896CC212BB5597007C5783 /* CSList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSList.h; sourceTree = "<group>"; };
+		D8896CC312BB5597007C5783 /* CSList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSList.m; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -247,6 +257,8 @@
 			children = (
 				D88969DB12BAE9C9007C5783 /* CSClient.h */,
 				D88969DC12BAE9C9007C5783 /* CSClient.m */,
+				D8896CC212BB5597007C5783 /* CSList.h */,
+				D8896CC312BB5597007C5783 /* CSList.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -267,6 +279,8 @@
 				D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */,
 				D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */,
 				D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */,
+				D8896CBB12BB54FA007C5783 /* CSClientListsRequest.h */,
+				D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -369,6 +383,8 @@
 				D8896AE912BB27ED007C5783 /* CSListCreateRequest.h in Headers */,
 				D8896B5312BB3465007C5783 /* NSString+UUIDAdditions.h in Headers */,
 				D8896C1312BB4636007C5783 /* CSListDeleteRequest.h in Headers */,
+				D8896CBE12BB54FA007C5783 /* CSClientListsRequest.h in Headers */,
+				D8896CC512BB5597007C5783 /* CSList.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +499,8 @@
 				D8896AF712BB2B2B007C5783 /* CSListTests.m in Sources */,
 				D8896B5412BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */,
 				D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
+				D8896CBF12BB54FA007C5783 /* CSClientListsRequest.m in Sources */,
+				D8896CC612BB5597007C5783 /* CSList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +534,8 @@
 				D8896B2A12BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m in Sources */,
 				D8896B5212BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */,
 				D8896C1212BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
+				D8896CBD12BB54FA007C5783 /* CSClientListsRequest.m in Sources */,
+				D8896CC412BB5597007C5783 /* CSList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
