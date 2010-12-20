@@ -57,6 +57,9 @@
 		D8896CC412BB5597007C5783 /* CSList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CC312BB5597007C5783 /* CSList.m */; };
 		D8896CC512BB5597007C5783 /* CSList.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896CC212BB5597007C5783 /* CSList.h */; };
 		D8896CC612BB5597007C5783 /* CSList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CC312BB5597007C5783 /* CSList.m */; };
+		D8896CF512BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */; };
+		D8896CF612BF1EB4007C5783 /* CSListDetailsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896CF312BF1EB4007C5783 /* CSListDetailsRequest.h */; };
+		D8896CF712BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8CE1DB012B7515A002D871F /* Tests.xcconfig */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
@@ -108,6 +111,8 @@
 		D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSClientListsRequest.m; sourceTree = "<group>"; };
 		D8896CC212BB5597007C5783 /* CSList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSList.h; sourceTree = "<group>"; };
 		D8896CC312BB5597007C5783 /* CSList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSList.m; sourceTree = "<group>"; };
+		D8896CF312BF1EB4007C5783 /* CSListDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListDetailsRequest.h; sourceTree = "<group>"; };
+		D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListDetailsRequest.m; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -230,11 +235,12 @@
 		D88969AA12BAE173007C5783 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D88969A912BAE15C007C5783 /* Accounts */,
-				D8896AB312BB2097007C5783 /* Campaigns */,
-				D8896AE312BB27C4007C5783 /* Lists */,
 				D889681312B9D65E007C5783 /* CSAPIRequest.h */,
 				D889681412B9D65E007C5783 /* CSAPIRequest.m */,
+				D88969A912BAE15C007C5783 /* Accounts */,
+				D8896AB312BB2097007C5783 /* Campaigns */,
+				D8896CE912BF1E6E007C5783 /* Clients */,
+				D8896AE312BB27C4007C5783 /* Lists */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -279,10 +285,19 @@
 				D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */,
 				D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */,
 				D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */,
+				D8896CF312BF1EB4007C5783 /* CSListDetailsRequest.h */,
+				D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		D8896CE912BF1E6E007C5783 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
 				D8896CBB12BB54FA007C5783 /* CSClientListsRequest.h */,
 				D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */,
 			);
-			name = Lists;
+			name = Clients;
 			sourceTree = "<group>";
 		};
 		D8CE1D0512B73F04002D871F /* Configuration */ = {
@@ -385,6 +400,7 @@
 				D8896C1312BB4636007C5783 /* CSListDeleteRequest.h in Headers */,
 				D8896CBE12BB54FA007C5783 /* CSClientListsRequest.h in Headers */,
 				D8896CC512BB5597007C5783 /* CSList.h in Headers */,
+				D8896CF612BF1EB4007C5783 /* CSListDetailsRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +517,7 @@
 				D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
 				D8896CBF12BB54FA007C5783 /* CSClientListsRequest.m in Sources */,
 				D8896CC612BB5597007C5783 /* CSList.m in Sources */,
+				D8896CF712BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +553,7 @@
 				D8896C1212BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
 				D8896CBD12BB54FA007C5783 /* CSClientListsRequest.m in Sources */,
 				D8896CC412BB5597007C5783 /* CSList.m in Sources */,
+				D8896CF512BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,11 @@
 
 
 @property (retain) NSString* listID;
-@property (retain) NSString* name;
+@property (retain) NSString* title;
+
+@property (retain) NSString* unsubscribePage;
+@property (retain) NSString* confirmationSuccessPage;
+@property (assign) BOOL confirmOptIn;
 
 
 + (id)listWithDictionary:(NSDictionary *)listDict;

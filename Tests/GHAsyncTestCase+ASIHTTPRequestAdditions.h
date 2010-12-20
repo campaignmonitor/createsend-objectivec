@@ -13,8 +13,10 @@
 @interface GHAsyncTestCase (ASIHTTPRequestAdditions)
 
 
-- (void)performRequest:(CSAPIRequest *)request
-   forTestWithSelector:(SEL)selector;
+- (void)performRequestAndWaitForResponse:(CSAPIRequest *)request;
+
+- (void)performRequestAndWaitForResponse:(CSAPIRequest *)request
+                     forTestWithSelector:(SEL)selector;
 
 
 @end

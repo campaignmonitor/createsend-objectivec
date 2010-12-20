@@ -12,8 +12,13 @@
 @implementation GHAsyncTestCase (ASIHTTPRequestAdditions)
 
 
-- (void)performRequest:(CSAPIRequest *)request
-   forTestWithSelector:(SEL)selector {
+- (void)performRequestAndWaitForResponse:(CSAPIRequest *)request {
+  [self performRequestAndWaitForResponse:request forTestWithSelector:NULL];
+}
+
+
+- (void)performRequestAndWaitForResponse:(CSAPIRequest *)request
+                     forTestWithSelector:(SEL)selector {
 
   [self prepare];
 

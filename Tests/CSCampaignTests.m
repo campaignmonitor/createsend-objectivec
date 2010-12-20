@@ -24,7 +24,7 @@
 # pragma mark CSCampaignCreateRequest
 
 
-- (void)testCSCampaignCreateRequest {
+- (void)xtestCSCampaignCreateRequest {
   CSCampaignCreateRequest* request = [CSCampaignCreateRequest requestWithClientID:kCSTestsValidClientID
                                                                              name:@"Campaign Name"
                                                                           subject:@"Subject"
@@ -36,7 +36,7 @@
                                                                           listIDs:[NSArray array]
                                                                        segmentIDs:[NSArray array]];
 
-  [self performRequest:request forTestWithSelector:_cmd];
+  [self performRequestAndWaitForResponse:request];
 
   GHAssertNil(request.error, nil);
 }
