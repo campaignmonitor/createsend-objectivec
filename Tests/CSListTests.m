@@ -6,12 +6,7 @@
 //  Copyright 2010 Nathan de Vries. All rights reserved.
 //
 
-#import "CSListCreateRequest.h"
-#import "CSListDeleteRequest.h"
-#import "CSClientListsRequest.h"
-#import "CSListDetailsRequest.h"
-
-
+#import "CreateSend.h"
 #import "NSString+UUIDAdditions.h"
 
 
@@ -58,6 +53,15 @@
   GHAssertEqualObjects(detailsRequest.list.unsubscribePage, listUnsubscribePage, nil);
   GHAssertEqualObjects(detailsRequest.list.confirmationSuccessPage, listConfirmationSuccessPage, nil);
   GHAssertTrue(detailsRequest.list.confirmOptIn == listShouldConfirmOptIn, nil);
+
+
+  // Get the list stats
+
+  CSListStatsRequest* statsRequest = [CSListStatsRequest requestWithListID:createRequest.listID];
+  [self performRequestAndWaitForResponse:statsRequest];
+
+  GHAssertNil(statsRequest.error, nil);
+  GHAssertNotNil(statsRequest.listStatistics, nil);
 
 
   // Get a list of all the lists
