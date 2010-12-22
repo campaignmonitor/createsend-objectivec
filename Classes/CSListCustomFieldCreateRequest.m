@@ -12,26 +12,38 @@
 @implementation CSListCustomFieldCreateRequest
 
 
+@synthesize customFieldKey=_customFieldKey;
+
+
 + (id)requestWithListID:(NSString *)listID
             customField:(CSCustomField *)customField {
 
   CSListCustomFieldCreateRequest* request = [self requestWithAPISlug:[NSString stringWithFormat:@"lists/%@/customfields", listID]];
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           customField.name, @"FieldName",
-                           [customField dataTypeString], @"DataType",
-                           customField.options, @"Options",
-                           nil];
+
+  NSMutableDictionary* requestObject = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                        customField.name, @"FieldName",
+                                        [customField dataTypeString], @"DataType", nil];
+
+  if (customField.options) {
+    [requestObject setObject:customField.options
+                      forKey:@"Options"];
+  }
+
+  request.requestObject = requestObject;
+
   return request;
 }
 
 
-- (void)prepareRequestObject {
-
+- (void)handleParsedResponse {
+  self.customFieldKey = self.parsedResponse;
 }
 
 
-- (void)handleParsedResponse {
-  self.listID = self.parsedResponse;
+- (void)dealloc {
+  [_customFieldKey release];
+
+  [super dealloc];
 }
 
 

@@ -29,16 +29,19 @@ typedef enum _CSCustomFieldDataType {
 
 
 + (id)customFieldWithName:(NSString *)name
-                 dataType:(CSCustomFieldDataType)dataType;
-
-+ (id)customFieldWithName:(NSString *)name
                  dataType:(CSCustomFieldDataType)dataType
                   options:(NSArray *)options;
+
++ (id)customFieldWithName:(NSString *)name
+                 dataType:(CSCustomFieldDataType)dataType;
 
 + (id)customFieldWithDictionary:(NSDictionary *)customFieldDict;
 
 
 - (NSString *)dataTypeString;
+
+
++ (NSDictionary *)dictionaryWithValue:(id)fieldValue forFieldKey:(NSString *)fieldKey;
 
 
 @end

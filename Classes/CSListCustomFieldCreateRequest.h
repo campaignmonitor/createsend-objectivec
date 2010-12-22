@@ -13,6 +13,9 @@
 @interface CSListCustomFieldCreateRequest : CSAPIRequest
 
 
+@property (retain) NSString* customFieldKey;
+
+
 + (id)requestWithListID:(NSString *)listID
             customField:(CSCustomField *)customField;
 

@@ -34,26 +34,45 @@ static NSDictionary* customFieldDataTypeMapping;
 + (void)initialize {
   if (self == [CSCustomField class]) {
     customFieldDataTypeMapping = [[NSDictionary dictionaryWithObjectsAndKeys:
-                                   @"Text", [NSNumber numberWithInt:CSCustomFieldTextDataType],
-                                   @"Number", [NSNumber numberWithInt:CSCustomFieldNumberDataType],
-                                   @"MultiSelectOne", [NSNumber numberWithInt:CSCustomFieldMultiSelectOneDataType],
-                                   @"MultiSelectMany", [NSNumber numberWithInt:CSCustomFieldMultiSelectManyDataType],
-                                   @"Country", [NSNumber numberWithInt:CSCustomFieldCountryDataType],
-                                   @"USState", [NSNumber numberWithInt:CSCustomFieldUSStateDataType],
+                                   [NSNumber numberWithInt:CSCustomFieldTextDataType], @"Text",
+                                   [NSNumber numberWithInt:CSCustomFieldNumberDataType], @"Number",
+                                   [NSNumber numberWithInt:CSCustomFieldMultiSelectOneDataType], @"MultiSelectOne",
+                                   [NSNumber numberWithInt:CSCustomFieldMultiSelectManyDataType], @"MultiSelectMany",
+                                   [NSNumber numberWithInt:CSCustomFieldCountryDataType], @"Country",
+                                   [NSNumber numberWithInt:CSCustomFieldUSStateDataType], @"USState",
                                    nil] retain];
   }
 }
 
 
-+ (id)customFieldWithDictionary:(NSDictionary *)customFieldDict {
++ (id)customFieldWithName:(NSString *)name
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options {
+
   CSCustomField* customField = [[[self alloc] init] autorelease];
+  customField.name = name;
+  customField.dataType = dataType;
+  customField.options = options;
+
+  return customField;
+}
 
 
-  customField.name = [customFieldDict valueForKey:@"FieldName"];
++ (id)customFieldWithName:(NSString *)name
+                 dataType:(CSCustomFieldDataType)dataType {
+
+  return [self customFieldWithName:name
+                          dataType:dataType
+                           options:nil];
+}
+
+
++ (id)customFieldWithDictionary:(NSDictionary *)customFieldDict {
+  CSCustomField* customField = [self customFieldWithName:[customFieldDict valueForKey:@"FieldName"]
+                                                dataType:[self dataTypeForDataTypeString:[customFieldDict valueForKey:@"DataType"]]
+                                                 options:[customFieldDict valueForKey:@"FieldOptions"]];
+
   customField.key = [customFieldDict valueForKey:@"Key"];
-  customField.dataType = [self dataTypeForDataTypeString:[customFieldDict valueForKey:@"DataType"]];
-  customField.options = [customFieldDict valueForKey:@"FieldOptions"];
-
   return customField;
 }
 
@@ -75,6 +94,14 @@ static NSDictionary* customFieldDataTypeMapping;
     }
   }
   return CSCustomFieldTextDataType;
+}
+
+
++ (NSDictionary *)dictionaryWithValue:(id)fieldValue forFieldKey:(NSString *)fieldKey {
+  return [NSDictionary dictionaryWithObjectsAndKeys:
+          fieldValue, @"Value",
+          fieldKey, @"Key",
+          nil];
 }
 
 

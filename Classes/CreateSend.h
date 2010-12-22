@@ -12,3 +12,6 @@
 #import "CSClientListsRequest.h"
 #import "CSListDetailsRequest.h"
 #import "CSListStatsRequest.h"
+#import "CSListCustomFieldCreateRequest.h"
+
+#import "CSSubscriberCreateRequest.h"

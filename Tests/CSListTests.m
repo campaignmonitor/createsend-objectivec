@@ -64,6 +64,43 @@
   GHAssertNotNil(statsRequest.listStatistics, nil);
 
 
+  // Create a custom field for the list
+
+  CSCustomField* customField = [CSCustomField customFieldWithName:@"Test Field"
+                                                         dataType:CSCustomFieldMultiSelectManyDataType
+                                                          options:[NSArray arrayWithObjects:@"First Option", @"Second Option", nil]];
+
+  CSListCustomFieldCreateRequest* customFieldCreateRequest;
+  customFieldCreateRequest = [CSListCustomFieldCreateRequest requestWithListID:createRequest.listID
+                                                                   customField:customField];
+  [self performRequestAndWaitForResponse:customFieldCreateRequest];
+
+  GHAssertNil(customFieldCreateRequest.error, nil);
+  GHAssertNotNil(customFieldCreateRequest.customFieldKey, nil);
+
+
+  // Subscribe to the list, supplying a value for the custom field
+
+  NSArray* customFieldValues = [NSArray arrayWithObjects:
+                                [CSCustomField dictionaryWithValue:@"First Option" forFieldKey:customFieldCreateRequest.customFieldKey],
+                                [CSCustomField dictionaryWithValue:@"Second Option" forFieldKey:customFieldCreateRequest.customFieldKey],
+                                nil];
+
+  CSSubscriberCreateRequest* subscribeRequest;
+  subscribeRequest = [CSSubscriberCreateRequest requestWithListID:createRequest.listID
+                                                     emailAddress:@"john.doe@example.com"
+                                                             name:@"John Doe"
+                                                shouldResubscribe:YES
+                                                customFieldValues:customFieldValues];
+  [self performRequestAndWaitForResponse:subscribeRequest];
+
+  GHAssertNil(subscribeRequest.error, nil);
+  GHAssertNotNil(subscribeRequest.subscribedEmailAddress, nil);
+
+
+  return;
+
+
   // Get a list of all the lists
 
   CSClientListsRequest* listRequest = [CSClientListsRequest requestWithClientID:kCSTestsValidClientID];
