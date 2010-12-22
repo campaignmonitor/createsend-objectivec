@@ -35,12 +35,16 @@
       customFieldValues:(NSArray *)customFieldValues {
 
   CSSubscriberSubscribeRequest* request = [self requestWithAPISlug:[NSString stringWithFormat:@"subscribers/%@", listID]];
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           emailAddress, @"EmailAddress",
-                           name, @"Name",
-                           [NSNumber numberWithBool:shouldResubscribe], @"Resubscribe",
-                           customFieldValues ?: [NSArray array], @"CustomFields",
-                           nil];
+
+  NSDictionary* requestObject = [[[CSSubscriber dictionaryWithEmailAddress:emailAddress
+                                                                      name:name
+                                                         customFieldValues:customFieldValues] mutableCopy] autorelease];
+
+  [requestObject setValue:[NSNumber numberWithBool:shouldResubscribe]
+                   forKey:@"Resubscribe"];
+
+  request.requestObject = requestObject;
+
   return request;
 }
 

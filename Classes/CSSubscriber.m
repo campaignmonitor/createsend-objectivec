@@ -46,6 +46,18 @@
 }
 
 
++ (NSDictionary *)dictionaryWithEmailAddress:(NSString *)emailAddress
+                                        name:(NSString *)name
+                           customFieldValues:(NSArray *)customFieldValues {
+
+  return [NSDictionary dictionaryWithObjectsAndKeys:
+          emailAddress, @"EmailAddress",
+          name, @"Name",
+          customFieldValues ?: [NSArray array], @"CustomFields",
+          nil];
+}
+
+
 - (NSString *)description {
   return [NSString stringWithFormat:@"<%@ emailAddress='%@' name='%@' "
           "date='%@' state='%@' customFieldValues=%@>",

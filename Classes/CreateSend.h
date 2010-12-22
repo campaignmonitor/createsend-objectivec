@@ -18,3 +18,5 @@
 #import "CSSubscriberDetailsRequest.h"
 #import "CSSubscriberSubscribeRequest.h"
 #import "CSSubscriberUnsubscribeRequest.h"
+#import "CSSubscriberImportRequest.h"
+#import "CSSubscriberHistoryRequest.h"

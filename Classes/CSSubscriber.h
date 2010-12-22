@@ -26,4 +26,9 @@
                customFieldValues:(NSArray *)customFieldValues;
 
 
++ (NSDictionary *)dictionaryWithEmailAddress:(NSString *)emailAddress
+                                        name:(NSString *)name
+                           customFieldValues:(NSArray *)customFieldValues;
+
+
 @end

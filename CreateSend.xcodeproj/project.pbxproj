@@ -85,6 +85,12 @@
 		D8896EE012C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */; };
 		D8896EE112C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */; };
 		D8896EE212C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */; };
+		D8896F3D12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */; };
+		D8896F3E12C1D5ED007C5783 /* CSSubscriberImportRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896F3B12C1D5ED007C5783 /* CSSubscriberImportRequest.h */; };
+		D8896F3F12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */; };
+		D8896F5712C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
+		D8896F5812C1D7FE007C5783 /* CSSubscriberHistoryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */; };
+		D8896F5912C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8CE1DB012B7515A002D871F /* Tests.xcconfig */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
@@ -155,6 +161,10 @@
 		D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberDetailsRequest.m; sourceTree = "<group>"; };
 		D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberUnsubscribeRequest.h; sourceTree = "<group>"; };
 		D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberUnsubscribeRequest.m; sourceTree = "<group>"; };
+		D8896F3B12C1D5ED007C5783 /* CSSubscriberImportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberImportRequest.h; sourceTree = "<group>"; };
+		D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberImportRequest.m; sourceTree = "<group>"; };
+		D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberHistoryRequest.h; sourceTree = "<group>"; };
+		D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberHistoryRequest.m; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -363,6 +373,10 @@
 				D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */,
 				D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */,
 				D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */,
+				D8896F3B12C1D5ED007C5783 /* CSSubscriberImportRequest.h */,
+				D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */,
+				D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */,
+				D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */,
 			);
 			name = Subscribers;
 			sourceTree = "<group>";
@@ -477,6 +491,8 @@
 				D8896DA112C187F2007C5783 /* CSSubscriber.h in Headers */,
 				D8896E9E12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h in Headers */,
 				D8896EE112C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h in Headers */,
+				D8896F3E12C1D5ED007C5783 /* CSSubscriberImportRequest.h in Headers */,
+				D8896F5812C1D7FE007C5783 /* CSSubscriberHistoryRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +618,8 @@
 				D8896DA212C187F2007C5783 /* CSSubscriber.m in Sources */,
 				D8896E9F12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */,
 				D8896EE212C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */,
+				D8896F3F12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */,
+				D8896F5912C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +664,8 @@
 				D8896DA012C187F2007C5783 /* CSSubscriber.m in Sources */,
 				D8896E9D12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */,
 				D8896EE012C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */,
+				D8896F3D12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */,
+				D8896F5712C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
