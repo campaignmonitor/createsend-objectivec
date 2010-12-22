@@ -27,7 +27,7 @@
   NSString* listTitle = [NSString UUIDString];
   NSString* listUnsubscribePage = @"example.com/unsubscribe";
   NSString* listConfirmationSuccessPage = @"example.com/success";
-  BOOL listShouldConfirmOptIn = YES;
+  BOOL listShouldConfirmOptIn = NO;
 
   CSListCreateRequest* createRequest = [CSListCreateRequest requestWithClientID:kCSTestsValidClientID
                                                                           title:listTitle
@@ -79,26 +79,56 @@
   GHAssertNotNil(customFieldCreateRequest.customFieldKey, nil);
 
 
+  // Ensure the custom field was created properly
+
+  CSListCustomFieldsRequest* customFieldsRequest;
+  customFieldsRequest = [CSListCustomFieldsRequest requestWithListID:createRequest.listID];
+  [self performRequestAndWaitForResponse:customFieldsRequest];
+
+  GHAssertNil(customFieldsRequest.error, nil);
+  GHAssertNotNil(customFieldsRequest.customFields, nil);
+  GHAssertTrue([customFieldsRequest.customFields count] == 1, nil);
+
+
   // Subscribe to the list, supplying a value for the custom field
 
-  NSArray* customFieldValues = [NSArray arrayWithObjects:
-                                [CSCustomField dictionaryWithValue:@"First Option" forFieldKey:customFieldCreateRequest.customFieldKey],
-                                [CSCustomField dictionaryWithValue:@"Second Option" forFieldKey:customFieldCreateRequest.customFieldKey],
-                                nil];
+  NSString* subscriberEmailAddress = @"john.doe@example.com";
+  NSArray* subscriberCustomFields = [NSArray arrayWithObjects:
+                                     [CSCustomField dictionaryWithValue:@"First Option" forFieldKey:customFieldCreateRequest.customFieldKey],
+                                     [CSCustomField dictionaryWithValue:@"Second Option" forFieldKey:customFieldCreateRequest.customFieldKey],
+                                     nil];
 
-  CSSubscriberCreateRequest* subscribeRequest;
-  subscribeRequest = [CSSubscriberCreateRequest requestWithListID:createRequest.listID
+  CSSubscriberSubscribeRequest* subscribeRequest;
+  subscribeRequest = [CSSubscriberSubscribeRequest requestWithListID:createRequest.listID
                                                      emailAddress:@"john.doe@example.com"
                                                              name:@"John Doe"
                                                 shouldResubscribe:YES
-                                                customFieldValues:customFieldValues];
+                                                customFieldValues:subscriberCustomFields];
   [self performRequestAndWaitForResponse:subscribeRequest];
 
   GHAssertNil(subscribeRequest.error, nil);
   GHAssertNotNil(subscribeRequest.subscribedEmailAddress, nil);
 
 
-  return;
+  // Get the subscriber details and ensure they're correct
+
+  CSSubscriberDetailsRequest* subscriberRequest;
+  subscriberRequest = [CSSubscriberDetailsRequest requestWithListID:createRequest.listID
+                                                       emailAddress:subscriberEmailAddress];
+  [self performRequestAndWaitForResponse:subscriberRequest];
+
+  GHAssertNil(subscriberRequest.error, nil);
+  GHAssertNotNil(subscriberRequest.subscriber, nil);
+
+
+  // Delete the new subscriber
+
+  CSSubscriberUnsubscribeRequest* unsubscribeRequest;
+  unsubscribeRequest = [CSSubscriberUnsubscribeRequest requestWithListID:createRequest.listID
+                                                       emailAddress:subscriberEmailAddress];
+  [self performRequestAndWaitForResponse:unsubscribeRequest];
+
+  GHAssertNil(unsubscribeRequest.error, nil);
 
 
   // Get a list of all the lists

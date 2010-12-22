@@ -1,5 +1,5 @@
 //
-//  CSSubscriberCreateRequest.h
+//  CSSubscriberSubscribeRequest.h
 //  CreateSend
 //
 //  Created by Nathan de Vries on 22/12/10.
@@ -10,7 +10,7 @@
 #import "CSSubscriber.h"
 
 
-@interface CSSubscriberCreateRequest : CSAPIRequest
+@interface CSSubscriberSubscribeRequest : CSAPIRequest
 
 
 @property (retain) NSString* subscribedEmailAddress;

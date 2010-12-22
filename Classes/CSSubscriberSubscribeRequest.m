@@ -1,15 +1,15 @@
 //
-//  CSSubscriberCreateRequest.m
+//  CSSubscriberSubscribeRequest.m
 //  CreateSend
 //
 //  Created by Nathan de Vries on 22/12/10.
 //  Copyright 2010 Nathan de Vries. All rights reserved.
 //
 
-#import "CSSubscriberCreateRequest.h"
+#import "CSSubscriberSubscribeRequest.h"
 
 
-@implementation CSSubscriberCreateRequest
+@implementation CSSubscriberSubscribeRequest
 
 
 @synthesize subscribedEmailAddress=_subscribedEmailAddress;
@@ -34,7 +34,7 @@
       shouldResubscribe:(BOOL)shouldResubscribe
       customFieldValues:(NSArray *)customFieldValues {
 
-  CSSubscriberCreateRequest* request = [self requestWithAPISlug:[NSString stringWithFormat:@"subscribers/%@", listID]];
+  CSSubscriberSubscribeRequest* request = [self requestWithAPISlug:[NSString stringWithFormat:@"subscribers/%@", listID]];
   request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
                            emailAddress, @"EmailAddress",
                            name, @"Name",

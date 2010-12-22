@@ -73,12 +73,18 @@
 		D8896D7712BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D7612BF3273007C5783 /* CSListCustomFieldCreateRequest.m */; };
 		D8896D7812BF3273007C5783 /* CSListCustomFieldCreateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D7512BF3273007C5783 /* CSListCustomFieldCreateRequest.h */; };
 		D8896D7912BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D7612BF3273007C5783 /* CSListCustomFieldCreateRequest.m */; };
-		D8896D9B12C1877C007C5783 /* CSSubscriberCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9A12C1877C007C5783 /* CSSubscriberCreateRequest.m */; };
-		D8896D9C12C1877C007C5783 /* CSSubscriberCreateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D9912C1877C007C5783 /* CSSubscriberCreateRequest.h */; };
-		D8896D9D12C1877C007C5783 /* CSSubscriberCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9A12C1877C007C5783 /* CSSubscriberCreateRequest.m */; };
+		D8896D9B12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */; };
+		D8896D9C12C1877C007C5783 /* CSSubscriberSubscribeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D9912C1877C007C5783 /* CSSubscriberSubscribeRequest.h */; };
+		D8896D9D12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */; };
 		D8896DA012C187F2007C5783 /* CSSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9F12C187F2007C5783 /* CSSubscriber.m */; };
 		D8896DA112C187F2007C5783 /* CSSubscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D9E12C187F2007C5783 /* CSSubscriber.h */; };
 		D8896DA212C187F2007C5783 /* CSSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9F12C187F2007C5783 /* CSSubscriber.m */; };
+		D8896E9D12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */; };
+		D8896E9E12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896E9B12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h */; };
+		D8896E9F12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */; };
+		D8896EE012C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */; };
+		D8896EE112C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */; };
+		D8896EE212C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1DB112B7515A002D871F /* Tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8CE1DB012B7515A002D871F /* Tests.xcconfig */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
@@ -141,10 +147,14 @@
 		D8896D6512BF2EB4007C5783 /* CSCustomField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCustomField.m; sourceTree = "<group>"; };
 		D8896D7512BF3273007C5783 /* CSListCustomFieldCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListCustomFieldCreateRequest.h; sourceTree = "<group>"; };
 		D8896D7612BF3273007C5783 /* CSListCustomFieldCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListCustomFieldCreateRequest.m; sourceTree = "<group>"; };
-		D8896D9912C1877C007C5783 /* CSSubscriberCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberCreateRequest.h; sourceTree = "<group>"; };
-		D8896D9A12C1877C007C5783 /* CSSubscriberCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberCreateRequest.m; sourceTree = "<group>"; };
+		D8896D9912C1877C007C5783 /* CSSubscriberSubscribeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberSubscribeRequest.h; sourceTree = "<group>"; };
+		D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberSubscribeRequest.m; sourceTree = "<group>"; };
 		D8896D9E12C187F2007C5783 /* CSSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriber.h; sourceTree = "<group>"; };
 		D8896D9F12C187F2007C5783 /* CSSubscriber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriber.m; sourceTree = "<group>"; };
+		D8896E9B12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberDetailsRequest.h; sourceTree = "<group>"; };
+		D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberDetailsRequest.m; sourceTree = "<group>"; };
+		D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberUnsubscribeRequest.h; sourceTree = "<group>"; };
+		D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberUnsubscribeRequest.m; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -347,8 +357,12 @@
 		D8896D9612C18700007C5783 /* Subscribers */ = {
 			isa = PBXGroup;
 			children = (
-				D8896D9912C1877C007C5783 /* CSSubscriberCreateRequest.h */,
-				D8896D9A12C1877C007C5783 /* CSSubscriberCreateRequest.m */,
+				D8896E9B12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h */,
+				D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */,
+				D8896D9912C1877C007C5783 /* CSSubscriberSubscribeRequest.h */,
+				D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */,
+				D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */,
+				D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */,
 			);
 			name = Subscribers;
 			sourceTree = "<group>";
@@ -459,8 +473,10 @@
 				D8896D6212BF2D17007C5783 /* CSListCustomFieldsRequest.h in Headers */,
 				D8896D6712BF2EB4007C5783 /* CSCustomField.h in Headers */,
 				D8896D7812BF3273007C5783 /* CSListCustomFieldCreateRequest.h in Headers */,
-				D8896D9C12C1877C007C5783 /* CSSubscriberCreateRequest.h in Headers */,
+				D8896D9C12C1877C007C5783 /* CSSubscriberSubscribeRequest.h in Headers */,
 				D8896DA112C187F2007C5783 /* CSSubscriber.h in Headers */,
+				D8896E9E12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h in Headers */,
+				D8896EE112C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,8 +598,10 @@
 				D8896D6312BF2D17007C5783 /* CSListCustomFieldsRequest.m in Sources */,
 				D8896D6812BF2EB4007C5783 /* CSCustomField.m in Sources */,
 				D8896D7912BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */,
-				D8896D9D12C1877C007C5783 /* CSSubscriberCreateRequest.m in Sources */,
+				D8896D9D12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */,
 				D8896DA212C187F2007C5783 /* CSSubscriber.m in Sources */,
+				D8896E9F12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */,
+				D8896EE212C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,8 +642,10 @@
 				D8896D6112BF2D17007C5783 /* CSListCustomFieldsRequest.m in Sources */,
 				D8896D6612BF2EB4007C5783 /* CSCustomField.m in Sources */,
 				D8896D7712BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */,
-				D8896D9B12C1877C007C5783 /* CSSubscriberCreateRequest.m in Sources */,
+				D8896D9B12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */,
 				D8896DA012C187F2007C5783 /* CSSubscriber.m in Sources */,
+				D8896E9D12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */,
+				D8896EE012C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,10 +14,9 @@
 
 @property (retain) NSString* emailAddress;
 @property (retain) NSString* name;
-@property (retain) NSString* date;
+@property (retain) NSDate* date;
 @property (retain) NSString* state;
 @property (retain) NSArray* customFieldValues;
-@property (assign) BOOL resubscribe;
 
 
 + (id)subscriberWithDictionary:(NSDictionary *)subscriberDict;

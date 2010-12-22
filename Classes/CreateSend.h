@@ -12,6 +12,9 @@
 #import "CSClientListsRequest.h"
 #import "CSListDetailsRequest.h"
 #import "CSListStatsRequest.h"
+#import "CSListCustomFieldsRequest.h"
 #import "CSListCustomFieldCreateRequest.h"
 
-#import "CSSubscriberCreateRequest.h"
+#import "CSSubscriberDetailsRequest.h"
+#import "CSSubscriberSubscribeRequest.h"
+#import "CSSubscriberUnsubscribeRequest.h"

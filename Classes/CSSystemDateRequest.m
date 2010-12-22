@@ -21,11 +21,7 @@
 
 
 - (void)handleParsedResponse {
-  NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
-  NSLocale* locale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease];
-  [formatter setLocale:locale];
-  formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-
+  NSDateFormatter* formatter = [CSAPIRequest sharedDateFormatter];
   self.systemDate = [formatter dateFromString:[self.parsedResponse valueForKey:@"SystemDate"]];
 }
 

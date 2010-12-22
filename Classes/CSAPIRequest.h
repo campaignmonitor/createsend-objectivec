@@ -31,8 +31,9 @@ typedef enum _CSAPIRequestErrorType {
 
 
 + (NSString *)defaultAPIKey;
-
 + (void)setDefaultAPIKey:(NSString *)newDefaultAPIKey;
+
++ (NSDateFormatter *)sharedDateFormatter;
 
 
 // Prepare the requestObject, which is converted to JSON and set as the request body

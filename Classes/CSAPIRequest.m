@@ -77,6 +77,20 @@ static NSString* defaultAPIKey = nil;
 }
 
 
++ (NSDateFormatter *)sharedDateFormatter {
+  static NSDateFormatter* defaultDateFormatter = nil;
+
+  if (defaultDateFormatter == nil) {
+    defaultDateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale* locale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease];
+    [defaultDateFormatter setLocale:locale];
+    defaultDateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+  }
+
+  return defaultDateFormatter;
+}
+
+
 - (void)main {
   [self prepareRequestObject];
 

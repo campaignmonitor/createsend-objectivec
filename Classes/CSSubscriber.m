@@ -17,14 +17,6 @@
 @synthesize date=_date;
 @synthesize state=_state;
 @synthesize customFieldValues=_customFieldValues;
-@synthesize resubscribe=_resubscribe;
-
-
-+ (id)subscriberWithDictionary:(NSDictionary *)subscriberDict {
-  return [self subscriberWithEmailAddress:[subscriberDict valueForKey:@"EmailAddress"]
-                                     name:[subscriberDict valueForKey:@"Name"]
-                        customFieldValues:[subscriberDict valueForKey:@"CustomFields"]];
-}
 
 
 + (id)subscriberWithEmailAddress:(NSString *)emailAddress
@@ -37,6 +29,28 @@
   subscriber.customFieldValues = customFieldValues;
 
   return subscriber;
+}
+
+
++ (id)subscriberWithDictionary:(NSDictionary *)subscriberDict {
+  CSSubscriber* subscriber = [self subscriberWithEmailAddress:[subscriberDict valueForKey:@"EmailAddress"]
+                                                         name:[subscriberDict valueForKey:@"Name"]
+                                            customFieldValues:[subscriberDict valueForKey:@"CustomFields"]];
+
+  subscriber.state = [subscriberDict valueForKey:@"State"];
+
+  NSDateFormatter* formatter = [CSAPIRequest sharedDateFormatter];
+  subscriber.date = [formatter dateFromString:[subscriberDict valueForKey:@"Date"]];
+
+  return subscriber;
+}
+
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<%@ emailAddress='%@' name='%@' "
+          "date='%@' state='%@' customFieldValues=%@>",
+          [self class], self.emailAddress, self.name, self.date, self.state,
+          self.customFieldValues];
 }
 
 
