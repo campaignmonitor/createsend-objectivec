@@ -39,6 +39,8 @@ typedef enum _CSAPIRequestErrorType {
 // Prepare the requestObject, which is converted to JSON and set as the request body
 - (void)prepareRequestObject;
 
+
+// Pull the relevant values out of the parsed response dictionary
 - (void)handleParsedResponse;
 
 

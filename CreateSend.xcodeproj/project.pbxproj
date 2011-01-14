@@ -35,7 +35,6 @@
 		D8896A8412BB066B007C5783 /* CSSystemDateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896A8112BB066B007C5783 /* CSSystemDateRequest.h */; };
 		D8896A8512BB066B007C5783 /* CSSystemDateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896A8212BB066B007C5783 /* CSSystemDateRequest.m */; };
 		D8896AA912BB1E25007C5783 /* CSCampaignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AA812BB1E25007C5783 /* CSCampaignTests.m */; };
-		D8896AAA12BB1E25007C5783 /* CSCampaignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AA812BB1E25007C5783 /* CSCampaignTests.m */; };
 		D8896AB812BB20B6007C5783 /* CSCampaignCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AB712BB20B6007C5783 /* CSCampaignCreateRequest.m */; };
 		D8896AB912BB20B6007C5783 /* CSCampaignCreateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896AB612BB20B6007C5783 /* CSCampaignCreateRequest.h */; };
 		D8896ABA12BB20B6007C5783 /* CSCampaignCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AB712BB20B6007C5783 /* CSCampaignCreateRequest.m */; };
@@ -43,7 +42,6 @@
 		D8896AE912BB27ED007C5783 /* CSListCreateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896AE612BB27ED007C5783 /* CSListCreateRequest.h */; };
 		D8896AEA12BB27ED007C5783 /* CSListCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */; };
 		D8896AF612BB2B2B007C5783 /* CSListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AF512BB2B2B007C5783 /* CSListTests.m */; };
-		D8896AF712BB2B2B007C5783 /* CSListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AF512BB2B2B007C5783 /* CSListTests.m */; };
 		D8896B2A12BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896B2912BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m */; };
 		D8896B5212BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */; };
 		D8896B5312BB3465007C5783 /* NSString+UUIDAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896B5012BB3465007C5783 /* NSString+UUIDAdditions.h */; };
@@ -601,10 +599,8 @@
 				D8896A1212BAFDC9007C5783 /* CSCountriesRequest.m in Sources */,
 				D8896A6C12BB0481007C5783 /* CSTimezonesRequest.m in Sources */,
 				D8896A8512BB066B007C5783 /* CSSystemDateRequest.m in Sources */,
-				D8896AAA12BB1E25007C5783 /* CSCampaignTests.m in Sources */,
 				D8896ABA12BB20B6007C5783 /* CSCampaignCreateRequest.m in Sources */,
 				D8896AEA12BB27ED007C5783 /* CSListCreateRequest.m in Sources */,
-				D8896AF712BB2B2B007C5783 /* CSListTests.m in Sources */,
 				D8896B5412BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */,
 				D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
 				D8896CBF12BB54FA007C5783 /* CSClientListsRequest.m in Sources */,

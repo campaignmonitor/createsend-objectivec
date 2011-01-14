@@ -7,7 +7,7 @@
 //
 
 #import "CSSubscriber.h"
-
+#import "CSAPIRequest.h"
 
 @implementation CSSubscriber
 

@@ -21,15 +21,20 @@ INSTALL_PATH = /usr/local/lib
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/External/YAJL"
 
 FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework YAJL
-LIBRARY_FLAGS   = -lz
 GENERAL_FLAGS   = -ObjC -all_load
-OTHER_LDFLAGS   = $(FRAMEWORK_FLAGS) $(LIBRARY_FLAGS) $(GENERAL_FLAGS)
+OTHER_LDFLAGS   = $(FRAMEWORK_FLAGS) $(GENERAL_FLAGS)
 
 
 ALWAYS_SEARCH_USER_PATHS = NO
 
 
 RUN_CLANG_STATIC_ANALYZER = YES
+
+
+COPY_PHASE_STRIP = YES
+STRIP_INSTALLED_PRODUCT = YES
+STRIP_STYLE = non-global
+DEPLOYMENT_POSTPROCESSING = YES
 
 
 GCC_VERSION                  = com.apple.compilers.llvm.clang.1_0
