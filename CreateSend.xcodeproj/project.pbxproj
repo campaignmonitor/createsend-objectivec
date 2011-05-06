@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* CreateSend_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */; };
+		D881F3EB12F296470027CFA7 /* CSDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */; };
 		D889681012B9D58D007C5783 /* CSAPIKeyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */; };
 		D889681112B9D58D007C5783 /* CSAPIKeyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D889680E12B9D58D007C5783 /* CSAPIKeyRequest.h */; };
 		D889681212B9D58D007C5783 /* CSAPIKeyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */; };
 		D889681512B9D65E007C5783 /* CSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889681412B9D65E007C5783 /* CSAPIRequest.m */; };
 		D889681612B9D65E007C5783 /* CSAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D889681312B9D65E007C5783 /* CSAPIRequest.h */; };
 		D889681712B9D65E007C5783 /* CSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889681412B9D65E007C5783 /* CSAPIRequest.m */; };
-		D889682912B9E12E007C5783 /* CSDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D889682812B9E12E007C5783 /* CSDebuggingMacros.h */; };
 		D889687C12B9E638007C5783 /* CSAccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D889687B12B9E638007C5783 /* CSAccountTests.m */; };
 		D88968E012B9F08F007C5783 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */; };
 		D88968E112B9F08F007C5783 /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */; };
@@ -105,11 +105,11 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSend_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libCreateSend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCreateSend.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSDebuggingMacros.h; path = Classes/CSDebuggingMacros.h; sourceTree = "<group>"; };
 		D889680E12B9D58D007C5783 /* CSAPIKeyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIKeyRequest.h; sourceTree = "<group>"; };
 		D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIKeyRequest.m; sourceTree = "<group>"; };
 		D889681312B9D65E007C5783 /* CSAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIRequest.h; sourceTree = "<group>"; };
 		D889681412B9D65E007C5783 /* CSAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIRequest.m; sourceTree = "<group>"; };
-		D889682812B9E12E007C5783 /* CSDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDebuggingMacros.h; sourceTree = "<group>"; };
 		D889684D12B9E369007C5783 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = External/YAJL/YAJL.framework; sourceTree = "<group>"; };
 		D889687B12B9E638007C5783 /* CSAccountTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAccountTests.m; sourceTree = "<group>"; };
 		D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 			children = (
 				AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */,
 				D8CE1DC712B75291002D871F /* CreateSendTests_Prefix.pch */,
-				D889682812B9E12E007C5783 /* CSDebuggingMacros.h */,
+				D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -466,7 +466,6 @@
 				AA747D9F0F9514B9006C5449 /* CreateSend_Prefix.pch in Headers */,
 				D889681112B9D58D007C5783 /* CSAPIKeyRequest.h in Headers */,
 				D889681612B9D65E007C5783 /* CSAPIRequest.h in Headers */,
-				D889682912B9E12E007C5783 /* CSDebuggingMacros.h in Headers */,
 				D88968E112B9F08F007C5783 /* NSString+URLEncoding.h in Headers */,
 				D88969A712BAE154007C5783 /* CSClientsRequest.h in Headers */,
 				D88969DE12BAE9C9007C5783 /* CSClient.h in Headers */,
@@ -491,6 +490,7 @@
 				D8896EE112C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h in Headers */,
 				D8896F3E12C1D5ED007C5783 /* CSSubscriberImportRequest.h in Headers */,
 				D8896F5812C1D7FE007C5783 /* CSSubscriberHistoryRequest.h in Headers */,
+				D881F3EB12F296470027CFA7 /* CSDebuggingMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
