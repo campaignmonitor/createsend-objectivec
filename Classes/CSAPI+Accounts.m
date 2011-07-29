@@ -26,21 +26,6 @@
   [request startAsynchronous];
 }
 
-- (void)getClients:(void (^)(NSArray* clients))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler {
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"clients"];
-  
-  [request setCompletionBlock:^{
-    NSMutableArray* clients = [NSMutableArray array];
-    for (NSDictionary* clientDict in request.parsedResponse) {
-      [clients addObject:[CSClient clientWithDictionary:clientDict]];
-    }
-    completionHandler([NSArray arrayWithArray:clients]);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
-}
-
 - (void)getCountries:(void (^)(NSArray* countries))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler {
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"countries"];
   

@@ -12,6 +12,9 @@
 		D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */ = {isa = PBXBuildFile; fileRef = D857120B13E2D35800725300 /* CSPaginatedResult.h */; };
 		D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D857120C13E2D35800725300 /* CSPaginatedResult.m */; };
 		D857120F13E2D35800725300 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D857120C13E2D35800725300 /* CSPaginatedResult.m */; };
+		D857121213E2DF8100725300 /* CSAPI+Clients.h in Headers */ = {isa = PBXBuildFile; fileRef = D857121013E2DF8100725300 /* CSAPI+Clients.h */; };
+		D857121313E2DF8100725300 /* CSAPI+Clients.m in Sources */ = {isa = PBXBuildFile; fileRef = D857121113E2DF8100725300 /* CSAPI+Clients.m */; };
+		D857121413E2DF8100725300 /* CSAPI+Clients.m in Sources */ = {isa = PBXBuildFile; fileRef = D857121113E2DF8100725300 /* CSAPI+Clients.m */; };
 		D881F3EB12F296470027CFA7 /* CSDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */; };
 		D889681512B9D65E007C5783 /* CSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889681412B9D65E007C5783 /* CSAPIRequest.m */; };
 		D889681612B9D65E007C5783 /* CSAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D889681312B9D65E007C5783 /* CSAPIRequest.h */; };
@@ -69,6 +72,8 @@
 		D2AAC07E0554694100DB518D /* libCreateSend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCreateSend.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D857120B13E2D35800725300 /* CSPaginatedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPaginatedResult.h; sourceTree = "<group>"; };
 		D857120C13E2D35800725300 /* CSPaginatedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPaginatedResult.m; sourceTree = "<group>"; };
+		D857121013E2DF8100725300 /* CSAPI+Clients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Clients.h"; sourceTree = "<group>"; };
+		D857121113E2DF8100725300 /* CSAPI+Clients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Clients.m"; sourceTree = "<group>"; };
 		D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSDebuggingMacros.h; path = Classes/CSDebuggingMacros.h; sourceTree = "<group>"; };
 		D889681312B9D65E007C5783 /* CSAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIRequest.h; sourceTree = "<group>"; };
 		D889681412B9D65E007C5783 /* CSAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = CSAPIRequest.m; sourceTree = "<group>"; tabWidth = 2; };
@@ -217,6 +222,8 @@
 				D891348213E29EC30080D1E2 /* CSAPI+Lists.m */,
 				D891348613E2A84A0080D1E2 /* CSAPI+Subscribers.h */,
 				D891348713E2A84A0080D1E2 /* CSAPI+Subscribers.m */,
+				D857121013E2DF8100725300 /* CSAPI+Clients.h */,
+				D857121113E2DF8100725300 /* CSAPI+Clients.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 				D891348313E29EC30080D1E2 /* CSAPI+Lists.h in Headers */,
 				D891348813E2A84A0080D1E2 /* CSAPI+Subscribers.h in Headers */,
 				D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */,
+				D857121213E2DF8100725300 /* CSAPI+Clients.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +476,7 @@
 				D891348413E29EC30080D1E2 /* CSAPI+Lists.m in Sources */,
 				D891348913E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
 				D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */,
+				D857121313E2DF8100725300 /* CSAPI+Clients.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +511,7 @@
 				D891348513E29EC30080D1E2 /* CSAPI+Lists.m in Sources */,
 				D891348A13E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
 				D857120F13E2D35800725300 /* CSPaginatedResult.m in Sources */,
+				D857121413E2DF8100725300 /* CSAPI+Clients.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

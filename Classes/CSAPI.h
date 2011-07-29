@@ -27,3 +27,4 @@ typedef void (^CSAPIErrorHandler)(NSError* error);
 #import "CSAPI+Campaigns.h"
 #import "CSAPI+Lists.h"
 #import "CSAPI+Subscribers.h"
+#import "CSAPI+Clients.h"
