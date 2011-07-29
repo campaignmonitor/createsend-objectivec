@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* CreateSend_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */; };
+		D80B8C3113E2FC2E00F7A5CD /* CSAPI+Segments.h in Headers */ = {isa = PBXBuildFile; fileRef = D80B8C2F13E2FC2E00F7A5CD /* CSAPI+Segments.h */; };
+		D80B8C3213E2FC2E00F7A5CD /* CSAPI+Segments.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B8C3013E2FC2E00F7A5CD /* CSAPI+Segments.m */; };
+		D80B8C3313E2FC2E00F7A5CD /* CSAPI+Segments.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B8C3013E2FC2E00F7A5CD /* CSAPI+Segments.m */; };
+		D80B8C3613E2FE1B00F7A5CD /* CSAPI+Templates.h in Headers */ = {isa = PBXBuildFile; fileRef = D80B8C3413E2FE1B00F7A5CD /* CSAPI+Templates.h */; };
+		D80B8C3713E2FE1B00F7A5CD /* CSAPI+Templates.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B8C3513E2FE1B00F7A5CD /* CSAPI+Templates.m */; };
+		D80B8C3813E2FE1B00F7A5CD /* CSAPI+Templates.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B8C3513E2FE1B00F7A5CD /* CSAPI+Templates.m */; };
 		D837C06C1373DAE900DE99EE /* CSListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AF512BB2B2B007C5783 /* CSListTests.m */; };
 		D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */ = {isa = PBXBuildFile; fileRef = D857120B13E2D35800725300 /* CSPaginatedResult.h */; };
 		D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D857120C13E2D35800725300 /* CSPaginatedResult.m */; };
@@ -70,6 +76,10 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSend_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libCreateSend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCreateSend.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80B8C2F13E2FC2E00F7A5CD /* CSAPI+Segments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Segments.h"; sourceTree = "<group>"; };
+		D80B8C3013E2FC2E00F7A5CD /* CSAPI+Segments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Segments.m"; sourceTree = "<group>"; };
+		D80B8C3413E2FE1B00F7A5CD /* CSAPI+Templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Templates.h"; sourceTree = "<group>"; };
+		D80B8C3513E2FE1B00F7A5CD /* CSAPI+Templates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Templates.m"; sourceTree = "<group>"; };
 		D857120B13E2D35800725300 /* CSPaginatedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPaginatedResult.h; sourceTree = "<group>"; };
 		D857120C13E2D35800725300 /* CSPaginatedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPaginatedResult.m; sourceTree = "<group>"; };
 		D857121013E2DF8100725300 /* CSAPI+Clients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Clients.h"; sourceTree = "<group>"; };
@@ -224,6 +234,10 @@
 				D891348713E2A84A0080D1E2 /* CSAPI+Subscribers.m */,
 				D857121013E2DF8100725300 /* CSAPI+Clients.h */,
 				D857121113E2DF8100725300 /* CSAPI+Clients.m */,
+				D80B8C2F13E2FC2E00F7A5CD /* CSAPI+Segments.h */,
+				D80B8C3013E2FC2E00F7A5CD /* CSAPI+Segments.m */,
+				D80B8C3413E2FE1B00F7A5CD /* CSAPI+Templates.h */,
+				D80B8C3513E2FE1B00F7A5CD /* CSAPI+Templates.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -360,6 +374,8 @@
 				D891348813E2A84A0080D1E2 /* CSAPI+Subscribers.h in Headers */,
 				D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */,
 				D857121213E2DF8100725300 /* CSAPI+Clients.h in Headers */,
+				D80B8C3113E2FC2E00F7A5CD /* CSAPI+Segments.h in Headers */,
+				D80B8C3613E2FE1B00F7A5CD /* CSAPI+Templates.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +493,8 @@
 				D891348913E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
 				D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */,
 				D857121313E2DF8100725300 /* CSAPI+Clients.m in Sources */,
+				D80B8C3213E2FC2E00F7A5CD /* CSAPI+Segments.m in Sources */,
+				D80B8C3713E2FE1B00F7A5CD /* CSAPI+Templates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +530,8 @@
 				D891348A13E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
 				D857120F13E2D35800725300 /* CSPaginatedResult.m in Sources */,
 				D857121413E2DF8100725300 /* CSAPI+Clients.m in Sources */,
+				D80B8C3313E2FC2E00F7A5CD /* CSAPI+Segments.m in Sources */,
+				D80B8C3813E2FE1B00F7A5CD /* CSAPI+Templates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

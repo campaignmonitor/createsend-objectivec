@@ -11,6 +11,15 @@
 
 @interface CSAPI (Subscribers)
 
+/*
+ 
+ TODO: These APIs are yet to be implemented
+ 
+ PUT http://api.createsend.com/api/v3/subscribers/{listid}.{xml|json}?email={email}
+ 
+ */
+
+
 - (void)subscribeToListWithID:(NSString *)listID
                  emailAddress:(NSString *)emailAddress
                          name:(NSString *)name
