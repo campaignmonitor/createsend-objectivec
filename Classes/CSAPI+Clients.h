@@ -11,7 +11,19 @@
 
 @interface CSAPI (Clients)
 
+- (void)createClientWithCompanyName:(NSString *)companyName
+                        contactName:(NSString *)contactName
+                       emailAddress:(NSString *)emailAddress
+                            country:(NSString *)country
+                           timezone:(NSString *)timezone
+                  completionHandler:(void (^)(NSString* clientID))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
 - (void)getClients:(void (^)(NSArray* clients))completionHandler
       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getClientDetailsWithClientID:(NSString *)clientID
+                   completionHandler:(void (^)(NSDictionary* clientData))completionHandler
+                        errorHandler:(CSAPIErrorHandler)errorHandler;
 
 @end

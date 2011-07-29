@@ -50,4 +50,19 @@
   [request startAsynchronous];
 }
 
+- (void)getClientDetailsWithClientID:(NSString *)clientID
+                   completionHandler:(void (^)(NSDictionary* clientData))completionHandler
+                        errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"clients/%@", clientID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
 @end
