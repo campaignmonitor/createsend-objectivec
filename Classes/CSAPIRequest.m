@@ -41,6 +41,16 @@ static NSString* defaultAPIKey = nil;
   return [self requestWithAPISlug:APISlug queryParameters:nil];
 }
 
++ (id)requestWithAPIKey:(NSString *)APIKey slug:(NSString *)slug {
+    return [self requestWithAPIKey:APIKey slug:slug queryParameters:nil];
+}
+
++ (id)requestWithAPIKey:(NSString *)APIKey slug:(NSString *)slug queryParameters:(NSDictionary *)queryParameters {
+    CSAPIRequest* request = [self requestWithAPISlug:slug queryParameters:queryParameters];
+    request.username = APIKey;
+    request.password = @"";
+    return request;
+}
 
 + (id)requestWithAPISlug:(NSString *)APISlug
          queryParameters:(NSDictionary *)queryParameters {

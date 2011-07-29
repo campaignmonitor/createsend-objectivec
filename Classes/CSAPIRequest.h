@@ -19,10 +19,11 @@ typedef enum _CSAPIRequestErrorType {
 
 @interface CSAPIRequest : ASIHTTPRequest
 
-
 @property (retain) id requestObject;
 @property (retain) id parsedResponse;
 
++ (id)requestWithAPIKey:(NSString *)APIKey slug:(NSString *)slug;
++ (id)requestWithAPIKey:(NSString *)APIKey slug:(NSString *)slug queryParameters:(NSDictionary *)queryParameters;
 
 + (id)requestWithAPISlug:(NSString *)APISlug;
 

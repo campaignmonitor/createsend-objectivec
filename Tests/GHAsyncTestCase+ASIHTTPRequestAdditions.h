@@ -10,11 +10,14 @@
 
 @interface GHAsyncTestCase (ASIHTTPRequestAdditions)
 
-
 - (void)performRequestAndWaitForResponse:(CSAPIRequest *)request;
 
 - (void)performRequestAndWaitForResponse:(CSAPIRequest *)request
                      forTestWithSelector:(SEL)selector;
 
+- (void)testAsync:(void (^)(void))testBlock;
+- (void)testAsync:(void (^)(void))testBlock withTimeout:(NSTimeInterval)timeout;
+
+- (void)notifyTestFinished;
 
 @end
