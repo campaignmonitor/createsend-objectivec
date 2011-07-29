@@ -24,7 +24,7 @@ INSTALL_PATH = $(HOME)/Applications
 
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/External/YAJL" "$(SRCROOT)/External/GHUnit"
 
-FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework YAJL -framework GHUnitIOS
+FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework YAJLIOS -framework GHUnitIOS
 LIBRARY_FLAGS   = -lz
 GENERAL_FLAGS   = -ObjC -all_load
 OTHER_LDFLAGS   = $(FRAMEWORK_FLAGS) $(LIBRARY_FLAGS) $(GENERAL_FLAGS)

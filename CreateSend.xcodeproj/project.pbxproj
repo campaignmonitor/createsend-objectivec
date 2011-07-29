@@ -89,8 +89,6 @@
 		D8896F5712C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
 		D8896F5812C1D7FE007C5783 /* CSSubscriberHistoryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */; };
 		D8896F5912C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
-		D891346213E274570080D1E2 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D891346113E274570080D1E2 /* GHUnitIOS.framework */; };
-		D891346313E274570080D1E2 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D891346113E274570080D1E2 /* GHUnitIOS.framework */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
 		D8CE1E0A12B7546D002D871F /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF912B7546D002D871F /* ASIDataCompressor.m */; };
@@ -111,7 +109,6 @@
 		D889680F12B9D58D007C5783 /* CSAPIKeyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIKeyRequest.m; sourceTree = "<group>"; };
 		D889681312B9D65E007C5783 /* CSAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIRequest.h; sourceTree = "<group>"; };
 		D889681412B9D65E007C5783 /* CSAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIRequest.m; sourceTree = "<group>"; };
-		D889684D12B9E369007C5783 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = External/YAJL/YAJL.framework; sourceTree = "<group>"; };
 		D889687B12B9E638007C5783 /* CSAccountTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAccountTests.m; sourceTree = "<group>"; };
 		D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
@@ -165,6 +162,7 @@
 		D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberHistoryRequest.h; sourceTree = "<group>"; };
 		D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberHistoryRequest.m; sourceTree = "<group>"; };
 		D891346113E274570080D1E2 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = External/GHUnit/GHUnitIOS.framework; sourceTree = "<group>"; };
+		D891346413E278D60080D1E2 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = External/YAJL/YAJLiOS.framework; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D891346213E274570080D1E2 /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +207,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D891346313E274570080D1E2 /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +258,7 @@
 		D889683412B9E305007C5783 /* YAJL */ = {
 			isa = PBXGroup;
 			children = (
-				D889684D12B9E369007C5783 /* YAJL.framework */,
+				D891346413E278D60080D1E2 /* YAJLiOS.framework */,
 			);
 			name = YAJL;
 			sourceTree = "<group>";

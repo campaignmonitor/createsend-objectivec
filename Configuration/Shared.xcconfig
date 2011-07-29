@@ -20,7 +20,7 @@ INSTALL_PATH = /usr/local/lib
 
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/External/YAJL"
 
-FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework YAJL
+FRAMEWORK_FLAGS = -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -framework SystemConfiguration -framework MobileCoreServices -framework YAJLIOS
 GENERAL_FLAGS   = -ObjC -all_load
 OTHER_LDFLAGS   = $(FRAMEWORK_FLAGS) $(GENERAL_FLAGS)
 

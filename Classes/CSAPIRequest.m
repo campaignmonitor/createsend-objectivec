@@ -7,7 +7,7 @@
 //
 
 #import "CSAPIRequest.h"
-#import <YAJL/YAJL.h>
+#import <YAJLIOS/YAJL.h>
 #import "NSString+URLEncoding.h"
 
 
