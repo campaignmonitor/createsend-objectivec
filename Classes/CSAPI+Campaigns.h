@@ -23,4 +23,15 @@
                  completionHandler:(void (^)(NSString* campaignID))completionHandler
                       errorHandler:(CSAPIErrorHandler)errorHandler;
 
+- (void)sendCampaignImmediatelyWithCampaignID:(NSString *)campaignID
+                     confirmationEmailAddress:(NSString *)emailAddress
+                            completionHandler:(void (^)(void))completionHandler
+                                 errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)sendCampaignWithCampaignID:(NSString *)campaignID
+          confirmationEmailAddress:(NSString *)emailAddress
+                          sendDate:(NSDate *)sendDate
+                 completionHandler:(void (^)(void))completionHandler
+                      errorHandler:(CSAPIErrorHandler)errorHandler;
+
 @end
