@@ -20,6 +20,49 @@
                   completionHandler:(void (^)(NSString* clientID))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler;
 
+- (void)updateClientWithClientID:(NSString *)clientID
+                     companyName:(NSString *)companyName
+                     contactName:(NSString *)contactName
+                    emailAddress:(NSString *)emailAddress
+                         country:(NSString *)country
+                        timezone:(NSString *)timezone
+               completionHandler:(void (^)(void))completionHandler
+                    errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)deleteClientWithID:(NSString *)clientID
+         completionHandler:(void (^)(void))completionHandler
+              errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)setClientAccessWithClientID:(NSString *)clientID
+                           username:(NSString *)username
+                           password:(NSString *)password
+                        accessLevel:(NSUInteger)accessLevel
+                  completionHandler:(void (^)(void))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)setClientAccessWithClientID:(NSString *)clientID
+                        accessLevel:(NSUInteger)accessLevel
+                  completionHandler:(void (^)(void))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)setClientPAYGBillingSettingsWithClientID:(NSString *)clientID
+                                        currency:(NSString *)currency
+                              canPurchaseCredits:(BOOL)canPurchaseCredits
+                                      clientPays:(BOOL)clientPays
+                                markupPercentage:(float)markupPercentage
+                                markupOnDelivery:(float)markupOnDelivery
+                              markupPerRecipient:(float)markupPerRecipient
+                          markupOnDesignSpamTest:(float)markupOnDesignSpamTest
+                               completionHandler:(void (^)(void))completionHandler
+                                    errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)setClientMonthlyBillingWithClientID:(NSString *)clientID
+                                   currency:(NSString *)currency
+                                 clientPays:(BOOL)clientPays
+                           markupPercentage:(float)markupPercentage
+                          completionHandler:(void (^)(void))completionHandler
+                               errorHandler:(CSAPIErrorHandler)errorHandler;
+
 - (void)getClients:(void (^)(NSArray* clients))completionHandler
       errorHandler:(CSAPIErrorHandler)errorHandler;
 
@@ -54,5 +97,9 @@
                              ascending:(BOOL)ascending
                      completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
                           errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getTemplatesWithClientID:(NSString *)clientID
+               completionHandler:(void (^)(NSArray* templates))completionHandler
+                    errorHandler:(CSAPIErrorHandler)errorHandler;
 
 @end
