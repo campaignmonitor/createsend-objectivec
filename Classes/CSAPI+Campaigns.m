@@ -47,6 +47,19 @@
   [request startAsynchronous];
 }
 
+- (void)deleteCampaignWithID:(NSString *)campaignID
+           completionHandler:(void (^)(void))completionHandler
+                errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"campaigns/%@", campaignID]];
+  request.requestMethod = @"DELETE";
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
 - (void)sendCampaignWithCampaignID:(NSString *)campaignID
           confirmationEmailAddress:(NSString *)emailAddress
                     sendDateString:(NSString *)sendDateString
