@@ -15,12 +15,10 @@
 - (void)setUp {
   self.testAPI = [[[CSAPI alloc] initWithSiteURL:kCSTestsValidSiteURL
                                           APIKey:kCSTestsValidAPIKey] autorelease];
-  [CSAPIRequest setDefaultAPIKey:kCSTestsValidAPIKey];
 }
 
 - (void)tearDown {
   self.testAPI = nil;
-  [CSAPIRequest setDefaultAPIKey:nil];
 }
 
 - (CSAPIErrorHandler)assertError {

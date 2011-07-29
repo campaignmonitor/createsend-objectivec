@@ -26,16 +26,14 @@ typedef enum _CSAPIRequestErrorType {
 + (id)requestWithAPIKey:(NSString *)APIKey slug:(NSString *)slug queryParameters:(NSDictionary *)queryParameters;
 
 + (id)requestWithAPISlug:(NSString *)APISlug;
++ (id)requestWithAPISlug:(NSString *)APISlug queryParameters:(NSDictionary *)queryParameters;
 
-+ (id)requestWithAPISlug:(NSString *)APISlug
-         queryParameters:(NSDictionary *)queryParameters;
-
-
-+ (NSString *)defaultAPIKey;
-+ (void)setDefaultAPIKey:(NSString *)newDefaultAPIKey;
++ (NSDictionary *)paginationParametersWithPage:(NSUInteger)page
+                                      pageSize:(NSUInteger)pageSize
+                                    orderField:(NSString *)orderField
+                                     ascending:(BOOL)ascending;
 
 + (NSDateFormatter *)sharedDateFormatter;
-
 
 // Prepare the requestObject, which is converted to JSON and set as the request body
 - (void)prepareRequestObject;

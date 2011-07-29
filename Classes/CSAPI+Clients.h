@@ -8,6 +8,7 @@
 
 #import "CSAPI.h"
 #import "CSClient.h"
+#import "CSPaginatedResult.h"
 
 @interface CSAPI (Clients)
 
@@ -37,5 +38,21 @@
 - (void)getDraftCampaignsWithClientID:(NSString *)clientID
                     completionHandler:(void (^)(NSArray* campaigns))completionHandler
                          errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getSubscriberListsWithClientID:(NSString *)clientID
+                     completionHandler:(void (^)(NSArray* subscriberLists))completionHandler
+                          errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getSegmentsWithClientID:(NSString *)clientID
+              completionHandler:(void (^)(NSArray* segments))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getSuppressionListWithClientID:(NSString *)clientID
+                                  page:(NSUInteger)page
+                              pageSize:(NSUInteger)pageSize
+                            orderField:(NSString *)orderField
+                             ascending:(BOOL)ascending
+                     completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                          errorHandler:(CSAPIErrorHandler)errorHandler;
 
 @end

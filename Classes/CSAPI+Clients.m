@@ -96,14 +96,71 @@
 }
 
 - (void)getDraftCampaignsWithClientID:(NSString *)clientID
-                        completionHandler:(void (^)(NSArray* campaigns))completionHandler
-                             errorHandler:(CSAPIErrorHandler)errorHandler {
+                    completionHandler:(void (^)(NSArray* campaigns))completionHandler
+                         errorHandler:(CSAPIErrorHandler)errorHandler {
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
                                                              slug:[NSString stringWithFormat:@"clients/%@/drafts", clientID]];
   
   [request setCompletionBlock:^{
     completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getSubscriberListsWithClientID:(NSString *)clientID
+                     completionHandler:(void (^)(NSArray* subscriberLists))completionHandler
+                          errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"clients/%@/lists", clientID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getSegmentsWithClientID:(NSString *)clientID
+              completionHandler:(void (^)(NSArray* segments))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"clients/%@/segments", clientID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getSuppressionListWithClientID:(NSString *)clientID
+                                  page:(NSUInteger)page
+                              pageSize:(NSUInteger)pageSize
+                            orderField:(NSString *)orderField
+                             ascending:(BOOL)ascending
+                     completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                          errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSDictionary* queryParameters = [CSAPIRequest paginationParametersWithPage:page
+                                                                    pageSize:pageSize
+                                                                  orderField:orderField
+                                                                   ascending:ascending];
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"clients/%@/suppressionlist", clientID]
+                                                  queryParameters:queryParameters];
+  
+  
+  [request setCompletionBlock:^{
+    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
+    completionHandler(result);
   }];
   
   [request setFailedBlock:^{ errorHandler(request.error); }];

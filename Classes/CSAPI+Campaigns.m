@@ -152,12 +152,10 @@
                                errorHandler:(CSAPIErrorHandler)errorHandler {
   
   NSMutableDictionary* queryParameters;
-  queryParameters = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                     [NSString stringWithFormat:@"%d", page], @"page",
-                     [NSString stringWithFormat:@"%d", pageSize], @"pagesize",
-                     orderField, @"orderfield",
-                     (ascending ? @"asc" : @"desc"), @"orderdirection",
-                     nil];
+  queryParameters = [[[CSAPIRequest paginationParametersWithPage:page
+                                                        pageSize:pageSize
+                                                      orderField:orderField
+                                                       ascending:ascending] mutableCopy] autorelease];
   
   if (date) {
     NSString* dateString = [[CSAPIRequest sharedDateFormatter] stringFromDate:date];

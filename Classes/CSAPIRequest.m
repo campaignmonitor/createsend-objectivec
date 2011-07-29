@@ -13,11 +13,7 @@
 
 NSString* const kCSAPIRequestErrorDomain = @"kCSAPIRequestErrorDomain";
 
-static NSString* defaultAPIKey = nil;
-
-
 @implementation CSAPIRequest
-
 
 @synthesize requestObject=_requestObject;
 @synthesize parsedResponse=_parsedResponse;
@@ -75,17 +71,17 @@ static NSString* defaultAPIKey = nil;
   return [[[self alloc] initWithURL:URL] autorelease];
 }
 
-
-+ (NSString *)defaultAPIKey {
-  return defaultAPIKey;
++ (NSDictionary *)paginationParametersWithPage:(NSUInteger)page
+                                      pageSize:(NSUInteger)pageSize
+                                    orderField:(NSString *)orderField
+                                     ascending:(BOOL)ascending {
+  return [NSDictionary dictionaryWithObjectsAndKeys:
+          [NSString stringWithFormat:@"%d", page], @"page",
+          [NSString stringWithFormat:@"%d", pageSize], @"pagesize",
+          orderField, @"orderfield",
+          (ascending ? @"asc" : @"desc"), @"orderdirection",
+          nil];
 }
-
-
-+ (void)setDefaultAPIKey:(NSString *)newDefaultAPIKey {
-  [defaultAPIKey release];
-  defaultAPIKey = [newDefaultAPIKey retain];
-}
-
 
 + (NSDateFormatter *)sharedDateFormatter {
   static NSDateFormatter* defaultDateFormatter = nil;
@@ -100,7 +96,6 @@ static NSString* defaultAPIKey = nil;
   return defaultDateFormatter;
 }
 
-
 - (void)main {
   [self prepareRequestObject];
   
@@ -110,8 +105,6 @@ static NSString* defaultAPIKey = nil;
     
     CSDLog(@"JSONRequestBody = %@", JSONRequestBody);
   }
-  
-  self.username = self.username ?: [[self class] defaultAPIKey];
   
   if (self.username != nil && self.password == nil) {
     self.password = @"";
