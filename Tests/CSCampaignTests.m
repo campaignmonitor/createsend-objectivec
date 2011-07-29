@@ -6,41 +6,32 @@
 //  Copyright 2010 Nathan de Vries. All rights reserved.
 //
 
-#import "CSCampaignCreateRequest.h"
+#import "CSTestCase.h"
 
-
-@interface CSCampaignTests : GHAsyncTestCase
+@interface CSCampaignTests : CSTestCase
 @end
-
 
 @implementation CSCampaignTests
 
-
-- (void)setUpClass { [CSAPIRequest setDefaultAPIKey:kCSTestsValidAPIKey]; }
-- (void)tearDownClass { [CSAPIRequest setDefaultAPIKey:nil]; }
-
-
-# pragma mark -
-# pragma mark CSCampaignCreateRequest
-
-
-- (void)xtestCSCampaignCreateRequest {
-  CSCampaignCreateRequest* request = [CSCampaignCreateRequest requestWithClientID:kCSTestsValidClientID
-                                                                             name:@"Campaign Name"
-                                                                          subject:@"Subject"
-                                                                         fromName:@"John Doe"
-                                                                        fromEmail:@"johndoe@example.com"
-                                                                          replyTo:@"johndoe@example.com"
-                                                                    HTMLURLString:@"http://example.com/campaigncontent/index.html"
-                                                                    textURLString:@"http://example.com/campaigncontent/index.txt"
-                                                                          listIDs:[NSArray array]
-                                                                       segmentIDs:[NSArray array]];
-
-  [self performRequestAndWaitForResponse:request];
-
-  GHAssertNil(request.error, nil);
+- (void)testCreateCampaign {
+    [self testAsync:^{
+        [self.testAPI createCampaignWithClientID:kCSTestsValidClientID
+                                            name:@"Campaign Name"
+                                         subject:@"Subject"
+                                        fromName:@"John Doe"
+                                       fromEmail:@"johndoe@example.com"
+                                         replyTo:@"johndoe@example.com"
+                                   HTMLURLString:@"http://example.com/campaigncontent/index.html"
+                                   textURLString:@"http://example.com/campaigncontent/index.txt"
+                                         listIDs:[NSArray array]
+                                      segmentIDs:[NSArray array]
+                               completionHandler:^(NSString *campaignID) {
+                                   
+                                   [self notifyTestFinished];
+                                   GHAssertNotNil(campaignID, nil);
+                                   
+                               } errorHandler:[self assertNoError]];
+    }];
 }
-
-
 
 @end

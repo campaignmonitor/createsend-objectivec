@@ -21,68 +21,34 @@
 		D88969DE12BAE9C9007C5783 /* CSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = D88969DB12BAE9C9007C5783 /* CSClient.h */; };
 		D88969DF12BAE9C9007C5783 /* CSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D88969DC12BAE9C9007C5783 /* CSClient.m */; };
 		D8896AA912BB1E25007C5783 /* CSCampaignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AA812BB1E25007C5783 /* CSCampaignTests.m */; };
-		D8896AB812BB20B6007C5783 /* CSCampaignCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AB712BB20B6007C5783 /* CSCampaignCreateRequest.m */; };
-		D8896AB912BB20B6007C5783 /* CSCampaignCreateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896AB612BB20B6007C5783 /* CSCampaignCreateRequest.h */; };
-		D8896ABA12BB20B6007C5783 /* CSCampaignCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AB712BB20B6007C5783 /* CSCampaignCreateRequest.m */; };
-		D8896AE812BB27ED007C5783 /* CSListCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */; };
-		D8896AE912BB27ED007C5783 /* CSListCreateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896AE612BB27ED007C5783 /* CSListCreateRequest.h */; };
-		D8896AEA12BB27ED007C5783 /* CSListCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */; };
-		D8896B2A12BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896B2912BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m */; };
 		D8896B5212BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */; };
 		D8896B5312BB3465007C5783 /* NSString+UUIDAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896B5012BB3465007C5783 /* NSString+UUIDAdditions.h */; };
 		D8896B5412BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */; };
-		D8896C1212BB4636007C5783 /* CSListDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */; };
-		D8896C1312BB4636007C5783 /* CSListDeleteRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */; };
-		D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */; };
-		D8896CBD12BB54FA007C5783 /* CSClientListsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */; };
-		D8896CBE12BB54FA007C5783 /* CSClientListsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896CBB12BB54FA007C5783 /* CSClientListsRequest.h */; };
-		D8896CBF12BB54FA007C5783 /* CSClientListsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */; };
 		D8896CC412BB5597007C5783 /* CSList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CC312BB5597007C5783 /* CSList.m */; };
 		D8896CC512BB5597007C5783 /* CSList.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896CC212BB5597007C5783 /* CSList.h */; };
 		D8896CC612BB5597007C5783 /* CSList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CC312BB5597007C5783 /* CSList.m */; };
-		D8896CF512BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */; };
-		D8896CF612BF1EB4007C5783 /* CSListDetailsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896CF312BF1EB4007C5783 /* CSListDetailsRequest.h */; };
-		D8896CF712BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */; };
-		D8896D4212BF27FE007C5783 /* CSListStatsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D4112BF27FE007C5783 /* CSListStatsRequest.m */; };
-		D8896D4312BF27FE007C5783 /* CSListStatsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D4012BF27FE007C5783 /* CSListStatsRequest.h */; };
-		D8896D4412BF27FE007C5783 /* CSListStatsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D4112BF27FE007C5783 /* CSListStatsRequest.m */; };
-		D8896D4F12BF2BF2007C5783 /* CreateSend.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D4E12BF2BF2007C5783 /* CreateSend.h */; };
-		D8896D6112BF2D17007C5783 /* CSListCustomFieldsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D6012BF2D17007C5783 /* CSListCustomFieldsRequest.m */; };
-		D8896D6212BF2D17007C5783 /* CSListCustomFieldsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D5F12BF2D17007C5783 /* CSListCustomFieldsRequest.h */; };
-		D8896D6312BF2D17007C5783 /* CSListCustomFieldsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D6012BF2D17007C5783 /* CSListCustomFieldsRequest.m */; };
 		D8896D6612BF2EB4007C5783 /* CSCustomField.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D6512BF2EB4007C5783 /* CSCustomField.m */; };
 		D8896D6712BF2EB4007C5783 /* CSCustomField.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D6412BF2EB4007C5783 /* CSCustomField.h */; };
 		D8896D6812BF2EB4007C5783 /* CSCustomField.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D6512BF2EB4007C5783 /* CSCustomField.m */; };
-		D8896D7712BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D7612BF3273007C5783 /* CSListCustomFieldCreateRequest.m */; };
-		D8896D7812BF3273007C5783 /* CSListCustomFieldCreateRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D7512BF3273007C5783 /* CSListCustomFieldCreateRequest.h */; };
-		D8896D7912BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D7612BF3273007C5783 /* CSListCustomFieldCreateRequest.m */; };
-		D8896D9B12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */; };
-		D8896D9C12C1877C007C5783 /* CSSubscriberSubscribeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D9912C1877C007C5783 /* CSSubscriberSubscribeRequest.h */; };
-		D8896D9D12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */; };
 		D8896DA012C187F2007C5783 /* CSSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9F12C187F2007C5783 /* CSSubscriber.m */; };
 		D8896DA112C187F2007C5783 /* CSSubscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896D9E12C187F2007C5783 /* CSSubscriber.h */; };
 		D8896DA212C187F2007C5783 /* CSSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896D9F12C187F2007C5783 /* CSSubscriber.m */; };
-		D8896E9D12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */; };
-		D8896E9E12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896E9B12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h */; };
-		D8896E9F12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */; };
-		D8896EE012C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */; };
-		D8896EE112C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */; };
-		D8896EE212C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */; };
-		D8896F3D12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */; };
-		D8896F3E12C1D5ED007C5783 /* CSSubscriberImportRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896F3B12C1D5ED007C5783 /* CSSubscriberImportRequest.h */; };
-		D8896F3F12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */; };
-		D8896F5712C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
-		D8896F5812C1D7FE007C5783 /* CSSubscriberHistoryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */; };
-		D8896F5912C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
 		D891346913E27CBB0080D1E2 /* CSAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = D891346713E27CBB0080D1E2 /* CSAPI.h */; };
 		D891346A13E27CBB0080D1E2 /* CSAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D891346813E27CBB0080D1E2 /* CSAPI.m */; };
 		D891346B13E27CBB0080D1E2 /* CSAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D891346813E27CBB0080D1E2 /* CSAPI.m */; };
 		D891347313E292630080D1E2 /* CSAPI+Accounts.h in Headers */ = {isa = PBXBuildFile; fileRef = D891347113E292620080D1E2 /* CSAPI+Accounts.h */; };
 		D891347413E292630080D1E2 /* CSAPI+Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D891347213E292620080D1E2 /* CSAPI+Accounts.m */; };
 		D891347513E292630080D1E2 /* CSAPI+Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D891347213E292620080D1E2 /* CSAPI+Accounts.m */; };
-		D891347913E293970080D1E2 /* CSTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D891347713E293970080D1E2 /* CSTestCase.m */; };
 		D891347A13E293970080D1E2 /* CSTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D891347713E293970080D1E2 /* CSTestCase.m */; };
-		D891347B13E293DE0080D1E2 /* CSTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = D891347613E293970080D1E2 /* CSTestCase.h */; };
+		D891347E13E29ACC0080D1E2 /* CSAPI+Campaigns.h in Headers */ = {isa = PBXBuildFile; fileRef = D891347C13E29ACB0080D1E2 /* CSAPI+Campaigns.h */; };
+		D891347F13E29ACC0080D1E2 /* CSAPI+Campaigns.m in Sources */ = {isa = PBXBuildFile; fileRef = D891347D13E29ACB0080D1E2 /* CSAPI+Campaigns.m */; };
+		D891348013E29ACC0080D1E2 /* CSAPI+Campaigns.m in Sources */ = {isa = PBXBuildFile; fileRef = D891347D13E29ACB0080D1E2 /* CSAPI+Campaigns.m */; };
+		D891348313E29EC30080D1E2 /* CSAPI+Lists.h in Headers */ = {isa = PBXBuildFile; fileRef = D891348113E29EC30080D1E2 /* CSAPI+Lists.h */; };
+		D891348413E29EC30080D1E2 /* CSAPI+Lists.m in Sources */ = {isa = PBXBuildFile; fileRef = D891348213E29EC30080D1E2 /* CSAPI+Lists.m */; };
+		D891348513E29EC30080D1E2 /* CSAPI+Lists.m in Sources */ = {isa = PBXBuildFile; fileRef = D891348213E29EC30080D1E2 /* CSAPI+Lists.m */; };
+		D891348813E2A84A0080D1E2 /* CSAPI+Subscribers.h in Headers */ = {isa = PBXBuildFile; fileRef = D891348613E2A84A0080D1E2 /* CSAPI+Subscribers.h */; };
+		D891348913E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */ = {isa = PBXBuildFile; fileRef = D891348713E2A84A0080D1E2 /* CSAPI+Subscribers.m */; };
+		D891348A13E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */ = {isa = PBXBuildFile; fileRef = D891348713E2A84A0080D1E2 /* CSAPI+Subscribers.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
 		D8CE1E0A12B7546D002D871F /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF912B7546D002D871F /* ASIDataCompressor.m */; };
@@ -107,44 +73,15 @@
 		D88969DB12BAE9C9007C5783 /* CSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSClient.h; sourceTree = "<group>"; };
 		D88969DC12BAE9C9007C5783 /* CSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSClient.m; sourceTree = "<group>"; };
 		D8896AA812BB1E25007C5783 /* CSCampaignTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCampaignTests.m; sourceTree = "<group>"; };
-		D8896AB612BB20B6007C5783 /* CSCampaignCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCampaignCreateRequest.h; sourceTree = "<group>"; };
-		D8896AB712BB20B6007C5783 /* CSCampaignCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCampaignCreateRequest.m; sourceTree = "<group>"; };
-		D8896AE612BB27ED007C5783 /* CSListCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListCreateRequest.h; sourceTree = "<group>"; };
-		D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListCreateRequest.m; sourceTree = "<group>"; };
 		D8896AF512BB2B2B007C5783 /* CSListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListTests.m; sourceTree = "<group>"; };
-		D8896B2812BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GHAsyncTestCase+ASIHTTPRequestAdditions.h"; path = "../Tests/GHAsyncTestCase+ASIHTTPRequestAdditions.h"; sourceTree = "<group>"; };
-		D8896B2912BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GHAsyncTestCase+ASIHTTPRequestAdditions.m"; path = "../Tests/GHAsyncTestCase+ASIHTTPRequestAdditions.m"; sourceTree = "<group>"; };
 		D8896B5012BB3465007C5783 /* NSString+UUIDAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUIDAdditions.h"; sourceTree = "<group>"; };
 		D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUIDAdditions.m"; sourceTree = "<group>"; };
-		D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListDeleteRequest.h; sourceTree = "<group>"; };
-		D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListDeleteRequest.m; sourceTree = "<group>"; };
-		D8896CBB12BB54FA007C5783 /* CSClientListsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSClientListsRequest.h; sourceTree = "<group>"; };
-		D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSClientListsRequest.m; sourceTree = "<group>"; };
 		D8896CC212BB5597007C5783 /* CSList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSList.h; sourceTree = "<group>"; };
 		D8896CC312BB5597007C5783 /* CSList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSList.m; sourceTree = "<group>"; };
-		D8896CF312BF1EB4007C5783 /* CSListDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListDetailsRequest.h; sourceTree = "<group>"; };
-		D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListDetailsRequest.m; sourceTree = "<group>"; };
-		D8896D4012BF27FE007C5783 /* CSListStatsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListStatsRequest.h; sourceTree = "<group>"; };
-		D8896D4112BF27FE007C5783 /* CSListStatsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListStatsRequest.m; sourceTree = "<group>"; };
-		D8896D4E12BF2BF2007C5783 /* CreateSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSend.h; sourceTree = "<group>"; };
-		D8896D5F12BF2D17007C5783 /* CSListCustomFieldsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListCustomFieldsRequest.h; sourceTree = "<group>"; };
-		D8896D6012BF2D17007C5783 /* CSListCustomFieldsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListCustomFieldsRequest.m; sourceTree = "<group>"; };
 		D8896D6412BF2EB4007C5783 /* CSCustomField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCustomField.h; sourceTree = "<group>"; };
 		D8896D6512BF2EB4007C5783 /* CSCustomField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCustomField.m; sourceTree = "<group>"; };
-		D8896D7512BF3273007C5783 /* CSListCustomFieldCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListCustomFieldCreateRequest.h; sourceTree = "<group>"; };
-		D8896D7612BF3273007C5783 /* CSListCustomFieldCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListCustomFieldCreateRequest.m; sourceTree = "<group>"; };
-		D8896D9912C1877C007C5783 /* CSSubscriberSubscribeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberSubscribeRequest.h; sourceTree = "<group>"; };
-		D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberSubscribeRequest.m; sourceTree = "<group>"; };
 		D8896D9E12C187F2007C5783 /* CSSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriber.h; sourceTree = "<group>"; };
 		D8896D9F12C187F2007C5783 /* CSSubscriber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriber.m; sourceTree = "<group>"; };
-		D8896E9B12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberDetailsRequest.h; sourceTree = "<group>"; };
-		D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberDetailsRequest.m; sourceTree = "<group>"; };
-		D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberUnsubscribeRequest.h; sourceTree = "<group>"; };
-		D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberUnsubscribeRequest.m; sourceTree = "<group>"; };
-		D8896F3B12C1D5ED007C5783 /* CSSubscriberImportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberImportRequest.h; sourceTree = "<group>"; };
-		D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberImportRequest.m; sourceTree = "<group>"; };
-		D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberHistoryRequest.h; sourceTree = "<group>"; };
-		D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberHistoryRequest.m; sourceTree = "<group>"; };
 		D891346113E274570080D1E2 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = External/GHUnit/GHUnitIOS.framework; sourceTree = "<group>"; };
 		D891346413E278D60080D1E2 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = External/YAJL/YAJLiOS.framework; sourceTree = "<group>"; };
 		D891346713E27CBB0080D1E2 /* CSAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPI.h; sourceTree = "<group>"; };
@@ -153,6 +90,12 @@
 		D891347213E292620080D1E2 /* CSAPI+Accounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Accounts.m"; sourceTree = "<group>"; };
 		D891347613E293970080D1E2 /* CSTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTestCase.h; sourceTree = "<group>"; };
 		D891347713E293970080D1E2 /* CSTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTestCase.m; sourceTree = "<group>"; };
+		D891347C13E29ACB0080D1E2 /* CSAPI+Campaigns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Campaigns.h"; sourceTree = "<group>"; };
+		D891347D13E29ACB0080D1E2 /* CSAPI+Campaigns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Campaigns.m"; sourceTree = "<group>"; };
+		D891348113E29EC30080D1E2 /* CSAPI+Lists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Lists.h"; sourceTree = "<group>"; };
+		D891348213E29EC30080D1E2 /* CSAPI+Lists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Lists.m"; sourceTree = "<group>"; };
+		D891348613E2A84A0080D1E2 /* CSAPI+Subscribers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Subscribers.h"; sourceTree = "<group>"; };
+		D891348713E2A84A0080D1E2 /* CSAPI+Subscribers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Subscribers.m"; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -228,7 +171,6 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D8896D4E12BF2BF2007C5783 /* CreateSend.h */,
 				D88969AA12BAE173007C5783 /* API */,
 				D88969AB12BAE181007C5783 /* Categories */,
 				D88969DA12BAE9B2007C5783 /* Models */,
@@ -256,16 +198,18 @@
 		D88969AA12BAE173007C5783 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D889681312B9D65E007C5783 /* CSAPIRequest.h */,
+				D889681412B9D65E007C5783 /* CSAPIRequest.m */,
 				D891346713E27CBB0080D1E2 /* CSAPI.h */,
 				D891346813E27CBB0080D1E2 /* CSAPI.m */,
 				D891347113E292620080D1E2 /* CSAPI+Accounts.h */,
 				D891347213E292620080D1E2 /* CSAPI+Accounts.m */,
-				D889681312B9D65E007C5783 /* CSAPIRequest.h */,
-				D889681412B9D65E007C5783 /* CSAPIRequest.m */,
-				D8896AB312BB2097007C5783 /* Campaigns */,
-				D8896CE912BF1E6E007C5783 /* Clients */,
-				D8896AE312BB27C4007C5783 /* Lists */,
-				D8896D9612C18700007C5783 /* Subscribers */,
+				D891347C13E29ACB0080D1E2 /* CSAPI+Campaigns.h */,
+				D891347D13E29ACB0080D1E2 /* CSAPI+Campaigns.m */,
+				D891348113E29EC30080D1E2 /* CSAPI+Lists.h */,
+				D891348213E29EC30080D1E2 /* CSAPI+Lists.m */,
+				D891348613E2A84A0080D1E2 /* CSAPI+Subscribers.h */,
+				D891348713E2A84A0080D1E2 /* CSAPI+Subscribers.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -275,8 +219,6 @@
 			children = (
 				D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */,
 				D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */,
-				D8896B2812BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.h */,
-				D8896B2912BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m */,
 				D8896B5012BB3465007C5783 /* NSString+UUIDAdditions.h */,
 				D8896B5112BB3465007C5783 /* NSString+UUIDAdditions.m */,
 			);
@@ -296,60 +238,6 @@
 				D8896D9F12C187F2007C5783 /* CSSubscriber.m */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		D8896AB312BB2097007C5783 /* Campaigns */ = {
-			isa = PBXGroup;
-			children = (
-				D8896AB612BB20B6007C5783 /* CSCampaignCreateRequest.h */,
-				D8896AB712BB20B6007C5783 /* CSCampaignCreateRequest.m */,
-			);
-			name = Campaigns;
-			sourceTree = "<group>";
-		};
-		D8896AE312BB27C4007C5783 /* Lists */ = {
-			isa = PBXGroup;
-			children = (
-				D8896AE612BB27ED007C5783 /* CSListCreateRequest.h */,
-				D8896AE712BB27ED007C5783 /* CSListCreateRequest.m */,
-				D8896C1012BB4636007C5783 /* CSListDeleteRequest.h */,
-				D8896C1112BB4636007C5783 /* CSListDeleteRequest.m */,
-				D8896CF312BF1EB4007C5783 /* CSListDetailsRequest.h */,
-				D8896CF412BF1EB4007C5783 /* CSListDetailsRequest.m */,
-				D8896D4012BF27FE007C5783 /* CSListStatsRequest.h */,
-				D8896D4112BF27FE007C5783 /* CSListStatsRequest.m */,
-				D8896D5F12BF2D17007C5783 /* CSListCustomFieldsRequest.h */,
-				D8896D6012BF2D17007C5783 /* CSListCustomFieldsRequest.m */,
-				D8896D7512BF3273007C5783 /* CSListCustomFieldCreateRequest.h */,
-				D8896D7612BF3273007C5783 /* CSListCustomFieldCreateRequest.m */,
-			);
-			name = Lists;
-			sourceTree = "<group>";
-		};
-		D8896CE912BF1E6E007C5783 /* Clients */ = {
-			isa = PBXGroup;
-			children = (
-				D8896CBB12BB54FA007C5783 /* CSClientListsRequest.h */,
-				D8896CBC12BB54FA007C5783 /* CSClientListsRequest.m */,
-			);
-			name = Clients;
-			sourceTree = "<group>";
-		};
-		D8896D9612C18700007C5783 /* Subscribers */ = {
-			isa = PBXGroup;
-			children = (
-				D8896E9B12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h */,
-				D8896E9C12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m */,
-				D8896D9912C1877C007C5783 /* CSSubscriberSubscribeRequest.h */,
-				D8896D9A12C1877C007C5783 /* CSSubscriberSubscribeRequest.m */,
-				D8896EDE12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h */,
-				D8896EDF12C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m */,
-				D8896F3B12C1D5ED007C5783 /* CSSubscriberImportRequest.h */,
-				D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */,
-				D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */,
-				D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */,
-			);
-			name = Subscribers;
 			sourceTree = "<group>";
 		};
 		D8CE1D0512B73F04002D871F /* Configuration */ = {
@@ -444,28 +332,16 @@
 				D889681612B9D65E007C5783 /* CSAPIRequest.h in Headers */,
 				D88968E112B9F08F007C5783 /* NSString+URLEncoding.h in Headers */,
 				D88969DE12BAE9C9007C5783 /* CSClient.h in Headers */,
-				D8896AB912BB20B6007C5783 /* CSCampaignCreateRequest.h in Headers */,
-				D8896AE912BB27ED007C5783 /* CSListCreateRequest.h in Headers */,
 				D8896B5312BB3465007C5783 /* NSString+UUIDAdditions.h in Headers */,
-				D8896C1312BB4636007C5783 /* CSListDeleteRequest.h in Headers */,
-				D8896CBE12BB54FA007C5783 /* CSClientListsRequest.h in Headers */,
 				D8896CC512BB5597007C5783 /* CSList.h in Headers */,
-				D8896CF612BF1EB4007C5783 /* CSListDetailsRequest.h in Headers */,
-				D8896D4312BF27FE007C5783 /* CSListStatsRequest.h in Headers */,
-				D8896D4F12BF2BF2007C5783 /* CreateSend.h in Headers */,
-				D8896D6212BF2D17007C5783 /* CSListCustomFieldsRequest.h in Headers */,
 				D8896D6712BF2EB4007C5783 /* CSCustomField.h in Headers */,
-				D8896D7812BF3273007C5783 /* CSListCustomFieldCreateRequest.h in Headers */,
-				D8896D9C12C1877C007C5783 /* CSSubscriberSubscribeRequest.h in Headers */,
 				D8896DA112C187F2007C5783 /* CSSubscriber.h in Headers */,
-				D8896E9E12C1C7FE007C5783 /* CSSubscriberDetailsRequest.h in Headers */,
-				D8896EE112C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.h in Headers */,
-				D8896F3E12C1D5ED007C5783 /* CSSubscriberImportRequest.h in Headers */,
-				D8896F5812C1D7FE007C5783 /* CSSubscriberHistoryRequest.h in Headers */,
 				D881F3EB12F296470027CFA7 /* CSDebuggingMacros.h in Headers */,
 				D891346913E27CBB0080D1E2 /* CSAPI.h in Headers */,
 				D891347313E292630080D1E2 /* CSAPI+Accounts.h in Headers */,
-				D891347B13E293DE0080D1E2 /* CSTestCase.h in Headers */,
+				D891347E13E29ACC0080D1E2 /* CSAPI+Campaigns.h in Headers */,
+				D891348313E29EC30080D1E2 /* CSAPI+Lists.h in Headers */,
+				D891348813E2A84A0080D1E2 /* CSAPI+Subscribers.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,26 +448,15 @@
 				D889681712B9D65E007C5783 /* CSAPIRequest.m in Sources */,
 				D88968E212B9F08F007C5783 /* NSString+URLEncoding.m in Sources */,
 				D88969DF12BAE9C9007C5783 /* CSClient.m in Sources */,
-				D8896ABA12BB20B6007C5783 /* CSCampaignCreateRequest.m in Sources */,
-				D8896AEA12BB27ED007C5783 /* CSListCreateRequest.m in Sources */,
 				D8896B5412BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */,
-				D8896C1412BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
-				D8896CBF12BB54FA007C5783 /* CSClientListsRequest.m in Sources */,
 				D8896CC612BB5597007C5783 /* CSList.m in Sources */,
-				D8896CF712BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */,
-				D8896D4412BF27FE007C5783 /* CSListStatsRequest.m in Sources */,
-				D8896D6312BF2D17007C5783 /* CSListCustomFieldsRequest.m in Sources */,
 				D8896D6812BF2EB4007C5783 /* CSCustomField.m in Sources */,
-				D8896D7912BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */,
-				D8896D9D12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */,
 				D8896DA212C187F2007C5783 /* CSSubscriber.m in Sources */,
-				D8896E9F12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */,
-				D8896EE212C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */,
-				D8896F3F12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */,
-				D8896F5912C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */,
 				D891346A13E27CBB0080D1E2 /* CSAPI.m in Sources */,
 				D891347413E292630080D1E2 /* CSAPI+Accounts.m in Sources */,
-				D891347913E293970080D1E2 /* CSTestCase.m in Sources */,
+				D891347F13E29ACC0080D1E2 /* CSAPI+Campaigns.m in Sources */,
+				D891348413E29EC30080D1E2 /* CSAPI+Lists.m in Sources */,
+				D891348913E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,28 +479,17 @@
 				D88968E012B9F08F007C5783 /* NSString+URLEncoding.m in Sources */,
 				D88969DD12BAE9C9007C5783 /* CSClient.m in Sources */,
 				D8896AA912BB1E25007C5783 /* CSCampaignTests.m in Sources */,
-				D8896AB812BB20B6007C5783 /* CSCampaignCreateRequest.m in Sources */,
-				D8896AE812BB27ED007C5783 /* CSListCreateRequest.m in Sources */,
-				D8896B2A12BB3191007C5783 /* GHAsyncTestCase+ASIHTTPRequestAdditions.m in Sources */,
 				D8896B5212BB3465007C5783 /* NSString+UUIDAdditions.m in Sources */,
-				D8896C1212BB4636007C5783 /* CSListDeleteRequest.m in Sources */,
-				D8896CBD12BB54FA007C5783 /* CSClientListsRequest.m in Sources */,
 				D8896CC412BB5597007C5783 /* CSList.m in Sources */,
-				D8896CF512BF1EB4007C5783 /* CSListDetailsRequest.m in Sources */,
-				D8896D4212BF27FE007C5783 /* CSListStatsRequest.m in Sources */,
-				D8896D6112BF2D17007C5783 /* CSListCustomFieldsRequest.m in Sources */,
 				D8896D6612BF2EB4007C5783 /* CSCustomField.m in Sources */,
-				D8896D7712BF3273007C5783 /* CSListCustomFieldCreateRequest.m in Sources */,
-				D8896D9B12C1877C007C5783 /* CSSubscriberSubscribeRequest.m in Sources */,
 				D8896DA012C187F2007C5783 /* CSSubscriber.m in Sources */,
-				D8896E9D12C1C7FE007C5783 /* CSSubscriberDetailsRequest.m in Sources */,
-				D8896EE012C1CD99007C5783 /* CSSubscriberUnsubscribeRequest.m in Sources */,
-				D8896F3D12C1D5ED007C5783 /* CSSubscriberImportRequest.m in Sources */,
-				D8896F5712C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */,
 				D837C06C1373DAE900DE99EE /* CSListTests.m in Sources */,
 				D891346B13E27CBB0080D1E2 /* CSAPI.m in Sources */,
 				D891347513E292630080D1E2 /* CSAPI+Accounts.m in Sources */,
 				D891347A13E293970080D1E2 /* CSTestCase.m in Sources */,
+				D891348013E29ACC0080D1E2 /* CSAPI+Campaigns.m in Sources */,
+				D891348513E29EC30080D1E2 /* CSAPI+Lists.m in Sources */,
+				D891348A13E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +518,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -676,7 +529,6 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
