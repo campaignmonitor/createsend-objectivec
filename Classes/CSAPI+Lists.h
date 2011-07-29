@@ -77,6 +77,8 @@
                       completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
                            errorHandler:(CSAPIErrorHandler)errorHandler;
 
+# pragma mark - Custom Fields
+
 - (void)getCustomFieldsWithListID:(NSString *)listID
                 completionHandler:(void (^)(NSArray* customFields))completionHandler
                      errorHandler:(CSAPIErrorHandler)errorHandler;
@@ -84,6 +86,51 @@
 - (void)createCustomFieldWithListID:(NSString *)listID
                         customField:(CSCustomField *)customField
                   completionHandler:(void (^)(NSString* customFieldKey))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)updateCustomFieldWithListID:(NSString *)listID
+                     customFieldKey:(NSString *)fieldKey
+                            options:(NSArray *)options
+                       keepExisting:(BOOL)keepExisting
+                  completionHandler:(void (^)(void))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)deleteCustomFieldWithListID:(NSString *)listID
+                     customFieldKey:(NSString *)fieldKey
+                  completionHandler:(void (^)(void))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+# pragma mark - Webhooks
+
+- (void)createWebhookWithListID:(NSString *)listID
+                         events:(NSArray *)events
+                      URLString:(NSString *)URLString
+                  payloadFormat:(NSString *)payloadFormat
+              completionHandler:(void (^)(NSString* webhookID))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getWebhooksWithListID:(NSString *)listID
+            completionHandler:(void (^)(NSArray* webhooks))completionHandler
+                 errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)testWebhookWithListID:(NSString *)listID
+                    webhookID:(NSString *)webhookID
+            completionHandler:(void (^)(void))completionHandler
+                 errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)deleteWebhookWithListID:(NSString *)listID
+                      webhookID:(NSString *)webhookID
+              completionHandler:(void (^)(void))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)activateWebhookWithListID:(NSString *)listID
+                        webhookID:(NSString *)webhookID
+                completionHandler:(void (^)(void))completionHandler
+                     errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)deactivateWebhookWithListID:(NSString *)listID
+                          webhookID:(NSString *)webhookID
+                  completionHandler:(void (^)(void))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler;
 
 @end

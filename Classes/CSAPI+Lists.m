@@ -195,13 +195,13 @@
 }
 
 - (void)getBouncedSubscribersWithListID:(NSString *)listID
-                                        date:(NSDate *)date
-                                        page:(NSUInteger)page
-                                    pageSize:(NSUInteger)pageSize
-                                  orderField:(NSString *)orderField
-                                   ascending:(BOOL)ascending
-                           completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
-                                errorHandler:(CSAPIErrorHandler)errorHandler {
+                                   date:(NSDate *)date
+                                   page:(NSUInteger)page
+                               pageSize:(NSUInteger)pageSize
+                             orderField:(NSString *)orderField
+                              ascending:(BOOL)ascending
+                      completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                           errorHandler:(CSAPIErrorHandler)errorHandler {
   
   [self getSubscribersWithListID:listID
                             slug:@"bounced"
@@ -228,6 +228,8 @@
   [request setFailedBlock:^{ errorHandler(request.error); }];
   [request startAsynchronous];
 }
+
+# pragma mark - Custom Fields
 
 - (void)getCustomFieldsWithListID:(NSString *)listID
                 completionHandler:(void (^)(NSArray* customFields))completionHandler
@@ -273,6 +275,140 @@
   
   [request setFailedBlock:^{ errorHandler(request.error); }];
   [request startAsynchronous];
+}
+
+- (void)updateCustomFieldWithListID:(NSString *)listID
+                     customFieldKey:(NSString *)fieldKey
+                            options:(NSArray *)options
+                       keepExisting:(BOOL)keepExisting
+                  completionHandler:(void (^)(void))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* slug = [NSString stringWithFormat:@"lists/%@/customfields/%@/options", listID, fieldKey];
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:slug];
+  request.requestMethod = @"PUT";
+  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                           options, @"Options",
+                           [NSNumber numberWithBool:keepExisting], @"KeepExistingOptions", nil];
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)deleteCustomFieldWithListID:(NSString *)listID
+                     customFieldKey:(NSString *)fieldKey
+                  completionHandler:(void (^)(void))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* slug = [NSString stringWithFormat:@"lists/%@/customfields/%@", listID, fieldKey];
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:slug];
+  request.requestMethod = @"DELETE";
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+# pragma mark - Webhooks
+
+- (void)createWebhookWithListID:(NSString *)listID
+                         events:(NSArray *)events
+                      URLString:(NSString *)URLString
+                  payloadFormat:(NSString *)payloadFormat
+              completionHandler:(void (^)(NSString* webhookID))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"lists/%@/webhooks", listID]];
+  
+  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                           events, @"Events",
+                           URLString, @"Url",
+                           payloadFormat, @"PayloadFormat", nil];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getWebhooksWithListID:(NSString *)listID
+            completionHandler:(void (^)(NSArray* webhooks))completionHandler
+                 errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"lists/%@/webhooks", listID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)testWebhookWithListID:(NSString *)listID
+                    webhookID:(NSString *)webhookID
+            completionHandler:(void (^)(void))completionHandler
+                 errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@/test", listID, webhookID];
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:slug];
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)deleteWebhookWithListID:(NSString *)listID
+                      webhookID:(NSString *)webhookID
+              completionHandler:(void (^)(void))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@", listID, webhookID];
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:slug];
+  request.requestMethod = @"DELETE";
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];  
+}
+
+- (void)activateWebhookWithListID:(NSString *)listID
+                        webhookID:(NSString *)webhookID
+                completionHandler:(void (^)(void))completionHandler
+                     errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@/activate", listID, webhookID];
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:slug];
+  request.requestMethod = @"PUT";
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];  
+}
+
+- (void)deactivateWebhookWithListID:(NSString *)listID
+                          webhookID:(NSString *)webhookID
+                  completionHandler:(void (^)(void))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@/deactivate", listID, webhookID];
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:slug];
+  request.requestMethod = @"PUT";
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];  
 }
 
 @end
