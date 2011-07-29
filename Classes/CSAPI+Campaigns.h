@@ -7,6 +7,7 @@
 //
 
 #import "CSAPI.h"
+#import "CSPaginatedResult.h"
 
 @interface CSAPI (Campaigns)
 
@@ -34,12 +35,20 @@
                  completionHandler:(void (^)(void))completionHandler
                       errorHandler:(CSAPIErrorHandler)errorHandler;
 
-- (void)getCampaignSummaryWithID:(NSString *)campaignID
+- (void)getCampaignSummaryWithCampaignID:(NSString *)campaignID
                completionHandler:(void (^)(NSDictionary* summaryData))completionHandler
                     errorHandler:(CSAPIErrorHandler)errorHandler;
 
-- (void)getCampaignListsAndSegmentsWithID:(NSString *)campaignID
-                        completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
-                             errorHandler:(CSAPIErrorHandler)errorHandler;
+- (void)getCampaignListsAndSegmentsWithCampaignID:(NSString *)campaignID
+                                completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
+                                     errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getCampaignRecipientsWithCampaignID:(NSString *)campaignID
+                                       page:(NSUInteger)page
+                                   pageSize:(NSUInteger)pageSize
+                                 orderField:(NSString *)orderField
+                                  ascending:(BOOL)ascending
+                          completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                               errorHandler:(CSAPIErrorHandler)errorHandler;
 
 @end

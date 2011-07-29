@@ -95,7 +95,7 @@
   
 }
 
-- (void)getCampaignSummaryWithID:(NSString *)campaignID
+- (void)getCampaignSummaryWithCampaignID:(NSString *)campaignID
                completionHandler:(void (^)(NSDictionary* summaryData))completionHandler
                     errorHandler:(CSAPIErrorHandler)errorHandler {
   
@@ -110,7 +110,7 @@
   [request startAsynchronous];
 }
 
-- (void)getCampaignListsAndSegmentsWithID:(NSString *)campaignID
+- (void)getCampaignListsAndSegmentsWithCampaignID:(NSString *)campaignID
                         completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
                              errorHandler:(CSAPIErrorHandler)errorHandler {
   
@@ -122,6 +122,35 @@
     NSArray* segments = [request.parsedResponse valueForKey:@"Segments"];
     
     completionHandler(lists, segments);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getCampaignRecipientsWithCampaignID:(NSString *)campaignID
+                                       page:(NSUInteger)page
+                                   pageSize:(NSUInteger)pageSize
+                                 orderField:(NSString *)orderField
+                                  ascending:(BOOL)ascending
+                          completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                               errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSDictionary* queryParameters;
+  queryParameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                     [NSString stringWithFormat:@"%d", page], @"page",
+                     [NSString stringWithFormat:@"%d", page], @"pagesize",
+                     orderField, @"orderfield",
+                     (ascending ? @"asc" : @"desc"), @"orderdirection",
+                     nil];
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"campaigns/%@/recipients", campaignID]
+                                                  queryParameters:queryParameters];
+  
+  [request setCompletionBlock:^{
+    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
+    completionHandler(result);
   }];
   
   [request setFailedBlock:^{ errorHandler(request.error); }];

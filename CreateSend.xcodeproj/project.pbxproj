@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* CreateSend_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */; };
 		D837C06C1373DAE900DE99EE /* CSListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AF512BB2B2B007C5783 /* CSListTests.m */; };
+		D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */ = {isa = PBXBuildFile; fileRef = D857120B13E2D35800725300 /* CSPaginatedResult.h */; };
+		D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D857120C13E2D35800725300 /* CSPaginatedResult.m */; };
+		D857120F13E2D35800725300 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D857120C13E2D35800725300 /* CSPaginatedResult.m */; };
 		D881F3EB12F296470027CFA7 /* CSDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */; };
 		D889681512B9D65E007C5783 /* CSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D889681412B9D65E007C5783 /* CSAPIRequest.m */; };
 		D889681612B9D65E007C5783 /* CSAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D889681312B9D65E007C5783 /* CSAPIRequest.h */; };
@@ -64,6 +67,8 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* CreateSend_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSend_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libCreateSend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCreateSend.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D857120B13E2D35800725300 /* CSPaginatedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPaginatedResult.h; sourceTree = "<group>"; };
+		D857120C13E2D35800725300 /* CSPaginatedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPaginatedResult.m; sourceTree = "<group>"; };
 		D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSDebuggingMacros.h; path = Classes/CSDebuggingMacros.h; sourceTree = "<group>"; };
 		D889681312B9D65E007C5783 /* CSAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIRequest.h; sourceTree = "<group>"; };
 		D889681412B9D65E007C5783 /* CSAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = CSAPIRequest.m; sourceTree = "<group>"; tabWidth = 2; };
@@ -238,6 +243,8 @@
 				D8896CC312BB5597007C5783 /* CSList.m */,
 				D8896D9E12C187F2007C5783 /* CSSubscriber.h */,
 				D8896D9F12C187F2007C5783 /* CSSubscriber.m */,
+				D857120B13E2D35800725300 /* CSPaginatedResult.h */,
+				D857120C13E2D35800725300 /* CSPaginatedResult.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -344,6 +351,7 @@
 				D891347E13E29ACC0080D1E2 /* CSAPI+Campaigns.h in Headers */,
 				D891348313E29EC30080D1E2 /* CSAPI+Lists.h in Headers */,
 				D891348813E2A84A0080D1E2 /* CSAPI+Subscribers.h in Headers */,
+				D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +467,7 @@
 				D891347F13E29ACC0080D1E2 /* CSAPI+Campaigns.m in Sources */,
 				D891348413E29EC30080D1E2 /* CSAPI+Lists.m in Sources */,
 				D891348913E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
+				D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +501,7 @@
 				D891348013E29ACC0080D1E2 /* CSAPI+Campaigns.m in Sources */,
 				D891348513E29EC30080D1E2 /* CSAPI+Lists.m in Sources */,
 				D891348A13E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */,
+				D857120F13E2D35800725300 /* CSPaginatedResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
