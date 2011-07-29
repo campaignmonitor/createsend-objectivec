@@ -6,9 +6,7 @@
 //  Copyright 2010 Nathan de Vries. All rights reserved.
 //
 
-#import <GHUnit/GHUnit.h>
 #import "CSAPIRequest.h"
-
 
 @interface GHAsyncTestCase (ASIHTTPRequestAdditions)
 

@@ -1,8 +1,8 @@
 //
-//  GHUnitIPhoneView.h
-//  GHUnitIPhone
+//  GHTest+JUnitXML.h
+//  GHUnit
 //
-//  Created by Gabriel Handford on 4/12/10.
+//  Created by Gabriel Handford on 6/4/10.
 //  Copyright 2010. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,26 +27,18 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//! @cond DEV
 
-@interface GHUnitIPhoneView : UIView {
-  UISearchBar *searchBar_;
-  
-  UITableView *tableView_;
-  
-  //! Status label at bottom of the view
-  UILabel *statusLabel_;
- 
-  UISegmentedControl *filterControl_;
-    
-  UIToolbar *runToolbar_;  
-  
-  UIView *footerView_;
-}
+#import "GHTest.h"
 
-@property (readonly, nonatomic) UILabel *statusLabel;
-@property (readonly, nonatomic) UISegmentedControl *filterControl;
-@property (readonly, nonatomic) UISearchBar *searchBar;
-@property (readonly, nonatomic) UITableView *tableView;
+@interface GHTest(JUnitXML)
 
+/*!
+ Return test results in JUnit XML format for external parsing use
+ (such as a Continuous Integration system like Hudson)
+ */
+- (NSString *)JUnitXML;
 
 @end
+
+//! @endcond

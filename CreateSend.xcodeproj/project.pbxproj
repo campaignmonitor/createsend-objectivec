@@ -89,6 +89,8 @@
 		D8896F5712C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
 		D8896F5812C1D7FE007C5783 /* CSSubscriberHistoryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */; };
 		D8896F5912C1D7FE007C5783 /* CSSubscriberHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */; };
+		D891346213E274570080D1E2 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D891346113E274570080D1E2 /* GHUnitIOS.framework */; };
+		D891346313E274570080D1E2 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D891346113E274570080D1E2 /* GHUnitIOS.framework */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8CE1E0912B7546D002D871F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF612B7546D002D871F /* ASIAuthenticationDialog.m */; };
 		D8CE1E0A12B7546D002D871F /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1DF912B7546D002D871F /* ASIDataCompressor.m */; };
@@ -162,12 +164,12 @@
 		D8896F3C12C1D5ED007C5783 /* CSSubscriberImportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberImportRequest.m; sourceTree = "<group>"; };
 		D8896F5512C1D7FE007C5783 /* CSSubscriberHistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberHistoryRequest.h; sourceTree = "<group>"; };
 		D8896F5612C1D7FE007C5783 /* CSSubscriberHistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberHistoryRequest.m; sourceTree = "<group>"; };
+		D891346113E274570080D1E2 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = External/GHUnit/GHUnitIOS.framework; sourceTree = "<group>"; };
 		D8CE1D0612B73F19002D871F /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0712B73F28002D871F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8CE1D0812B73F2F002D871F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		D8CE1D8212B74EAB002D871F /* CreateSendTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateSendTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CE1D8412B74EAB002D871F /* CreateSendTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CreateSendTests-Info.plist"; path = "../CreateSendTests-Info.plist"; sourceTree = "<group>"; };
-		D8CE1D8B12B74ED0002D871F /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = External/GHUnit/GHUnit.framework; sourceTree = "<group>"; };
 		D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = External/GHUnit/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		D8CE1DB012B7515A002D871F /* Tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
 		D8CE1DC712B75291002D871F /* CreateSendTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateSendTests_Prefix.pch; path = ../CreateSendTests_Prefix.pch; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D891346213E274570080D1E2 /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D891346313E274570080D1E2 /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +405,7 @@
 		D8CE1D8912B74EBE002D871F /* GHUnit */ = {
 			isa = PBXGroup;
 			children = (
-				D8CE1D8B12B74ED0002D871F /* GHUnit.framework */,
+				D891346113E274570080D1E2 /* GHUnitIOS.framework */,
 				D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */,
 			);
 			name = GHUnit;
@@ -677,10 +681,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1D0812B73F2F002D871F /* Release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/External/YAJL\"",
-				);
 			};
 			name = Release;
 		};
@@ -722,11 +722,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8CE1DB012B7515A002D871F /* Tests.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/External/YAJL\"",
-					"\"$(SRCROOT)/External/OCHamcrest\"",
-				);
 			};
 			name = Release;
 		};

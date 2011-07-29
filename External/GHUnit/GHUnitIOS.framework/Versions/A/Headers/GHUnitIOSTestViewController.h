@@ -1,9 +1,9 @@
 //
-//  GHTest+JUnitXML.h
-//  GHUnit
+//  GHUnitIOSTestViewController.h
+//  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/4/10.
-//  Copyright 2010. All rights reserved.
+//  Created by Gabriel Handford on 2/20/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,18 +27,17 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-//! @cond DEV
+#import <UIKit/UIKit.h>
+#import "GHTestViewModel.h"
 
-#import "GHTest.h"
+@interface GHUnitIOSTestViewController : UIViewController <GHTestRunnerDelegate> {
+  UITextView *textView_;
 
-@interface GHTest(JUnitXML)
+  GHTestNode *testNode_;
+  
+  GHTestRunner *runner_;
+}
 
-/*!
- Return test results in JUnit XML format for external parsing use
- (such as a Continuous Integration system like Hudson)
- */
-- (NSString *)JUnitXML;
+- (void)setTest:(id<GHTest>)test;
 
 @end
-
-//! @endcond

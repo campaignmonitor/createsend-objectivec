@@ -1,9 +1,9 @@
 //
-//  GHUnitIPhoneTableViewDataSource.h
-//  GHUnitIPhone
+//  GHTestOperation.h
+//  GHUnit
 //
-//  Created by Gabriel Handford on 5/5/09.
-//  Copyright 2009. All rights reserved.
+//  Created by Gabriel Handford on 6/4/10.
+//  Copyright 2010. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,14 +27,20 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHTestViewModel.h"
+//! @cond DEV
 
-@interface GHUnitIPhoneTableViewDataSource : GHTestViewModel <UITableViewDataSource> {
-  
+#import "GHTest.h"
+
+/*!
+ Test for running in the context of an NSOperationQueue.
+ */
+@interface GHTestOperation : NSOperation { 
+  id<GHTest> test_;
+  GHTestOptions options_;
 }
 
-- (GHTestNode *)nodeForIndexPath:(NSIndexPath *)indexPath;
-
-- (void)setSelectedForAllNodes:(BOOL)selected;
+- (id)initWithTest:(id<GHTest>)test options:(GHTestOptions)options;
 
 @end
+
+//! @endcond

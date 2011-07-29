@@ -1,9 +1,9 @@
 //
-//  GHTestOperation.h
-//  GHUnit
+//  GHUnitIOSAppDelegate.h
+//  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/4/10.
-//  Copyright 2010. All rights reserved.
+//  Created by Gabriel Handford on 1/25/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,20 +27,13 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-//! @cond DEV
+#import <UIKit/UIKit.h>
 
-#import "GHTest.h"
-
-/*!
- Test for running in the context of an NSOperationQueue.
- */
-@interface GHTestOperation : NSOperation { 
-  id<GHTest> test_;
-  GHTestOptions options_;
+@interface GHUnitIOSAppDelegate : NSObject <UIApplicationDelegate> {
+  UIWindow *window_;
+  
+  UINavigationController *navigationController_;  
 }
-
-- (id)initWithTest:(id<GHTest>)test options:(GHTestOptions)options;
 
 @end
 
-//! @endcond
