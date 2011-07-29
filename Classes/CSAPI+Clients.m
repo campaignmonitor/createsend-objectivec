@@ -65,4 +65,49 @@
   [request startAsynchronous];
 }
 
+- (void)getSentCampaignsWithClientID:(NSString *)clientID
+                   completionHandler:(void (^)(NSArray* campaigns))completionHandler
+                        errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"clients/%@/campaigns", clientID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getScheduledCampaignsWithClientID:(NSString *)clientID
+                        completionHandler:(void (^)(NSArray* campaigns))completionHandler
+                             errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"clients/%@/scheduled", clientID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getDraftCampaignsWithClientID:(NSString *)clientID
+                        completionHandler:(void (^)(NSArray* campaigns))completionHandler
+                             errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"clients/%@/drafts", clientID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
 @end

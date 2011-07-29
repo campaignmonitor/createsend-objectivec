@@ -26,4 +26,16 @@
                    completionHandler:(void (^)(NSDictionary* clientData))completionHandler
                         errorHandler:(CSAPIErrorHandler)errorHandler;
 
+- (void)getSentCampaignsWithClientID:(NSString *)clientID
+                   completionHandler:(void (^)(NSArray* campaigns))completionHandler
+                        errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getScheduledCampaignsWithClientID:(NSString *)clientID
+                        completionHandler:(void (^)(NSArray* campaigns))completionHandler
+                             errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getDraftCampaignsWithClientID:(NSString *)clientID
+                    completionHandler:(void (^)(NSArray* campaigns))completionHandler
+                         errorHandler:(CSAPIErrorHandler)errorHandler;
+
 @end
