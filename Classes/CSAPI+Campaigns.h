@@ -51,4 +51,13 @@
                           completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
                                errorHandler:(CSAPIErrorHandler)errorHandler;
 
+- (void)getCampaignBouncesWithCampaignID:(NSString *)campaignID
+                                    date:(NSDate *)date
+                                    page:(NSUInteger)page
+                                pageSize:(NSUInteger)pageSize
+                              orderField:(NSString *)orderField
+                               ascending:(BOOL)ascending
+                       completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                            errorHandler:(CSAPIErrorHandler)errorHandler;
+
 @end

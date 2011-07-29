@@ -96,8 +96,8 @@
 }
 
 - (void)getCampaignSummaryWithCampaignID:(NSString *)campaignID
-               completionHandler:(void (^)(NSDictionary* summaryData))completionHandler
-                    errorHandler:(CSAPIErrorHandler)errorHandler {
+                       completionHandler:(void (^)(NSDictionary* summaryData))completionHandler
+                            errorHandler:(CSAPIErrorHandler)errorHandler {
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
                                                              slug:[NSString stringWithFormat:@"campaigns/%@/summary", campaignID]];
@@ -111,8 +111,8 @@
 }
 
 - (void)getCampaignListsAndSegmentsWithCampaignID:(NSString *)campaignID
-                        completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
-                             errorHandler:(CSAPIErrorHandler)errorHandler {
+                                completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
+                                     errorHandler:(CSAPIErrorHandler)errorHandler {
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
                                                              slug:[NSString stringWithFormat:@"campaigns/%@/listsandsegments", campaignID]];
@@ -146,6 +146,39 @@
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
                                                              slug:[NSString stringWithFormat:@"campaigns/%@/recipients", campaignID]
+                                                  queryParameters:queryParameters];
+  
+  [request setCompletionBlock:^{
+    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
+    completionHandler(result);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getCampaignBouncesWithCampaignID:(NSString *)campaignID
+                                    date:(NSDate *)date
+                                    page:(NSUInteger)page
+                                pageSize:(NSUInteger)pageSize
+                              orderField:(NSString *)orderField
+                               ascending:(BOOL)ascending
+                       completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                            errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* dateString = [[CSAPIRequest sharedDateFormatter] stringFromDate:date];
+  
+  NSDictionary* queryParameters;
+  queryParameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                     dateString, @"date",
+                     [NSString stringWithFormat:@"%d", page], @"page",
+                     [NSString stringWithFormat:@"%d", page], @"pagesize",
+                     orderField, @"orderfield",
+                     (ascending ? @"asc" : @"desc"), @"orderdirection",
+                     nil];
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"campaigns/%@/bounces", campaignID]
                                                   queryParameters:queryParameters];
   
   [request setCompletionBlock:^{
