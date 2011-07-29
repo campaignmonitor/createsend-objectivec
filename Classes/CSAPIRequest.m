@@ -25,14 +25,14 @@ static NSString* defaultAPIKey = nil;
 
 - (id)initWithURL:(NSURL *)newURL {
   self = [super initWithURL:newURL];
-
+  
   if (self) {
     self.shouldRedirect = NO;
     self.shouldPresentAuthenticationDialog = NO;
     self.shouldPresentProxyAuthenticationDialog = NO;
     self.useSessionPersistence = NO;
   }
-
+  
   return self;
 }
 
@@ -42,36 +42,36 @@ static NSString* defaultAPIKey = nil;
 }
 
 + (id)requestWithAPIKey:(NSString *)APIKey slug:(NSString *)slug {
-    return [self requestWithAPIKey:APIKey slug:slug queryParameters:nil];
+  return [self requestWithAPIKey:APIKey slug:slug queryParameters:nil];
 }
 
 + (id)requestWithAPIKey:(NSString *)APIKey slug:(NSString *)slug queryParameters:(NSDictionary *)queryParameters {
-    CSAPIRequest* request = [self requestWithAPISlug:slug queryParameters:queryParameters];
-    request.username = APIKey;
-    request.password = @"";
-    return request;
+  CSAPIRequest* request = [self requestWithAPISlug:slug queryParameters:queryParameters];
+  request.username = APIKey;
+  request.password = @"";
+  return request;
 }
 
 + (id)requestWithAPISlug:(NSString *)APISlug
          queryParameters:(NSDictionary *)queryParameters {
-
+  
   NSString* URLString = [NSString stringWithFormat:@"http://api.createsend.com/api/v3/%@.json", APISlug];
-
+  
   if (queryParameters) {
     NSMutableString* queryString = [NSMutableString string];
-
+    
     for (NSString* key in [queryParameters allKeys]) {
       NSString* value = [queryParameters valueForKey:key];
       NSString* queryPair = [NSString stringWithFormat:@"%@=%@", key, [value stringByPercentEncodingForURLs]];
-
+      
       [queryString appendString:queryPair];
     }
-
+    
     URLString = [URLString stringByAppendingFormat:@"?%@", queryString];
   }
-
+  
   NSURL* URL = [NSURL URLWithString:URLString];
-
+  
   return [[[self alloc] initWithURL:URL] autorelease];
 }
 
@@ -89,47 +89,47 @@ static NSString* defaultAPIKey = nil;
 
 + (NSDateFormatter *)sharedDateFormatter {
   static NSDateFormatter* defaultDateFormatter = nil;
-
+  
   if (defaultDateFormatter == nil) {
     defaultDateFormatter = [[NSDateFormatter alloc] init];
     NSLocale* locale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease];
     [defaultDateFormatter setLocale:locale];
     defaultDateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
   }
-
+  
   return defaultDateFormatter;
 }
 
 
 - (void)main {
   [self prepareRequestObject];
-
+  
   if (self.requestObject) {
     NSString* JSONRequestBody = [self.requestObject yajl_JSONString];
     [self appendPostData:[JSONRequestBody dataUsingEncoding:NSUTF8StringEncoding]];
-
+    
     CSDLog(@"JSONRequestBody = %@", JSONRequestBody);
   }
-
+  
   self.username = self.username ?: [[self class] defaultAPIKey];
-
+  
   if (self.username != nil && self.password == nil) {
     self.password = @"";
   }
-
+  
   [super main];
 }
 
 
 - (void)prepareRequestObject {
-
+  
 }
 
 
 - (void)parseJSONResponse {
   @try {
     self.parsedResponse = [[self responseData] yajl_JSON];
-
+    
     if (self.responseStatusCode != 200 && self.responseStatusCode != 201) {
       [self failWithError:[NSError errorWithDomain:kCSAPIRequestErrorDomain
                                               code:[[self.parsedResponse valueForKey:@"Code"] integerValue]
@@ -141,7 +141,7 @@ static NSString* defaultAPIKey = nil;
         self.parsedResponse = [[self responseString] substringWithRange:NSMakeRange(1, [[self responseString] length] - 2)];
       }
     }
-
+    
     CSDLog(@"parsedResponse = %@", self.parsedResponse);
   }
   @catch (NSException * e) {
@@ -159,26 +159,28 @@ static NSString* defaultAPIKey = nil;
 
 - (void)requestFinished {
   CSDLog(@"%@", self);
-
+  
   if ([[self responseData] length] > 0) {
     NSString* contentType = [[self responseHeaders] objectForKey:@"Content-Type"];
-
+    
     if ([contentType isEqualToString:@"application/json; charset=utf-8"]) {
       [self parseJSONResponse];
-
+      
     } else {
+      NSDictionary* errorUserInfo;
+      errorUserInfo = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"Invalid Content-Type (%@)", contentType]
+                                                  forKey:NSLocalizedDescriptionKey];
+      
       [self failWithError:[NSError errorWithDomain:kCSAPIRequestErrorDomain
                                               code:CSAPIRequestInvalidContentTypeErrorType
-                                          userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                    [NSString stringWithFormat:@"Invalid Content-Type (%@)", contentType], NSLocalizedDescriptionKey,
-                                                    nil]]];
+                                          userInfo:errorUserInfo]];
     }
   }
-
-	if (![self error]) {
+  
+  if (![self error]) {
     [self handleParsedResponse];
-		[super requestFinished];
-	}
+    [super requestFinished];
+  }
 }
 
 
@@ -199,7 +201,7 @@ static NSString* defaultAPIKey = nil;
 - (void)dealloc {
   [_requestObject release];
   [_parsedResponse release];
-
+  
   [super dealloc];
 }
 

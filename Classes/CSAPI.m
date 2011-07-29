@@ -17,33 +17,33 @@
 
 - (id)initWithSiteURL:(NSString *)siteURL
                APIKey:(NSString *)APIKey {
-    
-    if ((self = [self init])) {
-        self.siteURL = siteURL;
-        self.APIKey = APIKey;
-    }
-    return self;
+  
+  if ((self = [self init])) {
+    self.siteURL = siteURL;
+    self.APIKey = APIKey;
+  }
+  return self;
 }
 
 - (id)initWithSiteURL:(NSString *)siteURL
              username:(NSString *)username
              password:(NSString *)password {
-    
-    if ((self = [self init])) {
-        self.siteURL = siteURL;
-        self.username = username;
-        self.password = password;
-    }
-    return self;
+  
+  if ((self = [self init])) {
+    self.siteURL = siteURL;
+    self.username = username;
+    self.password = password;
+  }
+  return self;
 }
 
 - (void)dealloc {
-    self.siteURL = nil;
-    self.APIKey = nil;
-    self.username = nil;
-    self.password = nil;
-    
-    [super dealloc];
+  self.siteURL = nil;
+  self.APIKey = nil;
+  self.username = nil;
+  self.password = nil;
+  
+  [super dealloc];
 }
 
 @end

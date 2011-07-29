@@ -21,8 +21,8 @@
 
 - (void)unsubscribeFromListWithID:(NSString *)listID
                      emailAddress:(NSString *)emailAddress
-              completionHandler:(void (^)(void))completionHandler
-                   errorHandler:(CSAPIErrorHandler)errorHandler;
+                completionHandler:(void (^)(void))completionHandler
+                     errorHandler:(CSAPIErrorHandler)errorHandler;
 
 - (void)getSubscriberDetailsWithEmailAddress:(NSString *)emailAddress
                                       listID:(NSString *)listID

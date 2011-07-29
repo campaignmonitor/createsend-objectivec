@@ -14,24 +14,24 @@
 @implementation CSCampaignTests
 
 - (void)testCreateCampaign {
-    [self testAsync:^{
-        [self.testAPI createCampaignWithClientID:kCSTestsValidClientID
-                                            name:@"Campaign Name"
-                                         subject:@"Subject"
-                                        fromName:@"John Doe"
-                                       fromEmail:@"johndoe@example.com"
-                                         replyTo:@"johndoe@example.com"
-                                   HTMLURLString:@"http://example.com/campaigncontent/index.html"
-                                   textURLString:@"http://example.com/campaigncontent/index.txt"
-                                         listIDs:[NSArray array]
-                                      segmentIDs:[NSArray array]
-                               completionHandler:^(NSString *campaignID) {
-                                   
-                                   [self notifyTestFinished];
-                                   GHAssertNotNil(campaignID, nil);
-                                   
-                               } errorHandler:[self assertNoError]];
-    }];
+  [self testAsync:^{
+    [self.testAPI createCampaignWithClientID:kCSTestsValidClientID
+                                        name:@"Campaign Name"
+                                     subject:@"Subject"
+                                    fromName:@"John Doe"
+                                   fromEmail:@"johndoe@example.com"
+                                     replyTo:@"johndoe@example.com"
+                               HTMLURLString:@"http://example.com/campaigncontent/index.html"
+                               textURLString:@"http://example.com/campaigncontent/index.txt"
+                                     listIDs:[NSArray array]
+                                  segmentIDs:[NSArray array]
+                           completionHandler:^(NSString *campaignID) {
+                             
+                             [self notifyTestFinished];
+                             GHAssertNotNil(campaignID, nil);
+                             
+                           } errorHandler:[self assertNoError]];
+  }];
 }
 
 @end
