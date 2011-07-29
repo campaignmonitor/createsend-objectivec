@@ -69,4 +69,22 @@
                      completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
                           errorHandler:(CSAPIErrorHandler)errorHandler;
 
+- (void)getCampaignClicksWithCampaignID:(NSString *)campaignID
+                                   date:(NSDate *)date
+                                   page:(NSUInteger)page
+                               pageSize:(NSUInteger)pageSize
+                             orderField:(NSString *)orderField
+                              ascending:(BOOL)ascending
+                      completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                           errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getCampaignUnsubscribesWithCampaignID:(NSString *)campaignID
+                                         date:(NSDate *)date
+                                         page:(NSUInteger)page
+                                     pageSize:(NSUInteger)pageSize
+                                   orderField:(NSString *)orderField
+                                    ascending:(BOOL)ascending
+                            completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                                 errorHandler:(CSAPIErrorHandler)errorHandler;
+
 @end
