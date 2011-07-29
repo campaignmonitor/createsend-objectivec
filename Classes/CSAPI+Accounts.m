@@ -10,7 +10,9 @@
 
 @implementation CSAPI (Accounts)
 
-- (void)getAPIKey:(void (^)(NSString* APIKey))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler {
+- (void)getAPIKey:(void (^)(NSString* APIKey))completionHandler
+     errorHandler:(CSAPIErrorHandler)errorHandler {
+  
   NSDictionary* queryParameters = [NSDictionary dictionaryWithObject:self.siteURL forKey:@"siteurl"];
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPISlug:@"apikey"
                                                    queryParameters:queryParameters];
@@ -26,7 +28,9 @@
   [request startAsynchronous];
 }
 
-- (void)getCountries:(void (^)(NSArray* countries))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler {
+- (void)getCountries:(void (^)(NSArray* countries))completionHandler
+        errorHandler:(CSAPIErrorHandler)errorHandler {
+  
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"countries"];
   
   [request setCompletionBlock:^{
@@ -37,7 +41,9 @@
   [request startAsynchronous];
 }
 
-- (void)getTimezones:(void (^)(NSArray* timezones))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler {
+- (void)getTimezones:(void (^)(NSArray* timezones))completionHandler
+        errorHandler:(CSAPIErrorHandler)errorHandler {
+  
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"timezones"];
   
   [request setCompletionBlock:^{
@@ -48,7 +54,9 @@
   [request startAsynchronous];
 }
 
-- (void)getSystemDate:(void (^)(NSDate* systemDate))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler {
+- (void)getSystemDate:(void (^)(NSDate* systemDate))completionHandler
+         errorHandler:(CSAPIErrorHandler)errorHandler {
+  
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"systemdate"];
   
   [request setCompletionBlock:^{
