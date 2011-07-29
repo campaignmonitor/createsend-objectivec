@@ -95,4 +95,37 @@
   
 }
 
+- (void)getCampaignSummaryWithID:(NSString *)campaignID
+               completionHandler:(void (^)(NSDictionary* summaryData))completionHandler
+                    errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"campaigns/%@/summary", campaignID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getCampaignListsAndSegmentsWithID:(NSString *)campaignID
+                        completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
+                             errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"campaigns/%@/listsandsegments", campaignID]];
+  
+  [request setCompletionBlock:^{
+    NSArray* lists = [request.parsedResponse valueForKey:@"Lists"];
+    NSArray* segments = [request.parsedResponse valueForKey:@"Segments"];
+    
+    completionHandler(lists, segments);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
 @end

@@ -34,4 +34,12 @@
                  completionHandler:(void (^)(void))completionHandler
                       errorHandler:(CSAPIErrorHandler)errorHandler;
 
+- (void)getCampaignSummaryWithID:(NSString *)campaignID
+               completionHandler:(void (^)(NSDictionary* summaryData))completionHandler
+                    errorHandler:(CSAPIErrorHandler)errorHandler;
+
+- (void)getCampaignListsAndSegmentsWithID:(NSString *)campaignID
+                        completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
+                             errorHandler:(CSAPIErrorHandler)errorHandler;
+
 @end
