@@ -69,25 +69,6 @@
   [request startAsynchronous];
 }
 
-- (void)getCustomFieldsWithListID:(NSString *)listID
-                completionHandler:(void (^)(NSArray* customFields))completionHandler
-                     errorHandler:(CSAPIErrorHandler)errorHandler {
-  
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/customfields", listID]];
-  
-  [request setCompletionBlock:^{
-    NSMutableArray* customFields = [NSMutableArray array];
-    for (NSDictionary* customFieldDict in request.parsedResponse) {
-      [customFields addObject:[CSCustomField customFieldWithDictionary:customFieldDict]];
-    }
-    completionHandler([NSArray arrayWithArray:customFields]);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
-}
-
 - (void)getListDetailsWithListID:(NSString *)listID
                completionHandler:(void (^)(CSList* list))completionHandler
                     errorHandler:(CSAPIErrorHandler)errorHandler {
@@ -113,6 +94,132 @@
   
   [request setCompletionBlock:^{
     completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getSubscribersWithListID:(NSString *)listID
+                            slug:(NSString *)slug
+                            date:(NSDate *)date
+                            page:(NSUInteger)page
+                        pageSize:(NSUInteger)pageSize
+                      orderField:(NSString *)orderField
+                       ascending:(BOOL)ascending
+               completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                    errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSMutableDictionary* queryParameters;
+  queryParameters = [[[CSAPIRequest paginationParametersWithPage:page
+                                                        pageSize:pageSize
+                                                      orderField:orderField
+                                                       ascending:ascending] mutableCopy] autorelease];
+  
+  NSString* dateString = [[CSAPIRequest sharedDateFormatter] stringFromDate:date];
+  [queryParameters setObject:dateString forKey:@"Date"];
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"lists/%@/%@", listID, slug]
+                                                  queryParameters:queryParameters];
+  
+  [request setCompletionBlock:^{
+    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
+    completionHandler(result);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getActiveSubscribersWithListID:(NSString *)listID
+                                  date:(NSDate *)date
+                                  page:(NSUInteger)page
+                              pageSize:(NSUInteger)pageSize
+                            orderField:(NSString *)orderField
+                             ascending:(BOOL)ascending
+                     completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                          errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  [self getSubscribersWithListID:listID
+                            slug:@"active"
+                            date:nil
+                            page:page
+                        pageSize:pageSize
+                      orderField:orderField
+                       ascending:ascending
+               completionHandler:completionHandler
+                    errorHandler:errorHandler];
+}
+
+- (void)getUnsubscribedSubscribersWithListID:(NSString *)listID
+                                        date:(NSDate *)date
+                                        page:(NSUInteger)page
+                                    pageSize:(NSUInteger)pageSize
+                                  orderField:(NSString *)orderField
+                                   ascending:(BOOL)ascending
+                           completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                                errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  [self getSubscribersWithListID:listID
+                            slug:@"unsubscribed"
+                            date:nil
+                            page:page
+                        pageSize:pageSize
+                      orderField:orderField
+                       ascending:ascending
+               completionHandler:completionHandler
+                    errorHandler:errorHandler];
+}
+
+- (void)getBouncedSubscribersWithListID:(NSString *)listID
+                                        date:(NSDate *)date
+                                        page:(NSUInteger)page
+                                    pageSize:(NSUInteger)pageSize
+                                  orderField:(NSString *)orderField
+                                   ascending:(BOOL)ascending
+                           completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                                errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  [self getSubscribersWithListID:listID
+                            slug:@"bounced"
+                            date:nil
+                            page:page
+                        pageSize:pageSize
+                      orderField:orderField
+                       ascending:ascending
+               completionHandler:completionHandler
+                    errorHandler:errorHandler];
+}
+
+- (void)getListSegmentsWithListID:(NSString *)listID
+                completionHandler:(void (^)(NSArray* listSegments))completionHandler
+                     errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"lists/%@/segments", listID]];
+  
+  [request setCompletionBlock:^{
+    completionHandler(request.parsedResponse);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
+- (void)getCustomFieldsWithListID:(NSString *)listID
+                completionHandler:(void (^)(NSArray* customFields))completionHandler
+                     errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"lists/%@/customfields", listID]];
+  
+  [request setCompletionBlock:^{
+    NSMutableArray* customFields = [NSMutableArray array];
+    for (NSDictionary* customFieldDict in request.parsedResponse) {
+      [customFields addObject:[CSCustomField customFieldWithDictionary:customFieldDict]];
+    }
+    completionHandler([NSArray arrayWithArray:customFields]);
   }];
   
   [request setFailedBlock:^{ errorHandler(request.error); }];
