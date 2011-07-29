@@ -190,4 +190,37 @@
   [request startAsynchronous];
 }
 
+- (void)getCampaignOpensWithCampaignID:(NSString *)campaignID
+                                  date:(NSDate *)date
+                                  page:(NSUInteger)page
+                              pageSize:(NSUInteger)pageSize
+                            orderField:(NSString *)orderField
+                             ascending:(BOOL)ascending
+                     completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
+                          errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  NSString* dateString = [[CSAPIRequest sharedDateFormatter] stringFromDate:date];
+  
+  NSDictionary* queryParameters;
+  queryParameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                     dateString, @"date",
+                     [NSString stringWithFormat:@"%d", page], @"page",
+                     [NSString stringWithFormat:@"%d", page], @"pagesize",
+                     orderField, @"orderfield",
+                     (ascending ? @"asc" : @"desc"), @"orderdirection",
+                     nil];
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"campaigns/%@/opens", campaignID]
+                                                  queryParameters:queryParameters];
+  
+  [request setCompletionBlock:^{
+    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
+    completionHandler(result);
+  }];
+  
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
 @end
