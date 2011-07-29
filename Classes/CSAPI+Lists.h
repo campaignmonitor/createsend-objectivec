@@ -22,6 +22,14 @@
              completionHandler:(void (^)(NSString* listID))completionHandler
                   errorHandler:(CSAPIErrorHandler)errorHandler;
 
+- (void)updateListWithListID:(NSString *)listID
+                       title:(NSString *)title
+             unsubscribePage:(NSString *)unsubscribePage
+     confirmationSuccessPage:(NSString *)confirmationSuccessPage
+          shouldConfirmOptIn:(BOOL)shouldConfirmOptIn
+           completionHandler:(void (^)(void))completionHandler
+                errorHandler:(CSAPIErrorHandler)errorHandler;
+
 - (void)getListsWithClientID:(NSString *)clientID
            completionHandler:(void (^)(NSArray* lists))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler;

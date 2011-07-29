@@ -46,7 +46,7 @@
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
                                                              slug:[NSString stringWithFormat:@"clients/%@/setbasics", clientID]];
-  
+  request.requestMethod = @"PUT";
   request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
                            companyName, @"CompanyName",
                            contactName, @"ContactName",
@@ -81,7 +81,7 @@
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
                                                              slug:[NSString stringWithFormat:@"clients/%@/setaccess", clientID]];
-  
+  request.requestMethod = @"PUT";
   request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
                            username, @"Username",
                            password, @"Password",
@@ -99,7 +99,7 @@
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
                                                              slug:[NSString stringWithFormat:@"clients/%@/setaccess", clientID]];
-  
+  request.requestMethod = @"PUT";
   request.requestObject = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d", accessLevel]
                                                       forKey:@"AccessLevel"];
   
@@ -121,7 +121,7 @@
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
                                                              slug:[NSString stringWithFormat:@"clients/%@/setpaygbilling", clientID]];
-  
+  request.requestMethod = @"PUT";
   request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
                            currency, @"Currency",
                            [NSNumber numberWithBool:canPurchaseCredits], @"CanPurchaseCredits",
@@ -145,7 +145,7 @@
   
   __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
                                                              slug:[NSString stringWithFormat:@"clients/%@/setmonthlybilling", clientID]];
-  
+  request.requestMethod = @"PUT";  
   request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
                            currency, @"Currency",
                            [NSNumber numberWithBool:clientPays], @"ClientPays",

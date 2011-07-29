@@ -36,6 +36,28 @@
   [request startAsynchronous];
 }
 
+- (void)updateListWithListID:(NSString *)listID
+                       title:(NSString *)title
+             unsubscribePage:(NSString *)unsubscribePage
+     confirmationSuccessPage:(NSString *)confirmationSuccessPage
+          shouldConfirmOptIn:(BOOL)shouldConfirmOptIn
+           completionHandler:(void (^)(void))completionHandler
+                errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"lists/%@", listID]];
+  request.requestMethod = @"PUT";
+  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                           title, @"Title",
+                           unsubscribePage, @"UnsubscribePage",
+                           confirmationSuccessPage, @"ConfirmationSuccessPage",
+                           [NSNumber numberWithBool:shouldConfirmOptIn], @"ConfirmedOptIn", nil];
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
 - (void)getListsWithClientID:(NSString *)clientID
            completionHandler:(void (^)(NSArray* lists))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler {
