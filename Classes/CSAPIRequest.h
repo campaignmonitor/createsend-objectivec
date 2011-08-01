@@ -8,14 +8,12 @@
 
 #import "ASIHTTPRequest.h"
 
-
 extern NSString* const kCSAPIRequestErrorDomain;
 
 typedef enum _CSAPIRequestErrorType {
   CSAPIRequestInvalidContentTypeErrorType = 1,
   CSAPIRequestFailedToParseResponseErrorType = 2
 } CSAPIRequestErrorType;
-
 
 @interface CSAPIRequest : ASIHTTPRequest
 

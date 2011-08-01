@@ -10,7 +10,6 @@
 #import <YAJLIOS/YAJL.h>
 #import "NSString+URLEncoding.h"
 
-
 NSString* const kCSAPIRequestErrorDomain = @"kCSAPIRequestErrorDomain";
 
 @implementation CSAPIRequest
