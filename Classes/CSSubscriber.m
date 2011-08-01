@@ -49,12 +49,18 @@
 + (NSDictionary *)dictionaryWithEmailAddress:(NSString *)emailAddress
                                         name:(NSString *)name
                            customFieldValues:(NSArray *)customFieldValues {
-
-  return [NSDictionary dictionaryWithObjectsAndKeys:
-          emailAddress, @"EmailAddress",
-          name, @"Name",
-          customFieldValues ?: [NSArray array], @"CustomFields",
-          nil];
+  
+  NSMutableDictionary* dictionary = [NSMutableDictionary dictionary];
+  
+  if (emailAddress)
+    [dictionary setObject:emailAddress forKey:@"EmailAddress"];
+  
+  if (name)
+    [dictionary setObject:name forKey:@"Name"];
+  
+  [dictionary setObject:(customFieldValues ?: [NSArray array]) forKey:@"CustomFields"];
+  
+  return [NSDictionary dictionaryWithDictionary:dictionary];
 }
 
 

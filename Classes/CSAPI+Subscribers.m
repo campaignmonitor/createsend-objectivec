@@ -37,6 +37,34 @@
   [request startAsynchronous];
 }
 
+- (void)updateSubscriptionWithListID:(NSString *)listID
+                currentEmailAdddress:(NSString *)currentEmailAdddress
+                     newEmailAddress:(NSString *)newEmailAddress
+                                name:(NSString *)name
+                   shouldResubscribe:(BOOL)shouldResubscribe
+                   customFieldValues:(NSArray *)customFieldValues
+                   completionHandler:(void (^)(void))completionHandler
+                        errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
+                                                             slug:[NSString stringWithFormat:@"subscribers/%@", listID]
+                                                  queryParameters:[NSDictionary dictionaryWithObject:currentEmailAdddress
+                                                                                              forKey:@"email"]];
+  request.requestMethod = @"PUT";
+  
+  NSDictionary* requestObject = [[[CSSubscriber dictionaryWithEmailAddress:newEmailAddress
+                                                                      name:name
+                                                         customFieldValues:customFieldValues] mutableCopy] autorelease];
+  [requestObject setValue:[NSNumber numberWithBool:shouldResubscribe]
+                   forKey:@"Resubscribe"];
+  
+  request.requestObject = requestObject;
+  
+  [request setCompletionBlock:completionHandler];
+  [request setFailedBlock:^{ errorHandler(request.error); }];
+  [request startAsynchronous];
+}
+
 - (void)unsubscribeFromListWithID:(NSString *)listID
                      emailAddress:(NSString *)emailAddress
                 completionHandler:(void (^)(void))completionHandler
