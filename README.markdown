@@ -1,0 +1,48 @@
+# CreateSend Objective-C #
+
+`CreateSend` is an Objective-C library for talking to the Campaign Monitor API from Cocoa & Cocoa Touch applications on Mac OS X 10.5+ & iOS 4.0+.
+
+## Features ##
+
+- Supports all of the available [Campaign Monitor APIs](http://www.campaignmonitor.com/api/).
+- Provides a drop-in UI for adding new subscribers to your lists, with custom field support.
+
+## Example Use ##
+
+### Getting your API key: ###
+
+    CSAPI* API = [[[CSAPI alloc] initWithSiteURL:@"http://yoursite.createsend.com/"
+                                        username:@"yourusername"
+                                        password:@"yourpassword"] autorelease];
+    
+    [API getAPIKey:^(NSString* APIKey){
+      NSLog(@"Your API key is %@", APIKey);
+      
+    } errorHandler:^(NSError* error) {
+      NSLog(@"Something went wrong: %@", error);
+      
+    }];
+
+### Subscribing to a list: ###
+
+    CSAPI* API = [[[CSAPI alloc] initWithSiteURL:@"http://yoursite.createsend.com/"
+                                          APIKey:@"ab6b0598d32fecd63485b18abb4f0ad7"] autorelease];
+    
+    NSArray* customFields = [NSArray arrayWithObjects:
+                             [CSCustomField dictionaryWithValue:@"1 Infinite Loop"
+                                                    forFieldKey:@"[AddressStreet]"],
+                             [CSCustomField dictionaryWithValue:@"Cupertino"
+                                                    forFieldKey:@"[AddressSuburb]"], nil];
+
+    [API subscribeToListWithID:@"66f889ae2e1981157285b4f76f2e02ad"
+                  emailAddress:@"johnny.appleseed@apple.com"
+                          name:@"Johnny Appleseed"
+             shouldResubscribe:YES
+             customFieldValues:customFields
+             completionHandler:^(NSString* subscribedAddress) {
+               NSLog(@"Successfully subscribed %@", subscribedAddress);
+               
+             } errorHandler:^(NSError* error){
+               NSLog(@"Something went wrong: %@", error);
+               
+             }];
