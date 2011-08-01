@@ -7,18 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CSList.h"
-#import "CSCustomField.h"
+
+@class CSAPI;
+@class CSSubscriptionFormFieldCell;
 
 @interface CSSubscriptionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, retain) CSAPI* API;
 
 @property (nonatomic, retain) UITableView* tableView;
 @property (nonatomic, retain) NSString* listID;
 @property (nonatomic, retain) NSArray* customFields;
 
-@property (nonatomic, retain) NSString* subscriberName;
-@property (nonatomic, retain) NSString* subscriberEmailAddress;
-@property (nonatomic, retain) NSArray* subscriberCustomFieldValues;
+@property (nonatomic, retain) NSMutableArray* formFields;
+@property (nonatomic, retain) CSSubscriptionFormFieldCell* activeFormFieldCell;
+
+@property (nonatomic, retain) UIToolbar* formInputAccessoryToolbar;
 
 - (id)initWithListID:(NSString *)listID;
 

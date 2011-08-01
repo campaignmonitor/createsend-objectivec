@@ -12,6 +12,21 @@
 		D80B8C3213E2FC2E00F7A5CD /* CSAPI+Segments.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B8C3013E2FC2E00F7A5CD /* CSAPI+Segments.m */; };
 		D80B8C3613E2FE1B00F7A5CD /* CSAPI+Templates.h in Headers */ = {isa = PBXBuildFile; fileRef = D80B8C3413E2FE1B00F7A5CD /* CSAPI+Templates.h */; };
 		D80B8C3713E2FE1B00F7A5CD /* CSAPI+Templates.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B8C3513E2FE1B00F7A5CD /* CSAPI+Templates.m */; };
+		D81C58D413E697470048989D /* CSSubscriptionFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = D81C58D213E697470048989D /* CSSubscriptionFormField.h */; };
+		D81C58D513E697470048989D /* CSSubscriptionFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58D313E697470048989D /* CSSubscriptionFormField.m */; };
+		D81C58D613E697470048989D /* CSSubscriptionFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58D313E697470048989D /* CSSubscriptionFormField.m */; };
+		D81C58D913E697A30048989D /* CSSubscriptionFormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = D81C58D713E697A30048989D /* CSSubscriptionFormTextField.h */; };
+		D81C58DA13E697A30048989D /* CSSubscriptionFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58D813E697A30048989D /* CSSubscriptionFormTextField.m */; };
+		D81C58DB13E697A30048989D /* CSSubscriptionFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58D813E697A30048989D /* CSSubscriptionFormTextField.m */; };
+		D81C58DE13E697B80048989D /* CSSubscriptionFormOptionsField.h in Headers */ = {isa = PBXBuildFile; fileRef = D81C58DC13E697B70048989D /* CSSubscriptionFormOptionsField.h */; };
+		D81C58DF13E697B80048989D /* CSSubscriptionFormOptionsField.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58DD13E697B80048989D /* CSSubscriptionFormOptionsField.m */; };
+		D81C58E013E697B80048989D /* CSSubscriptionFormOptionsField.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58DD13E697B80048989D /* CSSubscriptionFormOptionsField.m */; };
+		D81C58E313E6A1660048989D /* CSSubscriptionFormTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D81C58E113E6A1660048989D /* CSSubscriptionFormTextFieldCell.h */; };
+		D81C58E413E6A1660048989D /* CSSubscriptionFormTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58E213E6A1660048989D /* CSSubscriptionFormTextFieldCell.m */; };
+		D81C58E513E6A1660048989D /* CSSubscriptionFormTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58E213E6A1660048989D /* CSSubscriptionFormTextFieldCell.m */; };
+		D81C58E813E6A2510048989D /* CSSubscriptionFormFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D81C58E613E6A2510048989D /* CSSubscriptionFormFieldCell.h */; };
+		D81C58E913E6A2510048989D /* CSSubscriptionFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58E713E6A2510048989D /* CSSubscriptionFormFieldCell.m */; };
+		D81C58EA13E6A2510048989D /* CSSubscriptionFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81C58E713E6A2510048989D /* CSSubscriptionFormFieldCell.m */; };
 		D837C06C1373DAE900DE99EE /* CSListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AF512BB2B2B007C5783 /* CSListTests.m */; };
 		D84F7C6513E6606400F013A6 /* CSSubscriptionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D84F7C6313E6606400F013A6 /* CSSubscriptionViewController.h */; settings = {ATTRIBUTES = (); }; };
 		D84F7C6613E6606400F013A6 /* CSSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F7C6413E6606400F013A6 /* CSSubscriptionViewController.m */; };
@@ -77,6 +92,16 @@
 		D80B8C3013E2FC2E00F7A5CD /* CSAPI+Segments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Segments.m"; sourceTree = "<group>"; };
 		D80B8C3413E2FE1B00F7A5CD /* CSAPI+Templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Templates.h"; sourceTree = "<group>"; };
 		D80B8C3513E2FE1B00F7A5CD /* CSAPI+Templates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Templates.m"; sourceTree = "<group>"; };
+		D81C58D213E697470048989D /* CSSubscriptionFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriptionFormField.h; sourceTree = "<group>"; };
+		D81C58D313E697470048989D /* CSSubscriptionFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriptionFormField.m; sourceTree = "<group>"; };
+		D81C58D713E697A30048989D /* CSSubscriptionFormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriptionFormTextField.h; sourceTree = "<group>"; };
+		D81C58D813E697A30048989D /* CSSubscriptionFormTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriptionFormTextField.m; sourceTree = "<group>"; };
+		D81C58DC13E697B70048989D /* CSSubscriptionFormOptionsField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriptionFormOptionsField.h; sourceTree = "<group>"; };
+		D81C58DD13E697B80048989D /* CSSubscriptionFormOptionsField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriptionFormOptionsField.m; sourceTree = "<group>"; };
+		D81C58E113E6A1660048989D /* CSSubscriptionFormTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriptionFormTextFieldCell.h; sourceTree = "<group>"; };
+		D81C58E213E6A1660048989D /* CSSubscriptionFormTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriptionFormTextFieldCell.m; sourceTree = "<group>"; };
+		D81C58E613E6A2510048989D /* CSSubscriptionFormFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriptionFormFieldCell.h; sourceTree = "<group>"; };
+		D81C58E713E6A2510048989D /* CSSubscriptionFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriptionFormFieldCell.m; sourceTree = "<group>"; };
 		D84F7C6313E6606400F013A6 /* CSSubscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriptionViewController.h; sourceTree = "<group>"; };
 		D84F7C6413E6606400F013A6 /* CSSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriptionViewController.m; sourceTree = "<group>"; };
 		D857120B13E2D35800725300 /* CSPaginatedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPaginatedResult.h; sourceTree = "<group>"; };
@@ -215,6 +240,16 @@
 			children = (
 				D84F7C6313E6606400F013A6 /* CSSubscriptionViewController.h */,
 				D84F7C6413E6606400F013A6 /* CSSubscriptionViewController.m */,
+				D81C58D213E697470048989D /* CSSubscriptionFormField.h */,
+				D81C58D313E697470048989D /* CSSubscriptionFormField.m */,
+				D81C58D713E697A30048989D /* CSSubscriptionFormTextField.h */,
+				D81C58D813E697A30048989D /* CSSubscriptionFormTextField.m */,
+				D81C58DC13E697B70048989D /* CSSubscriptionFormOptionsField.h */,
+				D81C58DD13E697B80048989D /* CSSubscriptionFormOptionsField.m */,
+				D81C58E113E6A1660048989D /* CSSubscriptionFormTextFieldCell.h */,
+				D81C58E213E6A1660048989D /* CSSubscriptionFormTextFieldCell.m */,
+				D81C58E613E6A2510048989D /* CSSubscriptionFormFieldCell.h */,
+				D81C58E713E6A2510048989D /* CSSubscriptionFormFieldCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -387,6 +422,11 @@
 				D857121213E2DF8100725300 /* CSAPI+Clients.h in Headers */,
 				D80B8C3113E2FC2E00F7A5CD /* CSAPI+Segments.h in Headers */,
 				D80B8C3613E2FE1B00F7A5CD /* CSAPI+Templates.h in Headers */,
+				D81C58D413E697470048989D /* CSSubscriptionFormField.h in Headers */,
+				D81C58D913E697A30048989D /* CSSubscriptionFormTextField.h in Headers */,
+				D81C58DE13E697B80048989D /* CSSubscriptionFormOptionsField.h in Headers */,
+				D81C58E313E6A1660048989D /* CSSubscriptionFormTextFieldCell.h in Headers */,
+				D81C58E813E6A2510048989D /* CSSubscriptionFormFieldCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +556,11 @@
 				D80B8C3213E2FC2E00F7A5CD /* CSAPI+Segments.m in Sources */,
 				D80B8C3713E2FE1B00F7A5CD /* CSAPI+Templates.m in Sources */,
 				D84F7C6613E6606400F013A6 /* CSSubscriptionViewController.m in Sources */,
+				D81C58D513E697470048989D /* CSSubscriptionFormField.m in Sources */,
+				D81C58DA13E697A30048989D /* CSSubscriptionFormTextField.m in Sources */,
+				D81C58DF13E697B80048989D /* CSSubscriptionFormOptionsField.m in Sources */,
+				D81C58E413E6A1660048989D /* CSSubscriptionFormTextFieldCell.m in Sources */,
+				D81C58E913E6A2510048989D /* CSSubscriptionFormFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +574,11 @@
 				D84F7CFF13E6835300F013A6 /* CSAccountTests.m in Sources */,
 				D837C06C1373DAE900DE99EE /* CSListTests.m in Sources */,
 				D891347A13E293970080D1E2 /* CSTestCase.m in Sources */,
+				D81C58D613E697470048989D /* CSSubscriptionFormField.m in Sources */,
+				D81C58DB13E697A30048989D /* CSSubscriptionFormTextField.m in Sources */,
+				D81C58E013E697B80048989D /* CSSubscriptionFormOptionsField.m in Sources */,
+				D81C58E513E6A1660048989D /* CSSubscriptionFormTextFieldCell.m in Sources */,
+				D81C58EA13E6A2510048989D /* CSSubscriptionFormFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
