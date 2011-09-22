@@ -42,7 +42,7 @@
 }
 
 - (void)testAsync:(void (^)(void))testBlock {
-  [self testAsync:testBlock withTimeout:2.0];
+  [self testAsync:testBlock withTimeout:10.0];
 }
 
 - (void)notifyTestFinished {
