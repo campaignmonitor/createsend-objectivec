@@ -7,11 +7,14 @@
 //
 
 #import "CSAPIRequest.h"
+#import "AFRestClient.h"
 
 typedef void (^CSAPICompletionHandler)(CSAPIRequest* request);
 typedef void (^CSAPIErrorHandler)(NSError* error);
 
 @interface CSAPI : NSObject
+
+@property (nonatomic, retain) AFRestClient* restClient;
 
 @property (nonatomic, copy) NSString* siteURL;
 @property (nonatomic, copy) NSString* APIKey;

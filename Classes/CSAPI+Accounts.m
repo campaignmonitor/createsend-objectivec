@@ -7,25 +7,25 @@
 //
 
 #import "CSAPI+Accounts.h"
+#import "AFRestClient.h"
 
 @implementation CSAPI (Accounts)
 
 - (void)getAPIKey:(void (^)(NSString* APIKey))completionHandler
      errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSDictionary* queryParameters = [NSDictionary dictionaryWithObject:self.siteURL forKey:@"siteurl"];
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPISlug:@"apikey"
-                                                   queryParameters:queryParameters];
+  NSDictionary* queryParameters = [NSDictionary dictionaryWithObject:self.siteURL
+                                                              forKey:@"siteurl"];
   
-  request.username = self.username;
-  request.password = self.password;
+  [self.restClient setAuthorizationHeaderWithUsername:self.username
+                                             password:self.password];
   
-  [request setCompletionBlock:^{
-    completionHandler([request.parsedResponse valueForKey:@"ApiKey"]);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:@"apikey.json"
+                parameters:queryParameters
+                   success:^(id response) {
+                     completionHandler([response valueForKey:@"ApiKey"]);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getCountries:(void (^)(NSArray* countries))completionHandler

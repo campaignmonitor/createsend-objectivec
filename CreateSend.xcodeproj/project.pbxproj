@@ -86,6 +86,8 @@
 		D891348813E2A84A0080D1E2 /* CSAPI+Subscribers.h in Headers */ = {isa = PBXBuildFile; fileRef = D891348613E2A84A0080D1E2 /* CSAPI+Subscribers.h */; };
 		D891348913E2A84A0080D1E2 /* CSAPI+Subscribers.m in Sources */ = {isa = PBXBuildFile; fileRef = D891348713E2A84A0080D1E2 /* CSAPI+Subscribers.m */; };
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
+		D8D06C3F142B1D1400BE09D7 /* CSRestClient.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D06C3D142B1D1400BE09D7 /* CSRestClient.h */; };
+		D8D06C40142B1D1400BE09D7 /* CSRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D06C3E142B1D1400BE09D7 /* CSRestClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +203,8 @@
 		D8CE1E0812B7546D002D871F /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = External/ASIHTTPRequest/Classes/ASIProgressDelegate.h; sourceTree = "<group>"; };
 		D8CE1E1812B754A0002D871F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = External/ASIHTTPRequest/External/Reachability/Reachability.h; sourceTree = "<group>"; };
 		D8CE1E1912B754A0002D871F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = External/ASIHTTPRequest/External/Reachability/Reachability.m; sourceTree = "<group>"; };
+		D8D06C3D142B1D1400BE09D7 /* CSRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRestClient.h; sourceTree = "<group>"; };
+		D8D06C3E142B1D1400BE09D7 /* CSRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRestClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +332,8 @@
 		D88969AA12BAE173007C5783 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D8D06C3D142B1D1400BE09D7 /* CSRestClient.h */,
+				D8D06C3E142B1D1400BE09D7 /* CSRestClient.m */,
 				D889681312B9D65E007C5783 /* CSAPIRequest.h */,
 				D889681412B9D65E007C5783 /* CSAPIRequest.m */,
 				D891346713E27CBB0080D1E2 /* CSAPI.h */,
@@ -501,6 +507,7 @@
 				D860F1B5142B057000074658 /* NSMutableURLRequest+AFNetworking.h in Headers */,
 				D860F1B7142B057000074658 /* NSString+AFNetworking.h in Headers */,
 				D860F1B9142B057000074658 /* UIImage+AFNetworking.h in Headers */,
+				D8D06C3F142B1D1400BE09D7 /* CSRestClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +651,7 @@
 				D860F1B6142B057000074658 /* NSMutableURLRequest+AFNetworking.m in Sources */,
 				D860F1B8142B057000074658 /* NSString+AFNetworking.m in Sources */,
 				D860F1BA142B057000074658 /* UIImage+AFNetworking.m in Sources */,
+				D8D06C40142B1D1400BE09D7 /* CSRestClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

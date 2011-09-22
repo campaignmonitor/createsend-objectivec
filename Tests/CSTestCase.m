@@ -37,7 +37,7 @@
 
 - (void)testAsync:(void (^)(void))testBlock withTimeout:(NSTimeInterval)timeout {
   [self prepare];
-  testBlock();    
+  testBlock();
   [self waitForStatus:kGHUnitWaitStatusSuccess timeout:timeout];
 }
 
