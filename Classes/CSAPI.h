@@ -11,6 +11,9 @@
 
 typedef void (^CSAPIErrorHandler)(NSError* error);
 
+/**
+ Convenient blocks-based interface to the Campaign Monitor API.
+ */
 @interface CSAPI : NSObject
 
 @property (nonatomic, retain) CSRestClient* restClient;
@@ -20,7 +23,29 @@ typedef void (^CSAPIErrorHandler)(NSError* error);
 @property (nonatomic, copy) NSString* username;
 @property (nonatomic, copy) NSString* password;
 
+/**
+ Creates and returns a CSAPI instance for interacting with the Campaign Monitor API.
+
+ @param siteURL The site URL for your Campaign Monitor account. e.g. `@"http://myaccountname.createsend.com/"`
+
+ @param APIKey The API key/token for your Campaign Monitor account.
+
+ @return A CSAPI instance.
+ */
 - (id)initWithSiteURL:(NSString *)siteURL APIKey:(NSString *)APIKey;
+
+/**
+ Creates and returns a CSAPI instance, however it's only really useful if you
+ don't have access to your API key and would like to request it via the API.
+
+ @param siteURL The site URL for your Campaign Monitor account. e.g. `@"http://myaccountname.createsend.com/"`
+ @param username Your Campaign Monitor account username.
+ @param password Your Campaign Monitor account password.
+
+ @return A CSAPI instance.
+
+ @see getAPIKey:errorHandler:
+ */
 - (id)initWithSiteURL:(NSString *)siteURL username:(NSString *)username password:(NSString *)password;
 
 + (NSDateFormatter *)sharedDateFormatter;
