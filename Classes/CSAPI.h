@@ -6,11 +6,9 @@
 //  Copyright 2011 Nathan de Vries. All rights reserved.
 //
 
-#import "CSAPIRequest.h"
 #import "CSRestClient.h"
 #import "JSONKit.h"
 
-typedef void (^CSAPICompletionHandler)(CSAPIRequest* request);
 typedef void (^CSAPIErrorHandler)(NSError* error);
 
 @interface CSAPI : NSObject

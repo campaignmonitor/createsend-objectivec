@@ -218,7 +218,7 @@
                      completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
                           errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSDictionary* queryParameters = [CSAPIRequest paginationParametersWithPage:page
+  NSDictionary* queryParameters = [CSAPI paginationParametersWithPage:page
                                                                     pageSize:pageSize
                                                                   orderField:orderField
                                                                    ascending:ascending];

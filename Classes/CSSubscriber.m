@@ -6,8 +6,8 @@
 //  Copyright 2010 Nathan de Vries. All rights reserved.
 //
 
+#import "CSAPI.h"
 #import "CSSubscriber.h"
-#import "CSAPIRequest.h"
 
 @implementation CSSubscriber
 
@@ -39,7 +39,7 @@
 
   subscriber.state = [subscriberDict valueForKey:@"State"];
 
-  NSDateFormatter* formatter = [CSAPIRequest sharedDateFormatter];
+  NSDateFormatter* formatter = [CSAPI sharedDateFormatter];
   subscriber.date = [formatter dateFromString:[subscriberDict valueForKey:@"Date"]];
 
   return subscriber;

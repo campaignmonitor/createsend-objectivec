@@ -143,13 +143,13 @@
                                errorHandler:(CSAPIErrorHandler)errorHandler {
   
   NSMutableDictionary* queryParameters;
-  queryParameters = [[[CSAPIRequest paginationParametersWithPage:page
+  queryParameters = [[[CSAPI paginationParametersWithPage:page
                                                         pageSize:pageSize
                                                       orderField:orderField
                                                        ascending:ascending] mutableCopy] autorelease];
   
   if (date) {
-    NSString* dateString = [[CSAPIRequest sharedDateFormatter] stringFromDate:date];
+    NSString* dateString = [[CSAPI sharedDateFormatter] stringFromDate:date];
     [queryParameters setObject:dateString forKey:@"Date"];
   }
   
