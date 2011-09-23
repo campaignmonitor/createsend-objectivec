@@ -7,7 +7,6 @@
 //
 
 #import "CSAPI+Accounts.h"
-#import "AFRestClient.h"
 
 @implementation CSAPI (Accounts)
 
@@ -16,9 +15,6 @@
   
   NSDictionary* queryParameters = [NSDictionary dictionaryWithObject:self.siteURL
                                                               forKey:@"siteurl"];
-  
-  [self.restClient setAuthorizationHeaderWithUsername:self.username
-                                             password:self.password];
   
   [self.restClient getPath:@"apikey.json"
                 parameters:queryParameters
@@ -31,42 +27,32 @@
 - (void)getCountries:(void (^)(NSArray* countries))completionHandler
         errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"countries"];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:@"countries.json"
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getTimezones:(void (^)(NSArray* timezones))completionHandler
         errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"timezones"];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:@"timezones.json"
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getSystemDate:(void (^)(NSDate* systemDate))completionHandler
          errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"systemdate"];
-  
-  [request setCompletionBlock:^{
-    NSDateFormatter* formatter = [CSAPIRequest sharedDateFormatter];
-    NSDate* systemDate = [formatter dateFromString:[request.parsedResponse valueForKey:@"SystemDate"]];
-    completionHandler(systemDate);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:@"systemdate.json"
+                parameters:nil
+                   success:^(id response) {
+                     NSDateFormatter* formatter = [CSAPI sharedDateFormatter];
+                     NSDate* systemDate = [formatter dateFromString:[response valueForKey:@"SystemDate"]];
+                     completionHandler(systemDate);
+                   }
+                   failure:errorHandler];
 }
 
 @end

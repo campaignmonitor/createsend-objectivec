@@ -22,7 +22,7 @@
     self.siteURL = siteURL;
     
     NSURL* baseURL = [NSURL URLWithString:@"http://api.createsend.com/api/v3/"];
-    self.restClient = [[[AFRestClient alloc] initWithBaseURL:baseURL] autorelease];
+    self.restClient = [[[CSRestClient alloc] initWithBaseURL:baseURL] autorelease];
   }
   return self;
 }
@@ -32,6 +32,9 @@
   
   if ((self = [self initWithSiteURL:siteURL])) {
     self.APIKey = APIKey;
+    
+    [self.restClient setAuthorizationHeaderWithUsername:APIKey
+                                               password:@""];
   }
   return self;
 }
@@ -43,6 +46,9 @@
   if ((self = [self initWithSiteURL:siteURL])) {
     self.username = username;
     self.password = password;
+    
+    [self.restClient setAuthorizationHeaderWithUsername:username
+                                               password:password];
   }
   return self;
 }
@@ -55,6 +61,33 @@
   self.password = nil;
   
   [super dealloc];
+}
+
++ (NSDateFormatter *)sharedDateFormatter {
+  static dispatch_once_t predicate;
+  static NSDateFormatter* sharedDateFormatter = nil;
+  
+  dispatch_once(&predicate, ^{
+    sharedDateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale* locale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease];
+    [sharedDateFormatter setLocale:locale];
+    sharedDateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+  });
+  
+  return sharedDateFormatter;
+}
+
++ (NSDictionary *)paginationParametersWithPage:(NSUInteger)page
+                                      pageSize:(NSUInteger)pageSize
+                                    orderField:(NSString *)orderField
+                                     ascending:(BOOL)ascending {
+  
+  return [NSDictionary dictionaryWithObjectsAndKeys:
+          [NSString stringWithFormat:@"%d", page], @"page",
+          [NSString stringWithFormat:@"%d", pageSize], @"pagesize",
+          orderField, @"orderfield",
+          (ascending ? @"asc" : @"desc"), @"orderdirection",
+          nil];
 }
 
 @end

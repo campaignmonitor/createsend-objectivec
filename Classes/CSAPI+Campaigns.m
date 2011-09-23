@@ -23,41 +23,37 @@
                  completionHandler:(void (^)(NSString* campaignID))completionHandler
                       errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"campaigns/%@",
-                                                                   clientID]];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"campaigns/%@.json", clientID]
+                                                         parameters:nil];
   
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           name, @"Name",
-                           subject, @"Subject",
-                           fromName, @"FromName",
-                           fromEmail, @"FromEmail",
-                           replyTo, @"ReplyTo",
-                           HTMLURLString, @"HtmlUrl",
-                           textURLString, @"TextUrl",
-                           listIDs, @"ListIDs",
-                           segmentIDs, @"SegmentIDs",
-                           nil];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     name, @"Name",
+                                     subject, @"Subject",
+                                     fromName, @"FromName",
+                                     fromEmail, @"FromEmail",
+                                     replyTo, @"ReplyTo",
+                                     HTMLURLString, @"HtmlUrl",
+                                     textURLString, @"TextUrl",
+                                     listIDs, @"ListIDs",
+                                     segmentIDs, @"SegmentIDs",
+                                     nil];
   
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
+  [request setHTTPBody:[requestBodyObject JSONData]];
   
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:completionHandler
+                                           failure:errorHandler];
 }
 
 - (void)deleteCampaignWithID:(NSString *)campaignID
            completionHandler:(void (^)(void))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"campaigns/%@", campaignID]];
-  request.requestMethod = @"DELETE";
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient deletePath:[NSString stringWithFormat:@"campaigns/%@.json", campaignID]
+                   parameters:nil
+                      success:^(id response) { completionHandler(); }
+                      failure:errorHandler];
 }
 
 - (void)sendCampaignWithCampaignID:(NSString *)campaignID
@@ -66,16 +62,19 @@
                  completionHandler:(void (^)(void))completionHandler
                       errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"campaigns/%@/send", campaignID]];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"campaigns/%@/send.json", campaignID]
+                                                         parameters:nil];
   
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           emailAddress, @"ConfirmationEmail",
-                           sendDateString, @"SendDate", nil];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     emailAddress, @"ConfirmationEmail",
+                                     sendDateString, @"SendDate", nil];
   
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [request setHTTPBody:[requestBodyObject JSONData]];
+  
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:^(id response) { completionHandler(); }
+                                           failure:errorHandler];
 }
 
 - (void)sendCampaignImmediatelyWithCampaignID:(NSString *)campaignID
@@ -112,33 +111,25 @@
                        completionHandler:(void (^)(NSDictionary* summaryData))completionHandler
                             errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"campaigns/%@/summary", campaignID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"campaigns/%@/summary.json", campaignID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getCampaignListsAndSegmentsWithCampaignID:(NSString *)campaignID
                                 completionHandler:(void (^)(NSArray* lists, NSArray* segments))completionHandler
                                      errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"campaigns/%@/listsandsegments", campaignID]];
-  
-  [request setCompletionBlock:^{
-    NSArray* lists = [request.parsedResponse valueForKey:@"Lists"];
-    NSArray* segments = [request.parsedResponse valueForKey:@"Segments"];
-    
-    completionHandler(lists, segments);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"campaigns/%@/listsandsegments.json", campaignID]
+                parameters:nil
+                   success:^(id response) {
+                     NSArray* lists = [response valueForKey:@"Lists"];
+                     NSArray* segments = [response valueForKey:@"Segments"];
+                     
+                     completionHandler(lists, segments);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getCampaignRecipientsWithCampaignID:(NSString *)campaignID
@@ -162,17 +153,14 @@
     [queryParameters setObject:dateString forKey:@"Date"];
   }
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"campaigns/%@/%@", campaignID, slug]
-                                                  queryParameters:queryParameters];
   
-  [request setCompletionBlock:^{
-    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
-    completionHandler(result);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"campaigns/%@/%@.json", campaignID, slug]
+                parameters:queryParameters
+                   success:^(id response) {
+                     CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:response];
+                     completionHandler(result);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getCampaignRecipientsWithCampaignID:(NSString *)campaignID

@@ -18,21 +18,16 @@
                   completionHandler:(void (^)(NSString* clientID))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"clients"];
-  
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           companyName, @"CompanyName",
-                           contactName, @"ContactName",
-                           emailAddress, @"EmailAddress",
-                           country, @"Country",
-                           timezone, @"TimeZone", nil];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous]; 
+  [self.restClient postPath:@"clients.json"
+                 parameters:nil
+                 bodyObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                             companyName, @"CompanyName",
+                             contactName, @"ContactName",
+                             emailAddress, @"EmailAddress",
+                             country, @"Country",
+                             timezone, @"TimeZone", nil]
+                    success:completionHandler
+                    failure:errorHandler];
 }
 
 - (void)updateClientWithClientID:(NSString *)clientID
@@ -44,32 +39,26 @@
                completionHandler:(void (^)(void))completionHandler
                     errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
-                                                             slug:[NSString stringWithFormat:@"clients/%@/setbasics", clientID]];
-  request.requestMethod = @"PUT";
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           companyName, @"CompanyName",
-                           contactName, @"ContactName",
-                           emailAddress, @"EmailAddress",
-                           country, @"Country",
-                           timezone, @"TimeZone", nil];
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient putPath:[NSString stringWithFormat:@"clients/%@/setbasics.json", clientID]
+                parameters:nil
+                bodyObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                            companyName, @"CompanyName",
+                            contactName, @"ContactName",
+                            emailAddress, @"EmailAddress",
+                            country, @"Country",
+                            timezone, @"TimeZone", nil]
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
 - (void)deleteClientWithID:(NSString *)clientID
            completionHandler:(void (^)(void))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@", clientID]];
-  request.requestMethod = @"DELETE";
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient deletePath:[NSString stringWithFormat:@"clients/%@.json", clientID]
+                   parameters:nil
+                      success:^(id response) { completionHandler(); }
+                      failure:errorHandler];
 }
 
 - (void)setClientAccessWithClientID:(NSString *)clientID
@@ -79,17 +68,14 @@
                   completionHandler:(void (^)(void))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
-                                                             slug:[NSString stringWithFormat:@"clients/%@/setaccess", clientID]];
-  request.requestMethod = @"PUT";
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           username, @"Username",
-                           password, @"Password",
-                           [NSString stringWithFormat:@"%d", accessLevel], @"AccessLevel", nil];
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient putPath:[NSString stringWithFormat:@"clients/%@/setaccess.json", clientID]
+                parameters:nil
+                bodyObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                            username, @"Username",
+                            password, @"Password",
+                            [NSString stringWithFormat:@"%d", accessLevel], @"AccessLevel", nil]
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
 - (void)setClientAccessWithClientID:(NSString *)clientID
@@ -97,15 +83,12 @@
                   completionHandler:(void (^)(void))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
-                                                             slug:[NSString stringWithFormat:@"clients/%@/setaccess", clientID]];
-  request.requestMethod = @"PUT";
-  request.requestObject = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d", accessLevel]
-                                                      forKey:@"AccessLevel"];
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient putPath:[NSString stringWithFormat:@"clients/%@/setaccess.json", clientID]
+                parameters:nil
+                bodyObject:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d", accessLevel]
+                                                       forKey:@"AccessLevel"]
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
 - (void)setClientPAYGBillingSettingsWithClientID:(NSString *)clientID
@@ -119,21 +102,18 @@
                                completionHandler:(void (^)(void))completionHandler
                                     errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
-                                                             slug:[NSString stringWithFormat:@"clients/%@/setpaygbilling", clientID]];
-  request.requestMethod = @"PUT";
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           currency, @"Currency",
-                           [NSNumber numberWithBool:canPurchaseCredits], @"CanPurchaseCredits",
-                           [NSNumber numberWithBool:clientPays], @"ClientPays",
-                           [NSNumber numberWithFloat:markupPercentage], @"MarkupPercentage",
-                           [NSNumber numberWithFloat:markupOnDelivery], @"MarkupOnDelivery",
-                           [NSNumber numberWithFloat:markupPerRecipient], @"MarkupPerRecipient",
-                           [NSNumber numberWithFloat:markupOnDesignSpamTest], @"MarkupOnDesignSpamTest", nil];
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient putPath:[NSString stringWithFormat:@"clients/%@/setpaygbilling.json", clientID]
+                parameters:nil
+                bodyObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                            currency, @"Currency",
+                            [NSNumber numberWithBool:canPurchaseCredits], @"CanPurchaseCredits",
+                            [NSNumber numberWithBool:clientPays], @"ClientPays",
+                            [NSNumber numberWithFloat:markupPercentage], @"MarkupPercentage",
+                            [NSNumber numberWithFloat:markupOnDelivery], @"MarkupOnDelivery",
+                            [NSNumber numberWithFloat:markupPerRecipient], @"MarkupPerRecipient",
+                            [NSNumber numberWithFloat:markupOnDesignSpamTest], @"MarkupOnDesignSpamTest", nil]
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
 - (void)setClientMonthlyBillingWithClientID:(NSString *)clientID
@@ -143,122 +123,91 @@
                           completionHandler:(void (^)(void))completionHandler
                                errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey 
-                                                             slug:[NSString stringWithFormat:@"clients/%@/setmonthlybilling", clientID]];
-  request.requestMethod = @"PUT";  
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           currency, @"Currency",
-                           [NSNumber numberWithBool:clientPays], @"ClientPays",
-                           [NSNumber numberWithFloat:markupPercentage], @"MarkupPercentage", nil];
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient putPath:[NSString stringWithFormat:@"clients/%@/setmonthlybilling.json", clientID]
+                parameters:nil
+                bodyObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                            currency, @"Currency",
+                            [NSNumber numberWithBool:clientPays], @"ClientPays",
+                            [NSNumber numberWithFloat:markupPercentage], @"MarkupPercentage", nil]
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
-- (void)getClients:(void (^)(NSArray* clients))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler {
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey slug:@"clients"];
+- (void)getClients:(void (^)(NSArray* clients))completionHandler
+      errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  [request setCompletionBlock:^{
-    NSMutableArray* clients = [NSMutableArray array];
-    for (NSDictionary* clientDict in request.parsedResponse) {
-      [clients addObject:[CSClient clientWithDictionary:clientDict]];
-    }
-    completionHandler([NSArray arrayWithArray:clients]);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:@"clients.json"
+                parameters:nil
+                   success:^(id response) {
+                     NSMutableArray* clients = [NSMutableArray array];
+                     
+                     for (NSDictionary* clientDict in response) {
+                       [clients addObject:[CSClient clientWithDictionary:clientDict]];
+                     }
+                     
+                     completionHandler([NSArray arrayWithArray:clients]);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getClientDetailsWithClientID:(NSString *)clientID
                    completionHandler:(void (^)(NSDictionary* clientData))completionHandler
                         errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@", clientID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getSentCampaignsWithClientID:(NSString *)clientID
                    completionHandler:(void (^)(NSArray* campaigns))completionHandler
                         errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/campaigns", clientID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/campaigns.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getScheduledCampaignsWithClientID:(NSString *)clientID
                         completionHandler:(void (^)(NSArray* campaigns))completionHandler
                              errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/scheduled", clientID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/scheduled.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getDraftCampaignsWithClientID:(NSString *)clientID
                     completionHandler:(void (^)(NSArray* campaigns))completionHandler
                          errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/drafts", clientID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/drafts.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getSubscriberListsWithClientID:(NSString *)clientID
                      completionHandler:(void (^)(NSArray* subscriberLists))completionHandler
                           errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/lists", clientID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/lists.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getSegmentsWithClientID:(NSString *)clientID
               completionHandler:(void (^)(NSArray* segments))completionHandler
                    errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/segments", clientID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/segments.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getSuppressionListWithClientID:(NSString *)clientID
@@ -274,33 +223,23 @@
                                                                   orderField:orderField
                                                                    ascending:ascending];
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/suppressionlist", clientID]
-                                                  queryParameters:queryParameters];
-  
-  
-  [request setCompletionBlock:^{
-    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
-    completionHandler(result);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/suppressionlist.json", clientID]
+                parameters:queryParameters
+                   success:^(id response) {
+                     CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:response];
+                     completionHandler(result);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getTemplatesWithClientID:(NSString *)clientID
                completionHandler:(void (^)(NSArray* templates))completionHandler
                     errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/templates", clientID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/templates.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 @end

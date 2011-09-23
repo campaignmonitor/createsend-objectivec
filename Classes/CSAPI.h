@@ -7,14 +7,15 @@
 //
 
 #import "CSAPIRequest.h"
-#import "AFRestClient.h"
+#import "CSRestClient.h"
+#import "JSONKit.h"
 
 typedef void (^CSAPICompletionHandler)(CSAPIRequest* request);
 typedef void (^CSAPIErrorHandler)(NSError* error);
 
 @interface CSAPI : NSObject
 
-@property (nonatomic, retain) AFRestClient* restClient;
+@property (nonatomic, retain) CSRestClient* restClient;
 
 @property (nonatomic, copy) NSString* siteURL;
 @property (nonatomic, copy) NSString* APIKey;
@@ -23,6 +24,13 @@ typedef void (^CSAPIErrorHandler)(NSError* error);
 
 - (id)initWithSiteURL:(NSString *)siteURL APIKey:(NSString *)APIKey;
 - (id)initWithSiteURL:(NSString *)siteURL username:(NSString *)username password:(NSString *)password;
+
++ (NSDateFormatter *)sharedDateFormatter;
+
++ (NSDictionary *)paginationParametersWithPage:(NSUInteger)page
+                                      pageSize:(NSUInteger)pageSize
+                                    orderField:(NSString *)orderField
+                                     ascending:(BOOL)ascending;
 
 @end
 

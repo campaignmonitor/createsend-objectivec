@@ -18,22 +18,22 @@
              completionHandler:(void (^)(NSString* listID))completionHandler
                   errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@", clientID]];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"lists/%@.json", clientID]
+                                                         parameters:nil];
   
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           title, @"Title",
-                           unsubscribePage, @"UnsubscribePage",
-                           confirmationSuccessPage, @"ConfirmationSuccessPage",
-                           [NSNumber numberWithBool:shouldConfirmOptIn], @"ConfirmedOptIn",
-                           nil];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     title, @"Title",
+                                     unsubscribePage, @"UnsubscribePage",
+                                     confirmationSuccessPage, @"ConfirmationSuccessPage",
+                                     [NSNumber numberWithBool:shouldConfirmOptIn], @"ConfirmedOptIn",
+                                     nil];
   
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
+  [request setHTTPBody:[requestBodyObject JSONData]];
   
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:completionHandler
+                                           failure:errorHandler];
 }
 
 - (void)updateListWithListID:(NSString *)listID
@@ -44,82 +44,72 @@
            completionHandler:(void (^)(void))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@", listID]];
-  request.requestMethod = @"PUT";
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           title, @"Title",
-                           unsubscribePage, @"UnsubscribePage",
-                           confirmationSuccessPage, @"ConfirmationSuccessPage",
-                           [NSNumber numberWithBool:shouldConfirmOptIn], @"ConfirmedOptIn", nil];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"PUT"
+                                                               path:[NSString stringWithFormat:@"lists/%@.json", listID]
+                                                         parameters:nil];
   
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     title, @"Title",
+                                     unsubscribePage, @"UnsubscribePage",
+                                     confirmationSuccessPage, @"ConfirmationSuccessPage",
+                                     [NSNumber numberWithBool:shouldConfirmOptIn], @"ConfirmedOptIn", nil];
+  
+  [request setHTTPBody:[requestBodyObject JSONData]];
+  
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:^(id response) { completionHandler(); }
+                                           failure:errorHandler];
 }
 
 - (void)getListsWithClientID:(NSString *)clientID
            completionHandler:(void (^)(NSArray* lists))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"clients/%@/lists",
-                                                                   clientID]];
-  
-  [request setCompletionBlock:^{
-    NSMutableArray* lists = [NSMutableArray array];
-    for (NSDictionary* listDict in request.parsedResponse) {
-      [lists addObject:[CSList listWithDictionary:listDict]];
-    }
-    completionHandler([NSArray arrayWithArray:lists]);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/lists.json", clientID]
+                parameters:nil
+                   success:^(NSArray* listDicts) {
+                     NSMutableArray* lists = [NSMutableArray arrayWithCapacity:[listDicts count]];
+                     
+                     for (NSDictionary* listDict in listDicts) {
+                       [lists addObject:[CSList listWithDictionary:listDict]];
+                     }
+                     
+                     completionHandler([NSArray arrayWithArray:lists]);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)deleteListWithID:(NSString *)listID
        completionHandler:(void (^)(void))completionHandler
             errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@", listID]];
-  request.requestMethod = @"DELETE";
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient deletePath:[NSString stringWithFormat:@"lists/%@.json", listID]
+                   parameters:nil
+                      success:^(id response) { completionHandler(); }
+                      failure:errorHandler];
 }
 
 - (void)getListDetailsWithListID:(NSString *)listID
                completionHandler:(void (^)(CSList* list))completionHandler
                     errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@", listID]];
-  
-  [request setCompletionBlock:^{
-    CSList* list = [CSList listWithDictionary:request.parsedResponse];
-    completionHandler(list);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"lists/%@.json", listID]
+                parameters:nil
+                   success:^(NSDictionary* listDict) {
+                     CSList* list = [CSList listWithDictionary:listDict];
+                     completionHandler(list);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getListStatisticsWithListID:(NSString *)listID
                   completionHandler:(void (^)(NSDictionary* listStatisticsData))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/stats", listID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"lists/%@/stats.json", listID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)getSubscribersWithListID:(NSString *)listID
@@ -141,17 +131,14 @@
   NSString* dateString = [[CSAPIRequest sharedDateFormatter] stringFromDate:date];
   [queryParameters setObject:dateString forKey:@"Date"];
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/%@", listID, slug]
-                                                  queryParameters:queryParameters];
   
-  [request setCompletionBlock:^{
-    CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:request.parsedResponse];
-    completionHandler(result);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"lists/%@/%@.json", listID, slug]
+                parameters:queryParameters
+                   success:^(id response) {
+                     CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:response];
+                     completionHandler(result);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getActiveSubscribersWithListID:(NSString *)listID
@@ -218,15 +205,10 @@
                 completionHandler:(void (^)(NSArray* listSegments))completionHandler
                      errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/segments", listID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"lists/%@/segments.json", listID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 # pragma mark - Custom Fields
@@ -235,19 +217,18 @@
                 completionHandler:(void (^)(NSArray* customFields))completionHandler
                      errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/customfields", listID]];
-  
-  [request setCompletionBlock:^{
-    NSMutableArray* customFields = [NSMutableArray array];
-    for (NSDictionary* customFieldDict in request.parsedResponse) {
-      [customFields addObject:[CSCustomField customFieldWithDictionary:customFieldDict]];
-    }
-    completionHandler([NSArray arrayWithArray:customFields]);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"lists/%@/customfields.json", listID]
+                parameters:nil
+                   success:^(id response) {
+                     NSMutableArray* customFields = [NSMutableArray array];
+                     
+                     for (NSDictionary* customFieldDict in response) {
+                       [customFields addObject:[CSCustomField customFieldWithDictionary:customFieldDict]];
+                     }
+                     
+                     completionHandler([NSArray arrayWithArray:customFields]);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)createCustomFieldWithListID:(NSString *)listID
@@ -255,26 +236,24 @@
                   completionHandler:(void (^)(NSString* customFieldKey))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/customfields", listID]];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"lists/%@/customfields.json", listID]
+                                                         parameters:nil];
   
-  NSMutableDictionary* requestObject = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                        customField.name, @"FieldName",
-                                        [customField dataTypeString], @"DataType", nil];
+  NSMutableDictionary* requestBodyObject = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                            customField.name, @"FieldName",
+                                            [customField dataTypeString], @"DataType", nil];
   
   if (customField.options) {
-    [requestObject setObject:customField.options
-                      forKey:@"Options"];
+    [requestBodyObject setObject:customField.options
+                          forKey:@"Options"];
   }
   
-  request.requestObject = requestObject;
+  [request setHTTPBody:[requestBodyObject JSONData]];
   
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:completionHandler
+                                           failure:errorHandler];
 }
 
 - (void)updateCustomFieldWithListID:(NSString *)listID
@@ -284,17 +263,20 @@
                   completionHandler:(void (^)(void))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSString* slug = [NSString stringWithFormat:@"lists/%@/customfields/%@/options", listID, fieldKey];
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:slug];
-  request.requestMethod = @"PUT";
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           options, @"Options",
-                           [NSNumber numberWithBool:keepExisting], @"KeepExistingOptions", nil];
+  NSString* path = [NSString stringWithFormat:@"lists/%@/customfields/%@/options.json", listID, fieldKey];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"PUT"
+                                                               path:path
+                                                         parameters:nil];
   
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     options, @"Options",
+                                     [NSNumber numberWithBool:keepExisting], @"KeepExistingOptions", nil];
+  
+  [request setHTTPBody:[requestBodyObject JSONData]];
+  
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:^(id response) { completionHandler(); }
+                                           failure:errorHandler];
 }
 
 - (void)deleteCustomFieldWithListID:(NSString *)listID
@@ -302,14 +284,10 @@
                   completionHandler:(void (^)(void))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSString* slug = [NSString stringWithFormat:@"lists/%@/customfields/%@", listID, fieldKey];
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:slug];
-  request.requestMethod = @"DELETE";
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient deletePath:[NSString stringWithFormat:@"lists/%@/customfields/%@.json", listID, fieldKey]
+                   parameters:nil
+                      success:^(id response) { completionHandler(); }
+                      failure:errorHandler];
 }
 
 # pragma mark - Webhooks
@@ -321,35 +299,30 @@
               completionHandler:(void (^)(NSString* webhookID))completionHandler
                    errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/webhooks", listID]];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"lists/%@/webhooks.json", listID]
+                                                         parameters:nil];
   
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           events, @"Events",
-                           URLString, @"Url",
-                           payloadFormat, @"PayloadFormat", nil];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     events, @"Events",
+                                     URLString, @"Url",
+                                     payloadFormat, @"PayloadFormat", nil];
   
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
+  [request setHTTPBody:[requestBodyObject JSONData]];
   
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:completionHandler
+                                           failure:errorHandler];
 }
 
 - (void)getWebhooksWithListID:(NSString *)listID
             completionHandler:(void (^)(NSArray* webhooks))completionHandler
                  errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"lists/%@/webhooks", listID]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"lists/%@/webhooks.json", listID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)testWebhookWithListID:(NSString *)listID
@@ -357,13 +330,10 @@
             completionHandler:(void (^)(void))completionHandler
                  errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@/test", listID, webhookID];
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:slug];
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"lists/%@/webhooks/%@/test.json", listID, webhookID]
+                parameters:nil
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
 - (void)deleteWebhookWithListID:(NSString *)listID
@@ -371,14 +341,10 @@
               completionHandler:(void (^)(void))completionHandler
                    errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@", listID, webhookID];
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:slug];
-  request.requestMethod = @"DELETE";
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];  
+  [self.restClient deletePath:[NSString stringWithFormat:@"lists/%@/webhooks/%@.json", listID, webhookID]
+                   parameters:nil
+                      success:^(id response) { completionHandler(); }
+                      failure:errorHandler];
 }
 
 - (void)activateWebhookWithListID:(NSString *)listID
@@ -386,14 +352,10 @@
                 completionHandler:(void (^)(void))completionHandler
                      errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@/activate", listID, webhookID];
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:slug];
-  request.requestMethod = @"PUT";
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];  
+  [self.restClient putPath:[NSString stringWithFormat:@"lists/%@/webhooks/%@/activate.json", listID, webhookID]
+                parameters:nil
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
 - (void)deactivateWebhookWithListID:(NSString *)listID
@@ -401,14 +363,10 @@
                   completionHandler:(void (^)(void))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  NSString* slug = [NSString stringWithFormat:@"lists/%@/webhooks/%@/deactivate", listID, webhookID];
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:slug];
-  request.requestMethod = @"PUT";
-  
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];  
+  [self.restClient putPath:[NSString stringWithFormat:@"lists/%@/webhooks/%@/deactivate.json", listID, webhookID]
+                parameters:nil
+                   success:^(id response) { completionHandler(); }
+                   failure:errorHandler];
 }
 
 @end

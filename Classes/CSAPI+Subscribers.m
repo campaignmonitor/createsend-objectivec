@@ -18,23 +18,22 @@
             completionHandler:(void (^)(NSString* subscribedAddress))completionHandler
                  errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"subscribers/%@", listID]];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"subscribers/%@.json", listID]
+                                                         parameters:nil];
   
-  NSDictionary* requestObject = [[[CSSubscriber dictionaryWithEmailAddress:emailAddress
-                                                                      name:name
-                                                         customFieldValues:customFieldValues] mutableCopy] autorelease];
-  [requestObject setValue:[NSNumber numberWithBool:shouldResubscribe]
-                   forKey:@"Resubscribe"];
+  NSDictionary* requestBodyObject = [[[CSSubscriber dictionaryWithEmailAddress:emailAddress
+                                                                          name:name
+                                                             customFieldValues:customFieldValues] mutableCopy] autorelease];
   
-  request.requestObject = requestObject;
+  [requestBodyObject setValue:[NSNumber numberWithBool:shouldResubscribe]
+                       forKey:@"Resubscribe"];
   
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
+  [request setHTTPBody:[requestBodyObject JSONData]];
   
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:completionHandler
+                                           failure:errorHandler];
 }
 
 - (void)updateSubscriptionWithListID:(NSString *)listID
@@ -46,23 +45,22 @@
                    completionHandler:(void (^)(void))completionHandler
                         errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"subscribers/%@", listID]
-                                                  queryParameters:[NSDictionary dictionaryWithObject:currentEmailAdddress
-                                                                                              forKey:@"email"]];
-  request.requestMethod = @"PUT";
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"subscribers/%@.json", listID]
+                                                         parameters:[NSDictionary dictionaryWithObject:currentEmailAdddress forKey:@"email"]];
   
-  NSDictionary* requestObject = [[[CSSubscriber dictionaryWithEmailAddress:newEmailAddress
-                                                                      name:name
-                                                         customFieldValues:customFieldValues] mutableCopy] autorelease];
-  [requestObject setValue:[NSNumber numberWithBool:shouldResubscribe]
-                   forKey:@"Resubscribe"];
+  NSDictionary* requestBodyObject = [[[CSSubscriber dictionaryWithEmailAddress:newEmailAddress
+                                                                          name:name
+                                                             customFieldValues:customFieldValues] mutableCopy] autorelease];
   
-  request.requestObject = requestObject;
+  [requestBodyObject setValue:[NSNumber numberWithBool:shouldResubscribe]
+                       forKey:@"Resubscribe"];
   
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [request setHTTPBody:[requestBodyObject JSONData]];
+  
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:^(id response) { completionHandler(); }
+                                           failure:errorHandler];
 }
 
 - (void)unsubscribeFromListWithID:(NSString *)listID
@@ -70,14 +68,18 @@
                 completionHandler:(void (^)(void))completionHandler
                      errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"subscribers/%@/unsubscribe", listID]];
-  request.requestObject = [NSDictionary dictionaryWithObject:emailAddress
-                                                      forKey:@"EmailAddress"];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"subscribers/%@/unsubscribe.json", listID]
+                                                         parameters:nil];
   
-  [request setCompletionBlock:completionHandler];
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObject:emailAddress
+                                                                forKey:@"EmailAddress"];
+  
+  [request setHTTPBody:[requestBodyObject JSONData]];
+  
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:^(id response) { completionHandler(); }
+                                           failure:errorHandler];
 }
 
 - (void)getSubscriberDetailsWithEmailAddress:(NSString *)emailAddress
@@ -85,18 +87,13 @@
                            completionHandler:(void (^)(CSSubscriber* subscriber))completionHandler
                                 errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"subscribers/%@", listID]
-                                                  queryParameters:[NSDictionary dictionaryWithObject:emailAddress
-                                                                                              forKey:@"email"]];
-  
-  [request setCompletionBlock:^{
-    CSSubscriber* subscriber = [CSSubscriber subscriberWithDictionary:request.parsedResponse];
-    completionHandler(subscriber);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"subscribers/%@.json", listID]
+                parameters:[NSDictionary dictionaryWithObject:emailAddress forKey:@"email"]
+                   success:^(id response) {
+                     CSSubscriber* subscriber = [CSSubscriber subscriberWithDictionary:response];
+                     completionHandler(subscriber);
+                   }
+                   failure:errorHandler];
 }
 
 - (void)getSubscriberHistoryWithEmailAddress:(NSString *)emailAddress
@@ -104,17 +101,10 @@
                            completionHandler:(void (^)(NSDictionary* historyData))completionHandler
                                 errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"subscribers/%@/history", listID]
-                                                  queryParameters:[NSDictionary dictionaryWithObject:emailAddress
-                                                                                              forKey:@"email"]];
-  
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
-  
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient getPath:[NSString stringWithFormat:@"subscribers/%@/history.json", listID]
+                parameters:[NSDictionary dictionaryWithObject:emailAddress forKey:@"email"]
+                   success:completionHandler
+                   failure:errorHandler];
 }
 
 - (void)importSubscribersToListWithID:(NSString *)listID
@@ -123,20 +113,19 @@
                     completionHandler:(void (^)(NSDictionary* responseObject))completionHandler
                          errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  __block CSAPIRequest* request = [CSAPIRequest requestWithAPIKey:self.APIKey
-                                                             slug:[NSString stringWithFormat:@"subscribers/%@/import", listID]];
+  NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
+                                                               path:[NSString stringWithFormat:@"subscribers/%@/import.json", listID]
+                                                         parameters:nil];
   
-  request.requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                           subscriberData, @"Subscribers",
-                           [NSNumber numberWithBool:shouldResubscribe], @"Resubscribe",
-                           nil];
+  NSDictionary* requestBodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     subscriberData, @"Subscribers",
+                                     [NSNumber numberWithBool:shouldResubscribe], @"Resubscribe", nil];
   
-  [request setCompletionBlock:^{
-    completionHandler(request.parsedResponse);
-  }];
+  [request setHTTPBody:[requestBodyObject JSONData]];
   
-  [request setFailedBlock:^{ errorHandler(request.error); }];
-  [request startAsynchronous];
+  [self.restClient enqueueHTTPOperationWithRequest:request
+                                           success:completionHandler
+                                           failure:errorHandler];
 }
 
 @end

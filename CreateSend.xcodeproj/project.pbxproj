@@ -88,6 +88,8 @@
 		D8CE1D8E12B74ED0002D871F /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CE1D8C12B74ED0002D871F /* GHUnitIOSTestMain.m */; };
 		D8D06C3F142B1D1400BE09D7 /* CSRestClient.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D06C3D142B1D1400BE09D7 /* CSRestClient.h */; };
 		D8D06C40142B1D1400BE09D7 /* CSRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D06C3E142B1D1400BE09D7 /* CSRestClient.m */; };
+		D8D06C47142C012900BE09D7 /* CSJSONRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D06C45142C012900BE09D7 /* CSJSONRequestOperation.h */; };
+		D8D06C48142C012900BE09D7 /* CSJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D06C46142C012900BE09D7 /* CSJSONRequestOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +207,8 @@
 		D8CE1E1912B754A0002D871F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = External/ASIHTTPRequest/External/Reachability/Reachability.m; sourceTree = "<group>"; };
 		D8D06C3D142B1D1400BE09D7 /* CSRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRestClient.h; sourceTree = "<group>"; };
 		D8D06C3E142B1D1400BE09D7 /* CSRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRestClient.m; sourceTree = "<group>"; };
+		D8D06C45142C012900BE09D7 /* CSJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSONRequestOperation.h; sourceTree = "<group>"; };
+		D8D06C46142C012900BE09D7 /* CSJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSONRequestOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +338,8 @@
 			children = (
 				D8D06C3D142B1D1400BE09D7 /* CSRestClient.h */,
 				D8D06C3E142B1D1400BE09D7 /* CSRestClient.m */,
+				D8D06C45142C012900BE09D7 /* CSJSONRequestOperation.h */,
+				D8D06C46142C012900BE09D7 /* CSJSONRequestOperation.m */,
 				D889681312B9D65E007C5783 /* CSAPIRequest.h */,
 				D889681412B9D65E007C5783 /* CSAPIRequest.m */,
 				D891346713E27CBB0080D1E2 /* CSAPI.h */,
@@ -508,6 +514,7 @@
 				D860F1B7142B057000074658 /* NSString+AFNetworking.h in Headers */,
 				D860F1B9142B057000074658 /* UIImage+AFNetworking.h in Headers */,
 				D8D06C3F142B1D1400BE09D7 /* CSRestClient.h in Headers */,
+				D8D06C47142C012900BE09D7 /* CSJSONRequestOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +659,7 @@
 				D860F1B8142B057000074658 /* NSString+AFNetworking.m in Sources */,
 				D860F1BA142B057000074658 /* UIImage+AFNetworking.m in Sources */,
 				D8D06C40142B1D1400BE09D7 /* CSRestClient.m in Sources */,
+				D8D06C48142C012900BE09D7 /* CSJSONRequestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
