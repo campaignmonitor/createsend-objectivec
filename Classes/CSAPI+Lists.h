@@ -351,6 +351,18 @@
 
 /** @name Web Hooks */
 
+/**
+ Create a new webhook for the provided list
+ 
+     http://www.campaignmonitor.com/api/lists/#creating_a_webhook
+ 
+ @param listID The ID of the list for which the webhook should be created
+ @param events The events you would like to trigger a call to your webhook. Valid events are `Subscribe`, `Deactivate` and `Update`.
+ @param URLString The URL endpoint you'd like called when an event occurs
+ @param payloadFormat The payload format you'd like to receive at the `URLString` endpoint. Valid payload formats are `json` and `xml`.
+ @param completionHandler Completion callback, with the ID of the newly created webhook as the first and only argument
+ @param errorHandler Error callback
+ */
 - (void)createWebhookWithListID:(NSString *)listID
                          events:(NSArray *)events
                       URLString:(NSString *)URLString
@@ -358,25 +370,85 @@
               completionHandler:(void (^)(NSString* webhookID))completionHandler
                    errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Get all the webhooks that have been created for a given list
+ 
+     http://www.campaignmonitor.com/api/lists/#getting_list_webhooks
+ 
+ @param listID The ID of the subscriber list for which webhooks should be retrieved
+ @param completionHandler Completion callback, with an array of webhook dictionaries in the following format:
+ 
+     {
+       "WebhookID":     "ee1b3864e5ca61618q98su98qsu9q",
+       "Url":           "http://example.com/subscribe",
+       "Status":        "Active",
+       "PayloadFormat": "json"
+       "Events":        [
+         "Subscribe"
+       ]
+     }
+ 
+ @param errorHandler Error callback
+ */
 - (void)getWebhooksWithListID:(NSString *)listID
             completionHandler:(void (^)(NSArray* webhooks))completionHandler
                  errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Attempt to post a webhook payload to the endpoint specified by a webhook
+ 
+     http://www.campaignmonitor.com/api/lists/#testing_a_webhook
+ 
+ @param listID The ID of the subscriber list to which the webhook belongs
+ @param webhookID The ID of the webhook for which the test should be sent
+ @param completionHandler Completion callback
+ @param errorHandler Error callback
+ */
 - (void)testWebhookWithListID:(NSString *)listID
                     webhookID:(NSString *)webhookID
             completionHandler:(void (^)(void))completionHandler
                  errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Delete a specific webhook associated with a list
+ 
+     http://www.campaignmonitor.com/api/lists/#deleting_a_webhook
+ 
+ @param listID The ID of the list from which the webhook should be deleted
+ @param webhookID The ID of the webhook you'd like to delete
+ @param completionHandler Completion callback
+ @param errorHandler Error callback
+ */
 - (void)deleteWebhookWithListID:(NSString *)listID
                       webhookID:(NSString *)webhookID
               completionHandler:(void (^)(void))completionHandler
                    errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Activate a webhook associated with a list
+ 
+     http://www.campaignmonitor.com/api/lists/#activating_a_webhook
+ 
+ @param listID The ID of the list with which the webhook you want to activate is associated
+ @param webhookID The ID of the webhook to be activated
+ @param completionHandler Completion callback
+ @param errorHandler Error callback
+ */
 - (void)activateWebhookWithListID:(NSString *)listID
                         webhookID:(NSString *)webhookID
                 completionHandler:(void (^)(void))completionHandler
                      errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Deactivate a webhook associated with a list
+ 
+     http://www.campaignmonitor.com/api/lists/#deactivating_a_webhook
+ 
+ @param listID The ID of the list with which the webhook you want to deactivate is associated
+ @param webhookID The ID of the webhook to be deactivated
+ @param completionHandler Completion callback
+ @param errorHandler Error callback
+ */
 - (void)deactivateWebhookWithListID:(NSString *)listID
                           webhookID:(NSString *)webhookID
                   completionHandler:(void (^)(void))completionHandler

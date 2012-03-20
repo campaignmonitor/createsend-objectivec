@@ -44,6 +44,8 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/activateWebhookWithListID:webhookID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- activateWebhookWithListID:webhookID:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:HTMLURLString:textURLString:listIDs:segmentIDs:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:HTMLURLString:textURLString:listIDs:segmentIDs:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</option>
@@ -52,11 +54,15 @@
 	
 	<option value="//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/deleteCampaignWithID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteCampaignWithID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/deleteListWithID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteListWithID:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/deleteWebhookWithListID:webhookID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteWebhookWithListID:webhookID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getAPIKey:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getAPIKey:errorHandler:</option>
 	
@@ -96,6 +102,8 @@
 	
 	<option value="//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/getWebhooksWithListID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getWebhooksWithListID:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/initWithSiteURL:APIKey:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSiteURL:APIKey:</option>
 	
 	<option value="//api/name/initWithSiteURL:username:password:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSiteURL:username:password:</option>
@@ -103,6 +111,8 @@
 	<option value="//api/name/sendCampaignImmediatelyWithCampaignID:confirmationEmailAddress:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- sendCampaignImmediatelyWithCampaignID:confirmationEmailAddress:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/sendCampaignWithCampaignID:confirmationEmailAddress:sendDate:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- sendCampaignWithCampaignID:confirmationEmailAddress:sendDate:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/testWebhookWithListID:webhookID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- testWebhookWithListID:webhookID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</option>
 	
@@ -124,13 +134,13 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accounts Methods">Accounts Methods</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Clients Methods">Clients Methods</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Campaigns Methods">Campaigns Methods</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accounts Methods">Accounts Methods</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Lists Methods">Lists Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Clients Methods">Clients Methods</a></span></li>
 	
 </ul></li>
 
@@ -144,6 +154,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activateWebhookWithListID:webhookID:completionHandler:errorHandler:">activateWebhookWithListID:webhookID:completionHandler:errorHandler:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:HTMLURLString:textURLString:listIDs:segmentIDs:completionHandler:errorHandler:">createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:HTMLURLString:textURLString:listIDs:segmentIDs:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></span></li>
@@ -152,11 +164,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:">deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteCampaignWithID:completionHandler:errorHandler:">deleteCampaignWithID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:">deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteListWithID:completionHandler:errorHandler:">deleteListWithID:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteWebhookWithListID:webhookID:completionHandler:errorHandler:">deleteWebhookWithListID:webhookID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAPIKey:errorHandler:">getAPIKey:errorHandler:</a></span></li>
 	
@@ -196,6 +212,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getWebhooksWithListID:completionHandler:errorHandler:">getWebhooksWithListID:completionHandler:errorHandler:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSiteURL:APIKey:">initWithSiteURL:APIKey:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSiteURL:username:password:">initWithSiteURL:username:password:</a></span></li>
@@ -203,6 +221,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendCampaignImmediatelyWithCampaignID:confirmationEmailAddress:completionHandler:errorHandler:">sendCampaignImmediatelyWithCampaignID:confirmationEmailAddress:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendCampaignWithCampaignID:confirmationEmailAddress:sendDate:completionHandler:errorHandler:">sendCampaignWithCampaignID:confirmationEmailAddress:sendDate:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWebhookWithListID:webhookID:completionHandler:errorHandler:">testWebhookWithListID:webhookID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</a></span></li>
 	
@@ -273,57 +293,6 @@
 		<code><a href="#//api/name/initWithSiteURL:username:password:">&ndash;&nbsp;initWithSiteURL:username:password:</a></code>
 		<span class="tooltip"><p>Creates and returns a <a href="CSAPI.html">CSAPI</a> instance, however it&rsquo;s only really useful if you
 don&rsquo;t have access to your API key and would like to request it via the API.</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Accounts Methods" name="task_Accounts Methods"></a>
-						<h3 class="subsubtitle task-title">Accounts Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getAPIKey:errorHandler:">&ndash;&nbsp;getAPIKey:errorHandler:</a></code>
-		<span class="tooltip"><p>Get the API key/token for your account.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getCountries:errorHandler:">&ndash;&nbsp;getCountries:errorHandler:</a></code>
-		<span class="tooltip"><p>Get a list of valid countries.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getTimezones:errorHandler:">&ndash;&nbsp;getTimezones:errorHandler:</a></code>
-		<span class="tooltip"><p>Get a list of valid timezones.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getSystemDate:errorHandler:">&ndash;&nbsp;getSystemDate:errorHandler:</a></code>
-		<span class="tooltip"><p>Get the current time.</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Clients Methods" name="task_Clients Methods"></a>
-						<h3 class="subsubtitle task-title">Clients Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&ndash;&nbsp;createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></code>
-		<span class="tooltip"><p>Create a new client in your account.</p></span>
 	</span>
 	
 	
@@ -409,6 +378,42 @@ don&rsquo;t have access to your API key and would like to request it via the API
 	<span class="tooltip">
 		<code><a href="#//api/name/getCampaignUnsubscribesWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getCampaignUnsubscribesWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Get a paged result representing all subscribers who unsubscribed from the email for a given campaign</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accounts Methods" name="task_Accounts Methods"></a>
+						<h3 class="subsubtitle task-title">Accounts Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAPIKey:errorHandler:">&ndash;&nbsp;getAPIKey:errorHandler:</a></code>
+		<span class="tooltip"><p>Get the API key/token for your account.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getCountries:errorHandler:">&ndash;&nbsp;getCountries:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a list of valid countries.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTimezones:errorHandler:">&ndash;&nbsp;getTimezones:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a list of valid timezones.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSystemDate:errorHandler:">&ndash;&nbsp;getSystemDate:errorHandler:</a></code>
+		<span class="tooltip"><p>Get the current time.</p></span>
 	</span>
 	
 	
@@ -518,6 +523,56 @@ don&rsquo;t have access to your API key and would like to request it via the API
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getWebhooksWithListID:completionHandler:errorHandler:">&ndash;&nbsp;getWebhooksWithListID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get all the webhooks that have been created for a given list</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWebhookWithListID:webhookID:completionHandler:errorHandler:">&ndash;&nbsp;testWebhookWithListID:webhookID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Attempt to post a webhook payload to the endpoint specified by a webhook</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteWebhookWithListID:webhookID:completionHandler:errorHandler:">&ndash;&nbsp;deleteWebhookWithListID:webhookID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Delete a specific webhook associated with a list</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activateWebhookWithListID:webhookID:completionHandler:errorHandler:">&ndash;&nbsp;activateWebhookWithListID:webhookID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Activate a webhook associated with a list</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:">&ndash;&nbsp;deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Deactivate a webhook associated with a list</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Clients Methods" name="task_Clients Methods"></a>
+						<h3 class="subsubtitle task-title">Clients Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&ndash;&nbsp;createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Create a new client in your account.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -534,6 +589,71 @@ don&rsquo;t have access to your API key and would like to request it via the API
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activateWebhookWithListID:webhookID:completionHandler:errorHandler:" title="activateWebhookWithListID:webhookID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">activateWebhookWithListID:webhookID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Activate a webhook associated with a list</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)activateWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the list with which the webhook you want to activate is associated</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>webhookID</em></dt>
+			<dd><p>The ID of the webhook to be activated</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/lists/#activating_a_webhook
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:HTMLURLString:textURLString:listIDs:segmentIDs:completionHandler:errorHandler:" title="createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:HTMLURLString:textURLString:listIDs:segmentIDs:completionHandler:errorHandler:"></a>
@@ -866,6 +986,71 @@ don&rsquo;t have access to your API key and would like to request it via the API
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:" title="deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deactivate a webhook associated with a list</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)deactivateWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the list with which the webhook you want to deactivate is associated</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>webhookID</em></dt>
+			<dd><p>The ID of the webhook to be deactivated</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/lists/#deactivating_a_webhook
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/deleteCampaignWithID:completionHandler:errorHandler:" title="deleteCampaignWithID:completionHandler:errorHandler:"></a>
 	<h3 class="subsubtitle method-title">deleteCampaignWithID:completionHandler:errorHandler:</h3>
 	
@@ -1033,6 +1218,71 @@ don&rsquo;t have access to your API key and would like to request it via the API
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<pre><code> http://www.campaignmonitor.com/api/lists/#deleting_a_list
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteWebhookWithListID:webhookID:completionHandler:errorHandler:" title="deleteWebhookWithListID:webhookID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">deleteWebhookWithListID:webhookID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete a specific webhook associated with a list</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)deleteWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the list from which the webhook should be deleted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>webhookID</em></dt>
+			<dd><p>The ID of the webhook you&rsquo;d like to delete</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/lists/#deleting_a_webhook
 </code></pre>
 	</div>
 	
@@ -1325,7 +1575,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>campaignID</em></dt>
-			<dd><p>The ID of the campaign you want data for. You can get the ID by calling getSentCampaignsWithClientID:completionHandler:errorHandler:.</p></dd>
+			<dd><p>The ID of the campaign you want data for. You can get the ID by calling <a href="#//api/name/getSentCampaignsWithClientID:completionHandler:errorHandler:">getSentCampaignsWithClientID:completionHandler:errorHandler:</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1421,7 +1671,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>campaignID</em></dt>
-			<dd><p>The ID of the campaign you want data for. You can get the ID by calling getSentCampaignsWithClientID:completionHandler:errorHandler:.</p></dd>
+			<dd><p>The ID of the campaign you want data for. You can get the ID by calling <a href="#//api/name/getSentCampaignsWithClientID:completionHandler:errorHandler:">getSentCampaignsWithClientID:completionHandler:errorHandler:</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1592,7 +1842,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>campaignID</em></dt>
-			<dd><p>The ID of the campaign you want data for. You can get the ID by calling getSentCampaignsWithClientID:completionHandler:errorHandler:.</p></dd>
+			<dd><p>The ID of the campaign you want data for. You can get the ID by calling <a href="#//api/name/getSentCampaignsWithClientID:completionHandler:errorHandler:">getSentCampaignsWithClientID:completionHandler:errorHandler:</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1685,7 +1935,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>campaignID</em></dt>
-			<dd><p>The ID of the campaign you want data for. You can get the ID by calling getSentCampaignsWithClientID:completionHandler:errorHandler:.</p></dd>
+			<dd><p>The ID of the campaign you want data for. You can get the ID by calling <a href="#//api/name/getSentCampaignsWithClientID:completionHandler:errorHandler:">getSentCampaignsWithClientID:completionHandler:errorHandler:</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1831,7 +2081,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>campaignID</em></dt>
-			<dd><p>The ID of the campaign you want data for. You can get the ID by calling getSentCampaignsWithClientID:completionHandler:errorHandler:.</p></dd>
+			<dd><p>The ID of the campaign you want data for. You can get the ID by calling <a href="#//api/name/getSentCampaignsWithClientID:completionHandler:errorHandler:">getSentCampaignsWithClientID:completionHandler:errorHandler:</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2544,6 +2794,77 @@ don&rsquo;t have access to your API key and would like to request it via the API
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/getWebhooksWithListID:completionHandler:errorHandler:" title="getWebhooksWithListID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getWebhooksWithListID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get all the webhooks that have been created for a given list</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getWebhooksWithListID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( NSArray *webhooks ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list for which webhooks should be retrieved</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with an array of webhook dictionaries in the following format:</p>
+
+<pre><code> {
+   "WebhookID":     "ee1b3864e5ca61618q98su98qsu9q",
+   "Url":           "http://example.com/subscribe",
+   "Status":        "Active",
+   "PayloadFormat": "json"
+   "Events":        [
+     "Subscribe"
+   ]
+ }
+</code></pre></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_list_webhooks
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/initWithSiteURL:APIKey:" title="initWithSiteURL:APIKey:"></a>
 	<h3 class="subsubtitle method-title">initWithSiteURL:APIKey:</h3>
 	
@@ -2796,6 +3117,71 @@ don&rsquo;t have access to your API key and would like to request it via the API
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
 		<code class="declared-in-ref">CSAPI+Campaigns.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWebhookWithListID:webhookID:completionHandler:errorHandler:" title="testWebhookWithListID:webhookID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">testWebhookWithListID:webhookID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempt to post a webhook payload to the endpoint specified by a webhook</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)testWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list to which the webhook belongs</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>webhookID</em></dt>
+			<dd><p>The ID of the webhook for which the test should be sent</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/lists/#testing_a_webhook
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
 	</div>				
 	
 	
