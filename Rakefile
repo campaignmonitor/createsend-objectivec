@@ -7,7 +7,6 @@ task :docs => [:'docs:clean'] do
     '--company-id com.campaignmonitor',
     '--keep-intermediate-files',
     '--create-html',
-    '--templates ~/.appledoc/',
     '--no-repeat-first-par',
     '--no-create-docset',
     '--verbose 6']
