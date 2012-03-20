@@ -30,7 +30,7 @@ typedef void (^CSAPIErrorHandler)(NSError* error);
 
  @param APIKey The API key/token for your Campaign Monitor account.
 
- @return A CSAPI instance.
+ @return A `CSAPI` instance.
  */
 - (id)initWithSiteURL:(NSString *)siteURL APIKey:(NSString *)APIKey;
 
