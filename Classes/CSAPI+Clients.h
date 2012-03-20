@@ -12,6 +12,19 @@
 
 @interface CSAPI (Clients)
 
+/**
+ Create a new client in your account.
+ 
+     http://www.campaignmonitor.com/api/clients/#creating_a_client
+ 
+ @param companyName Company name
+ @param contactName Contact name
+ @param emailAddress Email address
+ @param country Country (see getCountries:errorHandler:)
+ @param timezone Timezone (see getTimezones:errorHandler:)
+ @param completionHandler Completion callback, with ID of the successfully created client as the only argument
+ @param errorHandler Error callback
+ */
 - (void)createClientWithCompanyName:(NSString *)companyName
                         contactName:(NSString *)contactName
                        emailAddress:(NSString *)emailAddress

@@ -9,9 +9,9 @@ task :docs => [:'docs:clean'] do
     '--create-html',
     '--no-repeat-first-par',
     '--no-create-docset',
-    '--verbose 6']
+    '--verbose 5']
   
-  puts `appledoc #{appledoc_options.join(' ')} Classes/CSAPI*.h`
+  puts `appledoc #{appledoc_options.join(' ')} Classes/CSAPI*.h Classes/CSPaginatedResult.h`
 end
 
 namespace :docs do

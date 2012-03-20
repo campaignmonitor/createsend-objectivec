@@ -16,7 +16,7 @@
 /**
  Get the API key/token for your account.
  
- `http://www.campaignmonitor.com/api/account/#getting_your_api_key`
+     http://www.campaignmonitor.com/api/account/#getting_your_api_key
 
  @param completionHandler Completion callback, including the API key
  @param errorHandler Error callback
@@ -27,7 +27,7 @@
 /**
  Get a list of valid countries.
 
- `http://www.campaignmonitor.com/api/account/#getting_countries`
+     http://www.campaignmonitor.com/api/account/#getting_countries
 
  @param completionHandler Completion callback, including a list of country names as an `NSArray`
  @param errorHandler Error callback
@@ -39,7 +39,7 @@
 /**
  Get a list of valid timezones.
 
- `http://www.campaignmonitor.com/api/account/#getting_timezones`
+     http://www.campaignmonitor.com/api/account/#getting_timezones
 
  @param completionHandler Completion callback, including a list of timezone names as an `NSArray`
  @param errorHandler Error callback
@@ -51,7 +51,7 @@
 /**
  Get the current time.
 
- `http://www.campaignmonitor.com/api/account/#getting_systemdate`
+     http://www.campaignmonitor.com/api/account/#getting_systemdate
 
  @param completionHandler Completion callback, including the current time as an `NSDate`
  @param errorHandler Error callback
