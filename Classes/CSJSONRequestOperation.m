@@ -112,7 +112,7 @@
   if (successHandler) Block_release(successHandler);
   if (failureHandler) Block_release(failureHandler);
   
-  [super release];
+  [super dealloc];
 }
 
 @end
