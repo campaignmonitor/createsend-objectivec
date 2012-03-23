@@ -37,7 +37,7 @@
 }
 
 - (void)updateSubscriptionWithListID:(NSString *)listID
-                currentEmailAdddress:(NSString *)currentEmailAdddress
+                currentEmailAddress:(NSString *)currentEmailAddress
                      newEmailAddress:(NSString *)newEmailAddress
                                 name:(NSString *)name
                    shouldResubscribe:(BOOL)shouldResubscribe
@@ -47,7 +47,7 @@
   
   NSMutableURLRequest* request = [self.restClient requestWithMethod:@"POST"
                                                                path:[NSString stringWithFormat:@"subscribers/%@.json", listID]
-                                                         parameters:[NSDictionary dictionaryWithObject:currentEmailAdddress forKey:@"email"]];
+                                                         parameters:[NSDictionary dictionaryWithObject:currentEmailAddress forKey:@"email"]];
   
   NSDictionary* requestBodyObject = [[[CSSubscriber dictionaryWithEmailAddress:newEmailAddress
                                                                           name:name

@@ -12,7 +12,7 @@
 typedef void (^CSAPIErrorHandler)(NSError* error);
 
 /**
- Convenient blocks-based interface to the Campaign Monitor API.
+ A convenient blocks-based interface to the Campaign Monitor API.
  */
 @interface CSAPI : NSObject
 
@@ -44,7 +44,7 @@ typedef void (^CSAPIErrorHandler)(NSError* error);
 
  @return A CSAPI instance.
 
- @see getAPIKey:errorHandler:
+ @see [CSAPI(Accounts) getAPIKey:errorHandler:]
  */
 - (id)initWithSiteURL:(NSString *)siteURL username:(NSString *)username password:(NSString *)password;
 

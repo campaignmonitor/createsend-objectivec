@@ -12,6 +12,9 @@
 #import "CSCustomField.h"
 #import "CSPaginatedResult.h"
 
+/**
+ List-related APIs.
+ */
 @interface CSAPI (Lists)
 
 /**

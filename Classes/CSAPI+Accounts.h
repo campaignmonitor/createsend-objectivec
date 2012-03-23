@@ -9,7 +9,7 @@
 #import "CSAPI.h"
 
 /**
- Account-related API calls
+ Account-related APIs.
  */
 @interface CSAPI (Accounts)
 
@@ -31,7 +31,7 @@
 
  @param completionHandler Completion callback, including a list of country names as an `NSArray`
  @param errorHandler Error callback
- @see createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:
+ @see [CSAPI(Clients) createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:]
  */
 - (void)getCountries:(void (^)(NSArray* countries))completionHandler
         errorHandler:(CSAPIErrorHandler)errorHandler;
@@ -43,7 +43,7 @@
 
  @param completionHandler Completion callback, including a list of timezone names as an `NSArray`
  @param errorHandler Error callback
- @see createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:
+ @see [CSAPI(Clients) createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:]
  */
 - (void)getTimezones:(void (^)(NSArray* timezones))completionHandler
         errorHandler:(CSAPIErrorHandler)errorHandler;
@@ -55,7 +55,7 @@
 
  @param completionHandler Completion callback, including the current time as an `NSDate`
  @param errorHandler Error callback
- @see createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:
+ @see [CSAPI(Clients) createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:]
  */
 - (void)getSystemDate:(void (^)(NSDate* systemDate))completionHandler
          errorHandler:(CSAPIErrorHandler)errorHandler;

@@ -1,0 +1,831 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>CSAPI(Subscribers) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">CreateSend </a></h1>
+				<a id="developerHome" href="../index.html">Campaign Monitor</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">CSAPI(Subscribers) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:">getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:">getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:">importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:">subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:">unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:">updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="CSAPI(Subscribers) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">CSAPI(Subscribers) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">CSAPI+Subscribers.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Subscriber-related APIs.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:">&ndash;&nbsp;subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Adds a subscriber to an existing subscriber list, including custom field data
+if provided. If the subscriber (email address) already exists, their name and
+any custom field values are updated.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:">&ndash;&nbsp;updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Update an existing subscriber, including email address, name, and custom field data if supplied.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:">&ndash;&nbsp;unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Change the status of a subscriber from <code>Active</code> to <code>Unsubscribed</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:">&ndash;&nbsp;getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a subscribers details including their email address, name, active/inactive
+state and any custom field data.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:">&ndash;&nbsp;getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a list of all campaigns or autoresponder emails, to which a subscriber has
+made some trackable action. For each campaign or autoresponder email, all
+actions are provided, including the event type, date and IP address from which
+the event occurred.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:">&ndash;&nbsp;importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Import many subscribers into a subscriber list, including any custom field data if provided.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:" title="getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getSubscriberDetailsWithEmailAddress:listID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a subscribers details including their email address, name, active/inactive
+state and any custom field data.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getSubscriberDetailsWithEmailAddress:(NSString *)<em>emailAddress</em> listID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( CSSubscriber *subscriber ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddress</em></dt>
+			<dd><p>The ID of the subscriber whose details should be retrieved</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list to which the subscriber belongs</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with a <code>CSSubscriber</code> instance as the first and only argument.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/subscribers/#getting_subscriber_details
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Subscribers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:" title="getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getSubscriberHistoryWithEmailAddress:listID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a list of all campaigns or autoresponder emails, to which a subscriber has
+made some trackable action. For each campaign or autoresponder email, all
+actions are provided, including the event type, date and IP address from which
+the event occurred.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getSubscriberHistoryWithEmailAddress:(NSString *)<em>emailAddress</em> listID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( NSDictionary *historyData ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddress</em></dt>
+			<dd><p>The email address of the subscriber whose history should be retrieved</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list to which the subscriber belongs</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with an array of campaigns and autoresponder email dictionaries. Dictionaries are in the following format:</p>
+
+<pre><code> {
+   "ID": "fc0ce7105baeaf97f47c99be31d02a91",
+   "Type": "Campaign",
+   "Name": "Campaign One",
+   "Actions": [
+     {
+       "Event": "Open",
+       "Date": "2010-10-12 13:18:00",
+       "IPAddress": "192.168.126.87",
+       "Detail": ""
+     },
+     {
+       "Event": "Click",
+       "Date": "2010-10-12 13:16:00",
+       "IPAddress": "192.168.126.87",
+       "Detail": "http://example.com/post/12323/"
+     }
+   ]
+ }
+</code></pre></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/subscribers/#getting_subscriber_history
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Subscribers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:" title="importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">importSubscribersToListWithID:subscriberData:shouldResubscribe:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Import many subscribers into a subscriber list, including any custom field data if provided.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)importSubscribersToListWithID:(NSString *)<em>listID</em> subscriberData:(NSArray *)<em>subscriberData</em> shouldResubscribe:(BOOL)<em>shouldResubscribe</em> completionHandler:(void ( ^ ) ( NSDictionary *responseObject ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list to which the subscribers should be added</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>subscriberData</em></dt>
+			<dd><p>An array of subscriber dictionaries. Dictionaries should be in the following format:</p>
+
+<pre><code> {
+   "EmailAddress": "subscriber1@example.com",
+   "Name": "New Subscriber One",
+   "CustomFields": [
+     {
+       "Key": "website",
+       "Value": "http://example.com"
+     },
+     {
+       "Key": "interests",
+       "Value": "",
+       "Clear": true
+     }
+   ]
+ }
+</code></pre></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shouldResubscribe</em></dt>
+			<dd><p>Whether or not to resubscribe inactive subscribers</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with a dictionary containing information about the import. If the import was successful, the dictionary is in the following format:</p>
+
+<pre><code> {
+   "FailureDetails": [],
+   "TotalUniqueEmailsSubmitted": 3,
+   "TotalExistingSubscribers": 0,
+   "TotalNewSubscribers": 3,
+   "DuplicateEmailsInSubmission": []
+ }
+</code></pre>
+
+<p>If the import was unsuccessful, the dictionary is in the following format:</p>
+
+<pre><code> {
+   "ResultData": {
+     "TotalUniqueEmailsSubmitted": 3,
+     "TotalExistingSubscribers": 2,
+     "TotalNewSubscribers": 0,
+     "DuplicateEmailsInSubmission": [],
+     "FailureDetails": [
+       {
+         "EmailAddress": "example+1@example",
+         "Code": 1,
+         "Message": "Invalid Email Address"
+       }
+     ]
+   },
+   "Code": 210,
+   "Message": "Subscriber Import had some failures"
+ }
+</code></pre></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/subscribers/#importing_subscribers
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Subscribers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:" title="subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">subscribeToListWithID:emailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a subscriber to an existing subscriber list, including custom field data
+if provided. If the subscriber (email address) already exists, their name and
+any custom field values are updated.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)subscribeToListWithID:(NSString *)<em>listID</em> emailAddress:(NSString *)<em>emailAddress</em> name:(NSString *)<em>name</em> shouldResubscribe:(BOOL)<em>shouldResubscribe</em> customFieldValues:(NSArray *)<em>customFieldValues</em> completionHandler:(void ( ^ ) ( NSString *subscribedAddress ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list to which the subscriber should be added</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddress</em></dt>
+			<dd><p>Email address of the subscriber</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>Name of the subscriber</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shouldResubscribe</em></dt>
+			<dd><p>Whether to resubscribe subscribers in the inactive or unsubscribed state</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>customFieldValues</em></dt>
+			<dd><p>An array of custom field values</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with the email address of the new subscriber as the first and only argument</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/subscribers/#adding_a_subscriber
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Subscribers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:" title="unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">unsubscribeFromListWithID:emailAddress:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Change the status of a subscriber from <code>Active</code> to <code>Unsubscribed</code>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)unsubscribeFromListWithID:(NSString *)<em>listID</em> emailAddress:(NSString *)<em>emailAddress</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list from which the subscriber should be unsubscribed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddress</em></dt>
+			<dd><p>Email address of the subscriber you&rsquo;d like to unsubscribe</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/subscribers/#unsubscribing_a_subscriber
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Subscribers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:" title="updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">updateSubscriptionWithListID:currentEmailAddress:newEmailAddress:name:shouldResubscribe:customFieldValues:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update an existing subscriber, including email address, name, and custom field data if supplied.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)updateSubscriptionWithListID:(NSString *)<em>listID</em> currentEmailAddress:(NSString *)<em>currentEmailAddress</em> newEmailAddress:(NSString *)<em>newEmailAddress</em> name:(NSString *)<em>name</em> shouldResubscribe:(BOOL)<em>shouldResubscribe</em> customFieldValues:(NSArray *)<em>customFieldValues</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the subscriber list containing the subscriber you&rsquo;d like to update</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>currentEmailAddress</em></dt>
+			<dd><p>Existing email address of the subscriber</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newEmailAddress</em></dt>
+			<dd><p>New email address of the subscriber</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>New name of the subscriber</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shouldResubscribe</em></dt>
+			<dd><p>Whether or not to resubscribe inactive subscribers</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>customFieldValues</em></dt>
+			<dd><p>Custom field values to update</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Coompletion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/subscribers/#updating_a_subscriber
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Subscribers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-03-23)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

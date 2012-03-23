@@ -9,6 +9,9 @@
 #import "CSAPI.h"
 #import "CSPaginatedResult.h"
 
+/**
+ Campaign-related APIs.
+ */
 @interface CSAPI (Campaigns)
 
 /**

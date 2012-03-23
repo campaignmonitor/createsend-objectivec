@@ -10,6 +10,9 @@
 #import "CSClient.h"
 #import "CSPaginatedResult.h"
 
+/**
+ Client-related APIs.
+ */
 @interface CSAPI (Clients)
 
 /**

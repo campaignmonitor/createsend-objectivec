@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>CSAPI Class Reference</title>
+		<title>CSAPI(Clients) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">CSAPI Class Reference</h1>
+				<h1 class="hideInXcode">CSAPI(Clients) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -44,9 +44,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithSiteURL:APIKey:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSiteURL:APIKey:</option>
-	
-	<option value="//api/name/initWithSiteURL:username:password:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSiteURL:username:password:</option>
+	<option value="//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</option>
 	
 	
 	
@@ -76,9 +74,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSiteURL:APIKey:">initWithSiteURL:APIKey:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSiteURL:username:password:">initWithSiteURL:username:password:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></span></li>
 	
 </ul></li>
 
@@ -87,7 +83,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="CSAPI Class Reference" name="top"></a>
+				<a title="CSAPI(Clients) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -96,18 +92,15 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">CSAPI Class Reference</h1>
+						<h1 class="title title-header">CSAPI(Clients) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">CSAPI.h</td>
+	<td class="specification-value">CSAPI+Clients.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -117,7 +110,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A convenient blocks-based interface to the Campaign Monitor API.</p>
+						<p>Client-related APIs.</p>
 					</div>
 					
 					
@@ -135,16 +128,8 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithSiteURL:APIKey:">&ndash;&nbsp;initWithSiteURL:APIKey:</a></code>
-		<span class="tooltip"><p>Creates and returns a <a href="CSAPI.html">CSAPI</a> instance for interacting with the Campaign Monitor API.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithSiteURL:username:password:">&ndash;&nbsp;initWithSiteURL:username:password:</a></code>
-		<span class="tooltip"><p>Creates and returns a <a href="CSAPI.html">CSAPI</a> instance, however it&rsquo;s only really useful if you
-don&rsquo;t have access to your API key and would like to request it via the API.</p></span>
+		<code><a href="#//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&ndash;&nbsp;createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Create a new client in your account.</p></span>
 	</span>
 	
 	
@@ -166,44 +151,70 @@ don&rsquo;t have access to your API key and would like to request it via the API
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithSiteURL:APIKey:" title="initWithSiteURL:APIKey:"></a>
-	<h3 class="subsubtitle method-title">initWithSiteURL:APIKey:</h3>
+	<a name="//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:" title="createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates and returns a <a href="CSAPI.html">CSAPI</a> instance for interacting with the Campaign Monitor API.</p>
+		<p>Create a new client in your account.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (id)initWithSiteURL:(NSString *)<em>siteURL</em> APIKey:(NSString *)<em>APIKey</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)createClientWithCompanyName:(NSString *)<em>companyName</em> contactName:(NSString *)<em>contactName</em> emailAddress:(NSString *)<em>emailAddress</em> country:(NSString *)<em>country</em> timezone:(NSString *)<em>timezone</em> completionHandler:(void ( ^ ) ( NSString *clientID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>siteURL</em></dt>
-			<dd><p>The site URL for your Campaign Monitor account. e.g. <code>@"</code>http://myaccountname.createsend.com/<code>"</code></p></dd>
+			<dt><em>companyName</em></dt>
+			<dd><p>Company name</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>APIKey</em></dt>
-			<dd><p>The API key/token for your Campaign Monitor account.</p></dd>
+			<dt><em>contactName</em></dt>
+			<dd><p>Contact name</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddress</em></dt>
+			<dd><p>Email address</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>country</em></dt>
+			<dd><p>Country (see getCountries:errorHandler:)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timezone</em></dt>
+			<dd><p>Timezone (see getTimezones:errorHandler:)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with ID of the successfully created client as the only argument</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A <a href="CSAPI.html"><code>CSAPI</code></a> instance.</p>
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/clients/#creating_a_client
+</code></pre>
 	</div>
-	
-	
-	
-	
 	
 	
 	
@@ -213,76 +224,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSAPI.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithSiteURL:username:password:" title="initWithSiteURL:username:password:"></a>
-	<h3 class="subsubtitle method-title">initWithSiteURL:username:password:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates and returns a <a href="CSAPI.html">CSAPI</a> instance, however it&rsquo;s only really useful if you
-don&rsquo;t have access to your API key and would like to request it via the API.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (id)initWithSiteURL:(NSString *)<em>siteURL</em> username:(NSString *)<em>username</em> password:(NSString *)<em>password</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>siteURL</em></dt>
-			<dd><p>The site URL for your Campaign Monitor account. e.g. <code>@"</code>http://myaccountname.createsend.com/<code>"</code></p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>username</em></dt>
-			<dd><p>Your Campaign Monitor account username.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>password</em></dt>
-			<dd><p>Your Campaign Monitor account password.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A <a href="CSAPI.html">CSAPI</a> instance.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Categories/CSAPI(Accounts">[CSAPI(Accounts) getAPIKey:errorHandler:]</a>.html#//api/name/getAPIKey:errorHandler:)</p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSAPI.h</code><br />
+		<code class="declared-in-ref">CSAPI+Clients.h</code><br />
 	</div>				
 	
 	
