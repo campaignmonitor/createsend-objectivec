@@ -13,7 +13,7 @@
 #import "CSPaginatedResult.h"
 
 /**
- List-related APIs.
+ List-related APIs. See CSAPI for documentation of the other API categories.
  */
 @interface CSAPI (Lists)
 

@@ -12,7 +12,17 @@
 typedef void (^CSAPIErrorHandler)(NSError* error);
 
 /**
- A convenient blocks-based interface to the Campaign Monitor API.
+ A convenient blocks-based interface to the Campaign Monitor API. APIs are
+ grouped into categories as follows:
+ 
+ * [Accounts](CSAPI(Accounts))
+ * [Campaigns](CSAPI(Campaigns))
+ * [Lists](CSAPI(Lists))
+ * [Subscribers](CSAPI(Subscribers))
+ * [Clients](CSAPI(Clients))
+ * [Segments](CSAPI(Segments))
+ * [Templates](CSAPI(Templates))
+ 
  */
 @interface CSAPI : NSObject
 

@@ -10,7 +10,7 @@
 #import "CSPaginatedResult.h"
 
 /**
- Campaign-related APIs.
+ Campaign-related APIs. See CSAPI for documentation of the other API categories.
  */
 @interface CSAPI (Campaigns)
 

@@ -10,7 +10,7 @@
 #import "CSSubscriber.h"
 
 /**
- Subscriber-related APIs.
+ Subscriber-related APIs. See CSAPI for documentation of the other API categories.
  */
 @interface CSAPI (Subscribers)
 

@@ -9,7 +9,7 @@
 #import "CSAPI.h"
 
 /**
- Account-related APIs.
+ Account-related APIs. See CSAPI for documentation of the other API categories.
  */
 @interface CSAPI (Accounts)
 

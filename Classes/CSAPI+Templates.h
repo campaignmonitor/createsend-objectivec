@@ -8,6 +8,9 @@
 
 #import "CSAPI.h"
 
+/**
+ Template-related APIs. See CSAPI for documentation of the other API categories.
+ */
 @interface CSAPI (Templates)
 
 /*

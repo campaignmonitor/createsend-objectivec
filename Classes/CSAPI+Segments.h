@@ -6,6 +6,9 @@
 //  Copyright 2011 Nathan de Vries. All rights reserved.
 //
 
+/**
+ Segment-related APIs. See CSAPI for documentation of the other API categories.
+ */
 #import "CSAPI.h"
 
 @interface CSAPI (Segments)

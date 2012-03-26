@@ -11,7 +11,7 @@
 #import "CSPaginatedResult.h"
 
 /**
- Client-related APIs.
+ Client-related APIs. See CSAPI for documentation of the other API categories.
  */
 @interface CSAPI (Clients)
 
