@@ -316,38 +316,16 @@
  dictionaries as the first and only argument. Dictionaries are in the following
  format:
  
-   {
-     "ListID": "a58ee1d3039b8bec838e6d1482a8a965",
-     "Name": "List One"
-   }
+     {
+       "ListID": "a58ee1d3039b8bec838e6d1482a8a965",
+       "Name": "List One"
+     }
  
  @param errorHandler Error callback
  */
 - (void)getSubscriberListsWithClientID:(NSString *)clientID
                      completionHandler:(void (^)(NSArray* subscriberLists))completionHandler
                           errorHandler:(CSAPIErrorHandler)errorHandler;
-
-/**
- Get a list of all segments belonging to a particular client.
- 
-     http://www.campaignmonitor.com/api/clients/#getting_client_segments
- 
- @param clientID The ID of the client for which segments should be retrieved
- @param completionHandler Completion callback, with an array of segment
- dictionaries as the first and only argument. Dictionaries are in the following
- format:
- 
-   {
-     "ListID": "a58ee1d3039b8bec838e6d1482a8a965",
-     "SegmentID": "46aa5e01fd43381863d4e42cf277d3a9",
-     "Title": "Segment One"
-   }
- 
- @param errorHandler Error callback
- */ 
-- (void)getSegmentsWithClientID:(NSString *)clientID
-              completionHandler:(void (^)(NSArray* segments))completionHandler
-                   errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
  Get a paged result representing the client's suppression list.
@@ -361,12 +339,12 @@
  @param ascending Whether to sort the list (see `orderField`) in ascending order
  @param completionHandler Completion callback, with a `CSPaginatedResult` as the first and only argument. Items in the result list are in the following format:
  
-   {
-     "SuppressionReason": "Reason Unavailable",
-     "EmailAddress": "subscriberone@example.com",
-     "Date": "2010-10-25 13:04:15",
-     "State": "Suppressed"
-   }
+     {
+       "SuppressionReason": "Reason Unavailable",
+       "EmailAddress": "subscriberone@example.com",
+       "Date": "2010-10-25 13:04:15",
+       "State": "Suppressed"
+     }
  
  @param errorHandler Error callback
  */
@@ -377,28 +355,5 @@
                              ascending:(BOOL)ascending
                      completionHandler:(void (^)(CSPaginatedResult* paginatedResult))completionHandler
                           errorHandler:(CSAPIErrorHandler)errorHandler;
-
-/**
- Get a list of all templates belonging to a particular client.
- 
-     http://www.campaignmonitor.com/api/clients/#getting_client_templates
- 
- @param clientID The ID of the client for which templates should be retrieved
- @param completionHandler Completion callback, with an array of segment
- dictionaries as the first and only argument. Dictionaries are in the following
- format:
- 
-   {
-     "TemplateID": "5cac213cf061dd4e008de5a82b7a3621",
-     "Name": "Template One",
-     "PreviewURL": "http://preview.createsend.com/templates/publicpreview/01AF532CD8889B33?d=r",
-     "ScreenshotURL": "http://preview.createsend.com/ts/r/14/833/263/14833263.jpg?0318092541"
-   }
- 
- @param errorHandler Error callback
- */
-- (void)getTemplatesWithClientID:(NSString *)clientID
-               completionHandler:(void (^)(NSArray* templates))completionHandler
-                    errorHandler:(CSAPIErrorHandler)errorHandler;
 
 @end

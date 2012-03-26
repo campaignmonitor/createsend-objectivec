@@ -200,16 +200,6 @@
                    failure:errorHandler];
 }
 
-- (void)getSegmentsWithClientID:(NSString *)clientID
-              completionHandler:(void (^)(NSArray* segments))completionHandler
-                   errorHandler:(CSAPIErrorHandler)errorHandler {
-  
-  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/segments.json", clientID]
-                parameters:nil
-                   success:completionHandler
-                   failure:errorHandler];
-}
-
 - (void)getSuppressionListWithClientID:(NSString *)clientID
                                   page:(NSUInteger)page
                               pageSize:(NSUInteger)pageSize
@@ -229,16 +219,6 @@
                      CSPaginatedResult* result = [CSPaginatedResult resultWithDictionary:response];
                      completionHandler(result);
                    }
-                   failure:errorHandler];
-}
-
-- (void)getTemplatesWithClientID:(NSString *)clientID
-               completionHandler:(void (^)(NSArray* templates))completionHandler
-                    errorHandler:(CSAPIErrorHandler)errorHandler {
-  
-  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/templates.json", clientID]
-                parameters:nil
-                   success:completionHandler
                    failure:errorHandler];
 }
 

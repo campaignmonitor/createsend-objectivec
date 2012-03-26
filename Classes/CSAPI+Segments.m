@@ -10,4 +10,14 @@
 
 @implementation CSAPI (Segments)
 
+- (void)getSegmentsWithClientID:(NSString *)clientID
+              completionHandler:(void (^)(NSArray* segments))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler {
+  
+  [self.restClient getPath:[NSString stringWithFormat:@"clients/%@/segments.json", clientID]
+                parameters:nil
+                   success:completionHandler
+                   failure:errorHandler];
+}
+
 @end

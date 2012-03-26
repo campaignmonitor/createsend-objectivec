@@ -13,6 +13,28 @@
 
 @interface CSAPI (Segments)
 
+/**
+ Get a list of all segments belonging to a particular client.
+ 
+     http://www.campaignmonitor.com/api/clients/#getting_client_segments
+ 
+ @param clientID The ID of the client for which segments should be retrieved
+ @param completionHandler Completion callback, with an array of segment
+ dictionaries as the first and only argument. Dictionaries are in the following
+ format:
+ 
+     {
+       "ListID": "a58ee1d3039b8bec838e6d1482a8a965",
+       "SegmentID": "46aa5e01fd43381863d4e42cf277d3a9",
+       "Title": "Segment One"
+     }
+ 
+ @param errorHandler Error callback
+ */ 
+- (void)getSegmentsWithClientID:(NSString *)clientID
+              completionHandler:(void (^)(NSArray* segments))completionHandler
+                   errorHandler:(CSAPIErrorHandler)errorHandler;
+
 /*
  
  TODO: These APIs are yet to be implemented

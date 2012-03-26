@@ -32,12 +32,19 @@
 	
 	
 	
+	<option value="tasks">Tasks</option>
 	
 	
 	
 	
 	
 	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/getSegmentsWithClientID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getSegmentsWithClientID:completionHandler:errorHandler:</option>
 	
 	
 	
@@ -53,6 +60,9 @@
 
 
 
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
 
 
 
@@ -60,6 +70,13 @@
 
 
 
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSegmentsWithClientID:completionHandler:errorHandler:">getSegmentsWithClientID:completionHandler:errorHandler:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -100,6 +117,26 @@
 					
 					
 					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSegmentsWithClientID:completionHandler:errorHandler:">&ndash;&nbsp;getSegmentsWithClientID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a list of all segments belonging to a particular client.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
 					
 					
 					
@@ -107,6 +144,82 @@
 					
 					
 					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getSegmentsWithClientID:completionHandler:errorHandler:" title="getSegmentsWithClientID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getSegmentsWithClientID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a list of all segments belonging to a particular client.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getSegmentsWithClientID:(NSString *)<em>clientID</em> completionHandler:(void ( ^ ) ( NSArray *segments ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientID</em></dt>
+			<dd><p>The ID of the client for which segments should be retrieved</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with an array of segment
+dictionaries as the first and only argument. Dictionaries are in the following
+format:</p>
+
+<pre><code> {
+   "ListID": "a58ee1d3039b8bec838e6d1482a8a965",
+   "SegmentID": "46aa5e01fd43381863d4e42cf277d3a9",
+   "Title": "Segment One"
+ }
+</code></pre></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> http://www.campaignmonitor.com/api/clients/#getting_client_segments
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Segments.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 				</div>
