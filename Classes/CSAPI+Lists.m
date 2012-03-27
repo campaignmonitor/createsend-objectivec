@@ -124,9 +124,9 @@
   
   NSMutableDictionary* queryParameters;
   queryParameters = [[[CSAPI paginationParametersWithPage:page
-                                                        pageSize:pageSize
-                                                      orderField:orderField
-                                                       ascending:ascending] mutableCopy] autorelease];
+                                                 pageSize:pageSize
+                                               orderField:orderField
+                                                ascending:ascending] mutableCopy] autorelease];
   
   NSString* dateString = [[CSAPI sharedDateFormatter] stringFromDate:date];
   [queryParameters setObject:dateString forKey:@"Date"];
