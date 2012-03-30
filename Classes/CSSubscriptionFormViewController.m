@@ -8,6 +8,7 @@
 
 #import "CSSubscriptionFormViewController.h"
 #import "CSAPI.h"
+#import "CSTableView.h"
 
 @implementation CSSubscriptionFormViewController
 
@@ -36,11 +37,13 @@
     
     IBATextFormField* nameField = [[[IBATextFormField alloc] initWithKeyPath:@"name" title:NSLocalizedString(@"Name", nil)] autorelease];
     nameField.formFieldStyle = [self textFormFieldStyle];
+    nameField.textFormFieldCell.textField.placeholder = @"Name";
     [basicFormSection addFormField:nameField];
     
     
 		IBATextFormField* emailField = [[[IBATextFormField alloc] initWithKeyPath:@"email" title:NSLocalizedString(@"Email", nil)] autorelease];
     emailField.formFieldStyle = [self textFormFieldStyle];
+    emailField.textFormFieldCell.textField.placeholder = @"Email";
     [basicFormSection addFormField:emailField];
     
     emailField.textFormFieldCell.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
@@ -48,18 +51,18 @@
     emailField.textFormFieldCell.textField.keyboardType = UIKeyboardTypeEmailAddress;
     
     
-    // Subscribe Button
+//    // Subscribe Button
+//    
+//    IBAFormSection* subscribeFormSection = [self.formDataSource addSectionWithHeaderTitle:nil footerTitle:nil];
+//    
+//		IBAButtonFormField* subscribeButtonField = [[[IBAButtonFormField alloc] initWithTitle:NSLocalizedString(@"Subscribe", nil)
+//                                                                                     icon:nil
+//                                                                           executionBlock:[self subscribeAction]] autorelease];
+//    
+//    subscribeButtonField.formFieldStyle = [self buttonFormFieldStyle];
+//    [subscribeFormSection addFormField:subscribeButtonField];
     
-    IBAFormSection* subscribeFormSection = [self.formDataSource addSectionWithHeaderTitle:nil footerTitle:nil];
-    
-		IBAButtonFormField* subscribeButtonField = [[[IBAButtonFormField alloc] initWithTitle:NSLocalizedString(@"Subscribe", nil)
-                                                                                     icon:nil
-                                                                           executionBlock:[self subscribeAction]] autorelease];
-    
-    subscribeButtonField.formFieldStyle = [self buttonFormFieldStyle];
-    [subscribeFormSection addFormField:subscribeButtonField];
-    
-    [self loadCustomFields];
+    //[self loadCustomFields];
   }
   return self;
 }
@@ -134,11 +137,39 @@
 - (void)loadView {
   [super loadView];
   
-  self.tableView = [[[UITableView alloc] initWithFrame:self.view.bounds
-                                                 style:UITableViewStyleGrouped] autorelease];
+  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"CSSubscriptionForm-Background-Pattern.png"]];
   
+  CGRect tableViewFrame = CGRectMake(10.f, 0.f, self.view.bounds.size.width - 20.f, self.view.bounds.size.height);
+  self.tableView = [[[CSTableView alloc] initWithFrame:tableViewFrame style:UITableViewStyleGrouped] autorelease];
+  self.tableView.backgroundColor = [UIColor clearColor];
   self.tableView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin |
                                      UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin);
+  self.tableView.clipsToBounds = NO;
+  self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0.f, 0.f, 0.f, -10.f);
+  
+  CGRect headerPaddingRect = CGRectMake(0.f, 0.f, self.tableView.bounds.size.width, 10.f);
+  self.tableView.tableHeaderView = [[[UIView alloc] initWithFrame:headerPaddingRect] autorelease];
+  
+  UIImage* subscribeButtonBackground = [[UIImage imageNamed:@"CSSubscriptionForm-Button-Background.png"] stretchableImageWithLeftCapWidth:8.f topCapHeight:0.f];
+  UIButton* subscribeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [subscribeButton setBackgroundImage:subscribeButtonBackground forState:UIControlStateNormal];
+  subscribeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.f];
+  [subscribeButton setTitleColor:[UIColor colorWithWhite:0.455f alpha:1.f] forState:UIControlStateNormal]; // #747474
+  [subscribeButton setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+  [subscribeButton setTitle:@"Subscribe" forState:UIControlStateNormal];
+  [subscribeButton sizeToFit];
+  
+  CGRect footerPaddingRect = CGRectMake(0.f, 0.f, self.tableView.bounds.size.width, 10.f + subscribeButton.bounds.size.height);
+  self.tableView.tableFooterView = [[[UIView alloc] initWithFrame:footerPaddingRect] autorelease];
+  [self.tableView.tableFooterView addSubview:subscribeButton];
+  
+//  self.tableView.tableFooterView.backgroundColor = [UIColor greenColor];
+//  subscribeButton.backgroundColor = [UIColor yellowColor];
+  
+  subscribeButton.frame = CGRectMake(roundf((self.tableView.tableFooterView.bounds.size.width - (subscribeButton.bounds.size.width + 20.f)) / 2.f),
+                                     0.f,
+                                     subscribeButton.bounds.size.width + 20.f,
+                                     subscribeButton.bounds.size.height);
   
   [self.view addSubview:self.tableView];
 }
@@ -231,12 +262,12 @@
   style.labelTextColor = [UIColor blackColor];
   style.labelFont = [UIFont boldSystemFontOfSize:12.f];
   style.labelTextAlignment = UITextAlignmentRight;
-  style.labelFrame = CGRectMake(IBAFormFieldLabelX, IBAFormFieldLabelY, 100.f, IBAFormFieldLabelHeight);
+  style.labelFrame = CGRectZero;
   
-  style.valueTextAlignment = UITextAlignmentRight;
-  style.valueTextColor = [UIColor colorWithRed:.22f green:.33f blue:.53f alpha:1.f];
-  style.valueFont = [UIFont systemFontOfSize:12.f];
-  style.valueFrame = CGRectMake(style.labelFrame.size.width + 15.f, IBAFormFieldValueY, 195.f, IBAFormFieldValueHeight);
+  style.valueTextAlignment = UITextAlignmentLeft;
+  style.valueTextColor = [UIColor colorWithWhite:0.467f alpha:1.f]; // #777
+  style.valueFont = [UIFont systemFontOfSize:17.f];
+  style.valueFrame = CGRectMake(IBAFormFieldLabelX, 10.f, IBAFormFieldLabelWidth + IBAFormFieldValueWidth + 5.f, IBAFormFieldValueHeight);
   
   style.activeColor = [UIColor whiteColor];
   

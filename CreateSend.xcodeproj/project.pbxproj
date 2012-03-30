@@ -53,6 +53,12 @@
 		D837C06C1373DAE900DE99EE /* CSListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AF512BB2B2B007C5783 /* CSListTests.m */; };
 		D84F7CEB13E678A700F013A6 /* libCreateSend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libCreateSend.a */; };
 		D84F7CFF13E6835300F013A6 /* CSAccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D889687B12B9E638007C5783 /* CSAccountTests.m */; };
+		D8546512152568B6000A9351 /* UINavigationController+CSNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = D8546510152568B6000A9351 /* UINavigationController+CSNavigationBar.h */; };
+		D8546513152568B6000A9351 /* UINavigationController+CSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8546511152568B6000A9351 /* UINavigationController+CSNavigationBar.m */; };
+		D854651615256AB0000A9351 /* CSNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = D854651415256AB0000A9351 /* CSNavigationBar.h */; };
+		D854651715256AB0000A9351 /* CSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D854651515256AB0000A9351 /* CSNavigationBar.m */; };
+		D854652C15258668000A9351 /* CSTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D854652A15258668000A9351 /* CSTableView.h */; };
+		D854652D15258668000A9351 /* CSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D854652B15258668000A9351 /* CSTableView.m */; };
 		D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */ = {isa = PBXBuildFile; fileRef = D857120B13E2D35800725300 /* CSPaginatedResult.h */; };
 		D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D857120C13E2D35800725300 /* CSPaginatedResult.m */; };
 		D857121213E2DF8100725300 /* CSAPI+Clients.h in Headers */ = {isa = PBXBuildFile; fileRef = D857121013E2DF8100725300 /* CSAPI+Clients.h */; };
@@ -175,6 +181,17 @@
 		D818BB471521A53200B26451 /* IBATextInputProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBATextInputProvider.h; path = External/IBAForms/library/headers/IBAForms/IBATextInputProvider.h; sourceTree = "<group>"; };
 		D818BB481521A53200B26451 /* IBATitleFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBATitleFormField.h; path = External/IBAForms/library/headers/IBAForms/IBATitleFormField.h; sourceTree = "<group>"; };
 		D818BB491521A53200B26451 /* IBATextFormField+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IBATextFormField+Factory.h"; path = "External/IBAForms/library/headers/IBAForms/IBATextFormField+Factory.h"; sourceTree = "<group>"; };
+		D8546510152568B6000A9351 /* UINavigationController+CSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CSNavigationBar.h"; sourceTree = "<group>"; };
+		D8546511152568B6000A9351 /* UINavigationController+CSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CSNavigationBar.m"; sourceTree = "<group>"; };
+		D854651415256AB0000A9351 /* CSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNavigationBar.h; sourceTree = "<group>"; };
+		D854651515256AB0000A9351 /* CSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNavigationBar.m; sourceTree = "<group>"; };
+		D854651A15256C80000A9351 /* CSNavigationBar-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSNavigationBar-Background.png"; sourceTree = "<group>"; };
+		D854651D152570FA000A9351 /* CSNavigationBar-Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSNavigationBar-Background@2x.png"; sourceTree = "<group>"; };
+		D85465201525724C000A9351 /* CSSubscriptionForm-Background-Pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSSubscriptionForm-Background-Pattern.png"; sourceTree = "<group>"; };
+		D85465211525724C000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSSubscriptionForm-Background-Pattern@2x.png"; sourceTree = "<group>"; };
+		D854652A15258668000A9351 /* CSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTableView.h; sourceTree = "<group>"; };
+		D854652B15258668000A9351 /* CSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTableView.m; sourceTree = "<group>"; };
+		D854653615259B4B000A9351 /* CSSubscriptionForm-Button-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSSubscriptionForm-Button-Background.png"; sourceTree = "<group>"; };
 		D857120B13E2D35800725300 /* CSPaginatedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPaginatedResult.h; sourceTree = "<group>"; };
 		D857120C13E2D35800725300 /* CSPaginatedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPaginatedResult.m; sourceTree = "<group>"; };
 		D857121013E2DF8100725300 /* CSAPI+Clients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Clients.h"; sourceTree = "<group>"; };
@@ -275,6 +292,7 @@
 				D8CE1E3212B7570D002D871F /* Tests */,
 				D8CE1D8812B74EB6002D871F /* External */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
+				D854651915256C0D000A9351 /* Resources */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				D8CE1D0512B73F04002D871F /* Configuration */,
@@ -368,8 +386,26 @@
 			children = (
 				D818BAFF15219C2100B26451 /* CSSubscriptionFormViewController.h */,
 				D818BB0015219C2100B26451 /* CSSubscriptionFormViewController.m */,
+				D8546510152568B6000A9351 /* UINavigationController+CSNavigationBar.h */,
+				D8546511152568B6000A9351 /* UINavigationController+CSNavigationBar.m */,
+				D854651415256AB0000A9351 /* CSNavigationBar.h */,
+				D854651515256AB0000A9351 /* CSNavigationBar.m */,
+				D854652A15258668000A9351 /* CSTableView.h */,
+				D854652B15258668000A9351 /* CSTableView.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		D854651915256C0D000A9351 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D854651A15256C80000A9351 /* CSNavigationBar-Background.png */,
+				D854651D152570FA000A9351 /* CSNavigationBar-Background@2x.png */,
+				D85465201525724C000A9351 /* CSSubscriptionForm-Background-Pattern.png */,
+				D85465211525724C000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png */,
+				D854653615259B4B000A9351 /* CSSubscriptionForm-Button-Background.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D860F168142AFC0E00074658 /* AFNetworking */ = {
@@ -574,6 +610,9 @@
 				D818BB6A1521A53200B26451 /* IBATextInputProvider.h in Headers */,
 				D818BB6B1521A53200B26451 /* IBATitleFormField.h in Headers */,
 				D818BB6C1521A53200B26451 /* IBATextFormField+Factory.h in Headers */,
+				D8546512152568B6000A9351 /* UINavigationController+CSNavigationBar.h in Headers */,
+				D854651615256AB0000A9351 /* CSNavigationBar.h in Headers */,
+				D854652C15258668000A9351 /* CSTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +760,9 @@
 				D8D06C40142B1D1400BE09D7 /* CSRestClient.m in Sources */,
 				D8D06C48142C012900BE09D7 /* CSJSONRequestOperation.m in Sources */,
 				D818BB0215219C2100B26451 /* CSSubscriptionFormViewController.m in Sources */,
+				D8546513152568B6000A9351 /* UINavigationController+CSNavigationBar.m in Sources */,
+				D854651715256AB0000A9351 /* CSNavigationBar.m in Sources */,
+				D854652D15258668000A9351 /* CSTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
