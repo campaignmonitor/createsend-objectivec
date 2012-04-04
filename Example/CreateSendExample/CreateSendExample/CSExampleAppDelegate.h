@@ -1,5 +1,5 @@
 //
-//  CreateSendExampleAppDelegate.h
+//  CSExampleAppDelegate.h
 //  CreateSendExample
 //
 //  Created by Nathan de Vries on 1/08/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateSendExampleAppDelegate : NSObject <UIApplicationDelegate>
+@interface CSExampleAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) UIWindow *window;
 

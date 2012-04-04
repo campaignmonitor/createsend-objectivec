@@ -13,7 +13,7 @@
 		D84F7C8213E66CA900F013A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7C8113E66CA900F013A6 /* CoreGraphics.framework */; };
 		D84F7C8813E66CA900F013A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84F7C8613E66CA900F013A6 /* InfoPlist.strings */; };
 		D84F7C8A13E66CA900F013A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F7C8913E66CA900F013A6 /* main.m */; };
-		D84F7C8E13E66CA900F013A6 /* CreateSendExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F7C8D13E66CA900F013A6 /* CreateSendExampleAppDelegate.m */; };
+		D84F7C8E13E66CA900F013A6 /* CSExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F7C8D13E66CA900F013A6 /* CSExampleAppDelegate.m */; };
 		D84F7CF813E6792700F013A6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CF713E6792700F013A6 /* CFNetwork.framework */; };
 		D84F7CFA13E6792C00F013A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CF913E6792C00F013A6 /* SystemConfiguration.framework */; };
 		D84F7CFC13E6793300F013A6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CFB13E6793200F013A6 /* MobileCoreServices.framework */; };
@@ -51,16 +51,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D84F7C7913E66CA900F013A6 /* CreateSendExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateSendExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84F7C7913E66CA900F013A6 /* CSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F7C7D13E66CA900F013A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D84F7C7F13E66CA900F013A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D84F7C8113E66CA900F013A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D84F7C8513E66CA900F013A6 /* CreateSendExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreateSendExample-Info.plist"; sourceTree = "<group>"; };
+		D84F7C8513E66CA900F013A6 /* CSExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSExample-Info.plist"; sourceTree = "<group>"; };
 		D84F7C8713E66CA900F013A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D84F7C8913E66CA900F013A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D84F7C8B13E66CA900F013A6 /* CreateSendExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CreateSendExample-Prefix.pch"; sourceTree = "<group>"; };
-		D84F7C8C13E66CA900F013A6 /* CreateSendExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateSendExampleAppDelegate.h; sourceTree = "<group>"; };
-		D84F7C8D13E66CA900F013A6 /* CreateSendExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateSendExampleAppDelegate.m; sourceTree = "<group>"; };
+		D84F7C8B13E66CA900F013A6 /* CSExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSExample-Prefix.pch"; sourceTree = "<group>"; };
+		D84F7C8C13E66CA900F013A6 /* CSExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSExampleAppDelegate.h; sourceTree = "<group>"; };
+		D84F7C8D13E66CA900F013A6 /* CSExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSExampleAppDelegate.m; sourceTree = "<group>"; };
 		D84F7C9813E66D4D00F013A6 /* CreateSend.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CreateSend.xcodeproj; path = ../../../CreateSend.xcodeproj; sourceTree = "<group>"; };
 		D84F7CF713E6792700F013A6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D84F7CF913E6792C00F013A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -106,7 +106,7 @@
 		D84F7C7A13E66CA900F013A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D84F7C7913E66CA900F013A6 /* CreateSendExample.app */,
+				D84F7C7913E66CA900F013A6 /* CSExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 		D84F7C8313E66CA900F013A6 /* CreateSendExample */ = {
 			isa = PBXGroup;
 			children = (
-				D84F7C8C13E66CA900F013A6 /* CreateSendExampleAppDelegate.h */,
-				D84F7C8D13E66CA900F013A6 /* CreateSendExampleAppDelegate.m */,
+				D84F7C8C13E66CA900F013A6 /* CSExampleAppDelegate.h */,
+				D84F7C8D13E66CA900F013A6 /* CSExampleAppDelegate.m */,
 				D84F7C8413E66CA900F013A6 /* Supporting Files */,
 				D84F7C9713E66D2A00F013A6 /* Dependencies */,
 			);
@@ -140,10 +140,10 @@
 		D84F7C8413E66CA900F013A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D84F7C8513E66CA900F013A6 /* CreateSendExample-Info.plist */,
+				D84F7C8513E66CA900F013A6 /* CSExample-Info.plist */,
 				D84F7C8613E66CA900F013A6 /* InfoPlist.strings */,
 				D84F7C8913E66CA900F013A6 /* main.m */,
-				D84F7C8B13E66CA900F013A6 /* CreateSendExample-Prefix.pch */,
+				D84F7C8B13E66CA900F013A6 /* CSExample-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D84F7C7813E66CA900F013A6 /* CreateSendExample */ = {
+		D84F7C7813E66CA900F013A6 /* CSExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D84F7C9413E66CA900F013A6 /* Build configuration list for PBXNativeTarget "CreateSendExample" */;
+			buildConfigurationList = D84F7C9413E66CA900F013A6 /* Build configuration list for PBXNativeTarget "CSExample" */;
 			buildPhases = (
 				D84F7C7513E66CA900F013A6 /* Sources */,
 				D84F7C7613E66CA900F013A6 /* Frameworks */,
@@ -186,9 +186,9 @@
 			dependencies = (
 				D818BAEB1521998400B26451 /* PBXTargetDependency */,
 			);
-			name = CreateSendExample;
+			name = CSExample;
 			productName = CreateSendExample;
-			productReference = D84F7C7913E66CA900F013A6 /* CreateSendExample.app */;
+			productReference = D84F7C7913E66CA900F013A6 /* CSExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +217,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				D84F7C7813E66CA900F013A6 /* CreateSendExample */,
+				D84F7C7813E66CA900F013A6 /* CSExample */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84F7C8A13E66CA900F013A6 /* main.m in Sources */,
-				D84F7C8E13E66CA900F013A6 /* CreateSendExampleAppDelegate.m in Sources */,
+				D84F7C8E13E66CA900F013A6 /* CSExampleAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,14 +340,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CreateSendExample/CreateSendExample-Prefix.pch";
+				GCC_PREFIX_HEADER = "CreateSendExample/$(TARGET_NAME)-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SOURCE_ROOT)/../../Classes\"",
 					"\"$(SRCROOT)/../../External/IBAForms/library/headers\"",
 					"\"$(SRCROOT)/../../External/AFNetworking/AFNetworking\"",
 				);
-				INFOPLIST_FILE = "CreateSendExample/CreateSendExample-Info.plist";
+				INFOPLIST_FILE = "CreateSendExample/CSExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -357,14 +357,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CreateSendExample/CreateSendExample-Prefix.pch";
+				GCC_PREFIX_HEADER = "CreateSendExample/$(TARGET_NAME)-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SOURCE_ROOT)/../../Classes\"",
 					"\"$(SRCROOT)/../../External/IBAForms/library/headers\"",
 					"\"$(SRCROOT)/../../External/AFNetworking/AFNetworking\"",
 				);
-				INFOPLIST_FILE = "CreateSendExample/CreateSendExample-Info.plist";
+				INFOPLIST_FILE = "CreateSendExample/CSExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -382,7 +382,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D84F7C9413E66CA900F013A6 /* Build configuration list for PBXNativeTarget "CreateSendExample" */ = {
+		D84F7C9413E66CA900F013A6 /* Build configuration list for PBXNativeTarget "CSExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D84F7C9513E66CA900F013A6 /* Debug */,
