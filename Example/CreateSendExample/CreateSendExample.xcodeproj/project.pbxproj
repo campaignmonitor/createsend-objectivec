@@ -101,7 +101,9 @@
 				D84F7C7C13E66CA900F013A6 /* Frameworks */,
 				D84F7C7A13E66CA900F013A6 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		D84F7C7A13E66CA900F013A6 /* Products */ = {
 			isa = PBXGroup;
