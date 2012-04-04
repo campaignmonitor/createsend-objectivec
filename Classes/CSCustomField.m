@@ -45,23 +45,34 @@ static NSDictionary* customFieldDataTypeMapping;
   }
 }
 
++ (id)customFieldWithName:(NSString *)name
+                      key:(NSString *)key
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options {
+  
+  CSCustomField* customField = [[[self alloc] init] autorelease];
+  customField.name = name;
+  customField.key = key;
+  customField.dataType = dataType;
+  customField.options = options;
+  
+  return customField;
+}
 
 + (id)customFieldWithName:(NSString *)name
                  dataType:(CSCustomFieldDataType)dataType
                   options:(NSArray *)options {
-
-  CSCustomField* customField = [[[self alloc] init] autorelease];
-  customField.name = name;
-  customField.dataType = dataType;
-  customField.options = options;
-
-  return customField;
+  
+  return [self customFieldWithName:name
+                               key:nil
+                          dataType:dataType
+                           options:options];
 }
 
 
 + (id)customFieldWithName:(NSString *)name
                  dataType:(CSCustomFieldDataType)dataType {
-
+  
   return [self customFieldWithName:name
                           dataType:dataType
                            options:nil];
@@ -69,12 +80,10 @@ static NSDictionary* customFieldDataTypeMapping;
 
 
 + (id)customFieldWithDictionary:(NSDictionary *)customFieldDict {
-  CSCustomField* customField = [self customFieldWithName:[customFieldDict valueForKey:@"FieldName"]
-                                                dataType:[self dataTypeForDataTypeString:[customFieldDict valueForKey:@"DataType"]]
-                                                 options:[customFieldDict valueForKey:@"FieldOptions"]];
-
-  customField.key = [customFieldDict valueForKey:@"Key"];
-  return customField;
+  return [self customFieldWithName:[customFieldDict valueForKey:@"FieldName"]
+                               key:[customFieldDict valueForKey:@"Key"]
+                          dataType:[self dataTypeForDataTypeString:[customFieldDict valueForKey:@"DataType"]]
+                           options:[customFieldDict valueForKey:@"FieldOptions"]];
 }
 
 
@@ -117,7 +126,7 @@ static NSDictionary* customFieldDataTypeMapping;
   [_name release];
   [_key release];
   [_options release];
-
+  
   [super dealloc];
 }
 

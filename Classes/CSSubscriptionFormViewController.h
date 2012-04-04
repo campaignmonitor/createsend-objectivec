@@ -16,7 +16,16 @@
 @property (nonatomic, readwrite, retain) CSAPI* API;
 @property (nonatomic, readwrite, copy) NSString* listID;
 
+@property (nonatomic, readwrite, assign) BOOL shouldAutoLoadCustomFields;
+@property (nonatomic, readwrite, retain) NSArray* customFields;
+
 + (id)controllerWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID;
-- (id)initWithWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID;
+- (id)initWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID;
+
++ (id)controllerWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID customFields:(NSArray *)customFields;
+- (id)initWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID customFields:(NSArray *)customFields;
+
++ (id)controllerWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID shouldAutoLoadCustomFields:(BOOL)shouldAutoLoadCustomFields;
+- (id)initWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID shouldAutoLoadCustomFields:(BOOL)shouldAutoLoadCustomFields;
 
 @end

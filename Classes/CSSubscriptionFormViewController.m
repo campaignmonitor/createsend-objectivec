@@ -8,67 +8,72 @@
 
 #import "CSSubscriptionFormViewController.h"
 #import "CSAPI.h"
-#import "CSTableView.h"
+
+#import "CSButtonFormField.h"
 
 @implementation CSSubscriptionFormViewController
 
 @synthesize API=_API;
 @synthesize listID=_listID;
+@synthesize shouldAutoLoadCustomFields=_shouldAutoLoadCustomFields;
+@synthesize customFields=_customFields;
 
 + (id)controllerWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID {
-  return [[[self alloc] initWithWithAPI:API subscriptionListID:listID] autorelease];
+  return [[[self alloc] initWithAPI:API subscriptionListID:listID] autorelease];
 }
 
-- (id)initWithWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID {
+- (id)initWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID {
   if ((self = [self init])) {
-    self.title = NSLocalizedString(@"Subscribe to List", nil);
+    self.title = NSLocalizedString(@"Subscribe", nil);
     
     self.API = API;
     self.listID = listID;
+    self.shouldAutoLoadCustomFields = NO;
     
     NSMutableDictionary* model = [NSMutableDictionary dictionary];
-    
     self.formDataSource = [[[IBAFormDataSource alloc] initWithModel:model] autorelease];
     
-    // Name & Email Address Fields
+    [self configureRequiredFields];
+    [self configureSubscribeButtonField];
+  }
+  return self;
+}
+
++ (id)controllerWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID customFields:(NSArray *)customFields {
+  return [[[self alloc] initWithAPI:API subscriptionListID:listID customFields:customFields] autorelease];
+}
+
+- (id)initWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID customFields:(NSArray *)customFields {
+  if ((self = [self initWithAPI:API subscriptionListID:listID])) {
+    self.customFields = customFields;
+    [self configureCustomFields];
+  }
+  return self;
+}
+
++ (id)controllerWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID shouldAutoLoadCustomFields:(BOOL)shouldAutoLoadCustomFields {
+  return [[[self alloc] initWithAPI:API subscriptionListID:listID shouldAutoLoadCustomFields:shouldAutoLoadCustomFields] autorelease];
+}
+
+- (id)initWithAPI:(CSAPI *)API subscriptionListID:(NSString *)listID shouldAutoLoadCustomFields:(BOOL)shouldAutoLoadCustomFields {
+  if ((self = [self initWithAPI:API subscriptionListID:listID])) {
+    self.shouldAutoLoadCustomFields = shouldAutoLoadCustomFields;
     
-    IBAFormSection* basicFormSection = [self.formDataSource addSectionWithHeaderTitle:nil
-                                                                          footerTitle:nil];
-    
-    IBATextFormField* nameField = [[[IBATextFormField alloc] initWithKeyPath:@"name" title:NSLocalizedString(@"Name", nil)] autorelease];
-    nameField.formFieldStyle = [self textFormFieldStyle];
-    nameField.textFormFieldCell.textField.placeholder = @"Name";
-    [basicFormSection addFormField:nameField];
-    
-    
-		IBATextFormField* emailField = [[[IBATextFormField alloc] initWithKeyPath:@"email" title:NSLocalizedString(@"Email", nil)] autorelease];
-    emailField.formFieldStyle = [self textFormFieldStyle];
-    emailField.textFormFieldCell.textField.placeholder = @"Email";
-    [basicFormSection addFormField:emailField];
-    
-    emailField.textFormFieldCell.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    emailField.textFormFieldCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
-    emailField.textFormFieldCell.textField.keyboardType = UIKeyboardTypeEmailAddress;
-    
-    
-//    // Subscribe Button
-//    
-//    IBAFormSection* subscribeFormSection = [self.formDataSource addSectionWithHeaderTitle:nil footerTitle:nil];
-//    
-//		IBAButtonFormField* subscribeButtonField = [[[IBAButtonFormField alloc] initWithTitle:NSLocalizedString(@"Subscribe", nil)
-//                                                                                     icon:nil
-//                                                                           executionBlock:[self subscribeAction]] autorelease];
-//    
-//    subscribeButtonField.formFieldStyle = [self buttonFormFieldStyle];
-//    [subscribeFormSection addFormField:subscribeButtonField];
-    
-    //[self loadCustomFields];
+    if (self.shouldAutoLoadCustomFields) {
+      [self loadCustomFields];
+    }
   }
   return self;
 }
 
 - (IBAButtonFormFieldBlock)subscribeAction {
   return [Block_copy(^{
+    
+    IBAFormSection* subscribeButtonSection = [self.formDataSource.sections lastObject];
+    CSButtonFormField* subscribeButtonField = [subscribeButtonSection.formFields lastObject];
+    UIButton* subscribeButton = subscribeButtonField.buttonFormFieldCell.fieldButton;
+    
+    subscribeButton.enabled = NO;
     
     NSMutableDictionary* formValues = [[(NSDictionary *)self.formDataSource.model mutableCopy] autorelease];
     
@@ -106,6 +111,8 @@
                   customFieldValues:customFieldValues
                   completionHandler:^(NSString *subscribedAddress) {
                     
+                    subscribeButton.enabled = YES;
+                    
                     [[[[UIAlertView alloc] initWithTitle:@"Success!"
                                                  message:@"You've been subscribed to the list."
                                                 delegate:nil
@@ -113,6 +120,8 @@
                                        otherButtonTitles:nil] autorelease] show];
                     
                   } errorHandler:^(NSError *error) {
+                    
+                    subscribeButton.enabled = YES;
                     
                     [[[[UIAlertView alloc] initWithTitle:@"Uh Oh!"
                                                  message:[NSString stringWithFormat:@"Unable to subscribe\n\nReason: %@", [error localizedDescription]]
@@ -128,6 +137,7 @@
 - (void)dealloc {
   [_API release], _API = nil;
   [_listID release], _listID = nil;
+  [_customFields release], _customFields = nil;
   
   [super dealloc];
 }
@@ -137,67 +147,59 @@
 - (void)loadView {
   [super loadView];
   
-  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"CSSubscriptionForm-Background-Pattern.png"]];
-  
-  CGRect tableViewFrame = CGRectMake(10.f, 0.f, self.view.bounds.size.width - 20.f, self.view.bounds.size.height);
-  self.tableView = [[[CSTableView alloc] initWithFrame:tableViewFrame style:UITableViewStyleGrouped] autorelease];
-  self.tableView.backgroundColor = [UIColor clearColor];
+  self.tableView = [[[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped] autorelease];
   self.tableView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin |
                                      UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin);
-  self.tableView.clipsToBounds = NO;
-  self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0.f, 0.f, 0.f, -10.f);
-  
-  CGRect headerPaddingRect = CGRectMake(0.f, 0.f, self.tableView.bounds.size.width, 10.f);
-  self.tableView.tableHeaderView = [[[UIView alloc] initWithFrame:headerPaddingRect] autorelease];
-  
-  UIImage* subscribeButtonBackground = [[UIImage imageNamed:@"CSSubscriptionForm-Button-Background.png"] stretchableImageWithLeftCapWidth:8.f topCapHeight:0.f];
-  UIButton* subscribeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  [subscribeButton setBackgroundImage:subscribeButtonBackground forState:UIControlStateNormal];
-  subscribeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.f];
-  [subscribeButton setTitleColor:[UIColor colorWithWhite:0.455f alpha:1.f] forState:UIControlStateNormal]; // #747474
-  [subscribeButton setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
-  [subscribeButton setTitle:@"Subscribe" forState:UIControlStateNormal];
-  [subscribeButton sizeToFit];
-  
-  CGRect footerPaddingRect = CGRectMake(0.f, 0.f, self.tableView.bounds.size.width, 10.f + subscribeButton.bounds.size.height);
-  self.tableView.tableFooterView = [[[UIView alloc] initWithFrame:footerPaddingRect] autorelease];
-  [self.tableView.tableFooterView addSubview:subscribeButton];
-  
-//  self.tableView.tableFooterView.backgroundColor = [UIColor greenColor];
-//  subscribeButton.backgroundColor = [UIColor yellowColor];
-  
-  subscribeButton.frame = CGRectMake(roundf((self.tableView.tableFooterView.bounds.size.width - (subscribeButton.bounds.size.width + 20.f)) / 2.f),
-                                     0.f,
-                                     subscribeButton.bounds.size.width + 20.f,
-                                     subscribeButton.bounds.size.height);
   
   [self.view addSubview:self.tableView];
 }
 
 # pragma mark - Dynamic Custom Field Fetching
 
-- (void)loadCustomFields {
-  [self.API getCustomFieldsWithListID:self.listID
-                    completionHandler:^(NSArray* customFields) {
-                      
-                      [self configureFormWithCustomFields:customFields];
-                      
-                    } errorHandler:^(NSError *error) {
-                      [[[[UIAlertView alloc] initWithTitle:@"Uh Oh!"
-                                                   message:[NSString stringWithFormat:@"Unable to load custom fields\n\n%@", [error localizedDescription]]
-                                                  delegate:nil
-                                         cancelButtonTitle:@"OK"
-                                         otherButtonTitles:nil] autorelease] show];
-                    }];
+- (void)configureRequiredFields {
+  IBAFormSection* basicFormSection = [self.formDataSource addSectionWithHeaderTitle:nil
+                                                                        footerTitle:nil];
+  
+  IBATextFormField* nameField = [[[IBATextFormField alloc] initWithKeyPath:@"name" title:NSLocalizedString(@"Name", nil)] autorelease];
+  nameField.formFieldStyle = [self textFormFieldStyle];
+  nameField.textFormFieldCell.textField.placeholder = @"Name";
+  [basicFormSection addFormField:nameField];
+  
+  
+  IBATextFormField* emailField = [[[IBATextFormField alloc] initWithKeyPath:@"email" title:NSLocalizedString(@"Email", nil)] autorelease];
+  emailField.formFieldStyle = [self textFormFieldStyle];
+  emailField.textFormFieldCell.textField.placeholder = @"Email";
+  [basicFormSection addFormField:emailField];
+  
+  emailField.textFormFieldCell.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+  emailField.textFormFieldCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
+  emailField.textFormFieldCell.textField.keyboardType = UIKeyboardTypeEmailAddress;
 }
 
-- (void)configureFormWithCustomFields:(NSArray *)customFields {
-  IBAFormSection* customFieldSection = [[[IBAFormSection alloc] initWithHeaderTitle:nil footerTitle:nil] autorelease];
-  [self.formDataSource.sections insertObject:customFieldSection atIndex:1];
-  customFieldSection.modelManager = self.formDataSource;
-  customFieldSection.formFieldStyle = self.formDataSource.formFieldStyle;
+- (void)configureSubscribeButtonField {
+  IBAFormSection* subscribeFormSection = [self.formDataSource addSectionWithHeaderTitle:nil footerTitle:nil];
   
-  for (CSCustomField* customField in customFields) {
+  CSButtonFormField* subscribeButtonField = [[[CSButtonFormField alloc] initWithTitle:NSLocalizedString(@"Subscribe", nil)
+                                                                                 icon:nil
+                                                                       executionBlock:[self subscribeAction]] autorelease];
+  
+  [subscribeButtonField.buttonFormFieldCell.fieldButton setTitle:NSLocalizedString(@"Subscribing...", nil)
+                                                        forState:UIControlStateDisabled];
+  
+  [subscribeFormSection addFormField:subscribeButtonField];
+  
+  [self.tableView reloadData];  
+}
+
+- (void)configureCustomFields {
+  for (CSCustomField* customField in self.customFields) {
+    IBAFormSection* customFieldSection = [[[IBAFormSection alloc] initWithHeaderTitle:customField.name footerTitle:nil] autorelease];
+    customFieldSection.modelManager = self.formDataSource;
+    customFieldSection.formFieldStyle = self.formDataSource.formFieldStyle;
+    
+    [self.formDataSource.sections insertObject:customFieldSection
+                                       atIndex:([self.formDataSource.sections count] - 1)];
+    
     switch (customField.dataType) {
       case CSCustomFieldNumberDataType: {
         IBATextFormField* numberField = [[[IBATextFormField alloc] initWithKeyPath:customField.key title:customField.name] autorelease];
@@ -254,6 +256,24 @@
   [self.tableView reloadData];
 }
 
+# pragma mark - Custom Field Data Loading
+
+- (void)loadCustomFields {
+  [self.API getCustomFieldsWithListID:self.listID
+                    completionHandler:^(NSArray* customFields) {
+                      
+                      self.customFields = customFields;
+                      [self configureCustomFields];
+                      
+                    } errorHandler:^(NSError *error) {
+                      [[[[UIAlertView alloc] initWithTitle:@"Uh Oh!"
+                                                   message:[NSString stringWithFormat:@"Unable to load custom fields\n\n%@", [error localizedDescription]]
+                                                  delegate:nil
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil] autorelease] show];
+                    }];
+}
+
 #pragma mark - Form Field Styles
 
 - (IBAFormFieldStyle *)textFormFieldStyle {
@@ -268,20 +288,6 @@
   style.valueTextColor = [UIColor colorWithWhite:0.467f alpha:1.f]; // #777
   style.valueFont = [UIFont systemFontOfSize:17.f];
   style.valueFrame = CGRectMake(IBAFormFieldLabelX, 10.f, IBAFormFieldLabelWidth + IBAFormFieldValueWidth + 5.f, IBAFormFieldValueHeight);
-  
-  style.activeColor = [UIColor whiteColor];
-  
-	return style;
-}
-
-- (IBAFormFieldStyle *)buttonFormFieldStyle {
-	IBAFormFieldStyle *style = [[[IBAFormFieldStyle alloc] init] autorelease];
-  
-  style.labelTextColor = [UIColor colorWithRed:.318 green:.4 blue:.569 alpha:1.];
-  style.labelFont = [UIFont boldSystemFontOfSize:20.];
-  style.labelFrame = CGRectMake(10., 8., 300., 30.);
-  style.labelTextAlignment = UITextAlignmentCenter;
-  style.labelAutoresizingMask = UIViewAutoresizingFlexibleWidth;
   
   style.activeColor = [UIColor whiteColor];
   

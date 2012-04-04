@@ -53,12 +53,6 @@
 		D837C06C1373DAE900DE99EE /* CSListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8896AF512BB2B2B007C5783 /* CSListTests.m */; };
 		D84F7CEB13E678A700F013A6 /* libCreateSend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libCreateSend.a */; };
 		D84F7CFF13E6835300F013A6 /* CSAccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D889687B12B9E638007C5783 /* CSAccountTests.m */; };
-		D8546512152568B6000A9351 /* UINavigationController+CSNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = D8546510152568B6000A9351 /* UINavigationController+CSNavigationBar.h */; };
-		D8546513152568B6000A9351 /* UINavigationController+CSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8546511152568B6000A9351 /* UINavigationController+CSNavigationBar.m */; };
-		D854651615256AB0000A9351 /* CSNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = D854651415256AB0000A9351 /* CSNavigationBar.h */; };
-		D854651715256AB0000A9351 /* CSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D854651515256AB0000A9351 /* CSNavigationBar.m */; };
-		D854652C15258668000A9351 /* CSTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D854652A15258668000A9351 /* CSTableView.h */; };
-		D854652D15258668000A9351 /* CSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D854652B15258668000A9351 /* CSTableView.m */; };
 		D857120D13E2D35800725300 /* CSPaginatedResult.h in Headers */ = {isa = PBXBuildFile; fileRef = D857120B13E2D35800725300 /* CSPaginatedResult.h */; };
 		D857120E13E2D35800725300 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D857120C13E2D35800725300 /* CSPaginatedResult.m */; };
 		D857121213E2DF8100725300 /* CSAPI+Clients.h in Headers */ = {isa = PBXBuildFile; fileRef = D857121013E2DF8100725300 /* CSAPI+Clients.h */; };
@@ -81,6 +75,10 @@
 		D860F1B8142B057000074658 /* NSString+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D860F1A2142B057000074658 /* NSString+AFNetworking.m */; };
 		D860F1B9142B057000074658 /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = D860F1A3142B057000074658 /* UIImage+AFNetworking.h */; };
 		D860F1BA142B057000074658 /* UIImage+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D860F1A4142B057000074658 /* UIImage+AFNetworking.m */; };
+		D8632526152C2E250055EE4B /* CSButtonFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = D8632524152C2E250055EE4B /* CSButtonFormField.h */; };
+		D8632527152C2E250055EE4B /* CSButtonFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = D8632525152C2E250055EE4B /* CSButtonFormField.m */; };
+		D863252A152C343B0055EE4B /* CSButtonFormFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D8632528152C343B0055EE4B /* CSButtonFormFieldCell.h */; };
+		D863252B152C343B0055EE4B /* CSButtonFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8632529152C343B0055EE4B /* CSButtonFormFieldCell.m */; };
 		D881F3EB12F296470027CFA7 /* CSDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */; };
 		D88968E112B9F08F007C5783 /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */; };
 		D88968E212B9F08F007C5783 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D88968DF12B9F08F007C5783 /* NSString+URLEncoding.m */; };
@@ -181,17 +179,6 @@
 		D818BB471521A53200B26451 /* IBATextInputProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBATextInputProvider.h; path = External/IBAForms/library/headers/IBAForms/IBATextInputProvider.h; sourceTree = "<group>"; };
 		D818BB481521A53200B26451 /* IBATitleFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBATitleFormField.h; path = External/IBAForms/library/headers/IBAForms/IBATitleFormField.h; sourceTree = "<group>"; };
 		D818BB491521A53200B26451 /* IBATextFormField+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IBATextFormField+Factory.h"; path = "External/IBAForms/library/headers/IBAForms/IBATextFormField+Factory.h"; sourceTree = "<group>"; };
-		D8546510152568B6000A9351 /* UINavigationController+CSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CSNavigationBar.h"; sourceTree = "<group>"; };
-		D8546511152568B6000A9351 /* UINavigationController+CSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CSNavigationBar.m"; sourceTree = "<group>"; };
-		D854651415256AB0000A9351 /* CSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNavigationBar.h; sourceTree = "<group>"; };
-		D854651515256AB0000A9351 /* CSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNavigationBar.m; sourceTree = "<group>"; };
-		D854651A15256C80000A9351 /* CSNavigationBar-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSNavigationBar-Background.png"; sourceTree = "<group>"; };
-		D854651D152570FA000A9351 /* CSNavigationBar-Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSNavigationBar-Background@2x.png"; sourceTree = "<group>"; };
-		D85465201525724C000A9351 /* CSSubscriptionForm-Background-Pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSSubscriptionForm-Background-Pattern.png"; sourceTree = "<group>"; };
-		D85465211525724C000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSSubscriptionForm-Background-Pattern@2x.png"; sourceTree = "<group>"; };
-		D854652A15258668000A9351 /* CSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTableView.h; sourceTree = "<group>"; };
-		D854652B15258668000A9351 /* CSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTableView.m; sourceTree = "<group>"; };
-		D854653615259B4B000A9351 /* CSSubscriptionForm-Button-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSSubscriptionForm-Button-Background.png"; sourceTree = "<group>"; };
 		D857120B13E2D35800725300 /* CSPaginatedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPaginatedResult.h; sourceTree = "<group>"; };
 		D857120C13E2D35800725300 /* CSPaginatedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPaginatedResult.m; sourceTree = "<group>"; };
 		D857121013E2DF8100725300 /* CSAPI+Clients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Clients.h"; sourceTree = "<group>"; };
@@ -214,6 +201,10 @@
 		D860F1A2142B057000074658 /* NSString+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+AFNetworking.m"; path = "External/AFNetworking/AFNetworking/NSString+AFNetworking.m"; sourceTree = "<group>"; };
 		D860F1A3142B057000074658 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "External/AFNetworking/AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
 		D860F1A4142B057000074658 /* UIImage+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AFNetworking.m"; path = "External/AFNetworking/AFNetworking/UIImage+AFNetworking.m"; sourceTree = "<group>"; };
+		D8632524152C2E250055EE4B /* CSButtonFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSButtonFormField.h; sourceTree = "<group>"; };
+		D8632525152C2E250055EE4B /* CSButtonFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSButtonFormField.m; sourceTree = "<group>"; };
+		D8632528152C343B0055EE4B /* CSButtonFormFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSButtonFormFieldCell.h; sourceTree = "<group>"; };
+		D8632529152C343B0055EE4B /* CSButtonFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSButtonFormFieldCell.m; sourceTree = "<group>"; };
 		D881F3EA12F296470027CFA7 /* CSDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSDebuggingMacros.h; path = Classes/CSDebuggingMacros.h; sourceTree = "<group>"; };
 		D889687B12B9E638007C5783 /* CSAccountTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAccountTests.m; sourceTree = "<group>"; };
 		D88968DE12B9F08F007C5783 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -292,7 +283,6 @@
 				D8CE1E3212B7570D002D871F /* Tests */,
 				D8CE1D8812B74EB6002D871F /* External */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
-				D854651915256C0D000A9351 /* Resources */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				D8CE1D0512B73F04002D871F /* Configuration */,
@@ -386,26 +376,12 @@
 			children = (
 				D818BAFF15219C2100B26451 /* CSSubscriptionFormViewController.h */,
 				D818BB0015219C2100B26451 /* CSSubscriptionFormViewController.m */,
-				D8546510152568B6000A9351 /* UINavigationController+CSNavigationBar.h */,
-				D8546511152568B6000A9351 /* UINavigationController+CSNavigationBar.m */,
-				D854651415256AB0000A9351 /* CSNavigationBar.h */,
-				D854651515256AB0000A9351 /* CSNavigationBar.m */,
-				D854652A15258668000A9351 /* CSTableView.h */,
-				D854652B15258668000A9351 /* CSTableView.m */,
+				D8632524152C2E250055EE4B /* CSButtonFormField.h */,
+				D8632525152C2E250055EE4B /* CSButtonFormField.m */,
+				D8632528152C343B0055EE4B /* CSButtonFormFieldCell.h */,
+				D8632529152C343B0055EE4B /* CSButtonFormFieldCell.m */,
 			);
 			name = UI;
-			sourceTree = "<group>";
-		};
-		D854651915256C0D000A9351 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D854651A15256C80000A9351 /* CSNavigationBar-Background.png */,
-				D854651D152570FA000A9351 /* CSNavigationBar-Background@2x.png */,
-				D85465201525724C000A9351 /* CSSubscriptionForm-Background-Pattern.png */,
-				D85465211525724C000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png */,
-				D854653615259B4B000A9351 /* CSSubscriptionForm-Button-Background.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		D860F168142AFC0E00074658 /* AFNetworking */ = {
@@ -610,9 +586,8 @@
 				D818BB6A1521A53200B26451 /* IBATextInputProvider.h in Headers */,
 				D818BB6B1521A53200B26451 /* IBATitleFormField.h in Headers */,
 				D818BB6C1521A53200B26451 /* IBATextFormField+Factory.h in Headers */,
-				D8546512152568B6000A9351 /* UINavigationController+CSNavigationBar.h in Headers */,
-				D854651615256AB0000A9351 /* CSNavigationBar.h in Headers */,
-				D854652C15258668000A9351 /* CSTableView.h in Headers */,
+				D8632526152C2E250055EE4B /* CSButtonFormField.h in Headers */,
+				D863252A152C343B0055EE4B /* CSButtonFormFieldCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,9 +735,8 @@
 				D8D06C40142B1D1400BE09D7 /* CSRestClient.m in Sources */,
 				D8D06C48142C012900BE09D7 /* CSJSONRequestOperation.m in Sources */,
 				D818BB0215219C2100B26451 /* CSSubscriptionFormViewController.m in Sources */,
-				D8546513152568B6000A9351 /* UINavigationController+CSNavigationBar.m in Sources */,
-				D854651715256AB0000A9351 /* CSNavigationBar.m in Sources */,
-				D854652D15258668000A9351 /* CSTableView.m in Sources */,
+				D8632527152C2E250055EE4B /* CSButtonFormField.m in Sources */,
+				D863252B152C343B0055EE4B /* CSButtonFormFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

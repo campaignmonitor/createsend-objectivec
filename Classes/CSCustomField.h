@@ -37,7 +37,25 @@ typedef enum _CSCustomFieldDataType {
 @property (retain) NSArray* options;
 
 /**
- Creates and returns a `CSCustomField`. If you're not creating a multi-select custom field, you might want to use `customFieldWithName:dataType:` instead.
+ Creates and returns a `CSCustomField`. If you want to explicitely specify the
+ custom fields shown in a `CSSubscriptionFormViewController`, you should use
+ this constructor as it allows you to specify the custom field's key.
+ 
+ @param name The name of the custom field
+ @param key The system-generated key of the custom field. Used during subcription.
+ @param dataType The data type of the custom field
+ @param options The available options if the field has a multi-selet data type, or `nil` otherwise
+ 
+ @return An instance of `CSCustomField`
+ **/
++ (id)customFieldWithName:(NSString *)name
+                      key:(NSString *)key
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options;
+
+/**
+ Creates and returns a `CSCustomField`. If you're not creating a multi-select
+ custom field, you might want to use `customFieldWithName:dataType:` instead.
  
  @param name The name of the custom field
  @param dataType The data type of field

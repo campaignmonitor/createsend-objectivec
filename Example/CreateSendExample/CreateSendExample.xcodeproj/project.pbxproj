@@ -18,12 +18,7 @@
 		D84F7CFA13E6792C00F013A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CF913E6792C00F013A6 /* SystemConfiguration.framework */; };
 		D84F7CFC13E6793300F013A6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CFB13E6793200F013A6 /* MobileCoreServices.framework */; };
 		D84F7CFE13E6794800F013A6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CFD13E6794800F013A6 /* libz.dylib */; };
-		D854651C15256C9C000A9351 /* CSNavigationBar-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = D854651B15256C9C000A9351 /* CSNavigationBar-Background.png */; };
-		D854651F152570FF000A9351 /* CSNavigationBar-Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D854651E152570FF000A9351 /* CSNavigationBar-Background@2x.png */; };
-		D854652415257253000A9351 /* CSSubscriptionForm-Background-Pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = D854652215257253000A9351 /* CSSubscriptionForm-Background-Pattern.png */; };
-		D854652515257253000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D854652315257253000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png */; };
 		D85465291525827C000A9351 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85465281525827C000A9351 /* QuartzCore.framework */; };
-		D854653815259B5A000A9351 /* CSSubscriptionForm-Button-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = D854653715259B5A000A9351 /* CSSubscriptionForm-Button-Background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +52,7 @@
 		D84F7C8113E66CA900F013A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D84F7C8513E66CA900F013A6 /* CSExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSExample-Info.plist"; sourceTree = "<group>"; };
 		D84F7C8713E66CA900F013A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D84F7C8913E66CA900F013A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D84F7C8913E66CA900F013A6 /* main.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; tabWidth = 2; };
 		D84F7C8B13E66CA900F013A6 /* CSExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSExample-Prefix.pch"; sourceTree = "<group>"; };
 		D84F7C8C13E66CA900F013A6 /* CSExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSExampleAppDelegate.h; sourceTree = "<group>"; };
 		D84F7C8D13E66CA900F013A6 /* CSExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSExampleAppDelegate.m; sourceTree = "<group>"; };
@@ -66,12 +61,7 @@
 		D84F7CF913E6792C00F013A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D84F7CFB13E6793200F013A6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D84F7CFD13E6794800F013A6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D854651B15256C9C000A9351 /* CSNavigationBar-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CSNavigationBar-Background.png"; path = "../../../Resources/CSNavigationBar-Background.png"; sourceTree = "<group>"; };
-		D854651E152570FF000A9351 /* CSNavigationBar-Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CSNavigationBar-Background@2x.png"; path = "../../../Resources/CSNavigationBar-Background@2x.png"; sourceTree = "<group>"; };
-		D854652215257253000A9351 /* CSSubscriptionForm-Background-Pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CSSubscriptionForm-Background-Pattern.png"; path = "../../../Resources/CSSubscriptionForm-Background-Pattern.png"; sourceTree = "<group>"; };
-		D854652315257253000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CSSubscriptionForm-Background-Pattern@2x.png"; path = "../../../Resources/CSSubscriptionForm-Background-Pattern@2x.png"; sourceTree = "<group>"; };
 		D85465281525827C000A9351 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D854653715259B5A000A9351 /* CSSubscriptionForm-Button-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CSSubscriptionForm-Button-Background.png"; path = "../../../Resources/CSSubscriptionForm-Button-Background.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,11 +143,6 @@
 		D84F7C9713E66D2A00F013A6 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				D854651B15256C9C000A9351 /* CSNavigationBar-Background.png */,
-				D854651E152570FF000A9351 /* CSNavigationBar-Background@2x.png */,
-				D854652215257253000A9351 /* CSSubscriptionForm-Background-Pattern.png */,
-				D854652315257253000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png */,
-				D854653715259B5A000A9351 /* CSSubscriptionForm-Button-Background.png */,
 				D84F7C9813E66D4D00F013A6 /* CreateSend.xcodeproj */,
 			);
 			name = Dependencies;
@@ -247,11 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84F7C8813E66CA900F013A6 /* InfoPlist.strings in Resources */,
-				D854651C15256C9C000A9351 /* CSNavigationBar-Background.png in Resources */,
-				D854651F152570FF000A9351 /* CSNavigationBar-Background@2x.png in Resources */,
-				D854652415257253000A9351 /* CSSubscriptionForm-Background-Pattern.png in Resources */,
-				D854652515257253000A9351 /* CSSubscriptionForm-Background-Pattern@2x.png in Resources */,
-				D854653815259B5A000A9351 /* CSSubscriptionForm-Button-Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
