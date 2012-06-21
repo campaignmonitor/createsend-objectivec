@@ -40,6 +40,7 @@ static NSDictionary* customFieldDataTypeMapping;
                                    [NSNumber numberWithInt:CSCustomFieldMultiSelectManyDataType], @"MultiSelectMany",
                                    [NSNumber numberWithInt:CSCustomFieldCountryDataType], @"Country",
                                    [NSNumber numberWithInt:CSCustomFieldUSStateDataType], @"USState",
+                                   [NSNumber numberWithInt:CSCustomFieldDateDataType], @"Date",
                                    nil] retain];
   }
 }

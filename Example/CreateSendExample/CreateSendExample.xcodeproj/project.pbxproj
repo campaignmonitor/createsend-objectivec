@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D818BAEC1521998800B26451 /* libCreateSend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7C9E13E66D4D00F013A6 /* libCreateSend.a */; };
 		D84F7C7E13E66CA900F013A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7C7D13E66CA900F013A6 /* UIKit.framework */; };
 		D84F7C8013E66CA900F013A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7C7F13E66CA900F013A6 /* Foundation.framework */; };
 		D84F7C8213E66CA900F013A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7C8113E66CA900F013A6 /* CoreGraphics.framework */; };
 		D84F7C8813E66CA900F013A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84F7C8613E66CA900F013A6 /* InfoPlist.strings */; };
 		D84F7C8A13E66CA900F013A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F7C8913E66CA900F013A6 /* main.m */; };
 		D84F7C8E13E66CA900F013A6 /* CreateSendExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F7C8D13E66CA900F013A6 /* CreateSendExampleAppDelegate.m */; };
-		D84F7CAE13E66E5100F013A6 /* libCreateSend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7C9E13E66D4D00F013A6 /* libCreateSend.a */; };
 		D84F7CF813E6792700F013A6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CF713E6792700F013A6 /* CFNetwork.framework */; };
 		D84F7CFA13E6792C00F013A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CF913E6792C00F013A6 /* SystemConfiguration.framework */; };
 		D84F7CFC13E6793300F013A6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CFB13E6793200F013A6 /* MobileCoreServices.framework */; };
 		D84F7CFE13E6794800F013A6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7CFD13E6794800F013A6 /* libz.dylib */; };
-		D84F7D0113E6842D00F013A6 /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84F7D0013E6842D00F013A6 /* YAJLiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D818BAEA1521998400B26451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D84F7C9813E66D4D00F013A6 /* CreateSend.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CreateSend;
+		};
 		D84F7C9D13E66D4D00F013A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D84F7C9813E66D4D00F013A6 /* CreateSend.xcodeproj */;
@@ -35,13 +41,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = D8CE1D8212B74EAB002D871F;
 			remoteInfo = CreateSendTests;
-		};
-		D84F7CAC13E66E4300F013A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D84F7C9813E66D4D00F013A6 /* CreateSend.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = CreateSend;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,7 +60,6 @@
 		D84F7CF913E6792C00F013A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D84F7CFB13E6793200F013A6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D84F7CFD13E6794800F013A6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D84F7D0013E6842D00F013A6 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = ../../External/YAJL/YAJLiOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +67,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84F7D0113E6842D00F013A6 /* YAJLiOS.framework in Frameworks */,
+				D818BAEC1521998800B26451 /* libCreateSend.a in Frameworks */,
 				D84F7CFE13E6794800F013A6 /* libz.dylib in Frameworks */,
 				D84F7CFC13E6793300F013A6 /* MobileCoreServices.framework in Frameworks */,
 				D84F7CFA13E6792C00F013A6 /* SystemConfiguration.framework in Frameworks */,
 				D84F7CF813E6792700F013A6 /* CFNetwork.framework in Frameworks */,
-				D84F7CAE13E66E5100F013A6 /* libCreateSend.a in Frameworks */,
 				D84F7C7E13E66CA900F013A6 /* UIKit.framework in Frameworks */,
 				D84F7C8013E66CA900F013A6 /* Foundation.framework in Frameworks */,
 				D84F7C8213E66CA900F013A6 /* CoreGraphics.framework in Frameworks */,
@@ -104,7 +101,6 @@
 		D84F7C7C13E66CA900F013A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D84F7D0013E6842D00F013A6 /* YAJLiOS.framework */,
 				D84F7CFD13E6794800F013A6 /* libz.dylib */,
 				D84F7CFB13E6793200F013A6 /* MobileCoreServices.framework */,
 				D84F7CF913E6792C00F013A6 /* SystemConfiguration.framework */,
@@ -169,7 +165,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D84F7CAD13E66E4300F013A6 /* PBXTargetDependency */,
+				D818BAEB1521998400B26451 /* PBXTargetDependency */,
 			);
 			name = CreateSendExample;
 			productName = CreateSendExample;
@@ -181,6 +177,9 @@
 /* Begin PBXProject section */
 		D84F7C7013E66CA900F013A6 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = D84F7C7313E66CA900F013A6 /* Build configuration list for PBXProject "CreateSendExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -245,10 +244,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D84F7CAD13E66E4300F013A6 /* PBXTargetDependency */ = {
+		D818BAEB1521998400B26451 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CreateSend;
-			targetProxy = D84F7CAC13E66E4300F013A6 /* PBXContainerItemProxy */;
+			targetProxy = D818BAEA1521998400B26451 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -269,7 +268,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -279,15 +277,15 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -297,19 +295,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -318,13 +315,14 @@
 		D84F7C9513E66CA900F013A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../External/YAJL\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CreateSendExample/CreateSendExample-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/../../Classes\"";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SOURCE_ROOT)/../../Classes\"",
+					"\"$(SRCROOT)/../../External/IBAForms/library/headers\"",
+					"\"$(SRCROOT)/../../External/AFNetworking/AFNetworking\"",
+				);
 				INFOPLIST_FILE = "CreateSendExample/CreateSendExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -334,13 +332,14 @@
 		D84F7C9613E66CA900F013A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../External/YAJL\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CreateSendExample/CreateSendExample-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/../../Classes\"";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SOURCE_ROOT)/../../Classes\"",
+					"\"$(SRCROOT)/../../External/IBAForms/library/headers\"",
+					"\"$(SRCROOT)/../../External/AFNetworking/AFNetworking\"",
+				);
 				INFOPLIST_FILE = "CreateSendExample/CreateSendExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

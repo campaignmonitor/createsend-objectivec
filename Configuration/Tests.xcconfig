@@ -11,7 +11,7 @@ PRODUCT_NAME = CreateSendTests
 INFOPLIST_FILE = CreateSendTests-Info.plist
 
 SDKROOT                    = iphoneos
-IPHONEOS_DEPLOYMENT_TARGET = 3.0
+IPHONEOS_DEPLOYMENT_TARGET = 4.0
 
 
 ARCHS        = $(ARCHS_STANDARD_32_BIT)

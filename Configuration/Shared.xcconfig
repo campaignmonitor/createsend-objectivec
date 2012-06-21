@@ -9,7 +9,7 @@
 PRODUCT_NAME = CreateSend
 
 SDKROOT                    = iphoneos
-IPHONEOS_DEPLOYMENT_TARGET = 3.0
+IPHONEOS_DEPLOYMENT_TARGET = 4.0
 
 ARCHS        = $(ARCHS_STANDARD_32_BIT)
 DSTROOT      = /tmp/$(PRODUCT_NAME).dst
@@ -53,3 +53,5 @@ GCC_WARN_UNUSED_LABEL                     = YES
 GCC_WARN_UNUSED_VALUE                     = YES
 GCC_WARN_UNUSED_VARIABLE                  = YES
 GCC_WARN_ABOUT_MISSING_NEWLINE            = NO
+
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/External/IBAForms/library/headers"

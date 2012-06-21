@@ -7,6 +7,7 @@
 //
 
 #import "CSAPI.h"
+#import "JSONKit.h"
 
 @implementation CSAPI
 

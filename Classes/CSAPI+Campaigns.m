@@ -7,6 +7,7 @@
 //
 
 #import "CSAPI+Campaigns.h"
+#import "JSONKit.h"
 
 @implementation CSAPI (Campaigns)
 

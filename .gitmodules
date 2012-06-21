@@ -4,3 +4,6 @@
 [submodule "External/JSONKit"]
 	path = External/JSONKit
 	url = https://github.com/atnan/JSONKit.git
+[submodule "External/IBAForms"]
+	path = External/IBAForms
+	url = https://github.com/ittybittydude/IBAForms.git

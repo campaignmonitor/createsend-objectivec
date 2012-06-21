@@ -15,7 +15,8 @@ typedef enum _CSCustomFieldDataType {
   CSCustomFieldMultiSelectOneDataType,
   CSCustomFieldMultiSelectManyDataType,
   CSCustomFieldCountryDataType,
-  CSCustomFieldUSStateDataType
+  CSCustomFieldUSStateDataType,
+  CSCustomFieldDateDataType
 } CSCustomFieldDataType;
 
 /**

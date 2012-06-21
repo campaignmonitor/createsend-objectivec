@@ -7,7 +7,6 @@
 //
 
 #import "CSRestClient.h"
-#import "JSONKit.h"
 
 typedef void (^CSAPIErrorHandler)(NSError* error);
 

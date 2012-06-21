@@ -7,6 +7,7 @@
 //
 
 #import "CSAPI+Subscribers.h"
+#import "JSONKit.h"
 
 @implementation CSAPI (Subscribers)
 
