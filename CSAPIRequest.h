@@ -24,8 +24,15 @@ typedef enum _CSAPIRequestErrorType {
 @property (retain) id parsedResponse;
 
 
-+ (id)requestWithAPIName:(NSString *)apiName
++ (id)requestWithAPISlug:(NSString *)APISlug;
+
++ (id)requestWithAPISlug:(NSString *)APISlug
          queryParameters:(NSDictionary *)queryParameters;
+
+
++ (NSString *)defaultAPIKey;
+
++ (void)setDefaultAPIKey:(NSString *)newDefaultAPIKey;
 
 
 // Prepare the requestObject, which is converted to JSON and set as the request body

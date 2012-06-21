@@ -12,7 +12,7 @@
 @implementation CSAPIKeyRequest
 
 
-@synthesize APIKey;
+@synthesize APIKey=_APIKey;
 
 
 
@@ -20,7 +20,7 @@
                 username:(NSString *)username
                 password:(NSString *)password {
 
-  CSAPIKeyRequest* request = [self requestWithAPIName:@"apikey"
+  CSAPIKeyRequest* request = [self requestWithAPISlug:@"apikey"
                                       queryParameters:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        siteURL, @"siteurl",
                                                        nil]];
@@ -38,7 +38,7 @@
 
 
 - (void)dealloc {
-  [APIKey release];
+  [_APIKey release];
 
   [super release];
 }

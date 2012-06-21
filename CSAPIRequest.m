@@ -13,12 +13,7 @@
 
 NSString* const kCSAPIRequestErrorDomain = @"kCSAPIRequestErrorDomain";
 
-
-@interface CSAPIRequest ()
-
-- (void)parseJSONResponse;
-
-@end
+static NSString* defaultAPIKey = nil;
 
 
 @implementation CSAPIRequest
@@ -35,27 +30,49 @@ NSString* const kCSAPIRequestErrorDomain = @"kCSAPIRequestErrorDomain";
     self.shouldRedirect = NO;
     self.shouldPresentAuthenticationDialog = NO;
     self.shouldPresentProxyAuthenticationDialog = NO;
+    self.useSessionPersistence = NO;
   }
 
   return self;
 }
 
 
-+ (id)requestWithAPIName:(NSString *)APIName
++ (id)requestWithAPISlug:(NSString *)APISlug {
+  return [self requestWithAPISlug:APISlug queryParameters:nil];
+}
+
++ (id)requestWithAPISlug:(NSString *)APISlug
          queryParameters:(NSDictionary *)queryParameters {
 
-  NSMutableString* queryString = [NSMutableString string];
-  for (NSString* key in [queryParameters allKeys]) {
-    NSString* value = [queryParameters valueForKey:key];
-    NSString* queryPair = [NSString stringWithFormat:@"%@=%@", key, [value stringByPercentEncodingForURLs]];
+  NSString* URLString = [NSString stringWithFormat:@"http://api.createsend.com/api/v3/%@.json", APISlug];
 
-    [queryString appendString:queryPair];
+  if (queryParameters) {
+    NSMutableString* queryString = [NSMutableString string];
+
+    for (NSString* key in [queryParameters allKeys]) {
+      NSString* value = [queryParameters valueForKey:key];
+      NSString* queryPair = [NSString stringWithFormat:@"%@=%@", key, [value stringByPercentEncodingForURLs]];
+
+      [queryString appendString:queryPair];
+    }
+
+    URLString = [URLString stringByAppendingFormat:@"?%@", queryString];
   }
 
-  NSString* URLString = [NSString stringWithFormat:@"http://api.createsend.com/api/v3/%@.json?%@", APIName, queryString];
   NSURL* URL = [NSURL URLWithString:URLString];
 
   return [[[self alloc] initWithURL:URL] autorelease];
+}
+
+
++ (NSString *)defaultAPIKey {
+  return defaultAPIKey;
+}
+
+
++ (void)setDefaultAPIKey:(NSString *)newDefaultAPIKey {
+  [defaultAPIKey release];
+  defaultAPIKey = [newDefaultAPIKey retain];
 }
 
 
@@ -65,6 +82,12 @@ NSString* const kCSAPIRequestErrorDomain = @"kCSAPIRequestErrorDomain";
   if (self.requestObject) {
     NSData* JSONRequestBody = [[self.requestObject yajl_JSONString] dataUsingEncoding:NSUTF8StringEncoding];
     [self appendPostData:JSONRequestBody];
+  }
+
+  self.username = self.username ?: [[self class] defaultAPIKey];
+
+  if (self.username != nil && self.password == nil) {
+    self.password = @"";
   }
 
   [super main];

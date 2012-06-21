@@ -12,12 +12,12 @@
 @interface CSAPIKeyRequest : CSAPIRequest
 
 
+@property (retain) NSString* APIKey;
+
+
 + (id)requestWithSiteURL:(NSString *)siteURL
                 username:(NSString *)username
                 password:(NSString *)password;
-
-
-@property (retain) NSString* APIKey;
 
 
 @end
