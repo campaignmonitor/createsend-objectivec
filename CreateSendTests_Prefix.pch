@@ -1,0 +1,17 @@
+//
+// Prefix header for all source files of the 'CreateSendTests' target in the 'CreateSendTests' project.
+//
+
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+
+  #import "CSDebuggingMacros.h"
+
+  #import <GHUnitIOS/GHUnit.h>
+#endif
+
+# define kCSTestsValidUsername @"your-username"
+# define kCSTestsValidPassword @"your-password"
+# define kCSTestsValidSiteURL @"http://your-account.createsend.com/"
+# define kCSTestsValidAPIKey @"..."
+# define kCSTestsValidClientID @"..."
