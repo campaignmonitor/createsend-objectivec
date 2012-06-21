@@ -66,7 +66,7 @@
                       completionHandler:(void (^)(void))completionHandler
                            errorHandler:(CSAPIErrorHandler)errorHandler {
   
-  [self.restClient deletePath:[NSString stringWithFormat:@"segments/%@/rules.json"]
+  [self.restClient deletePath:[NSString stringWithFormat:@"segments/%@/rules.json", segmentID]
                    parameters:nil
                       success:^(id response) { completionHandler(); }
                       failure:errorHandler];
