@@ -3,7 +3,7 @@
 	url = https://github.com/atnan/AFNetworking.git
 [submodule "External/JSONKit"]
 	path = External/JSONKit
-	url = https://github.com/atnan/JSONKit.git
+	url = https://github.com/johnezang/JSONKit.git
 [submodule "External/IBAForms"]
 	path = External/IBAForms
 	url = https://github.com/ittybittydude/IBAForms.git

@@ -58,7 +58,7 @@
 		D857121213E2DF8100725300 /* CSAPI+Clients.h in Headers */ = {isa = PBXBuildFile; fileRef = D857121013E2DF8100725300 /* CSAPI+Clients.h */; };
 		D857121313E2DF8100725300 /* CSAPI+Clients.m in Sources */ = {isa = PBXBuildFile; fileRef = D857121113E2DF8100725300 /* CSAPI+Clients.m */; };
 		D860F18A142AFCE400074658 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D860F188142AFCE400074658 /* JSONKit.h */; };
-		D860F18B142AFCE400074658 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D860F189142AFCE400074658 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-Wno-strict-selector-match"; }; };
+		D860F18B142AFCE400074658 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D860F189142AFCE400074658 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker"; }; };
 		D860F1A7142B057000074658 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D860F191142B057000074658 /* AFHTTPRequestOperation.h */; };
 		D860F1A8142B057000074658 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D860F192142B057000074658 /* AFHTTPRequestOperation.m */; };
 		D860F1AD142B057000074658 /* AFJSONRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D860F197142B057000074658 /* AFJSONRequestOperation.h */; };
