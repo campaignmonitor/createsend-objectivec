@@ -11,6 +11,18 @@
 
 @class CSAPI;
 
+/**
+ Drop-in view controller which presents a subscription form. The view controller
+ can be configured in a number of ways:
+ 
+ 1. Subscribe with name & email address fields only
+ 2. Subscribe with name, email address & some custom fields (specified at compile-time)
+ 3. Subscribe with name, email address & all custom fields (fetched at run-time)
+ 
+ The last configuration allows custom fields to be added/removed from your CM
+ dashboard, and the subscription form will update dynamically without needing
+ to re-release your application.
+ */
 @interface CSSubscriptionFormViewController : IBAFormViewController
 
 @property (nonatomic, readwrite, retain) CSAPI* API;
