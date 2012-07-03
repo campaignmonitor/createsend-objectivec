@@ -7,7 +7,17 @@ CreateSend Objective-C is a library for talking to the Campaign Monitor API from
 - Supports all of the available [Campaign Monitor APIs](http://www.campaignmonitor.com/api/).
 - Provides a drop-in UI for adding new subscribers to your lists, with custom field support.
 
-## Example Use ##
+## Sample Project ##
+
+A sample project is included in `$SRCROOT/Example/CreateSendExample/CreateSendExample.xcodeproj`. With the help of [IBAForms](https://github.com/ittybittydude/IBAForms/) by the friendly folks at [Itty Bitty Apps](http://www.ittybittyapps.com), `CreateSendExample` demonstrates presenting a form for subscribing to a Campaign Monitor list.
+
+You will need to specify your own site URL and API key in `CSExampleAppDelegate.m` before building & running `CreateSendExample`.
+
+The provided `CSSubscriptionFormViewController` class can present a simple form with name & email address, or it can display the custom fields configured for the subscription list. Set the `customFieldBehavior` variable in `CSExampleAppDelegate.m` to any of the values specified in `CSExampleAppCustomFieldBehavior` to configure the form in fixed-fields or dynamic-fields mode.
+
+## Basic API Wrapper Usage Examples ##
+
+If you prefer to build your own custom UI, you can simply use the API wrapper directly. Here's a couple of examples to get you started.
 
 ### Getting your API key: ###
 
