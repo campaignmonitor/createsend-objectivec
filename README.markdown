@@ -17,7 +17,9 @@ The provided `CSSubscriptionFormViewController` class can present a simple form 
 
 ## Basic API Wrapper Usage Examples ##
 
-If you prefer to build your own custom UI, you can simply use the API wrapper directly. Here's a couple of examples to get you started.
+If you prefer to build your own custom UI, you can simply use the API wrapper directly. For full documentation of the API wrapper, see the class documentation is available in `Documentation/html/index.html` (generated with `rake docs:generate`).
+
+Here's a couple of examples to get you started.
 
 ### Getting your API key: ###
 
