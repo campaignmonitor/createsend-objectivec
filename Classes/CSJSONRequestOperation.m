@@ -26,24 +26,23 @@
 
 @implementation CSJSONRequestOperation
 
-@synthesize successHandler;
-@synthesize failureHandler;
-
 + (id)operationWithRequest:(NSURLRequest *)urlRequest
      acceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes
     acceptableContentTypes:(NSSet *)acceptableContentTypes
                    success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON))success
                    failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error))failure {
-  
+
+  id successHandler = [[success copy] autorelease];
+  id failureHandler = [[failure copy] autorelease];
   
   CSJSONRequestOperation* operation = [super operationWithRequest:urlRequest
                                             acceptableStatusCodes:acceptableStatusCodes
                                            acceptableContentTypes:acceptableContentTypes
-                                                          success:success
-                                                          failure:failure];
-  
-  operation.successHandler = Block_copy(success);
-  operation.failureHandler = Block_copy(failure);
+                                                          success:successHandler
+                                                          failure:failureHandler];
+
+  operation.successHandler = successHandler;
+  operation.failureHandler = failureHandler;
   
   return operation;
 }
@@ -109,9 +108,9 @@
 }
 
 - (void)dealloc {
-  if (successHandler) Block_release(successHandler);
-  if (failureHandler) Block_release(failureHandler);
-  
+  self.successHandler = nil;
+  self.failureHandler = nil;
+
   [super dealloc];
 }
 
