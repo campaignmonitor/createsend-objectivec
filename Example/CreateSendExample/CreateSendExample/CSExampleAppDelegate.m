@@ -22,12 +22,13 @@ typedef enum _CSExampleAppCustomFieldBehavior {
 @synthesize window=_window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+
   self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
   [self.window makeKeyAndVisible];
   
   // NOTE: This fetches the first subscription list from the first client in
   //       your account, and presents a subscription form for that list.
-
 
   // Replace with your site URL & API key
   CSAPI* API = [[[CSAPI alloc] initWithSiteURL:@"http://your-account.createsend.com/"
@@ -74,9 +75,13 @@ typedef enum _CSExampleAppCustomFieldBehavior {
                         
                         self.window.rootViewController = [[[UINavigationController alloc] initWithRootViewController:subscriptionform] autorelease];
                         
-                      } errorHandler:^(NSError *error) {}];
+                      } errorHandler:^(NSError *error) {
+                        NSLog(@"Failed to get subscriber lists. Error: %@", [error localizedDescription]);
+                      }];
     
-  } errorHandler:^(NSError* error){}];
+  } errorHandler:^(NSError* error){
+    NSLog(@"Failed to get clients. Error: %@", [error localizedDescription]);
+  }];
   
   return YES;
 }
