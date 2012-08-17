@@ -44,9 +44,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithSiteURL:APIKey:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSiteURL:APIKey:</option>
+	<option value="//api/name/initWithAPIKey:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAPIKey:</option>
 	
-	<option value="//api/name/initWithSiteURL:username:password:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSiteURL:username:password:</option>
+	<option value="//api/name/initWithClientID:clientSecret:scope:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithClientID:clientSecret:scope:</option>
 	
 	
 	
@@ -76,9 +76,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSiteURL:APIKey:">initWithSiteURL:APIKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAPIKey:">initWithAPIKey:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSiteURL:username:password:">initWithSiteURL:username:password:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithClientID:clientSecret:scope:">initWithClientID:clientSecret:scope:</a></span></li>
 	
 </ul></li>
 
@@ -121,7 +121,7 @@
 grouped into categories as follows:</p>
 
 <ul>
-<li><a href="../Categories/CSAPI+Accounts.html">Accounts</a></li>
+<li><a href="../Categories/CSAPI+Account.html">Accounts</a></li>
 <li><a href="../Categories/CSAPI+Campaigns.html">Campaigns</a></li>
 <li><a href="../Categories/CSAPI+Lists.html">Lists</a></li>
 <li><a href="../Categories/CSAPI+Subscribers.html">Subscribers</a></li>
@@ -147,16 +147,15 @@ grouped into categories as follows:</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithSiteURL:APIKey:">&ndash;&nbsp;initWithSiteURL:APIKey:</a></code>
+		<code><a href="#//api/name/initWithClientID:clientSecret:scope:">&ndash;&nbsp;initWithClientID:clientSecret:scope:</a></code>
 		<span class="tooltip"><p>Creates and returns a CSAPI instance for interacting with the Campaign Monitor API.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithSiteURL:username:password:">&ndash;&nbsp;initWithSiteURL:username:password:</a></code>
-		<span class="tooltip"><p>Creates and returns a CSAPI instance, however it&rsquo;s only really useful if you
-don&rsquo;t have access to your API key and would like to request it via the API.</p></span>
+		<code><a href="#//api/name/initWithAPIKey:">&ndash;&nbsp;initWithAPIKey:</a></code>
+		<span class="tooltip"><p>Creates and returns a CSAPI instance for interacting with the Campaign Monitor API.</p></span>
 	</span>
 	
 	
@@ -178,8 +177,8 @@ don&rsquo;t have access to your API key and would like to request it via the API
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithSiteURL:APIKey:" title="initWithSiteURL:APIKey:"></a>
-	<h3 class="subsubtitle method-title">initWithSiteURL:APIKey:</h3>
+	<a name="//api/name/initWithAPIKey:" title="initWithAPIKey:"></a>
+	<h3 class="subsubtitle method-title">initWithAPIKey:</h3>
 	
 	
 	
@@ -187,21 +186,18 @@ don&rsquo;t have access to your API key and would like to request it via the API
 		<p>Creates and returns a CSAPI instance for interacting with the Campaign Monitor API.</p>
 	</div>		
 	
-	
-	<div class="method-subsection method-declaration"><code>- (id)initWithSiteURL:(NSString *)<em>siteURL</em> APIKey:(NSString *)<em>APIKey</em></code></div>
-	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAPIKey:(NSString *)<em>APIKey</em></code></div>
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>siteURL</em></dt>
-			<dd><p>The site URL for your Campaign Monitor account. e.g. <code>@"</code>http://myaccountname.createsend.com/<code>"</code></p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
 			<dt><em>APIKey</em></dt>
-			<dd><p>The API key/token for your Campaign Monitor account.</p></dd>
+			<dd><p>The APIKey used for authentication.</p></dd>
 		</dl>
 		
 	</div>
@@ -232,36 +228,37 @@ don&rsquo;t have access to your API key and would like to request it via the API
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithSiteURL:username:password:" title="initWithSiteURL:username:password:"></a>
-	<h3 class="subsubtitle method-title">initWithSiteURL:username:password:</h3>
+	<a name="//api/name/initWithClientID:clientSecret:scope:" title="initWithClientID:clientSecret:scope:"></a>
+	<h3 class="subsubtitle method-title">initWithClientID:clientSecret:scope:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates and returns a CSAPI instance, however it&rsquo;s only really useful if you
-don&rsquo;t have access to your API key and would like to request it via the API.</p>
+		<p>Creates and returns a CSAPI instance for interacting with the Campaign Monitor API.</p>
 	</div>		
 	
-	
-	<div class="method-subsection method-declaration"><code>- (id)initWithSiteURL:(NSString *)<em>siteURL</em> username:(NSString *)<em>username</em> password:(NSString *)<em>password</em></code></div>
-	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithClientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> scope:(NSArray *)<em>scope</em></code></div>
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>siteURL</em></dt>
-			<dd><p>The site URL for your Campaign Monitor account. e.g. <code>@"</code>http://myaccountname.createsend.com/<code>"</code></p></dd>
+			<dt><em>clientID</em></dt>
+			<dd><p>The integration client ID provided during registration.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>username</em></dt>
-			<dd><p>Your Campaign Monitor account username.</p></dd>
+			<dt><em>clientSecret</em></dt>
+			<dd><p>This must be the integration secret provided during registration.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>password</em></dt>
-			<dd><p>Your Campaign Monitor account password.</p></dd>
+			<dt><em>scope</em></dt>
+			<dd><p>The permission level requested by the integration.</p></dd>
 		</dl>
 		
 	</div>
@@ -270,7 +267,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A CSAPI instance.</p>
+		<p>A <code>CSAPI</code> instance.</p>
 	</div>
 	
 	
@@ -280,15 +277,6 @@ don&rsquo;t have access to your API key and would like to request it via the API
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Categories/CSAPI+Accounts.html#//api/name/getAPIKey:errorHandler:">[CSAPI(Accounts) getAPIKey:errorHandler:]</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
@@ -313,7 +301,7 @@ don&rsquo;t have access to your API key and would like to request it via the API
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-04-04)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-08-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
@@ -403,6 +391,14 @@ don&rsquo;t have access to your API key and would like to request it via the API
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>

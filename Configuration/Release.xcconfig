@@ -1,9 +1,0 @@
-//
-//  Release.xcconfig
-//  CreateSend
-//
-//  Created by Nathan de Vries on 14/12/10.
-//  Copyright 2010 Nathan de Vries. All rights reserved.
-//
-
-#include "Shared.xcconfig"

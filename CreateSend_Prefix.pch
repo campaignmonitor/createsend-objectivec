@@ -1,8 +1,0 @@
-//
-// Prefix header for all source files of the 'CreateSend' target in the 'CreateSend' project.
-//
-
-#ifdef __OBJC__
-  #import <UIKit/UIKit.h>
-  #import "CSDebuggingMacros.h"
-#endif

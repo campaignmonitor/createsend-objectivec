@@ -16,7 +16,7 @@ namespace :docs do
       '--no-merge-categories',
       '--verbose 3']
   
-    puts `appledoc #{appledoc_options.join(' ')} Classes/CS*.h`
+    puts `appledoc #{appledoc_options.join(' ')} CreateSend/CS*.h`
   end
 
   desc 'Clean docs'

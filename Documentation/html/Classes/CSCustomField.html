@@ -38,26 +38,19 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/dataType">&nbsp;&nbsp;&nbsp;&nbsp;dataType</option>
-	
-	<option value="//api/name/key">&nbsp;&nbsp;&nbsp;&nbsp;key</option>
-	
-	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
-	
-	<option value="//api/name/options">&nbsp;&nbsp;&nbsp;&nbsp;options</option>
-	
-	
 	
 	
 	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/customFieldWithKey:value:">&nbsp;&nbsp;&nbsp;&nbsp;+ customFieldWithKey:value:</option>
 	
 	<option value="//api/name/customFieldWithName:dataType:">&nbsp;&nbsp;&nbsp;&nbsp;+ customFieldWithName:dataType:</option>
 	
 	<option value="//api/name/customFieldWithName:dataType:options:">&nbsp;&nbsp;&nbsp;&nbsp;+ customFieldWithName:dataType:options:</option>
 	
 	<option value="//api/name/customFieldWithName:key:dataType:options:">&nbsp;&nbsp;&nbsp;&nbsp;+ customFieldWithName:key:dataType:options:</option>
+	
+	<option value="//api/name/customFieldWithName:key:dataType:options:value:">&nbsp;&nbsp;&nbsp;&nbsp;+ customFieldWithName:key:dataType:options:value:</option>
 	
 	
 	
@@ -83,27 +76,19 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataType">dataType</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/key">key</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/options">options</a></span></li>
-	
-</ul></li>
-
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customFieldWithKey:value:">customFieldWithKey:value:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customFieldWithName:dataType:">customFieldWithName:dataType:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customFieldWithName:dataType:options:">customFieldWithName:dataType:options:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customFieldWithName:key:dataType:options:">customFieldWithName:key:dataType:options:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customFieldWithName:key:dataType:options:value:">customFieldWithName:key:dataType:options:value:</a></span></li>
 	
 </ul></li>
 
@@ -144,7 +129,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Represents a custom field, used for saving custom subscriber information</p>
+						<p>Represents a custom field, used for custom subscriber information</p>
 					</div>
 					
 					
@@ -162,38 +147,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
-		<span class="tooltip"><p>Field name</p></span>
+		<code><a href="#//api/name/customFieldWithName:key:dataType:options:value:">+&nbsp;customFieldWithName:key:dataType:options:value:</a></code>
+		<span class="tooltip"><p>Creates and returns a <code>CSCustomField</code>. If you want to explicitely specify the
+custom fields shown in a <code>CSSubscriptionFormViewController</code>, you should use
+this constructor as it allows you to specify the custom field&rsquo;s key.</p></span>
 	</span>
-	<span class="task-item-suffix">property</span>
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/key">&nbsp;&nbsp;key</a></code>
-		<span class="tooltip"><p>Field key (created automatically by the API)</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/dataType">&nbsp;&nbsp;dataType</a></code>
-		<span class="tooltip"><p>Field data type</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/options">&nbsp;&nbsp;options</a></code>
-		<span class="tooltip"><p>Available options for fields of type <code>CSCustomFieldMultiSelectOneDataType</code> or <code>CSCustomFieldMultiSelectManyDataType</code></p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/customFieldWithName:key:dataType:options:">+&nbsp;customFieldWithName:key:dataType:options:</a></code>
 		<span class="tooltip"><p>Creates and returns a <code>CSCustomField</code>. If you want to explicitely specify the
-custom fields shown in a <a href="../Classes/CSSubscriptionFormViewController.html"><code>CSSubscriptionFormViewController</code></a>, you should use
-this constructor as it allows you to specify the custom field&rsquo;s <a href="#//api/name/key">key</a>.</p></span>
+custom fields shown in a <code>CSSubscriptionFormViewController</code>, you should use
+this constructor as it allows you to specify the custom field&rsquo;s key.</p></span>
 	</span>
 	
 	
@@ -202,6 +168,13 @@ this constructor as it allows you to specify the custom field&rsquo;s <a href="#
 		<code><a href="#//api/name/customFieldWithName:dataType:options:">+&nbsp;customFieldWithName:dataType:options:</a></code>
 		<span class="tooltip"><p>Creates and returns a <code>CSCustomField</code>. If you&rsquo;re not creating a multi-select
 custom field, you might want to use <a href="#//api/name/customFieldWithName:dataType:"><code>customFieldWithName:dataType:</code></a> instead.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/customFieldWithKey:value:">+&nbsp;customFieldWithKey:value:</a></code>
+		<span class="tooltip"><p>Creates and returns a <code>CSCustomField</code></p></span>
 	</span>
 	
 	
@@ -221,153 +194,67 @@ custom field, you might want to use <a href="#//api/name/customFieldWithName:dat
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/dataType" title="dataType"></a>
-	<h3 class="subsubtitle method-title">dataType</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Field data type</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>@property (assign) CSCustomFieldDataType dataType</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSCustomField.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/key" title="key"></a>
-	<h3 class="subsubtitle method-title">key</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Field key (created automatically by the API)</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>@property (retain) NSString *key</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSCustomField.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="subsubtitle method-title">name</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Field name</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>@property (retain) NSString *name</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSCustomField.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/options" title="options"></a>
-	<h3 class="subsubtitle method-title">options</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Available options for fields of type <code>CSCustomFieldMultiSelectOneDataType</code> or <code>CSCustomFieldMultiSelectManyDataType</code></p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>@property (retain) NSArray *options</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSCustomField.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
 					
 					
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/customFieldWithKey:value:" title="customFieldWithKey:value:"></a>
+	<h3 class="subsubtitle method-title">customFieldWithKey:value:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a <code>CSCustomField</code></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)customFieldWithKey:(NSString *)<em>key</em> value:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The name of the custom field</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The custom field value</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <code>CSCustomField</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSCustomField.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/customFieldWithName:dataType:" title="customFieldWithName:dataType:"></a>
@@ -379,16 +266,18 @@ custom field, you might want to use <a href="#//api/name/customFieldWithName:dat
 		<p>Creates and returns a <code>CSCustomField</code></p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (id)customFieldWithName:(NSString *)<em>name</em> dataType:(CSCustomFieldDataType)<em>dataType</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>name</em></dt>
-			<dd><p>The <a href="#//api/name/name">name</a> of the custom field</p></dd>
+			<dd><p>The name of the custom field</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -434,16 +323,18 @@ custom field, you might want to use <a href="#//api/name/customFieldWithName:dat
 custom field, you might want to use <a href="#//api/name/customFieldWithName:dataType:"><code>customFieldWithName:dataType:</code></a> instead.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (id)customFieldWithName:(NSString *)<em>name</em> dataType:(CSCustomFieldDataType)<em>dataType</em> options:(NSArray *)<em>options</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>name</em></dt>
-			<dd><p>The <a href="#//api/name/name">name</a> of the custom field</p></dd>
+			<dd><p>The name of the custom field</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -453,7 +344,7 @@ custom field, you might want to use <a href="#//api/name/customFieldWithName:dat
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>options</em></dt>
-			<dd><p>The available <a href="#//api/name/options">options</a> if the field has a multi-select data type, or <code>nil</code> otherwise</p></dd>
+			<dd><p>The available options if the field has a multi-select data type, or <code>nil</code> otherwise</p></dd>
 		</dl>
 		
 	</div>
@@ -491,25 +382,27 @@ custom field, you might want to use <a href="#//api/name/customFieldWithName:dat
 	
 	<div class="method-subsection brief-description">
 		<p>Creates and returns a <code>CSCustomField</code>. If you want to explicitely specify the
-custom fields shown in a <a href="../Classes/CSSubscriptionFormViewController.html"><code>CSSubscriptionFormViewController</code></a>, you should use
-this constructor as it allows you to specify the custom field&rsquo;s <a href="#//api/name/key">key</a>.</p>
+custom fields shown in a <code>CSSubscriptionFormViewController</code>, you should use
+this constructor as it allows you to specify the custom field&rsquo;s key.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (id)customFieldWithName:(NSString *)<em>name</em> key:(NSString *)<em>key</em> dataType:(CSCustomFieldDataType)<em>dataType</em> options:(NSArray *)<em>options</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>name</em></dt>
-			<dd><p>The <a href="#//api/name/name">name</a> of the custom field</p></dd>
+			<dd><p>The name of the custom field</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>key</em></dt>
-			<dd><p>The system-generated <a href="#//api/name/key">key</a> of the custom field. Used during subcription.</p></dd>
+			<dd><p>The system-generated key of the custom field. Used during subcription.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -519,7 +412,81 @@ this constructor as it allows you to specify the custom field&rsquo;s <a href="#
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>options</em></dt>
-			<dd><p>The available <a href="#//api/name/options">options</a> if the field has a multi-selet data type, or <code>nil</code> otherwise</p></dd>
+			<dd><p>The available options if the field has a multi-selet data type, or <code>nil</code> otherwise</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <code>CSCustomField</code>
+*</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSCustomField.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/customFieldWithName:key:dataType:options:value:" title="customFieldWithName:key:dataType:options:value:"></a>
+	<h3 class="subsubtitle method-title">customFieldWithName:key:dataType:options:value:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a <code>CSCustomField</code>. If you want to explicitely specify the
+custom fields shown in a <code>CSSubscriptionFormViewController</code>, you should use
+this constructor as it allows you to specify the custom field&rsquo;s key.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)customFieldWithName:(NSString *)<em>name</em> key:(NSString *)<em>key</em> dataType:(CSCustomFieldDataType)<em>dataType</em> options:(NSArray *)<em>options</em> value:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the custom field</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The system-generated key of the custom field. Used during subcription.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dataType</em></dt>
+			<dd><p>The data type of the custom field</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>The available options if the field has a multi-selet data type, or <code>nil</code> otherwise</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Optional value for the field</p></dd>
 		</dl>
 		
 	</div>
@@ -565,7 +532,7 @@ this constructor as it allows you to specify the custom field&rsquo;s <a href="#
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-04-04)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-08-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
@@ -655,6 +622,14 @@ this constructor as it allows you to specify the custom field&rsquo;s <a href="#
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>

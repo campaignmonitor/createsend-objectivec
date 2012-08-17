@@ -50,6 +50,8 @@
 	
 	<option value="//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:</option>
@@ -64,13 +66,13 @@
 	
 	<option value="//api/name/getCustomFieldsWithListID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCustomFieldsWithListID:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/getListDetailsWithListID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getListDetailsWithListID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getListSegmentsWithListID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getListSegmentsWithListID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getListStatisticsWithListID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getListStatisticsWithListID:completionHandler:errorHandler:</option>
-	
-	<option value="//api/name/getListsWithClientID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getListsWithClientID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
 	
@@ -100,6 +102,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Custom Fields">Custom Fields</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Web Hooks">Web Hooks</a></span></li>
+	
 </ul></li>
 
 
@@ -118,6 +122,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:">createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:">deactivateWebhookWithListID:webhookID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:">deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:</a></span></li>
@@ -132,13 +138,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCustomFieldsWithListID:completionHandler:errorHandler:">getCustomFieldsWithListID:completionHandler:errorHandler:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getListDetailsWithListID:completionHandler:errorHandler:">getListDetailsWithListID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getListSegmentsWithListID:completionHandler:errorHandler:">getListSegmentsWithListID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getListStatisticsWithListID:completionHandler:errorHandler:">getListStatisticsWithListID:completionHandler:errorHandler:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getListsWithClientID:completionHandler:errorHandler:">getListsWithClientID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
 	
@@ -216,13 +222,6 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getListsWithClientID:completionHandler:errorHandler:">&ndash;&nbsp;getListsWithClientID:completionHandler:errorHandler:</a></code>
-		<span class="tooltip"><p>Get all the subscriber lists that belong to the given client</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/deleteListWithID:completionHandler:errorHandler:">&ndash;&nbsp;deleteListWithID:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Deletes a subscriber list from your account</p></span>
 	</span>
@@ -231,7 +230,7 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/getListDetailsWithListID:completionHandler:errorHandler:">&ndash;&nbsp;getListDetailsWithListID:completionHandler:errorHandler:</a></code>
-		<span class="tooltip"><p>Get a basic summary for a list in your accout</p></span>
+		<span class="tooltip"><p>Get a basic summary for a list in your account</p></span>
 	</span>
 	
 	
@@ -260,6 +259,13 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Get a paged result representing all the unsubscribed subscribers for a given list</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a paged result representing all the deleted subscribers for a given list</p></span>
 	</span>
 	
 	
@@ -303,6 +309,21 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:">&ndash;&nbsp;deleteCustomFieldWithListID:customFieldKey:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Deletes a specific custom field from a list</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Web Hooks" name="task_Web Hooks"></a>
+						<h3 class="subsubtitle task-title">Web Hooks</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:">&ndash;&nbsp;createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Create a new webhook for the provided list</p></span>
 	</span>
 	
 	
@@ -368,9 +389,11 @@
 		<p>Activate a webhook associated with a list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)activateWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -405,8 +428,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#activating_a_webhook
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#activating_a_webhook</p>
 	</div>
 	
 	
@@ -433,9 +455,11 @@
 		<p>Create a new custom field for a given list into which custom subscriber data can be added</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)createCustomFieldWithListID:(NSString *)<em>listID</em> customField:(CSCustomField *)<em>customField</em> completionHandler:(void ( ^ ) ( NSString *customFieldKey ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -470,8 +494,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#creating_a_custom_field
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#creating_a_custom_field</p>
 	</div>
 	
 	
@@ -498,9 +521,11 @@
 		<p>Create a new list into which subscribers can be added or imported</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)createListWithClientID:(NSString *)<em>clientID</em> title:(NSString *)<em>title</em> unsubscribePage:(NSString *)<em>unsubscribePage</em> confirmationSuccessPage:(NSString *)<em>confirmationSuccessPage</em> shouldConfirmOptIn:(BOOL)<em>shouldConfirmOptIn</em> completionHandler:(void ( ^ ) ( NSString *listID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -550,8 +575,83 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#creating_a_list
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#creating_a_list</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:" title="createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a new webhook for the provided list</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createWebhookWithListID:(NSString *)<em>listID</em> events:(NSArray *)<em>events</em> URLString:(NSString *)<em>URLString</em> payloadFormat:(NSString *)<em>payloadFormat</em> completionHandler:(void ( ^ ) ( NSString *webhookID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the list for which the webhook should be created</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>events</em></dt>
+			<dd><p>The events you would like to trigger a call to your webhook. Valid events are <code>Subscribe</code>, <code>Deactivate</code> and <code>Update</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URLString</em></dt>
+			<dd><p>The URL endpoint you&rsquo;d like called when an event occurs</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>payloadFormat</em></dt>
+			<dd><p>The payload format you&rsquo;d like to receive at the <code>URLString</code> endpoint. Valid payload formats are <code>json</code> and <code>xml</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with the ID of the newly created webhook as the first and only argument</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#creating_a_webhook</p>
 	</div>
 	
 	
@@ -578,9 +678,11 @@
 		<p>Deactivate a webhook associated with a list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)deactivateWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -615,8 +717,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#deactivating_a_webhook
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#deactivating_a_webhook</p>
 	</div>
 	
 	
@@ -643,9 +744,11 @@
 		<p>Deletes a specific custom field from a list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)deleteCustomFieldWithListID:(NSString *)<em>listID</em> customFieldKey:(NSString *)<em>fieldKey</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -680,8 +783,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#deleting_a_custom_field
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#deleting_a_custom_field</p>
 	</div>
 	
 	
@@ -708,9 +810,11 @@
 		<p>Deletes a subscriber list from your account</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)deleteListWithID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -740,8 +844,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#deleting_a_list
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#deleting_a_list</p>
 	</div>
 	
 	
@@ -768,9 +871,11 @@
 		<p>Delete a specific webhook associated with a list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)deleteWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -805,8 +910,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#deleting_a_webhook
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#deleting_a_webhook</p>
 	</div>
 	
 	
@@ -833,9 +937,11 @@
 		<p>Get a paged result representing all the active subscribers for a given list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)getActiveSubscribersWithListID:(NSString *)<em>listID</em> date:(NSDate *)<em>date</em> page:(NSUInteger)<em>page</em> pageSize:(NSUInteger)<em>pageSize</em> orderField:(NSString *)<em>orderField</em> ascending:(BOOL)<em>ascending</em> completionHandler:(void ( ^ ) ( CSPaginatedResult *paginatedResult ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -872,29 +978,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with a <a href="../Classes/CSPaginatedResult.html"><code>CSPaginatedResult</code></a> as the first and only argument. Items in the result list are in the following format:</p>
-
-<pre><code> {
-   "EmailAddress": "subs+7t8787Y@example.com",
-   "Name": "Person One",
-   "Date": "2010-10-25 10:28:00",
-   "State": "Active",
-   "CustomFields": [
-     {
-       "Key": "website",
-       "Value": "http://example.com"
-     },
-     {
-       "Key": "age",
-       "Value": "24"
-     },
-     {
-       "Key": "subscription date",
-       "Value": "2010-03-09"
-     }
-   ]
- }
-</code></pre></dd>
+			<dd><p>Completion callback, with a <code>CSPaginatedResult</code> as the first and only argument. Items in the result list are <code>CSSubscriber</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -912,8 +996,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_active_subscribers
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#active_subscribers</p>
 	</div>
 	
 	
@@ -940,9 +1023,11 @@
 		<p>Get a paged result representing all the bounced subscribers for a given list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)getBouncedSubscribersWithListID:(NSString *)<em>listID</em> date:(NSDate *)<em>date</em> page:(NSUInteger)<em>page</em> pageSize:(NSUInteger)<em>pageSize</em> orderField:(NSString *)<em>orderField</em> ascending:(BOOL)<em>ascending</em> completionHandler:(void ( ^ ) ( CSPaginatedResult *paginatedResult ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -979,16 +1064,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with a <a href="../Classes/CSPaginatedResult.html"><code>CSPaginatedResult</code></a> as the first and only argument. Items in the result list are in the following format:</p>
-
-<pre><code> {
-   "EmailAddress": "bouncedsubscriber@example.com",
-   "Name": "Bounced One",
-   "Date": "2010-10-25 13:11:00",
-   "State": "Bounced",
-   "CustomFields": []
- }
-</code></pre></dd>
+			<dd><p>Completion callback, with a <code>CSPaginatedResult</code> as the first and only argument. Items in the result list are <code>CSSubscriber</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1006,8 +1082,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_bounced_subscribers
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#bounced_subscribers</p>
 	</div>
 	
 	
@@ -1034,9 +1109,11 @@
 		<p>Get all the custom fields for a given list in your account</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)getCustomFieldsWithListID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( NSArray *customFields ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1048,18 +1125,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with an array of custom field dictionaries as the first and only argument. Custom fields dictionaries are in the following format:</p>
-
-<pre><code> {
-   "FieldName":    "newsletterformat",
-   "Key":          "[newsletterformat]",
-   "DataType":     "MultiSelectOne",
-   "FieldOptions": [
-     "HTML",
-     "Text"
-   ]
- }
-</code></pre></dd>
+			<dd><p>Completion callback, with an array of <a href="../Classes/CSCustomField.html"><code>CSCustomField</code></a> objects as the first and only argument</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1077,8 +1143,93 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_list_custom_fields
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#list_custom_fields</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:" title="getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getDeletedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a paged result representing all the deleted subscribers for a given list</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getDeletedSubscribersWithListID:(NSString *)<em>listID</em> date:(NSDate *)<em>date</em> page:(NSUInteger)<em>page</em> pageSize:(NSUInteger)<em>pageSize</em> orderField:(NSString *)<em>orderField</em> ascending:(BOOL)<em>ascending</em> completionHandler:(void ( ^ ) ( CSPaginatedResult *paginatedResult ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the list you want the deleted subscribers for</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>Subscribers which were deleted on or after the date specified will be returned</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>page</em></dt>
+			<dd><p>The page to retrieve</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pageSize</em></dt>
+			<dd><p>The number of subscribers to retrieve per page. Values accepted are between <code>10</code> and <code>1000</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderField</em></dt>
+			<dd><p>The subscriber field to order the list by. Values accepted are <code>email</code>, <code>name</code> or <code>date</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>Whether to sort the list (see <code>orderField</code>) in ascending order</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with a <code>CSPaginatedResult</code> as the first and only argument. Items in the result list are <code>CSSubscriber</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#deleted_subscribers</p>
 	</div>
 	
 	
@@ -1102,12 +1253,14 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Get a basic summary for a list in your accout</p>
+		<p>Get a basic summary for a list in your account</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)getListDetailsWithListID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( CSList *list ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1119,7 +1272,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with a <a href="../Classes/CSList.html"><code>CSList</code></a> as the only argument.</p></dd>
+			<dd><p>Completion callback, with a <code>CSList</code> as the only argument.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1137,8 +1290,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_list_details
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#list_details</p>
 	</div>
 	
 	
@@ -1165,9 +1317,11 @@
 		<p>Get all list segments for a list in your account</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)getListSegmentsWithListID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( NSArray *listSegments ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1179,14 +1333,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with an array of segments as the only argument. Segments are dictionaries in the following format:</p>
-
-<pre><code> {
-   "ListID": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
-   "SegmentID": "b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1",
-   "Title": "Segment One"
- }
-</code></pre></dd>
+			<dd><p>Completion callback, with an array of <code>CSSegment</code> objects as the only argument.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1204,8 +1351,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_list_segments
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#list_segments</p>
 	</div>
 	
 	
@@ -1232,9 +1378,11 @@
 		<p>Get comprehensive summary statistics for a list in your account</p>
 	</div>		
 	
-	
-	<div class="method-subsection method-declaration"><code>- (void)getListStatisticsWithListID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( NSDictionary *listStatisticsData ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getListStatisticsWithListID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( NSDictionary *listStatistics ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1248,33 +1396,32 @@
 			<dt><em>completionHandler</em></dt>
 			<dd><p>Completion callback, with a dictionary of statistics as the only argument. The statistics dictionary is in the following format:</p>
 
-<pre><code> {
-   "TotalActiveSubscribers": 6,
-   "NewActiveSubscribersToday": 0,
-   "NewActiveSubscribersYesterday": 8,
-   "NewActiveSubscribersThisWeek": 8,
-   "NewActiveSubscribersThisMonth": 8,
-   "NewActiveSubscribersThisYear": 8,
-   "TotalUnsubscribes": 2,
-   "UnsubscribesToday": 0,
-   "UnsubscribesYesterday": 2,
-   "UnsubscribesThisWeek": 2,
-   "UnsubscribesThisMonth": 2,
-   "UnsubscribesThisYear": 2,
-   "TotalDeleted": 0,
-   "DeletedToday": 0,
-   "DeletedYesterday": 0,
-   "DeletedThisWeek": 0,
-   "DeletedThisMonth": 0,
-   "DeletedThisYear": 0,
-   "TotalBounces": 0,
-   "BouncesToday": 0,
-   "BouncesYesterday": 0,
-   "BouncesThisWeek": 0,
-   "BouncesThisMonth": 0,
-   "BouncesThisYear": 0
- }
-</code></pre></dd>
+<p>{
+&ldquo;TotalActiveSubscribers&rdquo;: 6,
+&ldquo;NewActiveSubscribersToday&rdquo;: 0,
+&ldquo;NewActiveSubscribersYesterday&rdquo;: 8,
+&ldquo;NewActiveSubscribersThisWeek&rdquo;: 8,
+&ldquo;NewActiveSubscribersThisMonth&rdquo;: 8,
+&ldquo;NewActiveSubscribersThisYear&rdquo;: 8,
+&ldquo;TotalUnsubscribes&rdquo;: 2,
+&ldquo;UnsubscribesToday&rdquo;: 0,
+&ldquo;UnsubscribesYesterday&rdquo;: 2,
+&ldquo;UnsubscribesThisWeek&rdquo;: 2,
+&ldquo;UnsubscribesThisMonth&rdquo;: 2,
+&ldquo;UnsubscribesThisYear&rdquo;: 2,
+&ldquo;TotalDeleted&rdquo;: 0,
+&ldquo;DeletedToday&rdquo;: 0,
+&ldquo;DeletedYesterday&rdquo;: 0,
+&ldquo;DeletedThisWeek&rdquo;: 0,
+&ldquo;DeletedThisMonth&rdquo;: 0,
+&ldquo;DeletedThisYear&rdquo;: 0,
+&ldquo;TotalBounces&rdquo;: 0,
+&ldquo;BouncesToday&rdquo;: 0,
+&ldquo;BouncesYesterday&rdquo;: 0,
+&ldquo;BouncesThisWeek&rdquo;: 0,
+&ldquo;BouncesThisMonth&rdquo;: 0,
+&ldquo;BouncesThisYear&rdquo;: 0
+}</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1292,74 +1439,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_list_stats
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/getListsWithClientID:completionHandler:errorHandler:" title="getListsWithClientID:completionHandler:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">getListsWithClientID:completionHandler:errorHandler:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get all the subscriber lists that belong to the given client</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)getListsWithClientID:(NSString *)<em>clientID</em> completionHandler:(void ( ^ ) ( NSArray *lists ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>clientID</em></dt>
-			<dd><p>The ID of the client for which the lists should be retrieved</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with an array of lists as the only argument. Lists are in the following format:</p>
-
-<pre><code> {
-   "ListID": "a58ee1d3039b8bec838e6d1482a8a965",
-   "Name":   "List One"
- }
-</code></pre></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>errorHandler</em></dt>
-			<dd><p>Error callback</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/clients/#getting_client_lists
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#list_stats</p>
 	</div>
 	
 	
@@ -1386,9 +1466,11 @@
 		<p>Get a paged result representing all the unsubscribed subscribers for a given list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)getUnsubscribedSubscribersWithListID:(NSString *)<em>listID</em> date:(NSDate *)<em>date</em> page:(NSUInteger)<em>page</em> pageSize:(NSUInteger)<em>pageSize</em> orderField:(NSString *)<em>orderField</em> ascending:(BOOL)<em>ascending</em> completionHandler:(void ( ^ ) ( CSPaginatedResult *paginatedResult ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1425,16 +1507,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with a <a href="../Classes/CSPaginatedResult.html"><code>CSPaginatedResult</code></a> as the first and only argument. Items in the result list are in the following format:</p>
-
-<pre><code> {
-   "EmailAddress": "subscriber@example.com",
-   "Name": "Unsub One",
-   "Date": "2010-10-25 13:11:00",
-   "State": "Unsubscribed",
-   "CustomFields": []
- }
-</code></pre></dd>
+			<dd><p>Completion callback, with a <code>CSPaginatedResult</code> as the first and only argument. Items in the result list are <code>CSSubscriber</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1452,8 +1525,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_unsubscribed_subscribers
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#unsubscribed_subscribers</p>
 	</div>
 	
 	
@@ -1480,9 +1552,11 @@
 		<p>Get all the webhooks that have been created for a given list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)getWebhooksWithListID:(NSString *)<em>listID</em> completionHandler:(void ( ^ ) ( NSArray *webhooks ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1494,18 +1568,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completionHandler</em></dt>
-			<dd><p>Completion callback, with an array of webhook dictionaries in the following format:</p>
-
-<pre><code> {
-   "WebhookID":     "ee1b3864e5ca61618q98su98qsu9q",
-   "Url":           "http://example.com/subscribe",
-   "Status":        "Active",
-   "PayloadFormat": "json"
-   "Events":        [
-     "Subscribe"
-   ]
- }
-</code></pre></dd>
+			<dd><p>Completion callback, with an array of <code>CSWebhook</code> objects as the first and only argument</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1523,8 +1586,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#getting_list_webhooks
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#list_webhooks</p>
 	</div>
 	
 	
@@ -1551,9 +1613,11 @@
 		<p>Attempt to post a webhook payload to the endpoint specified by a webhook</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)testWebhookWithListID:(NSString *)<em>listID</em> webhookID:(NSString *)<em>webhookID</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1588,8 +1652,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#testing_a_webhook
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#testing_a_webhook</p>
 	</div>
 	
 	
@@ -1616,9 +1679,11 @@
 		<p>Update the available options for existing multi-select fields in a given list</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)updateCustomFieldWithListID:(NSString *)<em>listID</em> customFieldKey:(NSString *)<em>fieldKey</em> options:(NSArray *)<em>options</em> keepExisting:(BOOL)<em>keepExisting</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1663,8 +1728,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#updating_custom_field_options
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#updating_custom_field_options</p>
 	</div>
 	
 	
@@ -1691,9 +1755,11 @@
 		<p>Update the basic settings for any list in your account</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)updateListWithListID:(NSString *)<em>listID</em> title:(NSString *)<em>title</em> unsubscribePage:(NSString *)<em>unsubscribePage</em> confirmationSuccessPage:(NSString *)<em>confirmationSuccessPage</em> shouldConfirmOptIn:(BOOL)<em>shouldConfirmOptIn</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1743,8 +1809,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> http://www.campaignmonitor.com/api/lists/#updating_a_list
-</code></pre>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#updating_a_list</p>
 	</div>
 	
 	
@@ -1774,7 +1839,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-04-04)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-08-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
@@ -1864,6 +1929,14 @@
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>

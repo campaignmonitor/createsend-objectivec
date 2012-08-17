@@ -1,9 +1,4 @@
-[submodule "External/AFNetworking"]
-	path = External/AFNetworking
-	url = https://github.com/atnan/AFNetworking.git
-[submodule "External/JSONKit"]
-	path = External/JSONKit
-	url = https://github.com/johnezang/JSONKit.git
-[submodule "External/IBAForms"]
-	path = External/IBAForms
+
+[submodule "Example/CreateSendExample/Vendor/IBAForms"]
+	path = Example/CreateSendExample/Vendor/IBAForms
 	url = https://github.com/ittybittydude/IBAForms.git

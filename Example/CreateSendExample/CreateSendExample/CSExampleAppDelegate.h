@@ -2,8 +2,7 @@
 //  CSExampleAppDelegate.h
 //  CreateSendExample
 //
-//  Created by Nathan de Vries on 1/08/11.
-//  Copyright 2011 Nathan de Vries. All rights reserved.
+//  Copyright (c) 2012 Freshview Pty Ltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,8 +2,7 @@
 //  CSExampleAppDelegate.m
 //  CreateSendExample
 //
-//  Created by Nathan de Vries on 1/08/11.
-//  Copyright 2011 Nathan de Vries. All rights reserved.
+//  Copyright (c) 2012 Freshview Pty Ltd. All rights reserved.
 //
 
 #import "CSExampleAppDelegate.h"
@@ -30,9 +29,8 @@ typedef enum _CSExampleAppCustomFieldBehavior {
   // NOTE: This fetches the first subscription list from the first client in
   //       your account, and presents a subscription form for that list.
 
-  // Replace with your site URL & API key
-  CSAPI* API = [[[CSAPI alloc] initWithSiteURL:@"http://your-account.createsend.com/"
-                                        APIKey:@"..."] autorelease];
+  // Replace with your API key
+  CSAPI* API = [[[CSAPI alloc] initWithAPIKey:@"..."] autorelease];
   
   [API getClients:^(NSArray *clients) {
     
@@ -40,7 +38,8 @@ typedef enum _CSExampleAppCustomFieldBehavior {
     [API getSubscriberListsWithClientID:client.clientID
                       completionHandler:^(NSArray *subscriberLists) {
                         
-                        NSString* firstListID = [[subscriberLists objectAtIndex:0] valueForKey:@"ListID"];
+                        CSList *list = [subscriberLists objectAtIndex:0];
+                        NSString *listID = list.listID;
                         
                         CSSubscriptionFormViewController* subscriptionform;
                         
@@ -49,7 +48,7 @@ typedef enum _CSExampleAppCustomFieldBehavior {
                         
                         if (customFieldBehavior == CSExampleAppCustomFieldBehaviorNone) {
                           subscriptionform = [CSSubscriptionFormViewController controllerWithAPI:API
-                                                                              subscriptionListID:firstListID];                          
+                                                                              subscriptionListID:listID];
                           
                         } else if (customFieldBehavior == CSExampleAppCustomFieldBehaviorStatic) {
                           NSArray* customFields = [NSArray arrayWithObjects:
@@ -64,12 +63,12 @@ typedef enum _CSExampleAppCustomFieldBehavior {
                                                                               options:nil], nil];
                           
                           subscriptionform = [CSSubscriptionFormViewController controllerWithAPI:API
-                                                                              subscriptionListID:firstListID
+                                                                              subscriptionListID:listID
                                                                                     customFields:customFields];
                           
                         } else if (customFieldBehavior == CSExampleAppCustomFieldBehaviorDynamic) {
                           subscriptionform = [CSSubscriptionFormViewController controllerWithAPI:API
-                                                                              subscriptionListID:firstListID
+                                                                              subscriptionListID:listID
                                                                       shouldAutoLoadCustomFields:YES];
                         }
                         
