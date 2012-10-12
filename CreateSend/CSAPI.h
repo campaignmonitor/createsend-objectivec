@@ -104,3 +104,7 @@ enum {
 #import "CSAPI+Segments.h"
 #import "CSAPI+Subscribers.h"
 #import "CSAPI+Templates.h"
+
+#if TARGET_OS_IPHONE
+#import "CSAPI+iOS.h"
+#endif

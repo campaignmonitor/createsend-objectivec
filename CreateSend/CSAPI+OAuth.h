@@ -8,6 +8,7 @@
 #import "CSAPI.h"
 
 extern NSString * const CSAPIDidReceiveAuthorizationNotification;
+extern NSString * const CSAPIDidCancelAuthorizationNotification;
 
 /**
  Authorization-related APIs. See CSAPI for documentation of the other API categories.

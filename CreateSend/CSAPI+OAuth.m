@@ -15,6 +15,7 @@
 #endif
 
 NSString * const CSAPIDidReceiveAuthorizationNotification = @"CSAPIDidReceiveAuthorization";
+NSString * const CSAPIDidCancelAuthorizationNotification = @"CSAPIDidCancelAuthorization";
 
 #define kServiceName [NSString stringWithFormat:@"%@.campaignmonitor.auth", [[NSBundle mainBundle] bundleIdentifier]]
 
@@ -96,6 +97,8 @@ NSString * const CSAPIDidReceiveAuthorizationNotification = @"CSAPIDidReceiveAut
                 [[NSNotificationCenter defaultCenter] postNotificationName:CSAPIDidReceiveAuthorizationNotification object:strongSelf];
             } errorHandler:^(NSError *error) {
             }];
+        } else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:CSAPIDidCancelAuthorizationNotification object:self];
         }
     }
     

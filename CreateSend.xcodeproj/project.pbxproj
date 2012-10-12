@@ -94,6 +94,10 @@
 		AB45480115D2E7D6008B5DC7 /* CSPaginatedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4547FF15D2E7D6008B5DC7 /* CSPaginatedResult.m */; };
 		AB45480F15D30D13008B5DC7 /* NSURL+CSAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = AB45480D15D30D13008B5DC7 /* NSURL+CSAPI.h */; };
 		AB45481015D30D13008B5DC7 /* NSURL+CSAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB45480E15D30D13008B5DC7 /* NSURL+CSAPI.m */; };
+		AB5CA51F162846FC00558435 /* CSAuthorizationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5CA51D162846FC00558435 /* CSAuthorizationViewController.h */; };
+		AB5CA520162846FC00558435 /* CSAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5CA51E162846FC00558435 /* CSAuthorizationViewController.m */; };
+		AB5CA5231628471E00558435 /* CSAPI+iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5CA5211628471E00558435 /* CSAPI+iOS.h */; };
+		AB5CA5241628471E00558435 /* CSAPI+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5CA5221628471E00558435 /* CSAPI+iOS.m */; };
 		AB63260715DD780E0015100D /* CSSubscriberAction.h in Headers */ = {isa = PBXBuildFile; fileRef = AB63260515DD780E0015100D /* CSSubscriberAction.h */; };
 		AB63260815DD780E0015100D /* CSSubscriberAction.m in Sources */ = {isa = PBXBuildFile; fileRef = AB63260615DD780E0015100D /* CSSubscriberAction.m */; };
 		AB690BB115644C820093FC91 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = AB690BAF15644C820093FC91 /* NSData+Base64.h */; };
@@ -280,6 +284,10 @@
 		AB4547FF15D2E7D6008B5DC7 /* CSPaginatedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPaginatedResult.m; sourceTree = "<group>"; };
 		AB45480D15D30D13008B5DC7 /* NSURL+CSAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CSAPI.h"; sourceTree = "<group>"; };
 		AB45480E15D30D13008B5DC7 /* NSURL+CSAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CSAPI.m"; sourceTree = "<group>"; };
+		AB5CA51D162846FC00558435 /* CSAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAuthorizationViewController.h; sourceTree = "<group>"; };
+		AB5CA51E162846FC00558435 /* CSAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAuthorizationViewController.m; sourceTree = "<group>"; };
+		AB5CA5211628471E00558435 /* CSAPI+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+iOS.h"; sourceTree = "<group>"; };
+		AB5CA5221628471E00558435 /* CSAPI+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+iOS.m"; sourceTree = "<group>"; };
 		AB63260515DD780E0015100D /* CSSubscriberAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubscriberAction.h; sourceTree = "<group>"; };
 		AB63260615DD780E0015100D /* CSSubscriberAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubscriberAction.m; sourceTree = "<group>"; };
 		AB690BAF15644C820093FC91 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -401,6 +409,15 @@
 			path = NSURL;
 			sourceTree = "<group>";
 		};
+		AB5CA51C162846DB00558435 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AB5CA51D162846FC00558435 /* CSAuthorizationViewController.h */,
+				AB5CA51E162846FC00558435 /* CSAuthorizationViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		AB690BAD15644C820093FC91 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +485,7 @@
 				ABA6B5FD15C6F05800EC55BC /* CreateSend-Prefix.pch */,
 				ABC2889115D00C5F006947AE /* API */,
 				ABC2889215D00C7A006947AE /* Models */,
+				AB5CA51C162846DB00558435 /* UI */,
 			);
 			path = CreateSend;
 			sourceTree = "<group>";
@@ -617,6 +635,8 @@
 				ABBF3BBE15DA981400DF65C4 /* CSAPI+Campaigns.m */,
 				ABBF3BC915DAA5C000DF65C4 /* CSAPI+Clients.h */,
 				ABBF3BCA15DAA5C000DF65C4 /* CSAPI+Clients.m */,
+				AB5CA5211628471E00558435 /* CSAPI+iOS.h */,
+				AB5CA5221628471E00558435 /* CSAPI+iOS.m */,
 				ABA6B60215C6F05800EC55BC /* CSAPI+Lists.h */,
 				ABA6B60315C6F05800EC55BC /* CSAPI+Lists.m */,
 				ABC2888B15D002A7006947AE /* CSAPI+OAuth.h */,
@@ -726,6 +746,8 @@
 				AB63260715DD780E0015100D /* CSSubscriberAction.h in Headers */,
 				AB8BC20F15DD7A5000EF1665 /* CSSubscriberHistoryItem.h in Headers */,
 				AB8BC21315DD867D00EF1665 /* CSSubscriberImportResult.h in Headers */,
+				AB5CA51F162846FC00558435 /* CSAuthorizationViewController.h in Headers */,
+				AB5CA5231628471E00558435 /* CSAPI+iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +971,8 @@
 				AB63260815DD780E0015100D /* CSSubscriberAction.m in Sources */,
 				AB8BC21015DD7A5000EF1665 /* CSSubscriberHistoryItem.m in Sources */,
 				AB8BC21415DD867D00EF1665 /* CSSubscriberImportResult.m in Sources */,
+				AB5CA520162846FC00558435 /* CSAuthorizationViewController.m in Sources */,
+				AB5CA5241628471E00558435 /* CSAPI+iOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
