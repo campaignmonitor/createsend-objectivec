@@ -2,3 +2,6 @@
 [submodule "Example/CreateSendExample/Vendor/IBAForms"]
 	path = Example/CreateSendExample/Vendor/IBAForms
 	url = https://github.com/ittybittydude/IBAForms.git
+[submodule "CreateSendTests/Frameworks/Kiwi"]
+	path = CreateSendTests/Frameworks/Kiwi
+	url = https://github.com/allending/Kiwi.git
