@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31EC3D6167F2403004B75FC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A31EC3D5167F2403004B75FC /* Default-568h@2x.png */; };
 		AB7638F415DEBE58001A9C47 /* CSButtonFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7638EB15DEBE57001A9C47 /* CSButtonFormField.m */; };
 		AB7638F515DEBE58001A9C47 /* CSButtonFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7638ED15DEBE57001A9C47 /* CSButtonFormFieldCell.m */; };
 		AB7638F915DEBE58001A9C47 /* CSSubscriptionFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7638F215DEBE57001A9C47 /* CSSubscriptionFormViewController.m */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A31EC3D5167F2403004B75FC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AB7638D215DEBD6B001A9C47 /* CreateSend.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CreateSend.xcodeproj; path = ../../../CreateSend.xcodeproj; sourceTree = "<group>"; };
 		AB7638EA15DEBE57001A9C47 /* CSButtonFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSButtonFormField.h; sourceTree = "<group>"; };
 		AB7638EB15DEBE57001A9C47 /* CSButtonFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSButtonFormField.m; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		D84F7C6E13E66CA900F013A6 = {
 			isa = PBXGroup;
 			children = (
+				A31EC3D5167F2403004B75FC /* Default-568h@2x.png */,
 				D84F7C8313E66CA900F013A6 /* CreateSendExample */,
 				D84F7C7C13E66CA900F013A6 /* Frameworks */,
 				D84F7C7A13E66CA900F013A6 /* Products */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84F7C8813E66CA900F013A6 /* InfoPlist.strings in Resources */,
+				A31EC3D6167F2403004B75FC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
