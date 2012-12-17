@@ -36,6 +36,7 @@
     NSDictionary *billingDetails = [clientDictionary valueForKey:@"BillingDetails"];
     if (billingDetails) {
         client.canPurchaseCredits = [[billingDetails valueForKey:@"CanPurchaseCredits"] boolValue];
+        client.credits = [[billingDetails valueForKey:@"Credits"] unsignedIntegerValue];
         client.markupOnDesignSpamTest = [[billingDetails valueForKey:@"MarkupOnDesignSpamTest"] floatValue];
         client.clientPays = [[billingDetails valueForKey:@"ClientPays"] boolValue];
         client.baseRatePerRecipient = [[billingDetails valueForKey:@"BaseRatePerRecipient"] floatValue];

@@ -18,6 +18,7 @@
 @property (copy) NSString *country;
 @property (copy) NSString *timezone;
 @property (assign) BOOL canPurchaseCredits;
+@property (assign) NSUInteger credits;
 @property (assign) BOOL clientPays;
 @property (assign) float markupOnDesignSpamTest;
 @property (assign) float baseRatePerRecipient;

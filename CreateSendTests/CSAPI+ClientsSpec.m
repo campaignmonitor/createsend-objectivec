@@ -261,6 +261,7 @@ describe(@"CSAPI+Clients", ^{
                 [[client.timezone should] equal:@"(GMT+10:00) Canberra, Melbourne, Sydney"];
                 
                 [[theValue(client.canPurchaseCredits) should] beTrue];
+                [[theValue(client.credits) should] equal:theValue(500)];
                 [[theValue(client.clientPays) should] beTrue];
                 [[client.currency should] equal:CSAPICurrencyUSDollars];
                 [[theValue(client.markupOnDesignSpamTest) should] equal:theValue(0.0)];
