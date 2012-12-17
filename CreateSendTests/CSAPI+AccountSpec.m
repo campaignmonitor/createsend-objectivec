@@ -85,7 +85,39 @@ describe(@"CSAPI+Account", ^{
                 }];
             });
         });
-        
+
+        context(@"get billing details", ^{
+            it(@"should get all clients", ^{
+                NSURLRequest *request = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"billingdetails.json" returningRequest:&request whileExecutingBlock:^{
+                    __block CSBillingDetails *billingDetails = nil;
+                    [cs getBillingDetails:^(CSBillingDetails *response) {
+                        billingDetails = response;
+                    } errorHandler:^(NSError *error) {
+                        [error shouldBeNil];
+                    }];
+
+                    [[theValue(billingDetails.credits) should] equal:theValue(3021)];
+                }];
+
+                NSURL *expectedURL = [NSURL URLWithString:@"billingdetails.json" relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+            });
+            
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs getBillingDetails:^(CSBillingDetails *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage];
+                }];
+            });
+        });
+
         context(@"get all countries", ^{
             it(@"should get all countries", ^{
                 NSURLRequest *request = nil;

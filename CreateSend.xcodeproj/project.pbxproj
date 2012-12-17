@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = A315C1CB167B82C00020C198 /* CSBillingDetails.h */; };
+		A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A315C1CC167B82C00020C198 /* CSBillingDetails.m */; };
+		A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A315C1D7167F0CB70020C198 /* billingdetails.json */; };
 		AB1D5F3415DAB0F500207837 /* CSAPI+Segments.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1D5F3215DAB0F500207837 /* CSAPI+Segments.h */; };
 		AB1D5F3515DAB0F500207837 /* CSAPI+Segments.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1D5F3315DAB0F500207837 /* CSAPI+Segments.m */; };
 		AB1D5F4415DAB6CE00207837 /* CSAPI+Templates.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1D5F4215DAB6CE00207837 /* CSAPI+Templates.h */; };
@@ -164,6 +167,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A315C1D4167B82C10020C198 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABA6BBAE15C6F19A00EC55BC /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 832C83C7157263B300F160D5;
+			remoteInfo = "Kiwi-OSX";
+		};
 		AB9123021563E8620089DE3C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AB9122E31563E8610089DE3C /* Project object */;
@@ -195,6 +205,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A315C1CB167B82C00020C198 /* CSBillingDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBillingDetails.h; sourceTree = "<group>"; };
+		A315C1CC167B82C00020C198 /* CSBillingDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBillingDetails.m; sourceTree = "<group>"; };
+		A315C1D7167F0CB70020C198 /* billingdetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billingdetails.json; sourceTree = "<group>"; };
 		AB1D5F3215DAB0F500207837 /* CSAPI+Segments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Segments.h"; sourceTree = "<group>"; };
 		AB1D5F3315DAB0F500207837 /* CSAPI+Segments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Segments.m"; sourceTree = "<group>"; };
 		AB1D5F4215DAB6CE00207837 /* CSAPI+Templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Templates.h"; sourceTree = "<group>"; };
@@ -561,6 +574,7 @@
 				AB3969DA15DC232200CA2DE7 /* templates.json */,
 				AB3969DB15DC232200CA2DE7 /* timezones.json */,
 				AB3969DD15DC232200CA2DE7 /* unsubscribed_subscribers.json */,
+				A315C1D7167F0CB70020C198 /* billingdetails.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -601,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA6BBB815C6F19A00EC55BC /* libKiwi.a */,
+				A315C1D5167B82C10020C198 /* libKiwi-OSX.a */,
 				ABA6BBBA15C6F19A00EC55BC /* KiwiTests.octest */,
 				ABA6BBBC15C6F19A00EC55BC /* KiwiExamples.octest */,
 			);
@@ -698,6 +713,8 @@
 				AB1D5F4715DAB71000207837 /* CSTemplate.m */,
 				AB9BD7E615D9A77F00C8268A /* CSWebhook.h */,
 				AB9BD7E715D9A77F00C8268A /* CSWebhook.m */,
+				A315C1CB167B82C00020C198 /* CSBillingDetails.h */,
+				A315C1CC167B82C00020C198 /* CSBillingDetails.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -748,6 +765,7 @@
 				AB8BC21315DD867D00EF1665 /* CSSubscriberImportResult.h in Headers */,
 				AB5CA51F162846FC00558435 /* CSAuthorizationViewController.h in Headers */,
 				AB5CA5231628471E00558435 /* CSAPI+iOS.h in Headers */,
+				A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,6 +843,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A315C1D5167B82C10020C198 /* libKiwi-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKiwi-OSX.a";
+			remoteRef = A315C1D4167B82C10020C198 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ABA6BBB815C6F19A00EC55BC /* libKiwi.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -909,6 +934,7 @@
 				AB396A1B15DC232200CA2DE7 /* templates.json in Resources */,
 				AB396A1C15DC232200CA2DE7 /* timezones.json in Resources */,
 				AB396A1E15DC232200CA2DE7 /* unsubscribed_subscribers.json in Resources */,
+				A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +999,7 @@
 				AB8BC21415DD867D00EF1665 /* CSSubscriberImportResult.m in Sources */,
 				AB5CA520162846FC00558435 /* CSAuthorizationViewController.m in Sources */,
 				AB5CA5241628471E00558435 /* CSAPI+iOS.m in Sources */,
+				A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

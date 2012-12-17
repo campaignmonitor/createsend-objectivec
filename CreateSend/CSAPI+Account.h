@@ -8,6 +8,7 @@
 #import "CSAPI.h"
 #import "CSClient.h"
 #import "CSAdministrator.h"
+#import "CSBillingDetails.h"
 
 /**
  Account-related APIs. See CSAPI for documentation of the other API categories.
@@ -36,6 +37,16 @@
  @param errorHandler Error callback
  */
 - (void)getClients:(void (^)(NSArray *clients))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
+ Returns billing details for your account, including the number of credits in your account.
+ 
+ http://www.campaignmonitor.com/api/account/#getting_your_billing_details
+ 
+ @param completionHandler Completion callback, including a `CSBillingDetails` object as the first and only argument
+ @param errorHandler Error callback
+ */
+- (void)getBillingDetails:(void (^)(CSBillingDetails *billingDetails))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
  Get a list of valid countries.

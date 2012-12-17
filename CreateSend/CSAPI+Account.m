@@ -38,6 +38,14 @@
     } failure:errorHandler];
 }
 
+- (void)getBillingDetails:(void (^)(CSBillingDetails *billingDetails))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    [self.restClient get:@"billingdetails.json" success:^(NSDictionary *response) {
+        CSBillingDetails *billingDetails = [CSBillingDetails billingDetailsWithDictionary:response];
+        if (completionHandler) completionHandler(billingDetails);
+    } failure:errorHandler];
+}
+
 - (void)getCountries:(void (^)(NSArray *countries))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler
 {
     [self.restClient get:@"countries.json" success:completionHandler failure:errorHandler];
