@@ -13,9 +13,14 @@ describe(@"CSAPI", ^{
         beforeEach(^{
             cs = [[CSAPI alloc] initWithClientID:clientID clientSecret:clientSecret scope:scope];
         });
-        
-        it(@"should have the correct baseURL", ^{
+
+        it(@"should have the correct baseURL by default", ^{
             [[cs.baseURL.absoluteString should] equal:@"https://api.createsend.com/api/v3/"];
+        });
+
+        it(@"should allow baseURL to be set", ^{
+            cs.baseURL = [NSURL URLWithString:@"https://anotherurl.net/api/"];
+            [[cs.baseURL.absoluteString should] equal:@"https://anotherurl.net/api/"];
         });
         
         it(@"should have the correct userAgent", ^{

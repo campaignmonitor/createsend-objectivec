@@ -66,7 +66,7 @@ enum {
 @property (copy) NSString *APIKey;
 @property (readonly) BOOL isAuthorized;
 
-@property (readonly) NSURL *baseURL;
+@property (copy) NSURL *baseURL;
 @property (readonly) NSString *userAgent;
 
 + (NSDateFormatter *)sharedDateFormatter;

@@ -33,7 +33,7 @@ NSString * const CSAPICurrencyNewZealandDollars = @"NZD";
 @end
 
 @implementation CSAPI
-@dynamic baseURL;
+@synthesize baseURL;
 @dynamic userAgent;
 @dynamic isAuthorized;
 
@@ -73,6 +73,7 @@ NSString * const CSAPICurrencyNewZealandDollars = @"NZD";
 {
     self = [super init];
     if (self) {
+        self.baseURL = [NSURL URLWithString:@"https://api.createsend.com/api/v3/"];
         _restClient = [[CSRestClient alloc] initWithBaseURL:self.baseURL];
         _restClient.delegate = self;
     }
@@ -97,11 +98,6 @@ NSString * const CSAPICurrencyNewZealandDollars = @"NZD";
         _APIKey = APIKey;
     }
     return self;
-}
-
-- (NSURL *)baseURL
-{
-    return [NSURL URLWithString:@"https://api.createsend.com/api/v3/"];    
 }
 
 - (NSString *)userAgent
