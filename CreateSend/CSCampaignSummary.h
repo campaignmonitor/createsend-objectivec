@@ -18,6 +18,7 @@
 @property (assign) NSUInteger likesCount;
 @property (assign) NSUInteger mentionsCount;
 @property (copy) NSString *webVersionPage;
+@property (copy) NSString *webVersionTextPage;
 
 + (id)campaignSummaryWithDictionary:(NSDictionary *)campaignSummaryDictionary;
 @end

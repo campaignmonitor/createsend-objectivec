@@ -22,6 +22,7 @@
     campaignSummary.likesCount = [[campaignSummaryDictionary valueForKey:@"Likes"] unsignedIntegerValue];
     campaignSummary.mentionsCount = [[campaignSummaryDictionary valueForKey:@"Mentions"] unsignedIntegerValue];
     campaignSummary.webVersionPage = [campaignSummaryDictionary valueForKey:@"WebVersionURL"];
+    campaignSummary.webVersionTextPage = [campaignSummaryDictionary valueForKey:@"WebVersionTextURL"];
     return campaignSummary;
 }
 
