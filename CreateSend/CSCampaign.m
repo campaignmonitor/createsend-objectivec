@@ -17,7 +17,9 @@
     campaign.subject = [campaignDictionary valueForKey:@"Subject"];
     
     campaign.webVersionPage = [campaignDictionary valueForKey:@"WebVersionURL"];
+    campaign.webVersionTextPage = [campaignDictionary valueForKey:@"WebVersionTextURL"];
     campaign.previewPage = [campaignDictionary valueForKey:@"PreviewURL"];
+    campaign.previewTextPage = [campaignDictionary valueForKey:@"PreviewTextURL"];
     
     NSString *dateCreatedString = [campaignDictionary valueForKey:@"DateCreated"];
     if (dateCreatedString) {

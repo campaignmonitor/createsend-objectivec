@@ -307,6 +307,7 @@ describe(@"CSAPI+Clients", ^{
                     [[campaign.name should] equal:@"Campaign One"];
                     [[campaign.subject should] equal:@"Campaign One"];
                     [[campaign.webVersionPage should] equal:@"http://createsend.com/t/r-765E86829575EE2C"];
+                    [[campaign.webVersionTextPage should] equal:@"http://createsend.com/t/r-765E86829575EE2C/t"];
                     [[campaign.dateSent should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2010-10-12 12:58:00"]];
                     [[theValue(campaign.totalRecipients) should] equal:theValue(2245)];
                 }];
@@ -347,6 +348,7 @@ describe(@"CSAPI+Clients", ^{
                     [[campaign.name should] equal:@"Magic Issue One"];
                     [[campaign.subject should] equal:@"Magic Issue One"];
                     [[campaign.previewPage should] equal:@"http://createsend.com/t/r-DD543521A87C9B8B"];
+                    [[campaign.previewTextPage should] equal:@"http://createsend.com/t/r-DD543521A87C9B8B/t"];
                     [[campaign.dateCreated should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2011-05-24 10:37:00"]];
                     [[campaign.dateScheduled should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2011-05-25 10:40:00"]];
                     [[campaign.scheduledTimeZone should] equal:@"(GMT+10:00) Canberra, Melbourne, Sydney"];
@@ -388,6 +390,7 @@ describe(@"CSAPI+Clients", ^{
                     [[campaign.name should] equal:@"Draft One"];
                     [[campaign.subject should] equal:@"Draft One"];
                     [[campaign.previewPage should] equal:@"http://createsend.com/t/r-E97A7BB2E6983DA1"];
+                    [[campaign.previewTextPage should] equal:@"http://createsend.com/t/r-E97A7BB2E6983DA1/t"];
                     [[campaign.dateCreated should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2010-08-19 16:08:00"]];
                 }];
                 
