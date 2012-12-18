@@ -104,6 +104,26 @@
     } failure:errorHandler];
 }
 
+- (void)transferCreditsWithClientID:(NSString *)clientID
+                            credits:(NSInteger)credits
+      canUseMyCreditsWhenTheyRunOut:(BOOL)canUseMyCreditsWhenTheyRunOut
+                  completionHandler:(void (^)(NSUInteger accountCredits, NSUInteger clientCredits))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    NSDictionary *parameters = @{
+        @"Credits": @(credits),
+        @"CanUseMyCreditsWhenTheyRunOut": @(canUseMyCreditsWhenTheyRunOut),
+    };
+
+    [self.restClient post:[NSString stringWithFormat:@"clients/%@/credits.json", clientID] withParameters:parameters success:^(NSDictionary *response) {
+        __block NSUInteger accountCredits;
+        __block NSUInteger clientCredits;
+        accountCredits = [[response valueForKey:@"AccountCredits"] integerValue];
+        clientCredits = [[response valueForKey:@"ClientCredits"] integerValue];
+        if (completionHandler) completionHandler(accountCredits, clientCredits);
+    } failure:errorHandler];
+}
+
 - (void)getClientDetailsWithClientID:(NSString *)clientID
                    completionHandler:(void (^)(CSClient *client))completionHandler
                         errorHandler:(CSAPIErrorHandler)errorHandler

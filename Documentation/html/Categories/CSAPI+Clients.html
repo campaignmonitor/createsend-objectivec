@@ -80,6 +80,8 @@
 	
 	<option value="//api/name/setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:</option>
@@ -147,6 +149,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:">setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:">setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:">transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></span></li>
 	
@@ -238,6 +242,17 @@ client can purchase their own email credits to access bulk discounts.</p></span>
 		<span class="tooltip"><p>Set if a client can pay for their own campaigns and design and spam tests using
 our monthly billing. Set the currency they should pay in plus mark-up
 percentage that will apply to the base prices at each pricing tier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:">&ndash;&nbsp;transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Transfer credits from your account to a client, or transfer credits from a
+client to your account. The credits parameter should be either a positive
+integer if you wish to allocate credits from your account to the client, or
+a negative integer if you wish to deduct credits from the client back into
+your account.</p></span>
 	</span>
 	
 	
@@ -1596,6 +1611,88 @@ client can purchase their own email credits to access bulk discounts.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p><a href="http://www.campaignmonitor.com/api/clients/">http://www.campaignmonitor.com/api/clients/</a>#setting_primary_contact</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Clients.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:" title="transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Transfer credits from your account to a client, or transfer credits from a
+client to your account. The credits parameter should be either a positive
+integer if you wish to allocate credits from your account to the client, or
+a negative integer if you wish to deduct credits from the client back into
+your account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)transferCreditsWithClientID:(NSString *)<em>clientID</em> credits:(NSInteger)<em>credits</em> canUseMyCreditsWhenTheyRunOut:(BOOL)<em>canUseMyCreditsWhenTheyRunOut</em> completionHandler:(void ( ^ ) ( NSUInteger accountCredits , NSUInteger clientCredits ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientID</em></dt>
+			<dd><p>The ID of the client for which the credit transfer will be made.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>credits</em></dt>
+			<dd><p>The number of credits to transfer to/from the client. For example,
+to deduct 200 credits from a client (and transfer those credits back to your
+account) you would provide a value of -200. To allocate 200 credits from your
+account to a client, you would provide a value of 200.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>canUseMyCreditsWhenTheyRunOut</em></dt>
+			<dd><p>Whether or not the client will be able to
+continue sending using your credits or payment details once they run out of
+credits.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with the resulting number of
+credits remaining in your account as the first argument, and the resulting number
+of credits belonging to the client as the second argument.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/clients/">http://www.campaignmonitor.com/api/clients/</a>#transfer_credits</p>
 	</div>
 	
 	

@@ -10,6 +10,7 @@
 		A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = A315C1CB167B82C00020C198 /* CSBillingDetails.h */; };
 		A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A315C1CC167B82C00020C198 /* CSBillingDetails.m */; };
 		A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A315C1D7167F0CB70020C198 /* billingdetails.json */; };
+		A3EB67C31680A5B9004F7793 /* transfer_credits.json in Resources */ = {isa = PBXBuildFile; fileRef = A3EB67C21680A5B9004F7793 /* transfer_credits.json */; };
 		AB1D5F3415DAB0F500207837 /* CSAPI+Segments.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1D5F3215DAB0F500207837 /* CSAPI+Segments.h */; };
 		AB1D5F3515DAB0F500207837 /* CSAPI+Segments.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1D5F3315DAB0F500207837 /* CSAPI+Segments.m */; };
 		AB1D5F4415DAB6CE00207837 /* CSAPI+Templates.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1D5F4215DAB6CE00207837 /* CSAPI+Templates.h */; };
@@ -208,6 +209,7 @@
 		A315C1CB167B82C00020C198 /* CSBillingDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBillingDetails.h; sourceTree = "<group>"; };
 		A315C1CC167B82C00020C198 /* CSBillingDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBillingDetails.m; sourceTree = "<group>"; };
 		A315C1D7167F0CB70020C198 /* billingdetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billingdetails.json; sourceTree = "<group>"; };
+		A3EB67C21680A5B9004F7793 /* transfer_credits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transfer_credits.json; sourceTree = "<group>"; };
 		AB1D5F3215DAB0F500207837 /* CSAPI+Segments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Segments.h"; sourceTree = "<group>"; };
 		AB1D5F3315DAB0F500207837 /* CSAPI+Segments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Segments.m"; sourceTree = "<group>"; };
 		AB1D5F4215DAB6CE00207837 /* CSAPI+Templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Templates.h"; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 				AB3969DB15DC232200CA2DE7 /* timezones.json */,
 				AB3969DD15DC232200CA2DE7 /* unsubscribed_subscribers.json */,
 				A315C1D7167F0CB70020C198 /* billingdetails.json */,
+				A3EB67C21680A5B9004F7793 /* transfer_credits.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				AB396A1C15DC232200CA2DE7 /* timezones.json in Resources */,
 				AB396A1E15DC232200CA2DE7 /* unsubscribed_subscribers.json in Resources */,
 				A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */,
+				A3EB67C31680A5B9004F7793 /* transfer_credits.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

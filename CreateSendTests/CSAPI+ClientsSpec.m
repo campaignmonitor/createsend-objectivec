@@ -236,7 +236,53 @@ describe(@"CSAPI+Clients", ^{
                 }];
             });
         });
-        
+
+        context(@"transfer credits to client", ^{
+            BOOL canUseMyCreditsWhenTheyRunOut = YES;
+            NSInteger credits = 200;
+            
+            it(@"should transfer credits to client", ^{
+                NSURLRequest *request = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"transfer_credits.json" returningRequest:&request whileExecutingBlock:^ {
+                    [cs transferCreditsWithClientID:clientID
+                                            credits:credits
+                      canUseMyCreditsWhenTheyRunOut:canUseMyCreditsWhenTheyRunOut
+                                  completionHandler:^(NSUInteger accountCredits, NSUInteger clientCredits) {
+                                      [[theValue(accountCredits) should] equal:theValue(800)];
+                                      [[theValue(clientCredits) should] equal:theValue(200)];
+                                  }
+                                       errorHandler:^(NSError *errorResponse) { [errorResponse shouldBeNil]; }
+                     ];
+                }];
+                
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"clients/%@/credits.json", clientID] relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+                [[request.HTTPMethod should] equal:@"POST"];
+
+                NSDictionary *expectedPostBody = @{
+                    @"Credits": @(credits),
+                    @"CanUseMyCreditsWhenTheyRunOut": @(canUseMyCreditsWhenTheyRunOut),
+                };
+
+                NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
+                [[postBody should] equal:expectedPostBody];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorInvalidClient message:CSAPIErrorInvalidClientMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs transferCreditsWithClientID:clientID
+                                            credits:credits
+                      canUseMyCreditsWhenTheyRunOut:canUseMyCreditsWhenTheyRunOut
+                                  completionHandler:^(NSUInteger accountCredits, NSUInteger clientCredits) {}
+                                       errorHandler:^(NSError *errorResponse) { error = errorResponse; }
+                     ];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorInvalidClient message:CSAPIErrorInvalidClientMessage];
+                }];
+            });
+        });
+
         context(@"get details of a client", ^{
             it(@"should get details of a client", ^{
                 NSURLRequest *request = nil;

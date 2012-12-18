@@ -142,6 +142,34 @@
                                errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
+ Transfer credits from your account to a client, or transfer credits from a
+ client to your account. The credits parameter should be either a positive
+ integer if you wish to allocate credits from your account to the client, or
+ a negative integer if you wish to deduct credits from the client back into
+ your account.
+ 
+ http://www.campaignmonitor.com/api/clients/#transfer_credits
+ 
+ @param clientID The ID of the client for which the credit transfer will be made.
+ @param credits The number of credits to transfer to/from the client. For example,
+ to deduct 200 credits from a client (and transfer those credits back to your
+ account) you would provide a value of -200. To allocate 200 credits from your
+ account to a client, you would provide a value of 200.
+ @param canUseMyCreditsWhenTheyRunOut Whether or not the client will be able to
+ continue sending using your credits or payment details once they run out of
+ credits.
+ @param completionHandler Completion callback, with the resulting number of
+ credits remaining in your account as the first argument, and the resulting number
+ of credits belonging to the client as the second argument.
+ @param errorHandler Error callback
+ */
+- (void)transferCreditsWithClientID:(NSString *)clientID
+                            credits:(NSInteger)credits
+      canUseMyCreditsWhenTheyRunOut:(BOOL)canUseMyCreditsWhenTheyRunOut
+                  completionHandler:(void (^)(NSUInteger accountCredits, NSUInteger clientCredits))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
  Get the complete details for a client including their API key, access level,
  contact details and billing settings.
  
