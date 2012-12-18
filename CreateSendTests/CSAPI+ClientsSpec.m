@@ -306,6 +306,9 @@ describe(@"CSAPI+Clients", ^{
                     [[campaign.campaignID should] equal:@"fc0ce7105baeaf97f47c99be31d02a91"];
                     [[campaign.name should] equal:@"Campaign One"];
                     [[campaign.subject should] equal:@"Campaign One"];
+                    [[campaign.fromName should] equal:@"My Name"];
+                    [[campaign.fromEmail should] equal:@"myemail@example.com"];
+                    [[campaign.replyTo should] equal:@"myemail@example.com"];
                     [[campaign.webVersionPage should] equal:@"http://createsend.com/t/r-765E86829575EE2C"];
                     [[campaign.webVersionTextPage should] equal:@"http://createsend.com/t/r-765E86829575EE2C/t"];
                     [[campaign.dateSent should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2010-10-12 12:58:00"]];
@@ -347,6 +350,9 @@ describe(@"CSAPI+Clients", ^{
                     [[campaign.campaignID should] equal:@"827dbbd2161ea9989fa11ad562c66937"];
                     [[campaign.name should] equal:@"Magic Issue One"];
                     [[campaign.subject should] equal:@"Magic Issue One"];
+                    [[campaign.fromName should] equal:@"My Name"];
+                    [[campaign.fromEmail should] equal:@"myemail@example.com"];
+                    [[campaign.replyTo should] equal:@"myemail@example.com"];
                     [[campaign.previewPage should] equal:@"http://createsend.com/t/r-DD543521A87C9B8B"];
                     [[campaign.previewTextPage should] equal:@"http://createsend.com/t/r-DD543521A87C9B8B/t"];
                     [[campaign.dateCreated should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2011-05-24 10:37:00"]];
@@ -389,6 +395,9 @@ describe(@"CSAPI+Clients", ^{
                     [[campaign.campaignID should] equal:@"7c7424792065d92627139208c8c01db1"];
                     [[campaign.name should] equal:@"Draft One"];
                     [[campaign.subject should] equal:@"Draft One"];
+                    [[campaign.fromName should] equal:@"My Name"];
+                    [[campaign.fromEmail should] equal:@"myemail@example.com"];
+                    [[campaign.replyTo should] equal:@"myemail@example.com"];
                     [[campaign.previewPage should] equal:@"http://createsend.com/t/r-E97A7BB2E6983DA1"];
                     [[campaign.previewTextPage should] equal:@"http://createsend.com/t/r-E97A7BB2E6983DA1/t"];
                     [[campaign.dateCreated should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2010-08-19 16:08:00"]];

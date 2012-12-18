@@ -15,6 +15,9 @@
     campaign.campaignID = [campaignDictionary valueForKey:@"CampaignID"];
     campaign.name = [campaignDictionary valueForKey:@"Name"];
     campaign.subject = [campaignDictionary valueForKey:@"Subject"];
+    campaign.fromName = [campaignDictionary valueForKey:@"FromName"];
+    campaign.fromEmail = [campaignDictionary valueForKey:@"FromEmail"];
+    campaign.replyTo = [campaignDictionary valueForKey:@"ReplyTo"];
     
     campaign.webVersionPage = [campaignDictionary valueForKey:@"WebVersionURL"];
     campaign.webVersionTextPage = [campaignDictionary valueForKey:@"WebVersionTextURL"];
