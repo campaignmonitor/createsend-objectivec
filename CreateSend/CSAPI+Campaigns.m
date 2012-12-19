@@ -105,6 +105,21 @@ NSString * const CSAPICampaignPreviewPersonalizeRandom = @"Random";
     } failure:errorHandler];
 }
 
+- (void)getCampaignEmailClientUsageWithCampaignID:(NSString *)campaignID
+                                completionHandler:(void (^)(NSArray *campaignEmailClientUsage))completionHandler
+                                     errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    [self.restClient get:[NSString stringWithFormat:@"campaigns/%@/emailclientusage.json", campaignID] success:^(NSArray *response) {
+        __block NSMutableArray *emailClientUsage = [[NSMutableArray alloc] initWithCapacity:response.count];
+        [response enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSDictionary *emailClientDictionary = (NSDictionary *)obj;
+            CSCampaignEmailClient *ec = [CSCampaignEmailClient campaignEmailClientWithDictionary:emailClientDictionary];
+            [emailClientUsage addObject:ec];
+        }];
+        if (completionHandler) completionHandler([[NSArray alloc] initWithArray:emailClientUsage]);
+    } failure:errorHandler];
+}
+
 - (void)getCampaignListsAndSegmentsWithCampaignID:(NSString *)campaignID
                                 completionHandler:(void (^)(NSArray *lists, NSArray *segments))completionHandler
                                      errorHandler:(CSAPIErrorHandler)errorHandler

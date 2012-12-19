@@ -10,6 +10,9 @@
 		A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = A315C1CB167B82C00020C198 /* CSBillingDetails.h */; };
 		A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A315C1CC167B82C00020C198 /* CSBillingDetails.m */; };
 		A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A315C1D7167F0CB70020C198 /* billingdetails.json */; };
+		A3BE060916820D6400858A00 /* CSCampaignEmailClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */; };
+		A3BE060A16820D6400858A00 /* CSCampaignEmailClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */; };
+		A3BE060C1682132600858A00 /* email_client_usage.json in Resources */ = {isa = PBXBuildFile; fileRef = A3BE060B1682132600858A00 /* email_client_usage.json */; };
 		A3EB67C31680A5B9004F7793 /* transfer_credits.json in Resources */ = {isa = PBXBuildFile; fileRef = A3EB67C21680A5B9004F7793 /* transfer_credits.json */; };
 		AB1D5F3415DAB0F500207837 /* CSAPI+Segments.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1D5F3215DAB0F500207837 /* CSAPI+Segments.h */; };
 		AB1D5F3515DAB0F500207837 /* CSAPI+Segments.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1D5F3315DAB0F500207837 /* CSAPI+Segments.m */; };
@@ -209,6 +212,9 @@
 		A315C1CB167B82C00020C198 /* CSBillingDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBillingDetails.h; sourceTree = "<group>"; };
 		A315C1CC167B82C00020C198 /* CSBillingDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBillingDetails.m; sourceTree = "<group>"; };
 		A315C1D7167F0CB70020C198 /* billingdetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billingdetails.json; sourceTree = "<group>"; };
+		A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCampaignEmailClient.h; sourceTree = "<group>"; };
+		A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCampaignEmailClient.m; sourceTree = "<group>"; };
+		A3BE060B1682132600858A00 /* email_client_usage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = email_client_usage.json; sourceTree = "<group>"; };
 		A3EB67C21680A5B9004F7793 /* transfer_credits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transfer_credits.json; sourceTree = "<group>"; };
 		AB1D5F3215DAB0F500207837 /* CSAPI+Segments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSAPI+Segments.h"; sourceTree = "<group>"; };
 		AB1D5F3315DAB0F500207837 /* CSAPI+Segments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSAPI+Segments.m"; sourceTree = "<group>"; };
@@ -578,6 +584,7 @@
 				AB3969DD15DC232200CA2DE7 /* unsubscribed_subscribers.json */,
 				A315C1D7167F0CB70020C198 /* billingdetails.json */,
 				A3EB67C21680A5B9004F7793 /* transfer_credits.json */,
+				A3BE060B1682132600858A00 /* email_client_usage.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -718,6 +725,8 @@
 				AB9BD7E715D9A77F00C8268A /* CSWebhook.m */,
 				A315C1CB167B82C00020C198 /* CSBillingDetails.h */,
 				A315C1CC167B82C00020C198 /* CSBillingDetails.m */,
+				A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */,
+				A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -769,6 +778,7 @@
 				AB5CA51F162846FC00558435 /* CSAuthorizationViewController.h in Headers */,
 				AB5CA5231628471E00558435 /* CSAPI+iOS.h in Headers */,
 				A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */,
+				A3BE060916820D6400858A00 /* CSCampaignEmailClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,6 +949,7 @@
 				AB396A1E15DC232200CA2DE7 /* unsubscribed_subscribers.json in Resources */,
 				A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */,
 				A3EB67C31680A5B9004F7793 /* transfer_credits.json in Resources */,
+				A3BE060C1682132600858A00 /* email_client_usage.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1015,7 @@
 				AB5CA520162846FC00558435 /* CSAuthorizationViewController.m in Sources */,
 				AB5CA5241628471E00558435 /* CSAPI+iOS.m in Sources */,
 				A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */,
+				A3BE060A16820D6400858A00 /* CSCampaignEmailClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

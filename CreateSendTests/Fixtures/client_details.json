@@ -20,7 +20,7 @@
      "BaseRatePerRecipient": 1.0,
      "MarkupPerRecipient": 0.0,
      "MarkupOnDelivery": 0.0,
-     "BaseDeliveryRate": 5.0,
+     "BaseDeliveryRate": 5.23,
      "Currency": "USD",
      "BaseDesignSpamTestRate": 5.0
   }

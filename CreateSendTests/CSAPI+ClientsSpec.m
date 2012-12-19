@@ -314,7 +314,7 @@ describe(@"CSAPI+Clients", ^{
                 [[theValue(client.baseRatePerRecipient) should] equal:theValue(1.0)];
                 [[theValue(client.markupPerRecipient) should] equal:theValue(0.0)];
                 [[theValue(client.markupOnDelivery) should] equal:theValue(0.0)];
-                [[theValue(client.baseDeliveryRate) should] equal:theValue(5.0)];
+                [[theValue(client.baseDeliveryRate) should] equal:theValue(5.23f)];
                 [[theValue(client.baseDesignSpamTestRate) should] equal:theValue(5.0)];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"clients/%@.json", clientID] relativeToURL:cs.baseURL];

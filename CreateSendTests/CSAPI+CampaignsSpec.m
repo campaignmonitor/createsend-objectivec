@@ -237,7 +237,7 @@ describe(@"CSAPI+Campaigns", ^{
                 }];
             });
         });
-        
+
         context(@"get a campaign summary", ^{
             it(@"should get a campaign summary", ^{
                 NSURLRequest *request = nil;
@@ -280,6 +280,44 @@ describe(@"CSAPI+Campaigns", ^{
             });
         });
         
+        context(@"get campaign email client usage", ^{
+            it(@"should get campaign email client usage", ^{
+                NSURLRequest *request = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"email_client_usage.json" returningRequest:&request whileExecutingBlock:^{
+                    __block NSArray *emailClientUsage = nil;
+                    [cs getCampaignEmailClientUsageWithCampaignID:campaign.campaignID completionHandler:^(NSArray *response) {
+                        emailClientUsage = response;
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+
+                    [[[emailClientUsage should] have:6] items];
+                    
+                    CSCampaignEmailClient *firstEmailClient = [emailClientUsage objectAtIndex:0];
+                    [[firstEmailClient.client should] equal:@"iOS Devices"];
+                    [[firstEmailClient.version should] equal:@"iPhone"];
+                    [[theValue(firstEmailClient.percentage) should] equal:theValue(19.83f)];
+                    [[theValue(firstEmailClient.subscribers) should] equal:theValue(7056)];
+                }];
+
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"campaigns/%@/emailclientusage.json", campaign.campaignID] relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs getCampaignEmailClientUsageWithCampaignID:campaign.campaignID completionHandler:^(NSArray *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage];
+                }];
+            });
+        });
+
         context(@"get the lists and segments for a campaign", ^{
             it(@"should get the lists and segments for a campaign", ^{
                 NSURLRequest *request = nil;

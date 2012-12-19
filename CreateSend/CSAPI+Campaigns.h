@@ -12,6 +12,7 @@
 #import "CSCampaignRecipient.h"
 #import "CSCampaignRecipientClicked.h"
 #import "CSCampaignSummary.h"
+#import "CSCampaignEmailClient.h"
 #import "CSList.h"
 #import "CSSegment.h"
 
@@ -143,6 +144,19 @@ extern NSString * const CSAPICampaignPreviewPersonalizeRandom;
 - (void)getCampaignSummaryWithCampaignID:(NSString *)campaignID
                        completionHandler:(void (^)(CSCampaignSummary *campaignSummary))completionHandler
                             errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
+ Gets the list of email clients used by subscribers to open the campaign.
+ 
+ http://www.campaignmonitor.com/api/campaigns/#campaign_email_client_usage
+ 
+ @param campaignID The ID of the campaign for which email client usage should be found.
+ @param completionHandler Completion callback, with an array of `CSCampaignEmailClient` objects as the first and only argument
+ @param errorHandler Error callback
+ */
+- (void)getCampaignEmailClientUsageWithCampaignID:(NSString *)campaignID
+                                completionHandler:(void (^)(NSArray *campaignEmailClientUsage))completionHandler
+                                     errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
  Get the lists and segments a campaign was sent to
