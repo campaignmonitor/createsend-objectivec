@@ -186,6 +186,31 @@ extern NSString * const CSAPIWebhookPayloadFormatXML;
                           errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
+ Get a paged result representing all the unconfirmed subscribers for a given list
+ (those subscribers who have subscribed to a confirmed-opt-in list, but have not
+ confirmed their subscription).
+ 
+ http://www.campaignmonitor.com/api/lists/#unconfirmed_subscribers
+ 
+ @param listID The ID of the list you want the unconfirmed subscribers for
+ @param date Subscribers who subscribed on or after the date specified will be returned
+ @param page The page to retrieve
+ @param pageSize The number of subscribers to retrieve per page. Values accepted are between `10` and `1000`.
+ @param orderField The subscriber field to order the list by. Values accepted are `email`, `name` or `date`.
+ @param ascending Whether to sort the list (see `orderField`) in ascending order
+ @param completionHandler Completion callback, with a `CSPaginatedResult` as the first and only argument. Items in the result list are `CSSubscriber`.
+ @param errorHandler Error callback
+ */
+- (void)getUnconfirmedSubscribersWithListID:(NSString *)listID
+                                  date:(NSDate *)date
+                                  page:(NSUInteger)page
+                              pageSize:(NSUInteger)pageSize
+                            orderField:(NSString *)orderField
+                             ascending:(BOOL)ascending
+                     completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
+                          errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
  Get a paged result representing all the unsubscribed subscribers for a given list
  
  http://www.campaignmonitor.com/api/lists/#unsubscribed_subscribers

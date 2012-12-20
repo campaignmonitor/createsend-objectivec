@@ -141,6 +141,26 @@ NSString * const CSAPIWebhookPayloadFormatXML = @"xml";
                       errorHandler:errorHandler];
 }
 
+- (void)getUnconfirmedSubscribersWithListID:(NSString *)listID
+                                       date:(NSDate *)date
+                                       page:(NSUInteger)page
+                                   pageSize:(NSUInteger)pageSize
+                                 orderField:(NSString *)orderField
+                                  ascending:(BOOL)ascending
+                          completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
+                               errorHandler:(CSAPIErrorHandler)errorHandler;
+{
+    [self getSubscribersWithListID:listID
+                              slug:@"unconfirmed"
+                              date:date
+                              page:page
+                          pageSize:pageSize
+                        orderField:orderField
+                         ascending:ascending
+                 completionHandler:completionHandler
+                      errorHandler:errorHandler];
+}
+
 - (void)getUnsubscribedSubscribersWithListID:(NSString *)listID
                                         date:(NSDate *)date
                                         page:(NSUInteger)page

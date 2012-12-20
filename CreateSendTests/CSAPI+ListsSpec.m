@@ -289,7 +289,61 @@ describe(@"CSAPI+Lists", ^{
                 }];
             });
         });
-        
+
+        context(@"unconfirmed subscribers for a list", ^{
+            NSDate *date = [NSDate date];
+            
+            it(@"should get the unconfirmed subscribers for a list", ^{
+                NSURLRequest *request = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"unconfirmed_subscribers.json" returningRequest:&request whileExecutingBlock:^{
+                    __block CSPaginatedResult *paginatedResult = nil;
+                    [cs getUnconfirmedSubscribersWithListID:listID date:date page:1 pageSize:1000 orderField:CSAPIOrderByEmail ascending:YES completionHandler:^(CSPaginatedResult *response) {
+                        paginatedResult = response;
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+
+                    [paginatedResult shouldNotBeNil];
+                    [[paginatedResult.orderedBy should] equal:CSAPIOrderByEmail];
+                    [[theValue(paginatedResult.ascending) should] beTrue];
+                    [[theValue(paginatedResult.page) should] equal:theValue(1)];
+                    [[theValue(paginatedResult.pageSize) should] equal:theValue(1000)];
+                    [[theValue(paginatedResult.resultCount) should] equal:theValue(2)];
+                    [[theValue(paginatedResult.totalResultCount) should] equal:theValue(2)];
+                    [[theValue(paginatedResult.totalPages) should] equal:theValue(1)];
+                    [[[paginatedResult.results should] have:2] items];
+
+                    CSSubscriber *firstSubscriber = [paginatedResult objectAtIndex:0];
+                    [[firstSubscriber.emailAddress should] equal:@"subs+7t8787Y@example.com"];
+                    [[firstSubscriber.name should] equal:@"Unconfirmed One"];
+                    [[[[CSAPI sharedDateFormatter] stringFromDate:firstSubscriber.date] should] equal:@"2010-10-25 10:28:00"];
+                    [[firstSubscriber.state should] equal:@"Unconfirmed"];
+                    [[[firstSubscriber.customFields should] have:1] items];
+                    [[firstSubscriber.readsEmailWith should] equal:@""];
+                }];
+                
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"lists/%@/unconfirmed.json", listID] relativeToURL:cs.baseURL];
+                [[request.URL.path should] equal:expectedURL.path];
+                
+                NSDictionary *parameters = [request.URL cs_queryValuesForKeys:@[@"page", @"pagesize", @"orderfield", @"orderdirection", @"date"] error:nil];
+                NSDictionary *expectedParameters = @{@"page": @"1", @"pagesize": @"1000", @"orderfield": CSAPIOrderByEmail, @"orderdirection": @"asc", @"date": [[CSAPI sharedDateFormatter] stringFromDate:date]};
+                [[parameters should] equal:expectedParameters];
+            });
+            
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs getUnconfirmedSubscribersWithListID:listID date:date page:1 pageSize:1000 orderField:CSAPIOrderByEmail ascending:YES completionHandler:^(CSPaginatedResult *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage];
+                }];
+            });
+        });
+
         context(@"unsubscribed subscribers for a list", ^{
             NSDate *date = [NSDate date];
             
