@@ -18,6 +18,7 @@
     campaignSummary.unsubscribedCount = [[campaignSummaryDictionary valueForKey:@"Unsubscribed"] unsignedIntegerValue];
     campaignSummary.bouncedCount = [[campaignSummaryDictionary valueForKey:@"Bounced"] unsignedIntegerValue];
     campaignSummary.uniqueOpenedCount = [[campaignSummaryDictionary valueForKey:@"UniqueOpened"] unsignedIntegerValue];
+    campaignSummary.spamComplaints = [[campaignSummaryDictionary valueForKey:@"SpamComplaints"] unsignedIntegerValue];
     campaignSummary.forwardsCount = [[campaignSummaryDictionary valueForKey:@"Forwards"] unsignedIntegerValue];
     campaignSummary.likesCount = [[campaignSummaryDictionary valueForKey:@"Likes"] unsignedIntegerValue];
     campaignSummary.mentionsCount = [[campaignSummaryDictionary valueForKey:@"Mentions"] unsignedIntegerValue];

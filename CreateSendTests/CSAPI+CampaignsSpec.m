@@ -256,6 +256,7 @@ describe(@"CSAPI+Campaigns", ^{
                 [[theValue(campaignSummary.unsubscribedCount) should] equal:theValue(0)];
                 [[theValue(campaignSummary.bouncedCount) should] equal:theValue(0)];
                 [[theValue(campaignSummary.uniqueOpenedCount) should] equal:theValue(5)];
+                [[theValue(campaignSummary.spamComplaints) should] equal:theValue(23)];
                 [[theValue(campaignSummary.mentionsCount) should] equal:theValue(23)];
                 [[theValue(campaignSummary.forwardsCount) should] equal:theValue(11)];
                 [[theValue(campaignSummary.likesCount) should] equal:theValue(32)];

@@ -14,6 +14,7 @@
 @property (assign) NSUInteger unsubscribedCount;
 @property (assign) NSUInteger bouncedCount;
 @property (assign) NSUInteger uniqueOpenedCount;
+@property (assign) NSUInteger spamComplaints;
 @property (assign) NSUInteger forwardsCount;
 @property (assign) NSUInteger likesCount;
 @property (assign) NSUInteger mentionsCount;
