@@ -74,6 +74,8 @@
 	
 	<option value="//api/name/getListStatisticsWithListID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getListStatisticsWithListID:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getWebhooksWithListID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getWebhooksWithListID:completionHandler:errorHandler:</option>
@@ -145,6 +147,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getListSegmentsWithListID:completionHandler:errorHandler:">getListSegmentsWithListID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getListStatisticsWithListID:completionHandler:errorHandler:">getListStatisticsWithListID:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
 	
@@ -252,6 +256,15 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/getActiveSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getActiveSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Get a paged result representing all the active subscribers for a given list</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a paged result representing all the unconfirmed subscribers for a given list
+(those subscribers who have subscribed to a confirmed-opt-in list, but have not
+confirmed their subscription).</p></span>
 	</span>
 	
 	
@@ -1457,6 +1470,94 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:" title="getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getUnconfirmedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a paged result representing all the unconfirmed subscribers for a given list
+(those subscribers who have subscribed to a confirmed-opt-in list, but have not
+confirmed their subscription).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getUnconfirmedSubscribersWithListID:(NSString *)<em>listID</em> date:(NSDate *)<em>date</em> page:(NSUInteger)<em>page</em> pageSize:(NSUInteger)<em>pageSize</em> orderField:(NSString *)<em>orderField</em> ascending:(BOOL)<em>ascending</em> completionHandler:(void ( ^ ) ( CSPaginatedResult *paginatedResult ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the list you want the unconfirmed subscribers for</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>Subscribers who subscribed on or after the date specified will be returned</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>page</em></dt>
+			<dd><p>The page to retrieve</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pageSize</em></dt>
+			<dd><p>The number of subscribers to retrieve per page. Values accepted are between <code>10</code> and <code>1000</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderField</em></dt>
+			<dd><p>The subscriber field to order the list by. Values accepted are <code>email</code>, <code>name</code> or <code>date</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>Whether to sort the list (see <code>orderField</code>) in ascending order</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with a <code>CSPaginatedResult</code> as the first and only argument. Items in the result list are <code>CSSubscriber</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#unconfirmed_subscribers</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:" title="getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:"></a>
 	<h3 class="subsubtitle method-title">getUnsubscribedSubscribersWithListID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</h3>
 	
@@ -1839,7 +1940,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-18)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

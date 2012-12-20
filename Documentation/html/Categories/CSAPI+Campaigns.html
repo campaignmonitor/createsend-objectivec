@@ -52,11 +52,15 @@
 	
 	<option value="//api/name/getCampaignClicksWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCampaignClicksWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getCampaignOpensWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCampaignOpensWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getCampaignRecipientsWithCampaignID:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCampaignRecipientsWithCampaignID:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getCampaignSummaryWithCampaignID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getCampaignSummaryWithCampaignID:completionHandler:errorHandler:</option>
 	
@@ -106,11 +110,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCampaignClicksWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getCampaignClicksWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:">getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:">getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCampaignOpensWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getCampaignOpensWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCampaignRecipientsWithCampaignID:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getCampaignRecipientsWithCampaignID:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCampaignSummaryWithCampaignID:completionHandler:errorHandler:">getCampaignSummaryWithCampaignID:completionHandler:errorHandler:</a></span></li>
 	
@@ -226,6 +234,13 @@ You can also set how we should treat any personalization tags in your draft camp
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:">&ndash;&nbsp;getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Gets the list of email clients used by subscribers to open the campaign.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:">&ndash;&nbsp;getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Get the lists and segments a campaign was sent to</p></span>
 	</span>
@@ -263,6 +278,13 @@ You can also set how we should treat any personalization tags in your draft camp
 	<span class="tooltip">
 		<code><a href="#//api/name/getCampaignUnsubscribesWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getCampaignUnsubscribesWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Get a paged result representing all subscribers who unsubscribed from the email for a given campaign</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get a paged result representing all subscribers who marked a given campaign as spam</p></span>
 	</span>
 	
 	
@@ -623,6 +645,67 @@ You can also set how we should treat any personalization tags in your draft camp
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:" title="getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getCampaignEmailClientUsageWithCampaignID:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the list of email clients used by subscribers to open the campaign.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getCampaignEmailClientUsageWithCampaignID:(NSString *)<em>campaignID</em> completionHandler:(void ( ^ ) ( NSArray *campaignEmailClientUsage ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>campaignID</em></dt>
+			<dd><p>The ID of the campaign for which email client usage should be found.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with an array of <code>CSCampaignEmailClient</code> objects as the first and only argument</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/campaigns/">http://www.campaignmonitor.com/api/campaigns/</a>#campaign_email_client_usage</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Campaigns.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:" title="getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:"></a>
 	<h3 class="subsubtitle method-title">getCampaignListsAndSegmentsWithCampaignID:completionHandler:errorHandler:</h3>
 	
@@ -834,6 +917,92 @@ You can also set how we should treat any personalization tags in your draft camp
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p><a href="http://www.campaignmonitor.com/api/campaigns/">http://www.campaignmonitor.com/api/campaigns/</a>#campaign_recipients</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Campaigns.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:" title="getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getCampaignSpamComplaintsWithCampaignID:date:page:pageSize:orderField:ascending:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a paged result representing all subscribers who marked a given campaign as spam</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getCampaignSpamComplaintsWithCampaignID:(NSString *)<em>campaignID</em> date:(NSDate *)<em>date</em> page:(NSUInteger)<em>page</em> pageSize:(NSUInteger)<em>pageSize</em> orderField:(NSString *)<em>orderField</em> ascending:(BOOL)<em>ascending</em> completionHandler:(void ( ^ ) ( CSPaginatedResult *paginatedResult ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>campaignID</em></dt>
+			<dd><p>The ID of the campaign you want data for. You can get the ID by calling getSentCampaignsWithClientID:completionHandler:errorHandler:.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>Spam complaints after the specified date will be returned</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>page</em></dt>
+			<dd><p>The page to retrieve</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pageSize</em></dt>
+			<dd><p>The number of subscribers to retrieve per page. Values accepted are between <code>10</code> and <code>1000</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderField</em></dt>
+			<dd><p>The subscriber field to order the list by. Values accepted are <code>email</code>, <code>name</code> or <code>date</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>Whether to sort the list (see <code>orderField</code>) in ascending order</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with a <code>CSPaginatedResult</code> as the first and only argument. Items in the result list are <code>CSCampaignRecipient</code>:</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/campaigns/">http://www.campaignmonitor.com/api/campaigns/</a>#campaign_spam_complaints</p>
 	</div>
 	
 	
@@ -1287,7 +1456,7 @@ You can also set how we should treat any personalization tags in your draft camp
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-18)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

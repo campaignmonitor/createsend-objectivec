@@ -80,6 +80,8 @@
 	
 	<option value="//api/name/setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</option>
@@ -149,6 +151,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:">setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:">setPrimaryContactWithClientID:emailAddress:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:">suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:">transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</a></span></li>
 	
@@ -296,6 +300,13 @@ contact details and billing settings.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/getSuppressionListWithClientID:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&ndash;&nbsp;getSuppressionListWithClientID:page:pageSize:orderField:ascending:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Get a paged result representing the client&rsquo;s suppression list.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:">&ndash;&nbsp;suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Adds email addresses to the client&rsquo;s suppression list.</p></span>
 	</span>
 	
 	
@@ -1628,6 +1639,73 @@ client can purchase their own email credits to access bulk discounts.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:" title="suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds email addresses to the client&rsquo;s suppression list.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)suppressEmailAddressesWithClientID:(NSString *)<em>clientID</em> emailAddresses:(NSArray *)<em>emailAddresses</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientID</em></dt>
+			<dd><p>The ID of the client whose suppression list will have the provided
+email addresses added to it.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddresses</em></dt>
+			<dd><p>A collection of email addresses which will be suppressed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/clients/">http://www.campaignmonitor.com/api/clients/</a>#suppress_email_addresses</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Clients.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:" title="transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:"></a>
 	<h3 class="subsubtitle method-title">transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</h3>
 	
@@ -1894,7 +1972,7 @@ of credits belonging to the client as the second argument.</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-18)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
