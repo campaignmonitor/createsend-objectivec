@@ -36,7 +36,8 @@ extern NSString * const CSAPICampaignPreviewPersonalizeRandom;
  @param fromEmail Senders email address
  @param replyTo Email address to use in the Reply-To field
  @param htmlURL URL for the HTML content
- @param textURL URL for the plain text content
+ @param textURL URL for the plain text content (use an empty string if you
+ want the plain text content to be generated from the HTML content)
  @param listIDs Array of list IDs
  @param segmentIDs Array of segment IDs
  @param completionHandler Completion callback, with ID of the successfully created campaign as the only argument

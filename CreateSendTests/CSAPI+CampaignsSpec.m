@@ -28,7 +28,7 @@ describe(@"CSAPI+Campaigns", ^{
             NSString *fromEmail = @"good.day@example.com";
             NSString *replyTo = @"gday.mate@example.com";
             NSString *htmlURL = @"http://example.com/campaign.html";
-            NSString *textURL = @"http://example.com/campaign.txt";
+            NSString *textURL = @"";
             NSArray *listIDs = @[@"7y12989e82ue98u2e", @"dh9w89q8w98wudwd989"];
             NSArray *segmentIDs = @[@"y78q9w8d9w8ud9q8uw", @"djw98quw9duqw98uwd98"];
             
