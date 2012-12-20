@@ -553,7 +553,40 @@ describe(@"CSAPI+Clients", ^{
                 }];
             });
         });
-        
+
+        context(@"suppress email addresses with clientID", ^{
+            NSArray *emailAddresses = @[@"one@example.com", @"two@example.com"];
+            it(@"should suppress email addresses with clientID", ^{
+                NSURLRequest *request = nil;
+                [NSURLConnection stubSendAsynchronousRequestAndReturnRequest:&request whileExecutingBlock:^{
+                    [cs suppressEmailAddressesWithClientID:clientID emailAddresses:emailAddresses completionHandler:^() {
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+                }];
+
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"clients/%@/suppress.json", clientID] relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+                [[request.HTTPMethod should] equal:@"POST"];
+
+                NSDictionary *expectedPostBody = @{@"EmailAddresses": emailAddresses};
+                NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
+                [[postBody should] equal:expectedPostBody];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs suppressEmailAddressesWithClientID:clientID emailAddresses:emailAddresses completionHandler:^() {
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage];
+                }];
+            });
+        });
+
         context(@"get segments with clientID", ^{
             it(@"should get the segments for a client", ^{
                 NSURLRequest *request = nil;

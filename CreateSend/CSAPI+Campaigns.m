@@ -54,7 +54,6 @@ NSString * const CSAPICampaignPreviewPersonalizeRandom = @"Random";
                  completionHandler:(void (^)(void))completionHandler
                       errorHandler:(CSAPIErrorHandler)errorHandler
 {
-    
     [self.restClient post:[NSString stringWithFormat:@"campaigns/%@/send.json", campaignID] withParameters:@{@"ConfirmationEmail": emailAddress, @"SendDate": sendDateString} success:^(id response) {
         if (completionHandler) completionHandler();
     } failure:errorHandler];

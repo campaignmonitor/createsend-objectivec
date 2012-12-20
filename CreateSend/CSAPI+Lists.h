@@ -202,13 +202,13 @@ extern NSString * const CSAPIWebhookPayloadFormatXML;
  @param errorHandler Error callback
  */
 - (void)getUnconfirmedSubscribersWithListID:(NSString *)listID
-                                  date:(NSDate *)date
-                                  page:(NSUInteger)page
-                              pageSize:(NSUInteger)pageSize
-                            orderField:(NSString *)orderField
-                             ascending:(BOOL)ascending
-                     completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
-                          errorHandler:(CSAPIErrorHandler)errorHandler;
+                                       date:(NSDate *)date
+                                       page:(NSUInteger)page
+                                   pageSize:(NSUInteger)pageSize
+                                 orderField:(NSString *)orderField
+                                  ascending:(BOOL)ascending
+                          completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
+                               errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
  Get a paged result representing all the unsubscribed subscribers for a given list

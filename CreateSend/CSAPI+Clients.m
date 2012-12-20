@@ -200,6 +200,18 @@
     } failure:errorHandler];
 }
 
+- (void)suppressEmailAddressesWithClientID:(NSString *)clientID
+                            emailAddresses:(NSArray *)emailAddresses
+                         completionHandler:(void (^)(void))completionHandler
+                              errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    NSDictionary *parameters = @{ @"EmailAddresses": emailAddresses };
+    
+    [self.restClient post:[NSString stringWithFormat:@"clients/%@/suppress.json", clientID] withParameters:parameters success:^(id response) {
+        if (completionHandler) completionHandler();
+    } failure:errorHandler];
+}
+
 - (void)getSegmentsWithClientID:(NSString *)clientID
               completionHandler:(void (^)(NSArray *segments))completionHandler
                    errorHandler:(CSAPIErrorHandler)errorHandler

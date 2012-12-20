@@ -256,6 +256,21 @@
                      completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
                           errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Adds email addresses to the client's suppression list.
+ 
+ http://www.campaignmonitor.com/api/clients/#suppress_email_addresses
+ 
+ @param clientID The ID of the client whose suppression list will have the provided
+ email addresses added to it.
+ @param emailAddresses A collection of email addresses which will be suppressed.
+ @param completionHandler Completion callback
+ @param errorHandler Error callback
+ */
+- (void)suppressEmailAddressesWithClientID:(NSString *)clientID
+                            emailAddresses:(NSArray *)emailAddresses
+                         completionHandler:(void (^)(void))completionHandler
+                              errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
  Get a list of all segments belonging to a particular client.
