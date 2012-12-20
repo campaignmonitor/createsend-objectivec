@@ -48,6 +48,7 @@
             [customFields addObject:[CSCustomField customFieldWithDictionary:customFieldDictionary]];
         }];
         _customFields = [[NSArray alloc] initWithArray:customFields];
+        _readsEmailWith = [subscriberDictionary valueForKey:@"ReadsEmailWith"];
     }
     return self;
 }

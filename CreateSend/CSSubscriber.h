@@ -13,6 +13,7 @@
 @property (strong) NSDate *date;
 @property (copy) NSString *state;
 @property (strong) NSArray *customFields;
+@property (copy) NSString *readsEmailWith;
 
 + (id)subscriberWithEmailAddress:(NSString *)emailAddress name:(NSString *)name customFields:(NSArray *)customFields;
 

@@ -238,6 +238,7 @@ describe(@"CSAPI+Subscribers", ^{
                 CSCustomField *firstCustomField = [subscriber.customFields objectAtIndex:0];
                 [[firstCustomField.key should] equal:@"website"];
                 [[firstCustomField.value should] equal:@"http://example.com"];
+                [[subscriber.readsEmailWith should] equal:@"Gmail"];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"subscribers/%@.json?email=%@", listID, [emailAddress cs_urlEncodedString]] relativeToURL:cs.baseURL];
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];

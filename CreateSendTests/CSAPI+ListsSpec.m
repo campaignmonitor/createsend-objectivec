@@ -265,6 +265,7 @@ describe(@"CSAPI+Lists", ^{
                     [[[[CSAPI sharedDateFormatter] stringFromDate:firstSubscriber.date] should] equal:@"2010-10-25 10:28:00"];
                     [[firstSubscriber.state should] equal:@"Active"];
                     [[[firstSubscriber.customFields should] have:3] items];
+                    [[firstSubscriber.readsEmailWith should] equal:@"Gmail"];
                 }];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"lists/%@/active.json", listID] relativeToURL:cs.baseURL];
@@ -318,6 +319,7 @@ describe(@"CSAPI+Lists", ^{
                     [[[[CSAPI sharedDateFormatter] stringFromDate:firstSubscriber.date] should] equal:@"2010-10-25 13:11:00"];
                     [[firstSubscriber.state should] equal:@"Unsubscribed"];
                     [[[firstSubscriber.customFields should] have:0] items];
+                    [[firstSubscriber.readsEmailWith should] equal:@"Gmail"];
                 }];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"lists/%@/unsubscribed.json", listID] relativeToURL:cs.baseURL];
@@ -371,6 +373,7 @@ describe(@"CSAPI+Lists", ^{
                     [[[[CSAPI sharedDateFormatter] stringFromDate:firstSubscriber.date] should] equal:@"2010-10-25 13:11:00"];
                     [[firstSubscriber.state should] equal:@"Deleted"];
                     [[[firstSubscriber.customFields should] have:0] items];
+                    [[firstSubscriber.readsEmailWith should] equal:@"Gmail"];
                 }];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"lists/%@/deleted.json", listID] relativeToURL:cs.baseURL];
@@ -424,6 +427,7 @@ describe(@"CSAPI+Lists", ^{
                     [[[[CSAPI sharedDateFormatter] stringFromDate:firstSubscriber.date] should] equal:@"2010-10-25 13:11:00"];
                     [[firstSubscriber.state should] equal:@"Bounced"];
                     [[[firstSubscriber.customFields should] have:0] items];
+                    [[firstSubscriber.readsEmailWith should] equal:@""];
                 }];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"lists/%@/bounced.json", listID] relativeToURL:cs.baseURL];
