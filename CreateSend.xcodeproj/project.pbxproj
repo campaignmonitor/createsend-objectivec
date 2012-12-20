@@ -11,6 +11,7 @@
 		A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A315C1CC167B82C00020C198 /* CSBillingDetails.m */; };
 		A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A315C1D7167F0CB70020C198 /* billingdetails.json */; };
 		A381EBA71683080F00EA5AEB /* unconfirmed_subscribers.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBA61683080F00EA5AEB /* unconfirmed_subscribers.json */; };
+		A381EBA91683279F00EA5AEB /* campaign_spam.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBA81683279F00EA5AEB /* campaign_spam.json */; };
 		A3BE060916820D6400858A00 /* CSCampaignEmailClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */; };
 		A3BE060A16820D6400858A00 /* CSCampaignEmailClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */; };
 		A3BE060C1682132600858A00 /* email_client_usage.json in Resources */ = {isa = PBXBuildFile; fileRef = A3BE060B1682132600858A00 /* email_client_usage.json */; };
@@ -214,6 +215,7 @@
 		A315C1CC167B82C00020C198 /* CSBillingDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBillingDetails.m; sourceTree = "<group>"; };
 		A315C1D7167F0CB70020C198 /* billingdetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billingdetails.json; sourceTree = "<group>"; };
 		A381EBA61683080F00EA5AEB /* unconfirmed_subscribers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unconfirmed_subscribers.json; sourceTree = "<group>"; };
+		A381EBA81683279F00EA5AEB /* campaign_spam.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_spam.json; sourceTree = "<group>"; };
 		A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCampaignEmailClient.h; sourceTree = "<group>"; };
 		A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCampaignEmailClient.m; sourceTree = "<group>"; };
 		A3BE060B1682132600858A00 /* email_client_usage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = email_client_usage.json; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 				A3EB67C21680A5B9004F7793 /* transfer_credits.json */,
 				A3BE060B1682132600858A00 /* email_client_usage.json */,
 				A381EBA61683080F00EA5AEB /* unconfirmed_subscribers.json */,
+				A381EBA81683279F00EA5AEB /* campaign_spam.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -954,6 +957,7 @@
 				A3EB67C31680A5B9004F7793 /* transfer_credits.json in Resources */,
 				A3BE060C1682132600858A00 /* email_client_usage.json in Resources */,
 				A381EBA71683080F00EA5AEB /* unconfirmed_subscribers.json in Resources */,
+				A381EBA91683279F00EA5AEB /* campaign_spam.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

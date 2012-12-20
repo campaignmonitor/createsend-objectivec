@@ -566,6 +566,58 @@ describe(@"CSAPI+Campaigns", ^{
                 }];
             });
         });
+
+        context(@"get the spam complaints for a campaign", ^{
+            NSDate *date = [NSDate date];
+
+            it(@"should get the spam complaints for a campaign", ^{
+                NSURLRequest *request = nil;
+                __block CSPaginatedResult *paginatedResult = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"campaign_spam.json" returningRequest:&request whileExecutingBlock:^{
+                    [cs getCampaignSpamComplaintsWithCampaignID:campaign.campaignID date:date page:1 pageSize:1000 orderField:CSAPIOrderByDate ascending:YES completionHandler:^(CSPaginatedResult *response) {
+                        paginatedResult = response;
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+                }];
+                
+                [paginatedResult shouldNotBeNil];
+                [[paginatedResult.orderedBy should] equal:CSAPIOrderByDate];
+                [[theValue(paginatedResult.ascending) should] beTrue];
+                [[theValue(paginatedResult.page) should] equal:theValue(1)];
+                [[theValue(paginatedResult.pageSize) should] equal:theValue(1000)];
+                [[theValue(paginatedResult.resultCount) should] equal:theValue(1)];
+                [[theValue(paginatedResult.totalResultCount) should] equal:theValue(1)];
+                [[theValue(paginatedResult.totalPages) should] equal:theValue(1)];
+                [[[paginatedResult.results should] have:1] items];
+
+                CSCampaignRecipient *recipient = [paginatedResult objectAtIndex:0];
+                [[recipient.emailAddress should] equal:@"subs+6576576576@example.com"];
+                [[recipient.listID should] equal:@"512a3bc577a58fdf689c654329b50fa0"];
+                [[recipient.date should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2010-10-11 08:29:00"]];
+                
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"campaigns/%@/spam.json", campaign.campaignID] relativeToURL:cs.baseURL];
+                [[request.URL.path should] equal:expectedURL.path];
+                
+                NSDictionary *parameters = [request.URL cs_queryValuesForKeys:@[@"page", @"pagesize", @"orderfield", @"orderdirection", @"date"] error:nil];
+                NSDictionary *expectedParameters = @{@"page": @"1", @"pagesize": @"1000", @"orderfield": CSAPIOrderByDate, @"orderdirection": @"asc"};
+                [[parameters should] equal:expectedParameters];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs getCampaignSpamComplaintsWithCampaignID:campaign.campaignID date:date page:1 pageSize:1000 orderField:CSAPIOrderByDate ascending:YES completionHandler:^(CSPaginatedResult *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage];
+                }];
+            });
+        });
+    
     });
 });
 

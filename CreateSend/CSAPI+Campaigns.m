@@ -267,4 +267,26 @@ NSString * const CSAPICampaignPreviewPersonalizeRandom = @"Random";
                             completionHandler:completionHandler
                                  errorHandler:errorHandler];
 }
+
+- (void)getCampaignSpamComplaintsWithCampaignID:(NSString *)campaignID
+                                           date:(NSDate *)date
+                                           page:(NSUInteger)page
+                                       pageSize:(NSUInteger)pageSize
+                                     orderField:(NSString *)orderField
+                                      ascending:(BOOL)ascending
+                              completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
+                                   errorHandler:(CSAPIErrorHandler)errorHandler;
+{
+    [self getCampaignRecipientsWithCampaignID:campaignID
+                                         slug:@"spam"
+                                  resultClass:[CSCampaignRecipient class]
+                                         date:nil
+                                         page:page
+                                     pageSize:pageSize
+                                   orderField:orderField
+                                    ascending:ascending
+                            completionHandler:completionHandler
+                                 errorHandler:errorHandler];
+}
+
 @end

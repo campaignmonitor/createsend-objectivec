@@ -284,4 +284,27 @@ extern NSString * const CSAPICampaignPreviewPersonalizeRandom;
                             completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
                                  errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Get a paged result representing all subscribers who marked a given campaign as spam
+ 
+ http://www.campaignmonitor.com/api/campaigns/#campaign_spam_complaints
+ 
+ @param campaignID The ID of the campaign you want data for. You can get the ID by calling getSentCampaignsWithClientID:completionHandler:errorHandler:.
+ @param date Spam complaints after the specified date will be returned
+ @param page The page to retrieve
+ @param pageSize The number of subscribers to retrieve per page. Values accepted are between `10` and `1000`.
+ @param orderField The subscriber field to order the list by. Values accepted are `email`, `name` or `date`.
+ @param ascending Whether to sort the list (see `orderField`) in ascending order
+ @param completionHandler Completion callback, with a `CSPaginatedResult` as the first and only argument. Items in the result list are `CSCampaignRecipient`:
+ @param errorHandler Error callback
+ */
+- (void)getCampaignSpamComplaintsWithCampaignID:(NSString *)campaignID
+                                         date:(NSDate *)date
+                                         page:(NSUInteger)page
+                                     pageSize:(NSUInteger)pageSize
+                                   orderField:(NSString *)orderField
+                                    ascending:(BOOL)ascending
+                            completionHandler:(void (^)(CSPaginatedResult *paginatedResult))completionHandler
+                                 errorHandler:(CSAPIErrorHandler)errorHandler;
+
 @end

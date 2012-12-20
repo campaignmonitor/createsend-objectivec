@@ -20,7 +20,7 @@
         if (dateString) {
             _date = [[CSAPI sharedDateFormatter] dateFromString:dateString];
         }
-        
+
         _IPAddress = [recipientDictionary valueForKey:@"IPAddress"];
     }
     return self;
