@@ -587,6 +587,35 @@ describe(@"CSAPI+Clients", ^{
             });
         });
 
+        context(@"unsuppress an email address with clientID", ^{
+            NSString *emailAddress = @"one@example.com";
+            it(@"should unsuppress an email address with clientID", ^{
+                NSURLRequest *request = nil;
+                [NSURLConnection stubSendAsynchronousRequestAndReturnRequest:&request whileExecutingBlock:^{
+                    [cs unsuppressEmailAddressWithClientID:clientID emailAddress:emailAddress completionHandler:^() {
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+                }];
+                
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"clients/%@/unsuppress.json?email=%@", clientID, [emailAddress cs_urlEncodedString]] relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+                [[request.HTTPMethod should] equal:@"PUT"];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs unsuppressEmailAddressWithClientID:clientID emailAddress:emailAddress completionHandler:^() {
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage];
+                }];
+            });
+        });
+
         context(@"get segments with clientID", ^{
             it(@"should get the segments for a client", ^{
                 NSURLRequest *request = nil;

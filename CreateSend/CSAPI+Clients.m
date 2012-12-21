@@ -212,6 +212,17 @@
     } failure:errorHandler];
 }
 
+- (void)unsuppressEmailAddressWithClientID:(NSString *)clientID
+                              emailAddress:(NSString *)emailAddress
+                         completionHandler:(void (^)(void))completionHandler
+                              errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    [self.restClient put:[NSString stringWithFormat:@"clients/%@/unsuppress.json?email=%@", clientID, [emailAddress cs_urlEncodedString]]
+           withParameters:nil success:^(id response) {
+        if (completionHandler) completionHandler();
+    } failure:errorHandler];
+}
+
 - (void)getSegmentsWithClientID:(NSString *)clientID
               completionHandler:(void (^)(NSArray *segments))completionHandler
                    errorHandler:(CSAPIErrorHandler)errorHandler

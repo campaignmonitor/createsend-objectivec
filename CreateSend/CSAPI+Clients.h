@@ -273,6 +273,22 @@
                               errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
+ Unsuppress an email addresses (remove the email address from the client's suppression list).
+ 
+ http://www.campaignmonitor.com/api/clients/#unsuppress_an_email
+ 
+ @param clientID The ID of the client whose suppression list will have the provided
+ email address removed from it.
+ @param emailAddress The email address to be removed from the suppression list.
+ @param completionHandler Completion callback
+ @param errorHandler Error callback
+ */
+- (void)unsuppressEmailAddressWithClientID:(NSString *)clientID
+                              emailAddress:(NSString *)emailAddress
+                         completionHandler:(void (^)(void))completionHandler
+                              errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
  Get a list of all segments belonging to a particular client.
  
  http://www.campaignmonitor.com/api/clients/#segments
