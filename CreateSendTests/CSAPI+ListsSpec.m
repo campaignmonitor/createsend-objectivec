@@ -524,6 +524,7 @@ describe(@"CSAPI+Lists", ^{
                     [[firstCustomField.name should] equal:@"website"];
                     [[theValue(firstCustomField.dataType) should] equal:theValue(CSCustomFieldTextDataType)];
                     [[firstCustomField.options should] beEmpty];
+                    [[theValue(firstCustomField.visibleInPreferenceCenter) should] equal:@(NO)];
                 }];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"lists/%@/customfields.json", listID] relativeToURL:cs.baseURL];
@@ -543,9 +544,10 @@ describe(@"CSAPI+Lists", ^{
                 }];
             });
         });
-        
+
         context(@"create custom field", ^{
-            CSCustomField *customField = [CSCustomField customFieldWithName:@"new date field" key:@"[newdatefield]" dataType:CSCustomFieldDateDataType options:nil value:nil];
+            CSCustomField *customField = [CSCustomField customFieldWithName:@"new date field" key:@"[newdatefield]"
+                dataType:CSCustomFieldDateDataType options:nil value:nil visibleInPreferenceCenter:NO];
 
             it(@"should create a custom field", ^{
                 NSURLRequest *request = nil;
@@ -564,7 +566,7 @@ describe(@"CSAPI+Lists", ^{
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
                 [[request.HTTPMethod should] equal:@"POST"];
 
-                NSDictionary *expectedPostBody = @{@"FieldName": customField.name, @"DataType": [customField dataTypeString]};
+                NSDictionary *expectedPostBody = @{@"FieldName": customField.name, @"DataType": [customField dataTypeString], @"VisibleInPreferenceCenter": @(customField.visibleInPreferenceCenter)};
                 NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
                 [[postBody should] equal:expectedPostBody];
             });
@@ -582,7 +584,46 @@ describe(@"CSAPI+Lists", ^{
                 }];
             });
         });
-        
+
+        context(@"update custom field", ^{
+            CSCustomField *customField = [CSCustomField customFieldWithKey:@"[mycustomfield]" name:@"my renamed custom field" visibleInPreferenceCenter:YES];
+            
+            it(@"should update a custom field", ^{
+                NSURLRequest *request = nil;
+                __block NSString *newCustomFieldKey = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"update_custom_field.json" returningRequest:&request whileExecutingBlock:^{
+                    [cs updateCustomFieldWithListID:listID customField:customField completionHandler:^(NSString *response) {
+                        newCustomFieldKey = response;
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+                }];
+
+                [[newCustomFieldKey should] equal:@"[myrenamedcustomfield]"];
+
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"lists/%@/customfields/%@.json", listID, customField.key] relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+                [[request.HTTPMethod should] equal:@"PUT"];
+
+                NSDictionary *expectedPostBody = @{@"FieldName": customField.name, @"VisibleInPreferenceCenter": @(customField.visibleInPreferenceCenter)};
+                NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
+                [[postBody should] equal:expectedPostBody];
+            });
+            
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorFieldKeyExists message:CSAPIErrorFieldKeyExistsMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs updateCustomFieldWithListID:listID customField:customField completionHandler:^(NSString *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorFieldKeyExists message:CSAPIErrorFieldKeyExistsMessage];
+                }];
+            });
+        });
+
         context(@"update the options of a multi-optioned custom field", ^{
             NSString *customFieldKey = @"[newdatefield]";
             NSArray *options = @[@"one", @"two", @"three"];
@@ -591,7 +632,7 @@ describe(@"CSAPI+Lists", ^{
             it(@"should update the options of a multi-optioned custom field", ^{
                 NSURLRequest *request = nil;
                 [NSURLConnection stubSendAsynchronousRequestAndReturnRequest:&request whileExecutingBlock:^{
-                    [cs updateCustomFieldWithListID:listID customFieldKey:customFieldKey options:options keepExisting:keepExisting completionHandler:^() {
+                    [cs updateCustomFieldOptionsWithListID:listID customFieldKey:customFieldKey options:options keepExisting:keepExisting completionHandler:^() {
                     } errorHandler:^(NSError *errorResponse) {
                         [errorResponse shouldBeNil];
                     }];
@@ -606,11 +647,11 @@ describe(@"CSAPI+Lists", ^{
                 NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
                 [[postBody should] equal:expectedPostBody];
             });
-            
+
             it(@"should return an error if there is one", ^{
                 [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorFieldKeyExists message:CSAPIErrorFieldKeyExistsMessage whileExecutingBlock:^{
                     __block NSError *error = nil;
-                    [cs updateCustomFieldWithListID:listID customFieldKey:customFieldKey options:options keepExisting:keepExisting completionHandler:^() {
+                    [cs updateCustomFieldOptionsWithListID:listID customFieldKey:customFieldKey options:options keepExisting:keepExisting completionHandler:^() {
                     } errorHandler:^(NSError *errorResponse) {
                         error = errorResponse;
                     }];

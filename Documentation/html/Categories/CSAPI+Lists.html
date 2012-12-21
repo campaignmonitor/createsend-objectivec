@@ -82,7 +82,9 @@
 	
 	<option value="//api/name/testWebhookWithListID:webhookID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- testWebhookWithListID:webhookID:completionHandler:errorHandler:</option>
 	
-	<option value="//api/name/updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</option>
+	<option value="//api/name/updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</option>
+	
+	<option value="//api/name/updateCustomFieldWithListID:customField:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateCustomFieldWithListID:customField:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</option>
 	
@@ -156,7 +158,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWebhookWithListID:webhookID:completionHandler:errorHandler:">testWebhookWithListID:webhookID:completionHandler:errorHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateCustomFieldWithListID:customField:completionHandler:errorHandler:">updateCustomFieldWithListID:customField:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></span></li>
 	
@@ -313,8 +317,17 @@ confirmed their subscription).</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">&ndash;&nbsp;updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</a></code>
-		<span class="tooltip"><p>Update the available options for existing multi-select fields in a given list</p></span>
+		<code><a href="#//api/name/updateCustomFieldWithListID:customField:completionHandler:errorHandler:">&ndash;&nbsp;updateCustomFieldWithListID:customField:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Update a custom field, setting the name and whether or not it is visible in
+the subscriber preference center. To update the options for the custom field
+you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFieldOptionsWithListID:fieldKey:options:keepExisting:completionHandler:errorHandler:].</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:">&ndash;&nbsp;updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Update the available options for a multi-select field in a given list</p></span>
 	</span>
 	
 	
@@ -1771,18 +1784,18 @@ confirmed their subscription).</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:" title="updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">updateCustomFieldWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</h3>
+	<a name="//api/name/updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:" title="updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">updateCustomFieldOptionsWithListID:customFieldKey:options:keepExisting:completionHandler:errorHandler:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Update the available options for existing multi-select fields in a given list</p>
+		<p>Update the available options for a multi-select field in a given list</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)updateCustomFieldWithListID:(NSString *)<em>listID</em> customFieldKey:(NSString *)<em>fieldKey</em> options:(NSArray *)<em>options</em> keepExisting:(BOOL)<em>keepExisting</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)updateCustomFieldOptionsWithListID:(NSString *)<em>listID</em> customFieldKey:(NSString *)<em>fieldKey</em> options:(NSArray *)<em>options</em> keepExisting:(BOOL)<em>keepExisting</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
 
     
 	
@@ -1830,6 +1843,74 @@ confirmed their subscription).</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#updating_custom_field_options</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Lists.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateCustomFieldWithListID:customField:completionHandler:errorHandler:" title="updateCustomFieldWithListID:customField:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">updateCustomFieldWithListID:customField:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update a custom field, setting the name and whether or not it is visible in
+the subscriber preference center. To update the options for the custom field
+you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFieldOptionsWithListID:fieldKey:options:keepExisting:completionHandler:errorHandler:].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateCustomFieldWithListID:(NSString *)<em>listID</em> customField:(CSCustomField *)<em>customField</em> completionHandler:(void ( ^ ) ( NSString *customFieldKey ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listID</em></dt>
+			<dd><p>The ID of the list to which the custom field belongs</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>customField</em></dt>
+			<dd><p>A <a href="../Classes/CSCustomField.html"><code>CSCustomField</code></a> representing the field you&rsquo;d like to update. See <a href="../Classes/CSCustomField.html#//api/name/customFieldWithName:dataType:options:">[CSCustomField customFieldWithName:dataType:options:]</a> and <a href="../Classes/CSCustomField.html#//api/name/customFieldWithName:dataType:">[CSCustomField customFieldWithName:dataType:]</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with the key of the updated custom field as the first and only argument</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/lists/">http://www.campaignmonitor.com/api/lists/</a>#updating_a_custom_field</p>
 	</div>
 	
 	
@@ -1940,7 +2021,7 @@ confirmed their subscription).</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-20)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

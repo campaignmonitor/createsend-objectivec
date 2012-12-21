@@ -308,7 +308,24 @@ extern NSString * const CSAPIWebhookPayloadFormatXML;
                        errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
- Update the available options for existing multi-select fields in a given list
+ Update a custom field, setting the name and whether or not it is visible in
+ the subscriber preference center. To update the options for the custom field
+ you should use [CSAPI (Lists) updateCustomFieldOptionsWithListID:fieldKey:options:keepExisting:completionHandler:errorHandler:].
+
+ http://www.campaignmonitor.com/api/lists/#updating_a_custom_field
+
+ @param listID The ID of the list to which the custom field belongs
+ @param customField A `CSCustomField` representing the field you'd like to update. See [CSCustomField customFieldWithName:dataType:options:] and [CSCustomField customFieldWithName:dataType:].
+ @param completionHandler Completion callback, with the key of the updated custom field as the first and only argument
+ @param errorHandler Error callback
+ */
+- (void)updateCustomFieldWithListID:(NSString *)listID
+                        customField:(CSCustomField *)customField
+                  completionHandler:(void (^)(NSString *customFieldKey))completionHandler
+                       errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
+ Update the available options for a multi-select field in a given list
  
  http://www.campaignmonitor.com/api/lists/#updating_custom_field_options
  
@@ -319,12 +336,12 @@ extern NSString * const CSAPIWebhookPayloadFormatXML;
  @param completionHandler Completion callback
  @param errorHandler Error callback
  */
-- (void)updateCustomFieldWithListID:(NSString *)listID
-                     customFieldKey:(NSString *)fieldKey
-                            options:(NSArray *)options
-                       keepExisting:(BOOL)keepExisting
-                  completionHandler:(void (^)(void))completionHandler
-                       errorHandler:(CSAPIErrorHandler)errorHandler;
+- (void)updateCustomFieldOptionsWithListID:(NSString *)listID
+                            customFieldKey:(NSString *)fieldKey
+                                   options:(NSArray *)options
+                              keepExisting:(BOOL)keepExisting
+                         completionHandler:(void (^)(void))completionHandler
+                              errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
  Deletes a specific custom field from a list

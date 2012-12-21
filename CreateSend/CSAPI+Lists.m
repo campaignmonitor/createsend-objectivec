@@ -239,18 +239,26 @@ NSString * const CSAPIWebhookPayloadFormatXML = @"xml";
                   completionHandler:(void (^)(NSString *customFieldKey))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler
 {
-    
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary:@{@"FieldName": customField.name, @"DataType": [customField dataTypeString]}];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary:@{@"FieldName": customField.name, @"DataType": [customField dataTypeString], @"VisibleInPreferenceCenter": @(customField.visibleInPreferenceCenter)}];
     if (customField.options) [parameters setObject:customField.options forKey:@"Options"];
     [self.restClient post:[NSString stringWithFormat:@"lists/%@/customfields.json", listID] withParameters:parameters success:completionHandler failure:errorHandler];
 }
 
 - (void)updateCustomFieldWithListID:(NSString *)listID
-                     customFieldKey:(NSString *)customFieldKey
-                            options:(NSArray *)options
-                       keepExisting:(BOOL)keepExisting
-                  completionHandler:(void (^)(void))completionHandler
+                        customField:(CSCustomField *)customField
+                  completionHandler:(void (^)(NSString *customFieldKey))completionHandler
                        errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    NSDictionary *parameters = @{@"FieldName": customField.name, @"VisibleInPreferenceCenter": @(customField.visibleInPreferenceCenter)};
+    [self.restClient put:[NSString stringWithFormat:@"lists/%@/customfields/%@.json", listID, customField.key] withParameters:parameters success:completionHandler failure:errorHandler];
+}
+
+- (void)updateCustomFieldOptionsWithListID:(NSString *)listID
+                            customFieldKey:(NSString *)customFieldKey
+                                   options:(NSArray *)options
+                              keepExisting:(BOOL)keepExisting
+                         completionHandler:(void (^)(void))completionHandler
+                              errorHandler:(CSAPIErrorHandler)errorHandler
 {
     NSDictionary *parameters = @{@"Options": options, @"KeepExistingOptions": @(keepExisting)};
     [self.restClient put:[NSString stringWithFormat:@"lists/%@/customfields/%@/options.json", listID, customFieldKey] withParameters:parameters success:^(id response) {

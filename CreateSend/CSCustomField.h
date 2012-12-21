@@ -27,6 +27,29 @@ typedef enum {
 @property (strong) NSArray *options;
 @property (strong) id value;
 @property (assign) BOOL clear;
+@property (assign) BOOL visibleInPreferenceCenter;
+
+/**
+ Creates and returns a `CSCustomField`. If you want to explicitely specify the
+ custom fields shown in a `CSSubscriptionFormViewController`, you should use
+ this constructor as it allows you to specify the custom field's key.
+ 
+ @param name The name of the custom field
+ @param key The system-generated key of the custom field. Used during subcription.
+ @param dataType The data type of the custom field
+ @param options The available options if the field has a multi-selet data type, or `nil` otherwise
+ @param value Optional value for the field
+ @param visibleInPreferenceCenter Whether or not the field should be
+ visible in the subscriber preference center.
+ 
+ @return An instance of `CSCustomField`
+ **/
++ (id)customFieldWithName:(NSString *)name
+                      key:(NSString *)key
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options
+                    value:(id)value
+visibleInPreferenceCenter:(BOOL)visibleInPreferenceCenter;
 
 /**
  Creates and returns a `CSCustomField`. If you want to explicitely specify the
@@ -41,7 +64,11 @@ typedef enum {
  
  @return An instance of `CSCustomField`
  **/
-+ (id)customFieldWithName:(NSString *)name key:(NSString *)key dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options value:(id)value;
++ (id)customFieldWithName:(NSString *)name
+                      key:(NSString *)key
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options
+                    value:(id)value;
 
 /**
  Creates and returns a `CSCustomField`. If you want to explicitely specify the
@@ -55,7 +82,10 @@ typedef enum {
  
  @return An instance of `CSCustomField`
  **/
-+ (id)customFieldWithName:(NSString *)name key:(NSString *)key dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options;
++ (id)customFieldWithName:(NSString *)name
+                      key:(NSString *)key
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options;
 
 /**
  Creates and returns a `CSCustomField`. If you're not creating a multi-select
@@ -67,7 +97,23 @@ typedef enum {
  
  @return An instance of `CSCustomField`
  */
-+ (id)customFieldWithName:(NSString *)name dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options;
++ (id)customFieldWithName:(NSString *)name
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options;
+
+/**
+ Creates and returns a `CSCustomField` which represents a custom field to be updated.
+ 
+ @param key The key of the custom field
+ @param name The name for the custom field
+ @param visibleInPreferenceCenter Whether or not the custom field should be visible
+ in the subscriber preference center.
+ 
+ @return An instance of `CSCustomField`
+ */
++ (id) customFieldWithKey:(NSString *)key
+                     name:(NSString *)name
+visibleInPreferenceCenter:(BOOL)visibleInPreferenceCenter;
 
 /**
  Creates and returns a `CSCustomField`
@@ -77,7 +123,8 @@ typedef enum {
  
  @return An instance of `CSCustomField`
  */
-+ (id)customFieldWithKey:(NSString *)key value:(id)value;
++ (id)customFieldWithKey:(NSString *)key
+                   value:(id)value;
 
 /**
  Creates and returns a `CSCustomField`
@@ -87,7 +134,8 @@ typedef enum {
  
  @return An instance of `CSCustomField`
  */
-+ (id)customFieldWithName:(NSString *)name dataType:(CSCustomFieldDataType)dataType;
++ (id)customFieldWithName:(NSString *)name
+                 dataType:(CSCustomFieldDataType)dataType;
 
 + (id)customFieldWithDictionary:(NSDictionary *)customFieldDictionary;
 

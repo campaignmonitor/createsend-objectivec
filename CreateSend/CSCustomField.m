@@ -28,7 +28,12 @@ static NSDictionary * gCustomFieldDataTypeMapping;
     }
 }
 
-+ (id)customFieldWithName:(NSString *)name key:(NSString *)key dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options value:(id)value
++ (id)customFieldWithName:(NSString *)name
+                      key:(NSString *)key
+                 dataType:(CSCustomFieldDataType)dataType
+                  options:(NSArray *)options
+                    value:(id)value
+visibleInPreferenceCenter:(BOOL)visibleInPreferenceCenter
 {
     
     CSCustomField *customField = [[self alloc] init];
@@ -37,7 +42,13 @@ static NSDictionary * gCustomFieldDataTypeMapping;
     customField.dataType = dataType;
     customField.options = options;
     customField.value = value;
+    customField.visibleInPreferenceCenter = visibleInPreferenceCenter;
     return customField;
+}
+
++ (id)customFieldWithName:(NSString *)name key:(NSString *)key dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options value:(id)value
+{
+    return [self customFieldWithName:name key:key dataType:dataType options:options value:nil visibleInPreferenceCenter:YES];
 }
 
 + (id)customFieldWithName:(NSString *)name key:(NSString *)key dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options
@@ -55,6 +66,13 @@ static NSDictionary * gCustomFieldDataTypeMapping;
     return [self customFieldWithName:name dataType:dataType options:nil];
 }
 
++ (id) customFieldWithKey:(NSString *)key
+                     name:(NSString *)name
+visibleInPreferenceCenter:(BOOL)visibleInPreferenceCenter
+{
+    return [self customFieldWithName:name key:key dataType:CSCustomFieldTextDataType options:nil value:nil visibleInPreferenceCenter:visibleInPreferenceCenter];
+}
+
 + (id)customFieldWithKey:(NSString *)key value:(id)value
 {
     return [self customFieldWithName:nil key:key dataType:CSCustomFieldTextDataType options:nil value:value];
@@ -62,7 +80,7 @@ static NSDictionary * gCustomFieldDataTypeMapping;
 
 + (id)customFieldWithDictionary:(NSDictionary *)customFieldDictionary
 {
-    return [self customFieldWithName:[customFieldDictionary valueForKey:@"FieldName"] key:[customFieldDictionary valueForKey:@"Key"] dataType:[self dataTypeForDataTypeString:[customFieldDictionary valueForKey:@"DataType"]] options:[customFieldDictionary valueForKey:@"FieldOptions"] value:[customFieldDictionary valueForKey:@"Value"]];
+    return [self customFieldWithName:[customFieldDictionary valueForKey:@"FieldName"] key:[customFieldDictionary valueForKey:@"Key"] dataType:[self dataTypeForDataTypeString:[customFieldDictionary valueForKey:@"DataType"]] options:[customFieldDictionary valueForKey:@"FieldOptions"] value:[customFieldDictionary valueForKey:@"Value"] visibleInPreferenceCenter:[[customFieldDictionary valueForKey:@"VisibleInPreferenceCenter"] boolValue]];
 }
 
 - (NSString *)dataTypeString
