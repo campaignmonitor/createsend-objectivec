@@ -71,6 +71,64 @@ extern NSString * const CSAPICampaignPreviewPersonalizeRandom;
  @param segmentIDs Array of segment IDs
  @param templateID The ID of the template which should be used to create the campaign.
  @param templateContent The content to be used for the editable areas of the template.
+ 
+ The structure of templateContent is important. If you wanted to provided content for
+ the editable areas of the following HTML template:
+
+    <html>
+        <head><title>My Template</title></head>
+        <body>
+            <p><singleline>Enter heading...</singleline></p>
+            <div><multiline>Enter description...</multiline></div>
+            <img id="header-image" editable="true" width="500" />
+            <repeater>
+                <layout label="My layout">
+                    <div class="repeater-item">
+                    <p><singleline></singleline></p>
+                    <div><multiline></multiline></div>
+                    <img editable="true" width="500" />
+                    </div>
+                </layout>
+            </repeater>
+            <p><unsubscribe>Unsubscribe</unsubscribe></p>
+        </body>
+    </html>
+ 
+ You could define templateContent as follows:
+
+    NSDictionary *templateContent = @{
+        @"SingleLines": @[
+            @{@"Content": @"This is a heading", @"Href": @"http://example.com/"}
+        ],
+        @"MultiLines": @[
+            @{@"Content": @"<p>This is example</p><p>multiline <a href=\"http://example.com\">content</a>...</p>"}
+        ],
+        @"Images": @[
+            @{@"Content": @"http://example.com/image.png", @"Alt": @"This is alt text for an image", @"Href": @"http://example.com/"}
+        ],
+        @"Repeaters": @[
+            @{
+                @"Items": @[
+                    @{
+                        @"Layout": @"MyLayout",
+                        @"SingleLines": @[
+                            @{@"Content": @"This is a repeater heading", @"Href": @"http://example.com/"}
+                        ],
+                        @"MultiLines": @[
+                            @{@"Content": @"<p>This is example</p><p>multiline <a href=\"http://example.com\">content</a>...</p>"}
+                        ],
+                        @"Images": @[
+                            @{@"Content": @"http://example.com/image.png", @"Alt": @"This is alt text for a repeater image", @"Href": @"http://example.com/"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    };
+ 
+ Be sure to check out http://www.campaignmonitor.com/api/campaigns/#creating_a_campaign_from_template
+ for details of the structure of templateContent.
+
  @param completionHandler Completion callback, with ID of the successfully created campaign as the only argument
  @param errorHandler Error callback
  */
