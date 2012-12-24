@@ -20,6 +20,7 @@
 @property (assign) NSUInteger mentionsCount;
 @property (copy) NSString *webVersionPage;
 @property (copy) NSString *webVersionTextPage;
+@property (copy) NSString *worldviewURL;
 
 + (id)campaignSummaryWithDictionary:(NSDictionary *)campaignSummaryDictionary;
 @end

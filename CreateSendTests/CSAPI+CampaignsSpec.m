@@ -359,7 +359,7 @@ describe(@"CSAPI+Campaigns", ^{
                         [errorResponse shouldBeNil];
                     }];
                 }];
-                
+
                 [[theValue(campaignSummary.recipientCount) should] equal:theValue(5)];
                 [[theValue(campaignSummary.openedCount) should] equal:theValue(10)];
                 [[theValue(campaignSummary.clickCount) should] equal:theValue(0)];
@@ -372,11 +372,12 @@ describe(@"CSAPI+Campaigns", ^{
                 [[theValue(campaignSummary.likesCount) should] equal:theValue(32)];
                 [[campaignSummary.webVersionPage should] equal:@"http://createsend.com/t/r-3A433FC72FFE3B8B"];
                 [[campaignSummary.webVersionTextPage should] equal:@"http://createsend.com/t/r-3A433FC72FFE3B8B/t"];
-                
+                [[campaignSummary.worldviewURL should] equal:@"http://client.createsend.com/reports/wv/r/3A433FC72FFE3B8B"];
+
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"campaigns/%@/summary.json", campaign.campaignID] relativeToURL:cs.baseURL];
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
             });
-            
+
             it(@"should return an error if there is one", ^{
                 [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorNotFound message:CSAPIErrorNotFoundMessage whileExecutingBlock:^{
                     __block NSError *error = nil;

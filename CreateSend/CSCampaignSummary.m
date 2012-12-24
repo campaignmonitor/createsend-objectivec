@@ -24,6 +24,7 @@
     campaignSummary.mentionsCount = [[campaignSummaryDictionary valueForKey:@"Mentions"] unsignedIntegerValue];
     campaignSummary.webVersionPage = [campaignSummaryDictionary valueForKey:@"WebVersionURL"];
     campaignSummary.webVersionTextPage = [campaignSummaryDictionary valueForKey:@"WebVersionTextURL"];
+    campaignSummary.worldviewURL = [campaignSummaryDictionary valueForKey:@"WorldviewURL"];
     return campaignSummary;
 }
 
