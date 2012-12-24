@@ -57,6 +57,37 @@ extern NSString * const CSAPICampaignPreviewPersonalizeRandom;
                       errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
+ Create a draft campaign using a template.
+ 
+ http://www.campaignmonitor.com/api/campaigns/#creating_a_campaign_from_template
+ 
+ @param clientID The ID of the client for whom the campaign should be created.
+ @param name Name of the campaign
+ @param subject Subject of the email
+ @param fromName Senders name
+ @param fromEmail Senders email address
+ @param replyTo Email address to use in the Reply-To field
+ @param listIDs Array of list IDs
+ @param segmentIDs Array of segment IDs
+ @param templateID The ID of the template which should be used to create the campaign.
+ @param templateContent The content to be used for the editable areas of the template.
+ @param completionHandler Completion callback, with ID of the successfully created campaign as the only argument
+ @param errorHandler Error callback
+ */
+- (void)createCampaignFromTemplateWithClientID:(NSString *)clientID
+                                          name:(NSString *)name
+                                       subject:(NSString *)subject
+                                      fromName:(NSString *)fromName
+                                     fromEmail:(NSString *)fromEmail
+                                       replyTo:(NSString *)replyTo
+                                       listIDs:(NSArray *)listIDs
+                                    segmentIDs:(NSArray *)segmentIDs
+                                    templateID:(NSString *) templateID
+                               templateContent:(NSDictionary *) templateContent
+                             completionHandler:(void (^)(NSString *campaignID))completionHandler
+                                  errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
  Delete a campaign from your account
  
  http://www.campaignmonitor.com/api/campaigns/#deleting_a_campaign

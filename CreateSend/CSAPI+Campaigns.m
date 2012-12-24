@@ -41,6 +41,34 @@ NSString * const CSAPICampaignPreviewPersonalizeRandom = @"Random";
     [self.restClient post:[NSString stringWithFormat:@"campaigns/%@.json", clientID] withParameters:parameters success:completionHandler failure:errorHandler];
 }
 
+- (void)createCampaignFromTemplateWithClientID:(NSString *)clientID
+                                          name:(NSString *)name
+                                       subject:(NSString *)subject
+                                      fromName:(NSString *)fromName
+                                     fromEmail:(NSString *)fromEmail
+                                       replyTo:(NSString *)replyTo
+                                       listIDs:(NSArray *)listIDs
+                                    segmentIDs:(NSArray *)segmentIDs
+                                    templateID:(NSString *) templateID
+                               templateContent:(NSDictionary *) templateContent
+                             completionHandler:(void (^)(NSString *campaignID))completionHandler
+                                  errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    NSDictionary *parameters = @{
+        @"Name": name,
+        @"Subject": subject,
+        @"FromName": fromName,
+        @"FromEmail": fromEmail,
+        @"ReplyTo": replyTo,
+        @"ListIDs": listIDs,
+        @"SegmentIDs": segmentIDs,
+        @"TemplateID": templateID,
+        @"TemplateContent": templateContent
+    };
+
+    [self.restClient post:[NSString stringWithFormat:@"campaigns/%@/fromtemplate.json", clientID] withParameters:parameters success:completionHandler failure:errorHandler];
+}
+
 - (void)deleteCampaignWithID:(NSString *)campaignID completionHandler:(void (^)(void))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler
 {
     [self.restClient delete:[NSString stringWithFormat:@"campaigns/%@.json", campaignID] withParameters:nil success:^(id response) {

@@ -84,6 +84,8 @@
 	
 	<option value="//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:</option>
@@ -155,6 +157,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:">suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:">transferCreditsWithClientID:credits:canUseMyCreditsWhenTheyRunOut:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></span></li>
 	
@@ -307,6 +311,13 @@ contact details and billing settings.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:">&ndash;&nbsp;suppressEmailAddressesWithClientID:emailAddresses:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Adds email addresses to the client&rsquo;s suppression list.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">&ndash;&nbsp;unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Unsuppress an email addresses (remove the email address from the client&rsquo;s suppression list).</p></span>
 	</span>
 	
 	
@@ -1771,6 +1782,73 @@ of credits belonging to the client as the second argument.</p></dd>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p><a href="http://www.campaignmonitor.com/api/clients/">http://www.campaignmonitor.com/api/clients/</a>#transfer_credits</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Clients.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:" title="unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unsuppress an email addresses (remove the email address from the client&rsquo;s suppression list).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unsuppressEmailAddressWithClientID:(NSString *)<em>clientID</em> emailAddress:(NSString *)<em>emailAddress</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientID</em></dt>
+			<dd><p>The ID of the client whose suppression list will have the provided
+email address removed from it.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddress</em></dt>
+			<dd><p>The email address to be removed from the suppression list.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/clients/">http://www.campaignmonitor.com/api/clients/</a>#unsuppress_an_email</p>
 	</div>
 	
 	

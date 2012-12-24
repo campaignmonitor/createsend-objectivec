@@ -77,7 +77,117 @@ describe(@"CSAPI+Campaigns", ^{
                 }];
             });
         });
-        
+
+        context(@"create a campaign from a template", ^{
+            NSString *clientID = @"87y8d7qyw8d7yq8w7ydwqwd";
+            NSString *name = @"Campaign Name";
+            NSString *subject = @"Campaign Subject";
+            NSString *fromName = @"My Name";
+            NSString *fromEmail = @"good.day@example.com";
+            NSString *replyTo = @"gday.mate@example.com";
+            NSArray *listIDs = @[@"7y12989e82ue98u2e", @"dh9w89q8w98wudwd989"];
+            NSArray *segmentIDs = @[@"y78q9w8d9w8ud9q8uw", @"djw98quw9duqw98uwd98"];
+            NSString *templateID = @"udq9wud09q0w9d0q9wud0qw9";
+            NSDictionary *templateContent = @{
+                @"SingleLines": @[
+                    @{@"Content": @"This is a heading", @"Href": @"http://example.com/"}
+                ],
+                @"MultiLines": @[
+                    @{@"Content": @"<p>This is example</p><p>multiline <a href=\"http://example.com\">content</a>...</p>"}
+                ],
+                @"Images": @[
+                    @{@"Content": @"http://example.com/image.png", @"Alt": @"This is alt text for an image", @"Href": @"http://example.com/"}
+                ],
+                @"Repeaters": @[
+                    @{
+                        @"Items": @[
+                            @{
+                                @"Layout": @"MyLayout",
+                                @"SingleLines": @[
+                                    @{@"Content": @"This is a repeater heading", @"Href": @"http://example.com/"}
+                                ],
+                                @"MultiLines": @[
+                                    @{@"Content": @"<p>This is example</p><p>multiline <a href=\"http://example.com\">content</a>...</p>"}
+                                ],
+                                @"Images": @[
+                                    @{@"Content": @"http://example.com/image.png", @"Alt": @"This is alt text for a repeater image", @"Href": @"http://example.com/"}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            /*
+             templateContent as defined above would be used to fill the content of
+             a template with markup similar to the following:
+             
+             <html>
+                 <head><title>My Template</title></head>
+                 <body>
+                     <p><singleline>Enter heading...</singleline></p>
+                     <div><multiline>Enter description...</multiline></div>
+                     <img id="header-image" editable="true" width="500" />
+                     <repeater>
+                         <layout label="My layout">
+                         <div class="repeater-item">
+                             <p><singleline></singleline></p>
+                             <div><multiline></multiline></div>
+                             <img editable="true" width="500" />
+                         </div>
+                         </layout>
+                     </repeater>
+                     <p><unsubscribe>Unsubscribe</unsubscribe></p>
+                 </body>
+             </html>
+            */
+
+            it(@"should create a campaign from a template", ^{
+                NSURLRequest *request = nil;
+                __block NSString *campaignID = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"create_campaign.json" returningRequest:&request whileExecutingBlock:^{
+                    [cs createCampaignFromTemplateWithClientID:clientID name:name subject:subject fromName:fromName fromEmail:fromEmail replyTo:replyTo listIDs:listIDs segmentIDs:segmentIDs templateID:templateID templateContent:templateContent completionHandler:^(NSString *response) {
+                        campaignID = response;
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+                }];
+
+                [[campaignID should] equal:@"787y87y87y87y87y87y87"];
+
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"campaigns/%@/fromtemplate.json", clientID] relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+                [[request.HTTPMethod should] equal:@"POST"];
+                
+                NSDictionary *expectedPostBody = @{
+                    @"Name": name,
+                    @"Subject": subject,
+                    @"FromName": fromName,
+                    @"FromEmail": fromEmail,
+                    @"ReplyTo": replyTo,
+                    @"ListIDs": listIDs,
+                    @"SegmentIDs": segmentIDs,
+                    @"TemplateID": templateID,
+                    @"TemplateContent": templateContent
+                };
+                NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
+                [[postBody should] equal:expectedPostBody];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorInvalidClient message:CSAPIErrorInvalidClientMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs createCampaignFromTemplateWithClientID:clientID name:name subject:subject fromName:fromName fromEmail:fromEmail replyTo:replyTo listIDs:listIDs segmentIDs:segmentIDs templateID:templateID templateContent:templateContent completionHandler:^(NSString *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+
+                    [[error should] haveErrorCode:CSAPIErrorInvalidClient message:CSAPIErrorInvalidClientMessage];
+                }];
+            });
+        });
+
         context(@"delete a campaign", ^{
             it(@"should delete a campaign", ^{
                 NSURLRequest *request = nil;

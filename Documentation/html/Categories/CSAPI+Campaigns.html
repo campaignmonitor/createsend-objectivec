@@ -44,6 +44,8 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/deleteCampaignWithID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteCampaignWithID:completionHandler:errorHandler:</option>
@@ -101,6 +103,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:">createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:">createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:</a></span></li>
 	
@@ -186,6 +190,13 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:">&ndash;&nbsp;createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Create a draft campaign ready to be tested as a preview or sent.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:">&ndash;&nbsp;createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Create a draft campaign using a template.</p></span>
 	</span>
 	
 	
@@ -304,6 +315,112 @@ You can also set how we should treat any personalization tags in your draft camp
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:" title="createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">createCampaignFromTemplateWithClientID:name:subject:fromName:fromEmail:replyTo:listIDs:segmentIDs:templateID:templateContent:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a draft campaign using a template.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createCampaignFromTemplateWithClientID:(NSString *)<em>clientID</em> name:(NSString *)<em>name</em> subject:(NSString *)<em>subject</em> fromName:(NSString *)<em>fromName</em> fromEmail:(NSString *)<em>fromEmail</em> replyTo:(NSString *)<em>replyTo</em> listIDs:(NSArray *)<em>listIDs</em> segmentIDs:(NSArray *)<em>segmentIDs</em> templateID:(NSString *)<em>templateID</em> templateContent:(CSTemplateContent *)<em>templateContent</em> completionHandler:(void ( ^ ) ( NSString *campaignID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientID</em></dt>
+			<dd><p>The ID of the client for whom the campaign should be created.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>Name of the campaign</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>subject</em></dt>
+			<dd><p>Subject of the email</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fromName</em></dt>
+			<dd><p>Senders name</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fromEmail</em></dt>
+			<dd><p>Senders email address</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>replyTo</em></dt>
+			<dd><p>Email address to use in the Reply-To field</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listIDs</em></dt>
+			<dd><p>Array of list IDs</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>segmentIDs</em></dt>
+			<dd><p>Array of segment IDs</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>templateID</em></dt>
+			<dd><p>The ID of the template which should be used to create the campaign.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>templateContent</em></dt>
+			<dd><p>The content to be used for the editable areas of the template.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with ID of the successfully created campaign as the only argument</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/campaigns/">http://www.campaignmonitor.com/api/campaigns/</a>#creating_a_campaign_from_template</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Campaigns.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:" title="createCampaignWithClientID:name:subject:fromName:fromEmail:replyTo:htmlURL:textURL:listIDs:segmentIDs:completionHandler:errorHandler:"></a>
