@@ -22,6 +22,12 @@
         }
 
         _IPAddress = [recipientDictionary valueForKey:@"IPAddress"];
+        _latitude = [[recipientDictionary valueForKey:@"Latitude"] floatValue];
+        _longitude = [[recipientDictionary valueForKey:@"Longitude"] floatValue];
+        _city = [recipientDictionary valueForKey:@"City"];
+        _region = [recipientDictionary valueForKey:@"Region"];
+        _countryCode = [recipientDictionary valueForKey:@"CountryCode"];
+        _countryName = [recipientDictionary valueForKey:@"CountryName"];
     }
     return self;
 }

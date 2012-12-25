@@ -550,6 +550,12 @@ describe(@"CSAPI+Campaigns", ^{
                 [[recipient.listID should] equal:@"512a3bc577a58fdf689c654329b50fa0"];
                 [[recipient.IPAddress should] equal:@"192.168.126.87"];
                 [[recipient.date should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2010-10-11 08:29:00"]];
+                [[theValue(recipient.latitude) should] equal:theValue(-33.8683f)];
+                [[theValue(recipient.longitude) should] equal:theValue(151.2086f)];
+                [[recipient.city should] equal:@"Sydney"];
+                [[recipient.region should] equal:@"New South Wales"];
+                [[recipient.countryCode should] equal:@"AU"];
+                [[recipient.countryName should] equal:@"Australia"];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"campaigns/%@/opens.json", campaign.campaignID] relativeToURL:cs.baseURL];
                 [[request.URL.path should] equal:expectedURL.path];
@@ -603,7 +609,13 @@ describe(@"CSAPI+Campaigns", ^{
                 [[recipient.IPAddress should] equal:@"192.168.126.87"];
                 [[recipient.date should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2010-10-11 08:29:00"]];
                 [[recipient.URL.absoluteString should] equal:@"http://video.google.com.au/?hl=en&tab=wv"];
-                
+                [[theValue(recipient.latitude) should] equal:theValue(-33.8683f)];
+                [[theValue(recipient.longitude) should] equal:theValue(151.2086f)];
+                [[recipient.city should] equal:@"Sydney"];
+                [[recipient.region should] equal:@"New South Wales"];
+                [[recipient.countryCode should] equal:@"AU"];
+                [[recipient.countryName should] equal:@"Australia"];
+
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"campaigns/%@/clicks.json", campaign.campaignID] relativeToURL:cs.baseURL];
                 [[request.URL.path should] equal:expectedURL.path];
                 
