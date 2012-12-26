@@ -45,6 +45,7 @@
         client.baseDeliveryRate = [[billingDetails valueForKey:@"BaseDeliveryRate"] floatValue];
         client.baseDesignSpamTestRate = [[billingDetails valueForKey:@"BaseDesignSpamTestRate"] floatValue];
         client.currency = [billingDetails valueForKey:@"Currency"];
+        client.monthlyScheme = [billingDetails valueForKey:@"MonthlyScheme"];
     }
 
     return client;

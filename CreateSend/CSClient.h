@@ -27,6 +27,7 @@
 @property (assign) float baseDeliveryRate;
 @property (assign) float baseDesignSpamTestRate;
 @property (copy) NSString *currency;
+@property (copy) NSString *monthlyScheme;
     
 + (id)clientWithDictionary:(NSDictionary *)clientDictionary;
 @end

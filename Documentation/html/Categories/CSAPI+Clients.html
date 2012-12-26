@@ -74,7 +74,7 @@
 	
 	<option value="//api/name/getTemplatesWithClientID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getTemplatesWithClientID:completionHandler:errorHandler:</option>
 	
-	<option value="//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:</option>
+	<option value="//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:</option>
 	
@@ -148,7 +148,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTemplatesWithClientID:completionHandler:errorHandler:">getTemplatesWithClientID:completionHandler:errorHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:">setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:">setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:">setClientPAYGBillingSettingsWithClientID:currency:canPurchaseCredits:clientPays:markupPercentage:markupOnDelivery:markupPerRecipient:markupOnDesignSpamTest:completionHandler:errorHandler:</a></span></li>
 	
@@ -246,7 +246,7 @@ client can purchase their own email credits to access bulk discounts.</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:">&ndash;&nbsp;setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:</a></code>
+		<code><a href="#//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:">&ndash;&nbsp;setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Set if a client can pay for their own campaigns and design and spam tests using
 our monthly billing. Set the currency they should pay in plus mark-up
 percentage that will apply to the base prices at each pricing tier.</p></span>
@@ -1388,8 +1388,8 @@ contact details and billing settings.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:" title="setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:completionHandler:errorHandler:</h3>
+	<a name="//api/name/setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:" title="setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">setClientMonthlyBillingWithClientID:currency:clientPays:markupPercentage:monthlyScheme:completionHandler:errorHandler:</h3>
 	
 	
 	
@@ -1401,7 +1401,7 @@ percentage that will apply to the base prices at each pricing tier.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setClientMonthlyBillingWithClientID:(NSString *)<em>clientID</em> currency:(NSString *)<em>currency</em> clientPays:(BOOL)<em>clientPays</em> markupPercentage:(float)<em>markupPercentage</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setClientMonthlyBillingWithClientID:(NSString *)<em>clientID</em> currency:(NSString *)<em>currency</em> clientPays:(BOOL)<em>clientPays</em> markupPercentage:(float)<em>markupPercentage</em> monthlyScheme:(NSString *)<em>monthlyScheme</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
 
     
 	
@@ -1436,6 +1436,18 @@ percentage that will apply to the base prices at each pricing tier.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>markupPercentage</em></dt>
 			<dd><p>Markup as a percentage</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>monthlyScheme</em></dt>
+			<dd><p>The monthly scheme for the client. Must be either:</p>
+
+<ul>
+<li><code>Basic</code></li>
+<li><code>Unlimited</code></li>
+<li>Or an empty string if you do not wish to use a monthly billing scheme.</li>
+</ul>
+</dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2050,7 +2062,7 @@ email address removed from it.</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-24)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

@@ -90,6 +90,7 @@
                                    currency:(NSString *)currency
                                  clientPays:(BOOL)clientPays
                            markupPercentage:(float)markupPercentage
+                              monthlyScheme:(NSString *)monthlyScheme
                           completionHandler:(void (^)(void))completionHandler
                                errorHandler:(CSAPIErrorHandler)errorHandler
 {
@@ -97,8 +98,9 @@
         @"Currency": currency,
         @"ClientPays": @(clientPays),
         @"MarkupPercentage": @(markupPercentage),
+        @"MonthlyScheme": monthlyScheme,
     };
-    
+
     [self.restClient put:[NSString stringWithFormat:@"clients/%@/setmonthlybilling.json", clientID] withParameters:parameters success:^(id response) {
         if (completionHandler) completionHandler();
     } failure:errorHandler];

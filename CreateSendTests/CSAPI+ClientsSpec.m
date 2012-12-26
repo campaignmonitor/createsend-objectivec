@@ -189,11 +189,12 @@ describe(@"CSAPI+Clients", ^{
                 }];
             });
         });
-        
+
         context(@"set monthly billing", ^{
             NSString *currency = CSAPICurrencyCanadianDollars;
             BOOL clientPays = YES;
             float markupPercentage = 150.0f;
+            NSString *monthlyScheme = @"Basic";
             
             it(@"should set monthly billing", ^{
                 NSURLRequest *request = nil;
@@ -202,6 +203,7 @@ describe(@"CSAPI+Clients", ^{
                                                    currency:currency
                                                  clientPays:clientPays
                                            markupPercentage:markupPercentage
+                                              monthlyScheme:monthlyScheme
                                           completionHandler:^() {}
                                                errorHandler:^(NSError *errorResponse) { [errorResponse shouldBeNil]; }
                      ];
@@ -215,6 +217,7 @@ describe(@"CSAPI+Clients", ^{
                     @"Currency": currency,
                     @"ClientPays": @(clientPays),
                     @"MarkupPercentage": @(markupPercentage),
+                    @"MonthlyScheme": monthlyScheme,
                 };
                 
                 NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
@@ -228,6 +231,7 @@ describe(@"CSAPI+Clients", ^{
                                                    currency:currency
                                                  clientPays:clientPays
                                            markupPercentage:markupPercentage
+                                              monthlyScheme:monthlyScheme
                                           completionHandler:^() {}
                                                     errorHandler:^(NSError *errorResponse) { error = errorResponse; }
                      ];
@@ -316,6 +320,7 @@ describe(@"CSAPI+Clients", ^{
                 [[theValue(client.markupOnDelivery) should] equal:theValue(0.0)];
                 [[theValue(client.baseDeliveryRate) should] equal:theValue(5.23f)];
                 [[theValue(client.baseDesignSpamTestRate) should] equal:theValue(5.0)];
+                [[client.monthlyScheme should] equal:@"Basic"];
                 
                 NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"clients/%@.json", clientID] relativeToURL:cs.baseURL];
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];

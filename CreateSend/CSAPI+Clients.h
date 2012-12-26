@@ -131,6 +131,12 @@
  
  @param clientPays Whether or not the client can pay for their own campaigns and design and spam tests
  @param markupPercentage Markup as a percentage
+ @param monthlyScheme The monthly scheme for the client. Must be either:
+ 
+ - `Basic`
+ - `Unlimited`
+ - Or an empty string if you do not wish to use a monthly billing scheme.
+ 
  @param completionHandler Completion callback
  @param errorHandler Error callback
  */
@@ -138,6 +144,7 @@
                                    currency:(NSString *)currency
                                  clientPays:(BOOL)clientPays
                            markupPercentage:(float)markupPercentage
+                              monthlyScheme:(NSString *)monthlyScheme
                           completionHandler:(void (^)(void))completionHandler
                                errorHandler:(CSAPIErrorHandler)errorHandler;
 
