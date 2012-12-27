@@ -64,13 +64,16 @@ describe(@"CSAPI+Lists", ^{
         context(@"update list", ^{
             NSString *title = @"List One Renamed";
             NSString *unsubscribePage = @"example.com/unsubscribe-renamed";
+            NSString *unsubscribeSetting = @"AllClientLists";
             NSString *confirmationSuccessPage = @"example.com/success-renamed";
             BOOL shouldConfirmOptIn = YES;
+            BOOL addUnsubscribesToSuppList = YES;
+            BOOL scrubActiveWithSuppList = YES;
             
             it(@"should update a list", ^{
                 NSURLRequest *request = nil;
                 [NSURLConnection stubSendAsynchronousRequestAndReturnRequest:&request whileExecutingBlock:^{
-                    [cs updateListWithListID:listID title:title unsubscribePage:unsubscribePage confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn completionHandler:^() {
+                    [cs updateListWithListID:listID title:title unsubscribePage:unsubscribePage unsubscribeSetting:unsubscribeSetting confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn addUnsubscribesToSuppList:addUnsubscribesToSuppList scrubActiveWithSuppList:scrubActiveWithSuppList completionHandler:^() {
                     } errorHandler:^(NSError *errorResponse) {
                         [errorResponse shouldBeNil];
                     }];
@@ -80,7 +83,7 @@ describe(@"CSAPI+Lists", ^{
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
                 [[request.HTTPMethod should] equal:@"PUT"];
                 
-                NSDictionary *expectedPostBody = @{@"Title": title, @"ConfirmationSuccessPage": confirmationSuccessPage, @"UnsubscribePage": unsubscribePage, @"ConfirmedOptIn": @(shouldConfirmOptIn)};
+                NSDictionary *expectedPostBody = @{@"Title": title, @"ConfirmationSuccessPage": confirmationSuccessPage, @"UnsubscribePage": unsubscribePage, @"UnsubscribeSetting": unsubscribeSetting, @"ConfirmedOptIn": @(shouldConfirmOptIn), @"AddUnsubscribesToSuppList": @(addUnsubscribesToSuppList), @"ScrubActiveWithSuppList": @(scrubActiveWithSuppList)};
                 NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
                 [[postBody should] equal:expectedPostBody];
             });
@@ -88,7 +91,7 @@ describe(@"CSAPI+Lists", ^{
             it(@"should return an error if there is one", ^{
                 [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorListTitleEmpty message:CSAPIErrorListTitleEmptyMessage whileExecutingBlock:^{
                     __block NSError *error = nil;
-                    [cs updateListWithListID:listID title:title unsubscribePage:unsubscribePage confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn completionHandler:^() {
+                    [cs updateListWithListID:listID title:title unsubscribePage:unsubscribePage unsubscribeSetting:unsubscribeSetting confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn addUnsubscribesToSuppList:addUnsubscribesToSuppList scrubActiveWithSuppList:scrubActiveWithSuppList completionHandler:^() {
                     } errorHandler:^(NSError *errorResponse) {
                         error = errorResponse;
                     }];

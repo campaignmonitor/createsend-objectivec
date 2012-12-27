@@ -57,12 +57,15 @@ NSString * const CSAPIWebhookPayloadFormatXML = @"xml";
 - (void)updateListWithListID:(NSString *)listID
                        title:(NSString *)title
              unsubscribePage:(NSString *)unsubscribePage
+          unsubscribeSetting:(NSString *)unsubscribeSetting
      confirmationSuccessPage:(NSString *)confirmationSuccessPage
           shouldConfirmOptIn:(BOOL)shouldConfirmOptIn
+   addUnsubscribesToSuppList:(BOOL)addUnsubscribesToSuppList
+     scrubActiveWithSuppList:(BOOL)scrubActiveWithSuppList
            completionHandler:(void (^)(void))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler
 {
-    NSDictionary *parameters = @{@"Title": (title ?: @""), @"UnsubscribePage": (unsubscribePage ?: @""), @"ConfirmationSuccessPage": (confirmationSuccessPage ?: @""), @"ConfirmedOptIn": @(shouldConfirmOptIn)};
+    NSDictionary *parameters = @{@"Title": (title ?: @""), @"UnsubscribePage": (unsubscribePage ?: @""), @"UnsubscribeSetting": (unsubscribeSetting ?: @"AllClientLists"), @"ConfirmationSuccessPage": (confirmationSuccessPage ?: @""), @"ConfirmedOptIn": @(shouldConfirmOptIn), @"AddUnsubscribesToSuppList": @(addUnsubscribesToSuppList), @"ScrubActiveWithSuppList": @(scrubActiveWithSuppList)};
     [self.restClient put:[NSString stringWithFormat:@"lists/%@.json", listID] withParameters:parameters success:^(id response) {
         if (completionHandler) completionHandler();
     } failure:errorHandler];

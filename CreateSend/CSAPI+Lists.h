@@ -88,16 +88,33 @@ extern NSString * const CSAPIWebhookPayloadFormatXML;
  @param listID The ID of the list you want to update
  @param title The title of the new list. Must be unique.
  @param unsubscribePage URL for the unsubscribe page
+ @param unsubscribeSetting The unsubscribe setting for the list - must be one of:
+ 
+ - `AllClientLists`
+ - `OnlyThisList`
+ 
+ If set to `AllClientLists`, when someone unsubscribes from this list they will also be unsubscribed from all the client's lists (recommended).
+ If set to `OnlyThisList`, when someone unsubscribes from this list they will only be unsubscribed from this list.
+ 
+ If you specify the value of `AllClientLists`, you should check that params `addUnsubscribesToSuppList` and `scrubActiveWithSuppList` are set appropriately (see param descriptions below).
+ 
+ Setting `OnlyThisList` will result in this list not using the suppression list, meaning that if a subscriber on this list is added to the suppression list they will not be unsubscribed from this list.
+
  @param confirmationSuccessPage URL for the subscription confirmation page
  @param shouldConfirmOptIn Whether or not subscriptions need to be confirmed
+ @param addUnsubscribesToSuppList If you pass in unsubcribeSetting as `AllClientLists`, when the value for this param is set to `YES`, any subscribers who previously unsubscribed from this list will be added to the suppression list.
+ @param scrubActiveWithSuppList If you pass in unsubcribeSetting as `AllClientLists`, when the value for this param is set to `YES`, this will scrub all of the active subscribers in this list against the suppression list.
  @param completionHandler Completion callback
  @param errorHandler Error callback
  */
 - (void)updateListWithListID:(NSString *)listID
                        title:(NSString *)title
              unsubscribePage:(NSString *)unsubscribePage
+          unsubscribeSetting:(NSString *)unsubscribeSetting
      confirmationSuccessPage:(NSString *)confirmationSuccessPage
           shouldConfirmOptIn:(BOOL)shouldConfirmOptIn
+   addUnsubscribesToSuppList:(BOOL)addUnsubscribesToSuppList
+     scrubActiveWithSuppList:(BOOL)scrubActiveWithSuppList
            completionHandler:(void (^)(void))completionHandler
                 errorHandler:(CSAPIErrorHandler)errorHandler;
 

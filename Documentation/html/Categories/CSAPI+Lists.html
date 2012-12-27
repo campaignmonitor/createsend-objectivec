@@ -86,7 +86,7 @@
 	
 	<option value="//api/name/updateCustomFieldWithListID:customField:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateCustomFieldWithListID:customField:completionHandler:errorHandler:</option>
 	
-	<option value="//api/name/updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</option>
+	<option value="//api/name/updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:</option>
 	
 	
 	
@@ -162,7 +162,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateCustomFieldWithListID:customField:completionHandler:errorHandler:">updateCustomFieldWithListID:customField:completionHandler:errorHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:">updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:</a></span></li>
 	
 </ul></li>
 
@@ -223,7 +223,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&ndash;&nbsp;updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></code>
+		<code><a href="#//api/name/updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:">&ndash;&nbsp;updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Update the basic settings for any list in your account</p></span>
 	</span>
 	
@@ -1944,8 +1944,8 @@ you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFi
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:" title="updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">updateListWithListID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</h3>
+	<a name="//api/name/updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:" title="updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">updateListWithListID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:addUnsubscribesToSuppList:scrubActiveWithSuppList:completionHandler:errorHandler:</h3>
 	
 	
 	
@@ -1955,7 +1955,7 @@ you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFi
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)updateListWithListID:(NSString *)<em>listID</em> title:(NSString *)<em>title</em> unsubscribePage:(NSString *)<em>unsubscribePage</em> confirmationSuccessPage:(NSString *)<em>confirmationSuccessPage</em> shouldConfirmOptIn:(BOOL)<em>shouldConfirmOptIn</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)updateListWithListID:(NSString *)<em>listID</em> title:(NSString *)<em>title</em> unsubscribePage:(NSString *)<em>unsubscribePage</em> unsubscribeSetting:(NSString *)<em>unsubscribeSetting</em> confirmationSuccessPage:(NSString *)<em>confirmationSuccessPage</em> shouldConfirmOptIn:(BOOL)<em>shouldConfirmOptIn</em> addUnsubscribesToSuppList:(BOOL)<em>addUnsubscribesToSuppList</em> scrubActiveWithSuppList:(BOOL)<em>scrubActiveWithSuppList</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
 
     
 	
@@ -1978,6 +1978,24 @@ you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFi
 		</dl>
 		
 		<dl class="argument-def parameter-def">
+			<dt><em>unsubscribeSetting</em></dt>
+			<dd><p>The unsubscribe setting for the list &ndash; must be one of:</p>
+
+<ul>
+<li><code>AllClientLists</code></li>
+<li><code>OnlyThisList</code></li>
+</ul>
+
+
+<p>If set to <code>AllClientLists</code>, when someone unsubscribes from this list they will also be unsubscribed from all the client&rsquo;s lists (recommended).
+If set to <code>OnlyThisList</code>, when someone unsubscribes from this list they will only be unsubscribed from this list.</p>
+
+<p>If you specify the value of <code>AllClientLists</code>, you should check that params <code>addUnsubscribesToSuppList</code> and <code>scrubActiveWithSuppList</code> are set appropriately (see param descriptions below).</p>
+
+<p>Setting <code>OnlyThisList</code> will result in this list not using the suppression list, meaning that if a subscriber on this list is added to the suppression list they will not be unsubscribed from this list.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
 			<dt><em>confirmationSuccessPage</em></dt>
 			<dd><p>URL for the subscription confirmation page</p></dd>
 		</dl>
@@ -1985,6 +2003,16 @@ you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFi
 		<dl class="argument-def parameter-def">
 			<dt><em>shouldConfirmOptIn</em></dt>
 			<dd><p>Whether or not subscriptions need to be confirmed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>addUnsubscribesToSuppList</em></dt>
+			<dd><p>If you pass in unsubcribeSetting as <code>AllClientLists</code>, when the value for this param is set to <code>YES</code>, any subscribers who previously unsubscribed from this list will be added to the suppression list.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scrubActiveWithSuppList</em></dt>
+			<dd><p>If you pass in unsubcribeSetting as <code>AllClientLists</code>, when the value for this param is set to <code>YES</code>, this will scrub all of the active subscribers in this list against the suppression list.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
