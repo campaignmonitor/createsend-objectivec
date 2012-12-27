@@ -16,8 +16,8 @@
     list.name = [listDictionary valueForKey:@"Title"] ?: [listDictionary valueForKey:@"Name"];
     list.unsubscribePage = [listDictionary valueForKey:@"UnsubscribePage"];
     list.confirmationSuccessPage = [listDictionary valueForKey:@"ConfirmationSuccessPage"];
+    list.unsubscribeSetting = [listDictionary valueForKey:@"UnsubscribeSetting"];
     list.confirmOptIn = [[listDictionary valueForKey:@"ConfirmedOptIn"] boolValue];
-
     return list;
 }
 

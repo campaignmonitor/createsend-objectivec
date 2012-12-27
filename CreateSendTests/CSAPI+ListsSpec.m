@@ -141,6 +141,7 @@ describe(@"CSAPI+Lists", ^{
                     [[list.name should] equal:@"a non-basic list :)"];
                     [[list.unsubscribePage should] equal:@""];
                     [[list.confirmationSuccessPage should] equal:@""];
+                    [[list.unsubscribeSetting should] equal:@"AllClientLists"];
                     [[theValue(list.confirmOptIn) should] beFalse];
                 }];
                 
