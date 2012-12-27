@@ -2,7 +2,7 @@
 //  CSAuthorizationViewController.m
 //  CreateSend
 //
-//  Copyright (c) 2012 Campaign Monitor All rights reserved.
+//  Copyright (c) 2012 Campaign Monitor. All rights reserved.
 //
 
 #import "CSAuthorizationViewController.h"

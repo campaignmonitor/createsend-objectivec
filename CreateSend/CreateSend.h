@@ -2,7 +2,7 @@
 //  CreateSend.h
 //  CreateSend
 //
-//  Copyright (c) 2012 Campaign Monitor All rights reserved.
+//  Copyright (c) 2012 Campaign Monitor. All rights reserved.
 //
 
 #ifndef createsend_objc_CreateSend_h

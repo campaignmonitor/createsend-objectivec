@@ -2,7 +2,7 @@
 //  CSClient.h
 //  CreateSend
 //
-//  Copyright (c) 2012 Campaign Monitor All rights reserved.
+//  Copyright (c) 2012 Campaign Monitor. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
