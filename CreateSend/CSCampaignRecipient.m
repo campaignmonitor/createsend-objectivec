@@ -2,7 +2,7 @@
 //  CSCampaignRecipient.m
 //  CreateSend
 //
-//  Copyright (c) 2012 Freshview Pty Ltd. All rights reserved.
+//  Copyright (c) 2012 Campaign Monitor All rights reserved.
 //
 
 #import "CSCampaignRecipient.h"

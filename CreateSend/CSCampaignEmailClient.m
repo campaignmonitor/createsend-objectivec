@@ -3,7 +3,7 @@
 //  CreateSend
 //
 //  Created by James Dennes on 19/12/12.
-//  Copyright (c) 2012 Freshview Pty Ltd. All rights reserved.
+//  Copyright (c) 2012 Campaign Monitor All rights reserved.
 //
 
 #import "CSCampaignEmailClient.h"
