@@ -503,7 +503,46 @@ describe(@"CSAPI+Clients", ^{
                 }];
             });
         });
-        
+
+        context(@"get subscriber lists across a client to which an email address belongs", ^{
+            NSString *emailAddress = @"example@example.com";
+            it(@"should get the subscriber lists across a client to which an email address belongs", ^{
+                NSURLRequest *request = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"listsforemail.json" returningRequest:&request whileExecutingBlock:^{
+                    __block NSArray *lists = nil;
+                    [cs getSubscriberListsForEmailAddressWithClientID:clientID emailAddress:emailAddress completionHandler:^(NSArray *response) {
+                        lists = response;
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+
+                    [[[lists should] have:2] items];
+
+                    CSListForSubscriber *firstList = [lists objectAtIndex:0];
+                    [[firstList.listID should] equal:@"ab4a2b57c7c8f1ba62f898a1af1a575b"];
+                    [[firstList.name should] equal:@"List Number One"];
+                    [[firstList.subscriberState should] equal:@"Active"];
+                    [[firstList.dateSubscriberAdded should] equal:[[CSAPI sharedDateFormatter] dateFromString:@"2012-08-20 22:32:00"]];
+                }];
+
+                NSURL *expectedURL = [NSURL URLWithString:[NSString stringWithFormat:@"clients/%@/listsforemail.json?email=%@", clientID, [emailAddress cs_urlEncodedString]] relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorInvalidClient message:CSAPIErrorInvalidClientMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs getSubscriberListsForEmailAddressWithClientID:clientID emailAddress:emailAddress completionHandler:^(NSArray *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+
+                    [[error should] haveErrorCode:CSAPIErrorInvalidClient message:CSAPIErrorInvalidClientMessage];
+                }];
+            });
+        });
+
         context(@"get suppression lists with clientID", ^{
             it(@"should get the suppression lists for a client", ^{
                 NSURLRequest *request = nil;

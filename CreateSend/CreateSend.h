@@ -22,6 +22,7 @@ extern NSString * const CSCreateSendVersion;
 #import "CSCustomField.h"
 #import "CSWebhook.h"
 #import "CSList.h"
+#import "CSListForSubscriber.h"
 #import "CSSegmentRule.h"
 #import "CSSegment.h"
 #import "CSSegmentRule.h"

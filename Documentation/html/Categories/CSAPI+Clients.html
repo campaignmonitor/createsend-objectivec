@@ -68,6 +68,8 @@
 	
 	<option value="//api/name/getSentCampaignsWithClientID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getSentCampaignsWithClientID:completionHandler:errorHandler:</option>
 	
+	<option value="//api/name/getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</option>
+	
 	<option value="//api/name/getSubscriberListsWithClientID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getSubscriberListsWithClientID:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/getSuppressionListWithClientID:page:pageSize:orderField:ascending:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getSuppressionListWithClientID:page:pageSize:orderField:ascending:completionHandler:errorHandler:</option>
@@ -141,6 +143,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSegmentsWithClientID:completionHandler:errorHandler:">getSegmentsWithClientID:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSentCampaignsWithClientID:completionHandler:errorHandler:">getSentCampaignsWithClientID:completionHandler:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSubscriberListsWithClientID:completionHandler:errorHandler:">getSubscriberListsWithClientID:completionHandler:errorHandler:</a></span></li>
 	
@@ -297,6 +301,13 @@ contact details and billing settings.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/getSubscriberListsWithClientID:completionHandler:errorHandler:">&ndash;&nbsp;getSubscriberListsWithClientID:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Get all the subscriber lists that belong to a client.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">&ndash;&nbsp;getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</a></code>
+		<span class="tooltip"><p>Get all the subscriber lists across the client, to which an email address is subscribed.</p></span>
 	</span>
 	
 	
@@ -1158,6 +1169,72 @@ contact details and billing settings.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p><a href="http://www.campaignmonitor.com/api/clients/">http://www.campaignmonitor.com/api/clients/</a>#sent_campaigns</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSAPI+Clients.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:" title="getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">getSubscriberListsForEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get all the subscriber lists across the client, to which an email address is subscribed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getSubscriberListsForEmailAddressWithClientID:(NSString *)<em>clientID</em> emailAddress:(NSString *)<em>emailAddress</em> completionHandler:(void ( ^ ) ( NSArray *subscriberLists ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientID</em></dt>
+			<dd><p>The ID of the client for which lists should be retrieved</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>emailAddress</em></dt>
+			<dd><p>The email address for which lists should be retrieved</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>Completion callback, with an array of <code>CSListForSubscriber</code> objects as the first and only argument</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>Error callback</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="http://www.campaignmonitor.com/api/clients/">http://www.campaignmonitor.com/api/clients/</a>#lists_for_email</p>
 	</div>
 	
 	

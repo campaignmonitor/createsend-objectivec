@@ -10,6 +10,9 @@
 		A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = A315C1CB167B82C00020C198 /* CSBillingDetails.h */; };
 		A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A315C1CC167B82C00020C198 /* CSBillingDetails.m */; };
 		A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A315C1D7167F0CB70020C198 /* billingdetails.json */; };
+		A35F7299168C61E8000BCE27 /* CSListForSubscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = A35F7297168C61E8000BCE27 /* CSListForSubscriber.h */; };
+		A35F729A168C61E8000BCE27 /* CSListForSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = A35F7298168C61E8000BCE27 /* CSListForSubscriber.m */; };
+		A35F729C168C681C000BCE27 /* listsforemail.json in Resources */ = {isa = PBXBuildFile; fileRef = A35F729B168C681C000BCE27 /* listsforemail.json */; };
 		A381EBA71683080F00EA5AEB /* unconfirmed_subscribers.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBA61683080F00EA5AEB /* unconfirmed_subscribers.json */; };
 		A381EBA91683279F00EA5AEB /* campaign_spam.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBA81683279F00EA5AEB /* campaign_spam.json */; };
 		A381EBAB16846F2B00EA5AEB /* update_custom_field.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBAA16846F2A00EA5AEB /* update_custom_field.json */; };
@@ -215,6 +218,9 @@
 		A315C1CB167B82C00020C198 /* CSBillingDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CSBillingDetails.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		A315C1CC167B82C00020C198 /* CSBillingDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CSBillingDetails.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A315C1D7167F0CB70020C198 /* billingdetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billingdetails.json; sourceTree = "<group>"; };
+		A35F7297168C61E8000BCE27 /* CSListForSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListForSubscriber.h; sourceTree = "<group>"; };
+		A35F7298168C61E8000BCE27 /* CSListForSubscriber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListForSubscriber.m; sourceTree = "<group>"; };
+		A35F729B168C681C000BCE27 /* listsforemail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listsforemail.json; sourceTree = "<group>"; };
 		A381EBA61683080F00EA5AEB /* unconfirmed_subscribers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unconfirmed_subscribers.json; sourceTree = "<group>"; };
 		A381EBA81683279F00EA5AEB /* campaign_spam.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_spam.json; sourceTree = "<group>"; };
 		A381EBAA16846F2A00EA5AEB /* update_custom_field.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_custom_field.json; sourceTree = "<group>"; };
@@ -594,6 +600,7 @@
 				A381EBA61683080F00EA5AEB /* unconfirmed_subscribers.json */,
 				A381EBA81683279F00EA5AEB /* campaign_spam.json */,
 				A381EBAA16846F2A00EA5AEB /* update_custom_field.json */,
+				A35F729B168C681C000BCE27 /* listsforemail.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -736,6 +743,8 @@
 				A315C1CC167B82C00020C198 /* CSBillingDetails.m */,
 				A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */,
 				A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */,
+				A35F7297168C61E8000BCE27 /* CSListForSubscriber.h */,
+				A35F7298168C61E8000BCE27 /* CSListForSubscriber.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -788,6 +797,7 @@
 				AB5CA5231628471E00558435 /* CSAPI+iOS.h in Headers */,
 				A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */,
 				A3BE060916820D6400858A00 /* CSCampaignEmailClient.h in Headers */,
+				A35F7299168C61E8000BCE27 /* CSListForSubscriber.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +972,7 @@
 				A381EBA71683080F00EA5AEB /* unconfirmed_subscribers.json in Resources */,
 				A381EBA91683279F00EA5AEB /* campaign_spam.json in Resources */,
 				A381EBAB16846F2B00EA5AEB /* update_custom_field.json in Resources */,
+				A35F729C168C681C000BCE27 /* listsforemail.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1039,7 @@
 				AB5CA5241628471E00558435 /* CSAPI+iOS.m in Sources */,
 				A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */,
 				A3BE060A16820D6400858A00 /* CSCampaignEmailClient.m in Sources */,
+				A35F729A168C61E8000BCE27 /* CSListForSubscriber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

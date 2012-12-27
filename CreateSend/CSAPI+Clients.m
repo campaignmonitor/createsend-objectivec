@@ -178,6 +178,21 @@
     } failure:errorHandler];
 }
 
+- (void)getSubscriberListsForEmailAddressWithClientID:(NSString *)clientID
+                                         emailAddress:(NSString *)emailAddress
+                                    completionHandler:(void (^)(NSArray *subscriberLists))completionHandler
+                                         errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    [self.restClient get:[NSString stringWithFormat:@"clients/%@/listsforemail.json?email=%@", clientID, [emailAddress cs_urlEncodedString]] success:^(NSArray *response) {
+        __block NSMutableArray *lists = [[NSMutableArray alloc] initWithCapacity:response.count];
+        [response enumerateObjectsUsingBlock:^(NSDictionary *listDictionary, NSUInteger idx, BOOL *stop) {
+            CSListForSubscriber *list = [CSListForSubscriber listWithDictionary:listDictionary];
+            [lists addObject:list];
+        }];
+        if (completionHandler) completionHandler([[NSArray alloc] initWithArray:lists]);
+    } failure:errorHandler];
+}
+
 - (void)getSuppressionListWithClientID:(NSString *)clientID
                                   page:(NSUInteger)page
                               pageSize:(NSUInteger)pageSize

@@ -235,6 +235,21 @@
                           errorHandler:(CSAPIErrorHandler)errorHandler;
 
 /**
+ Get all the subscriber lists across the client, to which an email address is subscribed.
+ 
+ http://www.campaignmonitor.com/api/clients/#lists_for_email
+ 
+ @param clientID The ID of the client for which lists should be retrieved
+ @param emailAddress The email address for which lists should be retrieved
+ @param completionHandler Completion callback, with an array of `CSListForSubscriber` objects as the first and only argument
+ @param errorHandler Error callback
+ */
+- (void)getSubscriberListsForEmailAddressWithClientID:(NSString *)clientID
+                                         emailAddress:(NSString *)emailAddress
+                                    completionHandler:(void (^)(NSArray *subscriberLists))completionHandler
+                                         errorHandler:(CSAPIErrorHandler)errorHandler;
+
+/**
  Get a paged result representing the client's suppression list.
  
  http://www.campaignmonitor.com/api/clients/#suppression_list
