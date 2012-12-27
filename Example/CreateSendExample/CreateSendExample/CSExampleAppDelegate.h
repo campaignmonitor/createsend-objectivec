@@ -2,7 +2,7 @@
 //  CSExampleAppDelegate.h
 //  CreateSendExample
 //
-//  Copyright (c) 2012 Campaign Monitor All rights reserved.
+//  Copyright (c) 2012 Campaign Monitor. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -5,7 +5,7 @@
 //  Created by Sam Soffes on 5/19/10.
 //  Copyright (c) 2009-2011 Sam Soffes. All rights reserved.
 //
-//  Freshview - Namespaced class name and constants to CSSSKeychain for CreateSend so that they do not conflict
+//  Campaign Monitor - Namespaced class name and constants to CSSSKeychain for CreateSend so that they do not conflict
 
 #import <Foundation/Foundation.h>
 #import <Security/Security.h>
