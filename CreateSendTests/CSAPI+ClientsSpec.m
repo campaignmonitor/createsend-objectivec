@@ -20,16 +20,14 @@ describe(@"CSAPI+Clients", ^{
         
         context(@"create a client", ^{
             NSString *name = @"Client Company Name";
-            NSString *contactName =@"Client Contact Name";
-            NSString *emailAddress = @"client@example.com";
             NSString *timezone = @"(GMT+10:00) Canberra, Melbourne, Sydney";
             NSString *country = @"Australia";
-            
+
             it(@"should create a client", ^{
                 NSURLRequest *request = nil;
                 __block NSString *clientID = nil;
                 [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"create_client.json" returningRequest:&request whileExecutingBlock:^{
-                    [cs createClientWithCompanyName:name contactName:contactName emailAddress:emailAddress country:country timezone:timezone completionHandler:^(NSString *response) {
+                    [cs createClientWithCompanyName:name country:country timezone:timezone completionHandler:^(NSString *response) {
                         clientID = response;
                     } errorHandler:^(NSError *errorResponse) {
                         [errorResponse shouldBeNil];
@@ -42,7 +40,7 @@ describe(@"CSAPI+Clients", ^{
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
                 [[request.HTTPMethod should] equal:@"POST"];
                 
-                NSDictionary *expectedPostBody = @{@"CompanyName": name, @"ContactName": contactName, @"EmailAddress": emailAddress, @"TimeZone": timezone, @"Country": country};
+                NSDictionary *expectedPostBody = @{@"CompanyName": name, @"TimeZone": timezone, @"Country": country};
                 NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
                 [[postBody should] equal:expectedPostBody];
             });
@@ -50,7 +48,7 @@ describe(@"CSAPI+Clients", ^{
             it(@"should return an error if there is one", ^{
                 [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorInvalidEmailAddress message:CSAPIErrorInvalidEmailAddressMessage whileExecutingBlock:^{
                     __block NSError *error = nil;
-                    [cs createClientWithCompanyName:name contactName:contactName emailAddress:emailAddress country:country timezone:timezone completionHandler:^(NSString *response) {
+                    [cs createClientWithCompanyName:name country:country timezone:timezone completionHandler:^(NSString *response) {
                         [response shouldBeNil];
                     } errorHandler:^(NSError *errorResponse) {
                         error = errorResponse;
@@ -63,15 +61,13 @@ describe(@"CSAPI+Clients", ^{
         
         context(@"update a client", ^{
             NSString *name = @"Client Company Name";
-            NSString *contactName =@"Client Contact Name";
-            NSString *emailAddress = @"client@example.com";
             NSString *timezone = @"(GMT+10:00) Canberra, Melbourne, Sydney";
             NSString *country = @"Australia";
-            
+
             it(@"should update a client", ^{
                 NSURLRequest *request = nil;
                 [NSURLConnection stubSendAsynchronousRequestAndReturnRequest:&request whileExecutingBlock:^{
-                    [cs updateClientWithClientID:clientID companyName:name contactName:contactName emailAddress:emailAddress country:country timezone:timezone completionHandler:^() {
+                    [cs updateClientWithClientID:clientID companyName:name country:country timezone:timezone completionHandler:^() {
                     } errorHandler:^(NSError *errorResponse) {
                         [errorResponse shouldBeNil];
                     }];
@@ -81,7 +77,7 @@ describe(@"CSAPI+Clients", ^{
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
                 [[request.HTTPMethod should] equal:@"PUT"];
                 
-                NSDictionary *expectedPostBody = @{@"CompanyName": name, @"ContactName": contactName, @"EmailAddress": emailAddress, @"TimeZone": timezone, @"Country": country};
+                NSDictionary *expectedPostBody = @{@"CompanyName": name, @"TimeZone": timezone, @"Country": country};
                 NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
                 [[postBody should] equal:expectedPostBody];
             });
@@ -89,7 +85,7 @@ describe(@"CSAPI+Clients", ^{
             it(@"should return an error if there is one", ^{
                 [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorInvalidEmailAddress message:CSAPIErrorInvalidEmailAddressMessage whileExecutingBlock:^{
                     __block NSError *error = nil;
-                    [cs updateClientWithClientID:clientID companyName:name contactName:contactName emailAddress:emailAddress country:country timezone:timezone completionHandler:^() {
+                    [cs updateClientWithClientID:clientID companyName:name country:country timezone:timezone completionHandler:^() {
                     } errorHandler:^(NSError *errorResponse) {
                         error = errorResponse;
                     }];

@@ -46,7 +46,7 @@
 	
 	<option value="//api/name/addPersonWithClientID:name:emailAddress:password:accessLevel:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- addPersonWithClientID:name:emailAddress:password:accessLevel:completionHandler:errorHandler:</option>
 	
-	<option value="//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</option>
+	<option value="//api/name/createClientWithCompanyName:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createClientWithCompanyName:country:timezone:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/deleteClientWithID:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteClientWithID:completionHandler:errorHandler:</option>
 	
@@ -86,7 +86,7 @@
 	
 	<option value="//api/name/unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</option>
 	
-	<option value="//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</option>
+	<option value="//api/name/updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:</option>
 	
@@ -120,7 +120,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addPersonWithClientID:name:emailAddress:password:accessLevel:completionHandler:errorHandler:">addPersonWithClientID:name:emailAddress:password:accessLevel:completionHandler:errorHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createClientWithCompanyName:country:timezone:completionHandler:errorHandler:">createClientWithCompanyName:country:timezone:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteClientWithID:completionHandler:errorHandler:">deleteClientWithID:completionHandler:errorHandler:</a></span></li>
 	
@@ -160,7 +160,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:">unsuppressEmailAddressWithClientID:emailAddress:completionHandler:errorHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:">updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:">updatePersonWithClientID:name:currentEmailAddress:newEmailAddress:password:accessLevel:completionHandler:errorHandler:</a></span></li>
 	
@@ -216,14 +216,14 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&ndash;&nbsp;createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></code>
+		<code><a href="#//api/name/createClientWithCompanyName:country:timezone:completionHandler:errorHandler:">&ndash;&nbsp;createClientWithCompanyName:country:timezone:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Create a new client in your account with basic information and no access to the application.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:">&ndash;&nbsp;updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</a></code>
+		<code><a href="#//api/name/updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:">&ndash;&nbsp;updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Update the basic account details for an existing client in your account.</p></span>
 	</span>
 	
@@ -483,8 +483,8 @@ contact details and billing settings.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:" title="createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">createClientWithCompanyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</h3>
+	<a name="//api/name/createClientWithCompanyName:country:timezone:completionHandler:errorHandler:" title="createClientWithCompanyName:country:timezone:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">createClientWithCompanyName:country:timezone:completionHandler:errorHandler:</h3>
 	
 	
 	
@@ -494,7 +494,7 @@ contact details and billing settings.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)createClientWithCompanyName:(NSString *)<em>companyName</em> contactName:(NSString *)<em>contactName</em> emailAddress:(NSString *)<em>emailAddress</em> country:(NSString *)<em>country</em> timezone:(NSString *)<em>timezone</em> completionHandler:(void ( ^ ) ( NSString *clientID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)createClientWithCompanyName:(NSString *)<em>companyName</em> country:(NSString *)<em>country</em> timezone:(NSString *)<em>timezone</em> completionHandler:(void ( ^ ) ( NSString *clientID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
 
     
 	
@@ -504,16 +504,6 @@ contact details and billing settings.</p></span>
 		<dl class="argument-def parameter-def">
 			<dt><em>companyName</em></dt>
 			<dd><p>Company name of the new client</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>contactName</em></dt>
-			<dd><p>Contact name of the new client</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>emailAddress</em></dt>
-			<dd><p>Primary email address of the new client</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1878,8 +1868,8 @@ email address removed from it.</p></dd>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:" title="updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">updateClientWithClientID:companyName:contactName:emailAddress:country:timezone:completionHandler:errorHandler:</h3>
+	<a name="//api/name/updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:" title="updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">updateClientWithClientID:companyName:country:timezone:completionHandler:errorHandler:</h3>
 	
 	
 	
@@ -1889,7 +1879,7 @@ email address removed from it.</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)updateClientWithClientID:(NSString *)<em>clientID</em> companyName:(NSString *)<em>companyName</em> contactName:(NSString *)<em>contactName</em> emailAddress:(NSString *)<em>emailAddress</em> country:(NSString *)<em>country</em> timezone:(NSString *)<em>timezone</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)updateClientWithClientID:(NSString *)<em>clientID</em> companyName:(NSString *)<em>companyName</em> country:(NSString *)<em>country</em> timezone:(NSString *)<em>timezone</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
 
     
 	
@@ -1904,16 +1894,6 @@ email address removed from it.</p></dd>
 		<dl class="argument-def parameter-def">
 			<dt><em>companyName</em></dt>
 			<dd><p>Company name of the client</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>contactName</em></dt>
-			<dd><p>Contact name of the client</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>emailAddress</em></dt>
-			<dd><p>Primary email address of the client</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2062,7 +2042,7 @@ email address removed from it.</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-26)</span><br />
+						<p><span class="copyright">&copy; 2012 Campaign Monitor. All rights reserved. (Last updated: 2012-12-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

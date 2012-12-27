@@ -24,16 +24,12 @@
  http://www.campaignmonitor.com/api/clients/#creating_a_client
  
  @param companyName Company name of the new client
- @param contactName Contact name of the new client
- @param emailAddress Primary email address of the new client
  @param country Country (see getCountries:errorHandler:)
  @param timezone Timezone (see getTimezones:errorHandler:)
  @param completionHandler Completion callback, with ID of the successfully created client as the only argument
  @param errorHandler Error callback
  */
 - (void)createClientWithCompanyName:(NSString *)companyName
-                        contactName:(NSString *)contactName
-                       emailAddress:(NSString *)emailAddress
                             country:(NSString *)country
                            timezone:(NSString *)timezone
                   completionHandler:(void (^)(NSString *clientID))completionHandler
@@ -46,8 +42,6 @@
  
  @param clientID The ID of the client for which basic details should be set
  @param companyName Company name of the client
- @param contactName Contact name of the client
- @param emailAddress Primary email address of the client
  @param country Country (see getCountries:errorHandler:)
  @param timezone Timezone (see getTimezones:errorHandler:)
  @param completionHandler Completion callback
@@ -55,8 +49,6 @@
  */
 - (void)updateClientWithClientID:(NSString *)clientID
                      companyName:(NSString *)companyName
-                     contactName:(NSString *)contactName
-                    emailAddress:(NSString *)emailAddress
                          country:(NSString *)country
                         timezone:(NSString *)timezone
                completionHandler:(void (^)(void))completionHandler

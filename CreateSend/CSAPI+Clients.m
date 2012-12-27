@@ -11,8 +11,6 @@
 @implementation CSAPI (Clients)
 
 - (void)createClientWithCompanyName:(NSString *)companyName
-                        contactName:(NSString *)contactName
-                       emailAddress:(NSString *)emailAddress
                             country:(NSString *)country
                            timezone:(NSString *)timezone
                   completionHandler:(void (^)(NSString *clientID))completionHandler
@@ -20,19 +18,15 @@
 {
     NSDictionary *parameters = @{
         @"CompanyName": companyName,
-        @"ContactName": contactName,
-        @"EmailAddress": emailAddress,
         @"Country": country,
         @"TimeZone": timezone
     };
-    
+
     [self.restClient post:@"clients.json" withParameters:parameters success:completionHandler failure:errorHandler];
 }
 
 - (void)updateClientWithClientID:(NSString *)clientID
                      companyName:(NSString *)companyName
-                     contactName:(NSString *)contactName
-                    emailAddress:(NSString *)emailAddress
                          country:(NSString *)country
                         timezone:(NSString *)timezone
                completionHandler:(void (^)(void))completionHandler
@@ -40,8 +34,6 @@
 {
     NSDictionary *parameters = @{
         @"CompanyName": companyName,
-        @"ContactName": contactName,
-        @"EmailAddress": emailAddress,
         @"Country": country,
         @"TimeZone": timezone
     };
