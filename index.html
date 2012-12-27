@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>CreateSend Objective-C by campaignmonitor</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>CreateSend Objective-C</h1>
+        <p>A library for talking to the Campaign Monitor API from Cocoa &amp; Cocoa Touch applications.</p>
+
+        <p class="view"><a href="https://github.com/campaignmonitor/createsend-objectivec">View the Project on GitHub <small>campaignmonitor/createsend-objectivec</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/campaignmonitor/createsend-objectivec/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/campaignmonitor/createsend-objectivec/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/campaignmonitor/createsend-objectivec">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>CreateSend Objective-C</h1>
+
+<p>CreateSend Objective-C is a library for talking to the Campaign Monitor API from Cocoa &amp; Cocoa Touch applications. It supports Mac OS X 10.5+ &amp; iOS 4.0+.</p>
+
+<h3>Features</h3>
+
+<ul>
+<li>Supports all of the available <a href="http://www.campaignmonitor.com/api/">Campaign Monitor APIs</a>.</li>
+<li>Provides a drop-in UI for adding new subscribers to your lists, with custom field support.</li>
+</ul><h3>Sample Project</h3>
+
+<p>A sample project is included in <code>$SRCROOT/Example/CreateSendExample/CreateSendExample.xcodeproj</code>. With the help of <a href="https://github.com/ittybittydude/IBAForms/">IBAForms</a> by the friendly folks at <a href="http://www.ittybittyapps.com">Itty Bitty Apps</a>, <code>CreateSendExample</code> demonstrates presenting a form for subscribing to a Campaign Monitor list.</p>
+
+<p>You will need to specify your API key in <code>CSExampleAppDelegate.m</code> before building &amp; running <code>CreateSendExample</code>.</p>
+
+<p>The provided <code>CSSubscriptionFormViewController</code> class can present a simple form with name &amp; email address, or it can display the custom fields configured for the subscription list. Set the <code>customFieldBehavior</code> variable in <code>CSExampleAppDelegate.m</code> to any of the values specified in <code>CSExampleAppCustomFieldBehavior</code> to configure the form in fixed-fields or dynamic-fields mode.</p>
+
+<h3>Basic API Wrapper Usage Examples</h3>
+
+<p>If you prefer to build your own custom UI, you can simply use the API wrapper directly. For full documentation of the API wrapper, see the class documentation is available in <code>Documentation/html/index.html</code> (generated with <code>rake docs:generate</code>).</p>
+
+<p>Here's a some examples to get you started.</p>
+
+<h4>Getting your API key:</h4>
+
+<pre><code>CSAPI *API = [[CSAPI alloc] init];
+
+[API getAPIKeyWithSiteURL:@"http://yoursite.createsend.com/" username:@"yourusername" password:@"yourpassword" completionHandler:^(NSString *APIKey) {
+    NSLog(@"Your API key is %@", APIKey);
+} errorHandler:^(NSError *error) {
+    NSLog(@"Something went wrong: %@", error);
+}];
+</code></pre>
+
+<h4>Subscribing to a list:</h4>
+
+<pre><code>CSAPI *API = [[CSAPI alloc] initWithAPIKey:@"ab6b0598d32fecd63485b18abb4f0ad7"];
+
+NSArray *customFields = @[
+    [CSCustomField customFieldWithKey:@"AddressStreet" value:@"1 Infinite Loop"],
+    [CSCustomField customFieldWithKey:@"AddressSuburb" value:@"Cupertino"]
+];
+
+[API subscribeToListWithID:@"66f889ae2e1981157285b4f76f2e02ad"
+              emailAddress:@"johnny.appleseed@apple.com"
+                      name:@"Johnny Appleseed"
+         shouldResubscribe:YES
+              customFields:customFields
+         completionHandler:^(NSString *subscribedAddress) {
+            NSLog(@"Successfully subscribed %@", subscribedAddress);
+         } errorHandler:^(NSError *error) {
+            NSLog(@"Something went wrong: %@", error);
+         }];
+</code></pre>
+
+<h4>Authorizating via OAuth:</h4>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    API = [[CSAPI alloc] initWithClientID:@"CLIENT_ID" clientSecret:@"CLIENT_SECRET" scope:@[CSAPIClientScopeManageLists, CSAPIClientScopeImportSubscribers]];
+    if (!API.isAuthorized) {
+        [API authorize];    
+    }
+}
+</code></pre>
+
+<p>Once authorized, your app will be launched with the URL scheme csapiCLIENT_ID. The easiest way to register for this scheme is right-click on your app's plist file and select Open As → Source Code, and add the following code below the first  tag, substituting CLIENT_ID with your app's client id:</p>
+
+<pre><code>&lt;key&gt;CFBundleURLTypes&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;csapiCLIENT_ID&lt;/string&gt;
+        &lt;/array&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>Now that your app is registered for the correct scheme, you need to add the following code to your application delegate in order to complete the authorization flow:</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([API handleOpenURL:url]) {
+        if (API.isAuthorized) {
+            NSLog(@"App has been authorized successfully!");
+            // At this point you can start making API calls
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
+}
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/campaignmonitor">campaignmonitor</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
