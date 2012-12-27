@@ -56,6 +56,16 @@ extern NSString * const CSAPIWebhookPayloadFormatXML;
  @param clientID The ID of the client for whom the list should be created
  @param title The title of the new list. Must be unique.
  @param unsubscribePage URL for the unsubscribe page
+ @param unsubscribeSetting The unsubscribe setting for the list - must be one of:
+ 
+ - `AllClientLists`
+ - `OnlyThisList`
+ 
+ If set to `AllClientLists`, when someone unsubscribes from this list they will also be unsubscribed from all the client's lists (recommended).
+ If set to `OnlyThisList`, when someone unsubscribes from this list they will only be unsubscribed from this list.
+ 
+ Setting `OnlyThisList` will result in this list not using the suppression list, meaning that if a subscriber on this list is added to the suppression list they will not be unsubscribed from this list.
+
  @param confirmationSuccessPage URL for the subscription confirmation page
  @param shouldConfirmOptIn Whether or not subscriptions need to be confirmed
  @param completionHandler Completion callback, with the ID of the successfully created list
@@ -64,6 +74,7 @@ extern NSString * const CSAPIWebhookPayloadFormatXML;
 - (void)createListWithClientID:(NSString *)clientID
                          title:(NSString *)title
                unsubscribePage:(NSString *)unsubscribePage
+            unsubscribeSetting:(NSString *)unsubscribeSetting
        confirmationSuccessPage:(NSString *)confirmationSuccessPage
             shouldConfirmOptIn:(BOOL)shouldConfirmOptIn
              completionHandler:(void (^)(NSString *listID))completionHandler

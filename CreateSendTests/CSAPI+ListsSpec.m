@@ -21,6 +21,7 @@ describe(@"CSAPI+Lists", ^{
         context(@"create list", ^{
             NSString *title = @"List One";
             NSString *unsubscribePage = @"example.com/unsubscribe";
+            NSString *unsubscribeSetting = @"OnlyThisList";
             NSString *confirmationSuccessPage = @"example.com/success";
             BOOL shouldConfirmOptIn = NO;
             
@@ -28,7 +29,7 @@ describe(@"CSAPI+Lists", ^{
                 NSURLRequest *request = nil;
                 __block NSString *listID = nil;
                 [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"create_list.json" returningRequest:&request whileExecutingBlock:^{
-                    [cs createListWithClientID:clientID title:title unsubscribePage:unsubscribePage confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn completionHandler:^(NSString *response) {
+                    [cs createListWithClientID:clientID title:title unsubscribePage:unsubscribePage unsubscribeSetting:unsubscribeSetting confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn completionHandler:^(NSString *response) {
                         listID = response;
                     } errorHandler:^(NSError *errorResponse) {
                         [errorResponse shouldBeNil];
@@ -41,7 +42,7 @@ describe(@"CSAPI+Lists", ^{
                 [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
                 [[request.HTTPMethod should] equal:@"POST"];
                 
-                NSDictionary *expectedPostBody = @{@"Title": title, @"ConfirmationSuccessPage": confirmationSuccessPage, @"UnsubscribePage": unsubscribePage, @"ConfirmedOptIn": @(shouldConfirmOptIn)};
+                NSDictionary *expectedPostBody = @{@"Title": title, @"ConfirmationSuccessPage": confirmationSuccessPage, @"UnsubscribePage": unsubscribePage, @"UnsubscribeSetting": unsubscribeSetting, @"ConfirmedOptIn": @(shouldConfirmOptIn)};
                 NSDictionary *postBody = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil];
                 [[postBody should] equal:expectedPostBody];
             });
@@ -49,7 +50,7 @@ describe(@"CSAPI+Lists", ^{
             it(@"should return an error if there is one", ^{
                 [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorListTitleEmpty message:CSAPIErrorListTitleEmptyMessage whileExecutingBlock:^{
                     __block NSError *error = nil;
-                    [cs createListWithClientID:clientID title:title unsubscribePage:unsubscribePage confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn completionHandler:^(NSString *response) {
+                    [cs createListWithClientID:clientID title:title unsubscribePage:unsubscribePage unsubscribeSetting:unsubscribeSetting confirmationSuccessPage:confirmationSuccessPage shouldConfirmOptIn:shouldConfirmOptIn completionHandler:^(NSString *response) {
                         [response shouldBeNil];
                     } errorHandler:^(NSError *errorResponse) {
                         error = errorResponse;

@@ -44,13 +44,13 @@ NSString * const CSAPIWebhookPayloadFormatXML = @"xml";
 - (void)createListWithClientID:(NSString *)clientID
                          title:(NSString *)title
                unsubscribePage:(NSString *)unsubscribePage
+            unsubscribeSetting:(NSString *)unsubscribeSetting
        confirmationSuccessPage:(NSString *)confirmationSuccessPage
             shouldConfirmOptIn:(BOOL)shouldConfirmOptIn
              completionHandler:(void (^)(NSString *listID))completionHandler
                   errorHandler:(CSAPIErrorHandler)errorHandler
 {
-    
-    NSDictionary *parameters = @{@"Title": (title ?: @""), @"UnsubscribePage": (unsubscribePage ?: @""), @"ConfirmationSuccessPage": (confirmationSuccessPage ?: @""), @"ConfirmedOptIn": @(shouldConfirmOptIn)};
+    NSDictionary *parameters = @{@"Title": (title ?: @""), @"UnsubscribePage": (unsubscribePage ?: @""), @"UnsubscribeSetting": (unsubscribeSetting ?: @"AllClientLists"), @"ConfirmationSuccessPage": (confirmationSuccessPage ?: @""), @"ConfirmedOptIn": @(shouldConfirmOptIn)};
     [self.restClient post:[NSString stringWithFormat:@"lists/%@.json", clientID] withParameters:parameters success:completionHandler failure:errorHandler];
 }
 

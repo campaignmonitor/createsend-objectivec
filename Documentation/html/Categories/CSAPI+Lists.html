@@ -48,7 +48,7 @@
 	
 	<option value="//api/name/createCustomFieldWithListID:customField:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createCustomFieldWithListID:customField:completionHandler:errorHandler:</option>
 	
-	<option value="//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</option>
+	<option value="//api/name/createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</option>
 	
 	<option value="//api/name/createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:</option>
 	
@@ -124,7 +124,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createCustomFieldWithListID:customField:completionHandler:errorHandler:">createCustomFieldWithListID:customField:completionHandler:errorHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:">createWebhookWithListID:events:URLString:payloadFormat:completionHandler:errorHandler:</a></span></li>
 	
@@ -216,7 +216,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&ndash;&nbsp;createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></code>
+		<code><a href="#//api/name/createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:">&ndash;&nbsp;createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</a></code>
 		<span class="tooltip"><p>Create a new list into which subscribers can be added or imported</p></span>
 	</span>
 	
@@ -538,8 +538,8 @@ you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFi
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:" title="createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">createListWithClientID:title:unsubscribePage:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</h3>
+	<a name="//api/name/createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:" title="createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">createListWithClientID:title:unsubscribePage:unsubscribeSetting:confirmationSuccessPage:shouldConfirmOptIn:completionHandler:errorHandler:</h3>
 	
 	
 	
@@ -549,7 +549,7 @@ you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFi
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)createListWithClientID:(NSString *)<em>clientID</em> title:(NSString *)<em>title</em> unsubscribePage:(NSString *)<em>unsubscribePage</em> confirmationSuccessPage:(NSString *)<em>confirmationSuccessPage</em> shouldConfirmOptIn:(BOOL)<em>shouldConfirmOptIn</em> completionHandler:(void ( ^ ) ( NSString *listID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)createListWithClientID:(NSString *)<em>clientID</em> title:(NSString *)<em>title</em> unsubscribePage:(NSString *)<em>unsubscribePage</em> unsubscribeSetting:(NSString *)<em>unsubscribeSetting</em> confirmationSuccessPage:(NSString *)<em>confirmationSuccessPage</em> shouldConfirmOptIn:(BOOL)<em>shouldConfirmOptIn</em> completionHandler:(void ( ^ ) ( NSString *listID ))<em>completionHandler</em> errorHandler:(CSAPIErrorHandler)<em>errorHandler</em></code></div>
 
     
 	
@@ -569,6 +569,22 @@ you should use [<a href="../Classes/CSAPI.html">CSAPI</a> (Lists) updateCustomFi
 		<dl class="argument-def parameter-def">
 			<dt><em>unsubscribePage</em></dt>
 			<dd><p>URL for the unsubscribe page</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>unsubscribeSetting</em></dt>
+			<dd><p>The unsubscribe setting for the list &ndash; must be one of:</p>
+
+<ul>
+<li><code>AllClientLists</code></li>
+<li><code>OnlyThisList</code></li>
+</ul>
+
+
+<p>If set to <code>AllClientLists</code>, when someone unsubscribes from this list they will also be unsubscribed from all the client&rsquo;s lists (recommended).
+If set to <code>OnlyThisList</code>, when someone unsubscribes from this list they will only be unsubscribed from this list.</p>
+
+<p>Setting <code>OnlyThisList</code> will result in this list not using the suppression list, meaning that if a subscriber on this list is added to the suppression list they will not be unsubscribed from this list.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
