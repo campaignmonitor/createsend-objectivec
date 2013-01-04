@@ -12,6 +12,7 @@
 #import "CSSuppressedRecipient.h"
 #import "CSTemplate.h"
 #import "CSPaginatedResult.h"
+#import "CSListForSubscriber.h"
 
 /**
  Client-related APIs. See CSAPI for documentation of the other API categories.
