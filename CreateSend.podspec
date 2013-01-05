@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
     "James Dennes" => "jdennes@gmail.com"
   }
   s.source       = { :git => "https://github.com/campaignmonitor/createsend-objectivec.git", :tag => "v1.0.0" }
+  #s.platform = :ios, "5.0"
   s.ios.deployment_target = "5.0"
   s.osx.deployment_target = "10.5"
   s.requires_arc = true

@@ -19,6 +19,7 @@
 		A3BE060916820D6400858A00 /* CSCampaignEmailClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */; };
 		A3BE060A16820D6400858A00 /* CSCampaignEmailClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */; };
 		A3BE060C1682132600858A00 /* email_client_usage.json in Resources */ = {isa = PBXBuildFile; fileRef = A3BE060B1682132600858A00 /* email_client_usage.json */; };
+		A3D8756E1697ABA100ACBC44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9122FF1563E8620089DE3C /* UIKit.framework */; };
 		A3EB67C31680A5B9004F7793 /* transfer_credits.json in Resources */ = {isa = PBXBuildFile; fileRef = A3EB67C21680A5B9004F7793 /* transfer_credits.json */; };
 		AB1D5F3415DAB0F500207837 /* CSAPI+Segments.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1D5F3215DAB0F500207837 /* CSAPI+Segments.h */; };
 		AB1D5F3515DAB0F500207837 /* CSAPI+Segments.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1D5F3315DAB0F500207837 /* CSAPI+Segments.m */; };
@@ -396,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB9122F01563E8610089DE3C /* Foundation.framework in Frameworks */,
+				A3D8756E1697ABA100ACBC44 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
