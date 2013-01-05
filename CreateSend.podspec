@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.5"
   s.requires_arc = true
   s.source_files = "CreateSend", "Vendor/**/*.{h,m}"
+  s.prefix_header_file = "CreateSend/CreateSend-Prefix.pch"
   s.frameworks  = "Foundation", "UIKit"
   s.dependency "Kiwi", "~> 1.1"
 end

@@ -10,7 +10,6 @@
 #import "CSCustomField.h"
 #import "CSPaginatedResult.h"
 #import "CSSubscriber.h"
-#import "CSWebhook.h"
 
 extern NSString * const CSAPIListStatisticTotalActiveSubscribersKey;
 extern NSString * const CSAPIListStatisticNewActiveSubscribersTodayKey;
