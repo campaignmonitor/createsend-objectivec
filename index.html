@@ -30,12 +30,12 @@
       <section>
         <h1>CreateSend Objective-C</h1>
 
-<p>CreateSend Objective-C is a library for talking to the Campaign Monitor API from Cocoa &amp; Cocoa Touch applications. It supports Mac OS X 10.5+ &amp; iOS 4.0+.</p>
+<p>CreateSend Objective-C is a library for talking to the <a href="http://www.campaignmonitor.com/api/">Campaign Monitor API</a> from Cocoa &amp; Cocoa Touch applications. It supports Mac OS X 10.5+ &amp; iOS 5.0+.</p>
 
 <h3>Features</h3>
 
 <ul>
-<li>Supports all of the available <a href="http://www.campaignmonitor.com/api/">Campaign Monitor APIs</a>.</li>
+<li>Implements the complete functionality of the API.</li>
 <li>Provides a drop-in UI for adding new subscribers to your lists, with custom field support.</li>
 </ul><h3>Sample Project</h3>
 
@@ -51,77 +51,87 @@
 
 <p>Here's a some examples to get you started.</p>
 
-<h4>Getting your API key:</h4>
+<h4>Getting your API key</h4>
 
-<pre><code>CSAPI *API = [[CSAPI alloc] init];
+<div class="highlight"><pre><span class="n">CSAPI</span> <span class="o">*</span><span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 
-[API getAPIKeyWithSiteURL:@"http://yoursite.createsend.com/" username:@"yourusername" password:@"yourpassword" completionHandler:^(NSString *APIKey) {
-    NSLog(@"Your API key is %@", APIKey);
-} errorHandler:^(NSError *error) {
-    NSLog(@"Something went wrong: %@", error);
-}];
-</code></pre>
+<span class="p">[</span><span class="n">API</span> <span class="nl">getAPIKeyWithSiteURL:</span><span class="s">@"http://yoursite.createsend.com/"</span> <span class="nl">username:</span><span class="s">@"yourusername"</span> <span class="nl">password:</span><span class="s">@"yourpassword"</span> <span class="nl">completionHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">APIKey</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Your API key is %@"</span><span class="p">,</span> <span class="n">APIKey</span><span class="p">);</span>
+<span class="p">}</span> <span class="nl">errorHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Something went wrong: %@"</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+<span class="p">}];</span>
+</pre></div>
 
-<h4>Subscribing to a list:</h4>
+<h4>Subscribing to a list</h4>
 
-<pre><code>CSAPI *API = [[CSAPI alloc] initWithAPIKey:@"ab6b0598d32fecd63485b18abb4f0ad7"];
+<div class="highlight"><pre><span class="n">CSAPI</span> <span class="o">*</span><span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAPIKey:</span><span class="s">@"ab6b0598d32fecd63485b18abb4f0ad7"</span><span class="p">];</span>
 
-NSArray *customFields = @[
-    [CSCustomField customFieldWithKey:@"AddressStreet" value:@"1 Infinite Loop"],
-    [CSCustomField customFieldWithKey:@"AddressSuburb" value:@"Cupertino"]
-];
+<span class="n">NSArray</span> <span class="o">*</span><span class="n">customFields</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span>
+    <span class="p">[</span><span class="n">CSCustomField</span> <span class="nl">customFieldWithKey:</span><span class="s">@"AddressStreet"</span> <span class="nl">value:</span><span class="s">@"1 Infinite Loop"</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">CSCustomField</span> <span class="nl">customFieldWithKey:</span><span class="s">@"AddressSuburb"</span> <span class="nl">value:</span><span class="s">@"Cupertino"</span><span class="p">]</span>
+<span class="p">];</span>
 
-[API subscribeToListWithID:@"66f889ae2e1981157285b4f76f2e02ad"
-              emailAddress:@"johnny.appleseed@apple.com"
-                      name:@"Johnny Appleseed"
-         shouldResubscribe:YES
-              customFields:customFields
-         completionHandler:^(NSString *subscribedAddress) {
-            NSLog(@"Successfully subscribed %@", subscribedAddress);
-         } errorHandler:^(NSError *error) {
-            NSLog(@"Something went wrong: %@", error);
-         }];
-</code></pre>
+<span class="p">[</span><span class="n">API</span> <span class="nl">subscribeToListWithID:</span><span class="s">@"66f889ae2e1981157285b4f76f2e02ad"</span>
+              <span class="nl">emailAddress:</span><span class="s">@"johnny.appleseed@apple.com"</span>
+                      <span class="nl">name:</span><span class="s">@"Johnny Appleseed"</span>
+         <span class="nl">shouldResubscribe:</span><span class="n">YES</span>
+              <span class="nl">customFields:</span><span class="n">customFields</span>
+         <span class="nl">completionHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">subscribedAddress</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Successfully subscribed %@"</span><span class="p">,</span> <span class="n">subscribedAddress</span><span class="p">);</span>
+         <span class="p">}</span> <span class="nl">errorHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Something went wrong: %@"</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+         <span class="p">}];</span>
+</pre></div>
 
-<h4>Authorizating via OAuth:</h4>
+<h4>Authenticating with OAuth</h4>
 
-<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    API = [[CSAPI alloc] initWithClientID:@"CLIENT_ID" clientSecret:@"CLIENT_SECRET" scope:@[CSAPIClientScopeManageLists, CSAPIClientScopeImportSubscribers]];
-    if (!API.isAuthorized) {
-        [API authorize];    
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+<span class="p">{</span>
+    <span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithClientID:</span><span class="s">@"CLIENT_ID"</span> <span class="nl">clientSecret:</span><span class="s">@"CLIENT_SECRET"</span> <span class="nl">scope:</span><span class="err">@</span><span class="p">[</span><span class="n">CSAPIClientScopeManageLists</span><span class="p">,</span> <span class="n">CSAPIClientScopeImportSubscribers</span><span class="p">]];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">API</span><span class="p">.</span><span class="n">isAuthorized</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">API</span> <span class="n">authorize</span><span class="p">];</span>    
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 
-<p>Once authorized, your app will be launched with the URL scheme csapiCLIENT_ID. The easiest way to register for this scheme is right-click on your app's plist file and select Open As → Source Code, and add the following code below the first  tag, substituting CLIENT_ID with your app's client id:</p>
+<p>Once authorized, your app will be launched with the URL scheme <code>csapiCLIENT_ID</code>. The easiest way to register for this scheme is right-click on your app's plist file and select Open As → Source Code, and add the following code below the first <code>&lt;dict&gt;</code> tag, substituting <code>CLIENT_ID</code> with your app's client id:</p>
 
-<pre><code>&lt;key&gt;CFBundleURLTypes&lt;/key&gt;
-&lt;array&gt;
-    &lt;dict&gt;
-        &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;
-        &lt;array&gt;
-            &lt;string&gt;csapiCLIENT_ID&lt;/string&gt;
-        &lt;/array&gt;
-    &lt;/dict&gt;
-&lt;/array&gt;
-</code></pre>
+<div class="highlight"><pre><span class="nt">&lt;key&gt;</span>CFBundleURLTypes<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;array&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>CFBundleURLSchemes<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;array&gt;</span>
+            <span class="nt">&lt;string&gt;</span>csapiCLIENT_ID<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;/array&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/array&gt;</span>
+</pre></div>
 
 <p>Now that your app is registered for the correct scheme, you need to add the following code to your application delegate in order to complete the authorization flow:</p>
 
-<pre><code>- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    if ([API handleOpenURL:url]) {
-        if (API.isAuthorized) {
-            NSLog(@"App has been authorized successfully!");
-            // At this point you can start making API calls
-        }
-        return YES;
-    }
-    // Add whatever other url handling code your app requires here
-    return NO;
-}
-</code></pre>
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">openURL:</span><span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">url</span> <span class="nf">sourceApplication:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">sourceApplication</span> <span class="nf">annotation:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">annotation</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">([</span><span class="n">API</span> <span class="nl">handleOpenURL:</span><span class="n">url</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">API</span><span class="p">.</span><span class="n">isAuthorized</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"App has been authorized successfully!"</span><span class="p">);</span>
+            <span class="c1">// At this point you can start making API calls</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">YES</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Add whatever other url handling code your app requires here</span>
+    <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>Contributing</h3>
+
+<ol>
+<li>Fork the repository</li>
+<li>Make your changes, including tests for your changes.</li>
+<li>Ensure that all tests pass.</li>
+<li>It should go without saying, but do not increment the version number in your commits.</li>
+<li>Submit a pull request.</li>
+</ol>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/campaignmonitor">campaignmonitor</a></p>
