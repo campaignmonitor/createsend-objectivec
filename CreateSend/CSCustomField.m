@@ -48,7 +48,7 @@ visibleInPreferenceCenter:(BOOL)visibleInPreferenceCenter
 
 + (id)customFieldWithName:(NSString *)name key:(NSString *)key dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options value:(id)value
 {
-    return [self customFieldWithName:name key:key dataType:dataType options:options value:nil visibleInPreferenceCenter:YES];
+    return [self customFieldWithName:name key:key dataType:dataType options:options value:value visibleInPreferenceCenter:YES];
 }
 
 + (id)customFieldWithName:(NSString *)name key:(NSString *)key dataType:(CSCustomFieldDataType)dataType options:(NSArray *)options
