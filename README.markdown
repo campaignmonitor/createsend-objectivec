@@ -23,41 +23,11 @@ If you prefer to build your own custom UI, you can simply use the API wrapper di
 
 Here's a some examples to get you started.
 
-#### Getting your API key
+#### Authenticating using OAuth 2
 
-```objective-c
-CSAPI *API = [[CSAPI alloc] init];
-    
-[API getAPIKeyWithSiteURL:@"http://yoursite.createsend.com/" username:@"yourusername" password:@"yourpassword" completionHandler:^(NSString *APIKey) {
-    NSLog(@"Your API key is %@", APIKey);
-} errorHandler:^(NSError *error) {
-    NSLog(@"Something went wrong: %@", error);
-}];
-```
+The Campaign Monitor API supports authenticating using either OAuth 2 or an API key over basic authentication. Using OAuth 2 is recommended. For full details see the [API documentation](http://www.campaignmonitor.com/api/getting-started/#authentication).
 
-#### Subscribing to a list
-
-```objective-c
-CSAPI *API = [[CSAPI alloc] initWithAPIKey:@"ab6b0598d32fecd63485b18abb4f0ad7"];
-    
-NSArray *customFields = @[
-    [CSCustomField customFieldWithKey:@"AddressStreet" value:@"1 Infinite Loop"],
-    [CSCustomField customFieldWithKey:@"AddressSuburb" value:@"Cupertino"]
-];
-
-[API subscribeToListWithID:@"66f889ae2e1981157285b4f76f2e02ad"
-              emailAddress:@"johnny.appleseed@apple.com"
-                      name:@"Johnny Appleseed"
-         shouldResubscribe:YES
-              customFields:customFields
-         completionHandler:^(NSString *subscribedAddress) {
-            NSLog(@"Successfully subscribed %@", subscribedAddress);
-         } errorHandler:^(NSError *error) {
-            NSLog(@"Something went wrong: %@", error);
-         }];
-```
-
-#### Authenticating with OAuth
+Here's the recommended approach for authenticating using OAuth 2 from this library.
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -98,6 +68,46 @@ Now that your app is registered for the correct scheme, you need to add the foll
     // Add whatever other url handling code your app requires here
     return NO;
 }
+```
+
+#### Getting an API key
+
+As an alternative to using OAuth 2 for authentication, you can also use an API key.
+
+Here's how you get an API key using this library.
+
+```objective-c
+CSAPI *API = [[CSAPI alloc] init];
+    
+[API getAPIKeyWithSiteURL:@"http://yoursite.createsend.com/" username:@"yourusername" password:@"yourpassword" completionHandler:^(NSString *APIKey) {
+    NSLog(@"Your API key is %@", APIKey);
+} errorHandler:^(NSError *error) {
+    NSLog(@"Something went wrong: %@", error);
+}];
+```
+
+#### Subscribing to a list
+
+Here's an example of how to subscribe to a list (authenticating with API key rather than OAuth).
+
+```objective-c
+CSAPI *API = [[CSAPI alloc] initWithAPIKey:@"ab6b0598d32fecd63485b18abb4f0ad7"];
+    
+NSArray *customFields = @[
+    [CSCustomField customFieldWithKey:@"AddressStreet" value:@"1 Infinite Loop"],
+    [CSCustomField customFieldWithKey:@"AddressSuburb" value:@"Cupertino"]
+];
+
+[API subscribeToListWithID:@"66f889ae2e1981157285b4f76f2e02ad"
+              emailAddress:@"johnny.appleseed@apple.com"
+                      name:@"Johnny Appleseed"
+         shouldResubscribe:YES
+              customFields:customFields
+         completionHandler:^(NSString *subscribedAddress) {
+            NSLog(@"Successfully subscribed %@", subscribedAddress);
+         } errorHandler:^(NSError *error) {
+            NSLog(@"Something went wrong: %@", error);
+         }];
 ```
 
 ### Contributing
