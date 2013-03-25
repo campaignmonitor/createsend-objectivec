@@ -51,43 +51,15 @@
 
 <p>Here's a some examples to get you started.</p>
 
-<h4>Getting your API key</h4>
+<h4>Authenticating using OAuth 2</h4>
 
-<div class="highlight"><pre><span class="n">CSAPI</span> <span class="o">*</span><span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<p>The Campaign Monitor API supports authenticating using either OAuth 2 or an API key over basic authentication. Using OAuth 2 is recommended. For full details see the <a href="http://www.campaignmonitor.com/api/getting-started/#authentication">API documentation</a>.</p>
 
-<span class="p">[</span><span class="n">API</span> <span class="nl">getAPIKeyWithSiteURL:</span><span class="s">@"http://yoursite.createsend.com/"</span> <span class="nl">username:</span><span class="s">@"yourusername"</span> <span class="nl">password:</span><span class="s">@"yourpassword"</span> <span class="nl">completionHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">APIKey</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Your API key is %@"</span><span class="p">,</span> <span class="n">APIKey</span><span class="p">);</span>
-<span class="p">}</span> <span class="nl">errorHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Something went wrong: %@"</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
-<span class="p">}];</span>
-</pre></div>
-
-<h4>Subscribing to a list</h4>
-
-<div class="highlight"><pre><span class="n">CSAPI</span> <span class="o">*</span><span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAPIKey:</span><span class="s">@"ab6b0598d32fecd63485b18abb4f0ad7"</span><span class="p">];</span>
-
-<span class="n">NSArray</span> <span class="o">*</span><span class="n">customFields</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span>
-    <span class="p">[</span><span class="n">CSCustomField</span> <span class="nl">customFieldWithKey:</span><span class="s">@"AddressStreet"</span> <span class="nl">value:</span><span class="s">@"1 Infinite Loop"</span><span class="p">],</span>
-    <span class="p">[</span><span class="n">CSCustomField</span> <span class="nl">customFieldWithKey:</span><span class="s">@"AddressSuburb"</span> <span class="nl">value:</span><span class="s">@"Cupertino"</span><span class="p">]</span>
-<span class="p">];</span>
-
-<span class="p">[</span><span class="n">API</span> <span class="nl">subscribeToListWithID:</span><span class="s">@"66f889ae2e1981157285b4f76f2e02ad"</span>
-              <span class="nl">emailAddress:</span><span class="s">@"johnny.appleseed@apple.com"</span>
-                      <span class="nl">name:</span><span class="s">@"Johnny Appleseed"</span>
-         <span class="nl">shouldResubscribe:</span><span class="n">YES</span>
-              <span class="nl">customFields:</span><span class="n">customFields</span>
-         <span class="nl">completionHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">subscribedAddress</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Successfully subscribed %@"</span><span class="p">,</span> <span class="n">subscribedAddress</span><span class="p">);</span>
-         <span class="p">}</span> <span class="nl">errorHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Something went wrong: %@"</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
-         <span class="p">}];</span>
-</pre></div>
-
-<h4>Authenticating with OAuth</h4>
+<p>Here's the recommended approach for authenticating using OAuth 2 from this library.</p>
 
 <div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
 <span class="p">{</span>
-    <span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithClientID:</span><span class="s">@"CLIENT_ID"</span> <span class="nl">clientSecret:</span><span class="s">@"CLIENT_SECRET"</span> <span class="nl">scope:</span><span class="err">@</span><span class="p">[</span><span class="n">CSAPIClientScopeManageLists</span><span class="p">,</span> <span class="n">CSAPIClientScopeImportSubscribers</span><span class="p">]];</span>
+    <span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithClientID</span><span class="o">:</span><span class="s">@"CLIENT_ID"</span> <span class="n">clientSecret</span><span class="o">:</span><span class="s">@"CLIENT_SECRET"</span> <span class="n">scope</span><span class="o">:</span><span class="err">@</span><span class="p">[</span><span class="n">CSAPIClientScopeManageLists</span><span class="p">,</span> <span class="n">CSAPIClientScopeImportSubscribers</span><span class="p">]];</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">API</span><span class="p">.</span><span class="n">isAuthorized</span><span class="p">)</span> <span class="p">{</span>
         <span class="p">[</span><span class="n">API</span> <span class="n">authorize</span><span class="p">];</span>    
     <span class="p">}</span>
@@ -111,16 +83,54 @@
 
 <div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">openURL:</span><span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">url</span> <span class="nf">sourceApplication:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">sourceApplication</span> <span class="nf">annotation:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">annotation</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">([</span><span class="n">API</span> <span class="nl">handleOpenURL:</span><span class="n">url</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">([</span><span class="n">API</span> <span class="n">handleOpenURL</span><span class="o">:</span><span class="n">url</span><span class="p">])</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">API</span><span class="p">.</span><span class="n">isAuthorized</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">NSLog</span><span class="p">(</span><span class="s">@"App has been authorized successfully!"</span><span class="p">);</span>
             <span class="c1">// At this point you can start making API calls</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="n">YES</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// Add whatever other url handling code your app requires here</span>
-    <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">NO</span><span class="p">;</span>
 <span class="p">}</span>
+</pre></div>
+
+<h4>Getting an API key</h4>
+
+<p>As an alternative to using OAuth 2 for authentication, you can also use an API key.</p>
+
+<p>Here's how you get an API key using this library.</p>
+
+<div class="highlight"><pre><span class="n">CSAPI</span> <span class="o">*</span><span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">API</span> <span class="n">getAPIKeyWithSiteURL</span><span class="o">:</span><span class="s">@"http://yoursite.createsend.com/"</span> <span class="n">username</span><span class="o">:</span><span class="s">@"yourusername"</span> <span class="n">password</span><span class="o">:</span><span class="s">@"yourpassword"</span> <span class="n">completionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">APIKey</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Your API key is %@"</span><span class="p">,</span> <span class="n">APIKey</span><span class="p">);</span>
+<span class="p">}</span> <span class="n">errorHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Something went wrong: %@"</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+<span class="p">}];</span>
+</pre></div>
+
+<h4>Subscribing to a list</h4>
+
+<p>Here's an example of how to subscribe to a list (authenticating with API key rather than OAuth).</p>
+
+<div class="highlight"><pre><span class="n">CSAPI</span> <span class="o">*</span><span class="n">API</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CSAPI</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithAPIKey</span><span class="o">:</span><span class="s">@"ab6b0598d32fecd63485b18abb4f0ad7"</span><span class="p">];</span>
+
+<span class="n">NSArray</span> <span class="o">*</span><span class="n">customFields</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span>
+    <span class="p">[</span><span class="n">CSCustomField</span> <span class="n">customFieldWithKey</span><span class="o">:</span><span class="s">@"AddressStreet"</span> <span class="n">value</span><span class="o">:</span><span class="s">@"1 Infinite Loop"</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">CSCustomField</span> <span class="n">customFieldWithKey</span><span class="o">:</span><span class="s">@"AddressSuburb"</span> <span class="n">value</span><span class="o">:</span><span class="s">@"Cupertino"</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="p">[</span><span class="n">API</span> <span class="n">subscribeToListWithID</span><span class="o">:</span><span class="s">@"66f889ae2e1981157285b4f76f2e02ad"</span>
+              <span class="nl">emailAddress:</span><span class="s">@"johnny.appleseed@apple.com"</span>
+                      <span class="nl">name:</span><span class="s">@"Johnny Appleseed"</span>
+         <span class="nl">shouldResubscribe:</span><span class="nb">YES</span>
+              <span class="nl">customFields:</span><span class="n">customFields</span>
+         <span class="nl">completionHandler:</span><span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">subscribedAddress</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Successfully subscribed %@"</span><span class="p">,</span> <span class="n">subscribedAddress</span><span class="p">);</span>
+         <span class="p">}</span> <span class="n">errorHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Something went wrong: %@"</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+         <span class="p">}];</span>
 </pre></div>
 
 <h3>Contributing</h3>
