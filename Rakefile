@@ -1,4 +1,17 @@
-task :default => [:'docs:generate']
+task :default => :test
+
+desc 'Run tests'
+task :test do
+  xcodebuild_options = [
+    '-sdk iphonesimulator',
+    '-project CreateSend.xcodeproj',
+    '-scheme CommandLineUnitTests',
+    '-configuration Debug' ]
+    environment_variables = [
+      'RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES',
+      'ONLY_ACTIVE_ARCH=NO' ]
+  system "xcodebuild #{xcodebuild_options.join(' ')} #{environment_variables.join(' ')} clean build 2>&1"
+end
 
 namespace :docs do
   

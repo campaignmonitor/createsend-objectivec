@@ -992,7 +992,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "# Launch application using ios-sim and set up environment to inject test bundle into application\n# Source: http://stackoverflow.com/a/12682617/504494\n\nif [ \"$RUN_APPLICATION_TESTS_WITH_IOS_SIM\" = \"YES\" ]; then\n  test_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\n  environment_args=\"--setenv DYLD_INSERT_LIBRARIES=/../../Library/PrivateFrameworks/IDEBundleInjection.framework/IDEBundleInjection --setenv XCInjectBundle=$test_bundle_path --setenv XCInjectBundleInto=$TEST_HOST\"\n  ios-sim launch $(dirname $TEST_HOST) $environment_args --args -SenTest All $test_bundle_path\n  echo \"Finished running tests with ios-sim\"\nelse\n  \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

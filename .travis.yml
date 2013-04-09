@@ -1,2 +1,4 @@
 language: objective-c
-
+script:
+  - which ios-sim || brew install ios-sim
+  - rake test
