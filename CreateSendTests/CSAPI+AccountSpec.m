@@ -465,6 +465,46 @@ describe(@"CSAPI+Account", ^{
                 }];
             });
         });
+        
+        context(@"get external session url", ^{
+            NSString *email = @"example@example.com";
+            NSString *chrome = @"none";
+            NSString *url = @"/subscribers";
+            NSString *integratorID = @"qw989q8wud98qwyd";
+            NSString *clientID = @"9q8uw9d8u9wud";
+
+            it(@"should get external session url", ^{
+                NSURLRequest *request = nil;
+                __block NSString *sessionUrl = nil;
+                [self stubSendAsynchronousRequestAndReturnResponseWithFixtureNamed:@"externalsession.json" returningRequest:&request whileExecutingBlock:^{
+                    [cs getExternalSessionUrl:email chrome:chrome url:url integratorID:integratorID clientID:clientID completionHandler:^(NSString *response) {
+                        sessionUrl = response;
+                    } errorHandler:^(NSError *errorResponse) {
+                        [errorResponse shouldBeNil];
+                    }];
+                }];
+
+                [[sessionUrl should] equal:@"https://external1.createsend.com/cd/create/ABCDEF12/DEADBEEF?url=FEEDDAD1"];
+
+                NSURL *expectedURL = [NSURL URLWithString:@"externalsession.json" relativeToURL:cs.baseURL];
+                [[request.URL.absoluteString should] equal:expectedURL.absoluteString];
+                [[request.HTTPMethod should] equal:@"PUT"];
+            });
+
+            it(@"should return an error if there is one", ^{
+                [self stubSendAsynchronousRequestAndReturnErrorResponseWithCode:CSAPIErrorInvalidEmailAddress message:CSAPIErrorInvalidEmailAddressMessage whileExecutingBlock:^{
+                    __block NSError *error = nil;
+                    [cs getExternalSessionUrl:email chrome:chrome url:url integratorID:integratorID clientID:clientID completionHandler:^(NSString *response) {
+                        [response shouldBeNil];
+                    } errorHandler:^(NSError *errorResponse) {
+                        error = errorResponse;
+                    }];
+                    
+                    [[error should] haveErrorCode:CSAPIErrorInvalidEmailAddress message:CSAPIErrorInvalidEmailAddressMessage];
+                }];
+            });
+        });
+
     });
 });
 

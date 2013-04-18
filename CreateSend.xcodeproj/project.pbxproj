@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A311D492171FEE19005ECEC5 /* externalsession.json in Resources */ = {isa = PBXBuildFile; fileRef = A311D491171FEE19005ECEC5 /* externalsession.json */; };
 		A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = A315C1CB167B82C00020C198 /* CSBillingDetails.h */; };
 		A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A315C1CC167B82C00020C198 /* CSBillingDetails.m */; };
 		A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A315C1D7167F0CB70020C198 /* billingdetails.json */; };
@@ -216,6 +217,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A311D491171FEE19005ECEC5 /* externalsession.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = externalsession.json; sourceTree = "<group>"; };
 		A315C1CB167B82C00020C198 /* CSBillingDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CSBillingDetails.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		A315C1CC167B82C00020C198 /* CSBillingDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CSBillingDetails.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A315C1D7167F0CB70020C198 /* billingdetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billingdetails.json; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 		ABA6B63515C6F06300EC55BC /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				A311D491171FEE19005ECEC5 /* externalsession.json */,
 				AB39699F15DC232200CA2DE7 /* active_subscribers.json */,
 				AB3969A015DC232200CA2DE7 /* add_admin.json */,
 				AB3969A115DC232200CA2DE7 /* add_person.json */,
@@ -975,6 +978,7 @@
 				A381EBA91683279F00EA5AEB /* campaign_spam.json in Resources */,
 				A381EBAB16846F2B00EA5AEB /* update_custom_field.json in Resources */,
 				A35F729C168C681C000BCE27 /* listsforemail.json in Resources */,
+				A311D492171FEE19005ECEC5 /* externalsession.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
