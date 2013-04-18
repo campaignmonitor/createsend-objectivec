@@ -166,5 +166,25 @@
  */
 - (void)getPrimaryContact:(void (^)(NSString *primaryContactEmailAddress))completionHandler errorHandler:(CSAPIErrorHandler)errorHandler;
 
+/**
+ Returns a URL which initiates a new external session for the user with the given email address.
+ 
+ http://www.campaignmonitor.com/api/account/#single_sign_on
+ 
+ @param email The email address of the Campaign Monitor user for whom the login session should be created.
+ @param chrome Which 'chrome' to display - Must be either "all", "tabs", or "none".
+ @param url The URL to display once logged in. e.g. "/subscribers/"
+ @param integratorID The integrator ID. You need to contact Campaign Monitor support to get an integrator ID.
+ @param clientID The Client ID of the client which should be active once logged in to the Campaign Monitor account.
+ @param completionHandler Completion callback, with the session URL as the only argument
+ @param errorHandler Error callback
+ */
+-(void)getExternalSessionUrl:(NSString *)email
+                      chrome:(NSString *)chrome
+                         url:(NSString *)url
+                integratorID:(NSString *)integratorID
+                    clientID:(NSString *)clientID
+           completionHandler:(void (^)(NSString *sessionUrl))completionHandler
+                errorHandler:(CSAPIErrorHandler)errorHandler;
 
 @end

@@ -140,4 +140,20 @@
         if (completionHandler) completionHandler(primaryContactEmailAddress);
     } failure:errorHandler];
 }
+
+- (void)getExternalSessionUrl:(NSString *)email
+                      chrome:(NSString *)chrome
+                         url:(NSString *)url
+                integratorID:(NSString *)integratorID
+                    clientID:(NSString *)clientID
+           completionHandler:(void (^)(NSString *sessionUrl))completionHandler
+                errorHandler:(CSAPIErrorHandler)errorHandler
+{
+    NSDictionary *parameters = @{@"Email": (email ?: @""), @"Chrome": (chrome ?: @""), @"Url": (url ?: @""), @"IntegratorID": (integratorID ?: @""), @"ClientID": (clientID ?: @"")};
+    [self.restClient put:@"externalsession.json" withParameters:parameters success:^(NSDictionary *response) {
+        NSString *sessionUrl = [response valueForKey:@"SessionUrl"];
+        if (completionHandler) completionHandler(sessionUrl);
+    } failure:errorHandler];
+}
+
 @end

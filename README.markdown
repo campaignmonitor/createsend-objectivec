@@ -111,8 +111,5 @@ NSArray *customFields = @[
 ```
 
 ### Contributing
-1. Fork the repository
-2. Make your changes, including tests for your changes.
-3. Ensure that all tests pass.
-4. It should go without saying, but do not increment the version number in your commits.
-5. Submit a pull request.
+
+Please check the [guidelines for contributing](https://github.com/campaignmonitor/createsend-objectivec/blob/master/CONTRIBUTING.md) to this repository.
