@@ -176,7 +176,8 @@
  @param url The URL to display once logged in. e.g. "/subscribers/"
  @param integratorID The integrator ID. You need to contact Campaign Monitor support to get an integrator ID.
  @param clientID The Client ID of the client which should be active once logged in to the Campaign Monitor account.
-
+ @param completionHandler Completion callback, with the session URL as the only argument
+ @param errorHandler Error callback
  */
 -(void)getExternalSessionUrl:(NSString *)email
                       chrome:(NSString *)chrome
