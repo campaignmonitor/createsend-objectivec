@@ -1,4 +1,10 @@
-task :default => [:'docs:generate']
+task :default => :test
+
+desc 'Run tests'
+task :test do
+  sh "test -e xctool/xctool.sh || git clone https://github.com/facebook/xctool.git"
+  sh "xctool/xctool.sh -project CreateSend.xcodeproj -scheme CreateSend clean build test"
+end
 
 namespace :docs do
   

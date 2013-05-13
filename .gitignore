@@ -15,3 +15,4 @@ build/*
 *.pbxuser
 *.xcworkspace
 xcuserdata
+xctool

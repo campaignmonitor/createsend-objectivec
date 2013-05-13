@@ -4,6 +4,8 @@
 
 CreateSend Objective-C is a library for talking to the [Campaign Monitor API](http://www.campaignmonitor.com/api/) from Cocoa & Cocoa Touch applications. It supports Mac OS X 10.5+ & iOS 5.0+.
 
+[![Build Status](https://travis-ci.org/campaignmonitor/createsend-objectivec.png?branch=master)](https://travis-ci.org/campaignmonitor/createsend-objectivec)
+
 ### Features
 
 - Implements the complete functionality of the API.
