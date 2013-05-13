@@ -1,5 +1,3 @@
 language: objective-c
-before_script:
-  - brew update
-  - which xctool || brew install xctool
+before_script: git clone https://github.com/facebook/xctool.git
 script: rake test
