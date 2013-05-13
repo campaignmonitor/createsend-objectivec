@@ -2,10 +2,7 @@ task :default => :test
 
 desc 'Run tests'
 task :test do
-  xctool_options = [
-    '-project CreateSend.xcodeproj',
-    '-scheme CreateSend' ]
-  system "xctool #{xctool_options.join(' ')} clean build test"
+  sh "xctool -project CreateSend.xcodeproj -scheme CreateSend clean build test"
 end
 
 namespace :docs do
