@@ -2,15 +2,10 @@ task :default => :test
 
 desc 'Run tests'
 task :test do
-  xcodebuild_options = [
-    '-sdk iphonesimulator',
+  xctool_options = [
     '-project CreateSend.xcodeproj',
-    '-scheme CommandLineUnitTests',
-    '-configuration Debug' ]
-    environment_variables = [
-      'RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES',
-      'ONLY_ACTIVE_ARCH=NO' ]
-  system "xcodebuild #{xcodebuild_options.join(' ')} #{environment_variables.join(' ')} clean build 2>&1"
+    '-scheme CreateSend' ]
+  system "xctool #{xctool_options.join(' ')} clean build test"
 end
 
 namespace :docs do

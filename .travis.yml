@@ -1,4 +1,6 @@
 language: objective-c
+before_script:
+  - brew update
+  - which xctool || brew install xctool
 script:
-  - which ios-sim || brew install ios-sim
   - rake test
