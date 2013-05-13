@@ -1,6 +1,5 @@
 language: objective-c
 before_script:
-  - brew update
   - which xctool || brew install xctool
 script:
   - rake test
