@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A311D492171FEE19005ECEC5 /* externalsession.json in Resources */ = {isa = PBXBuildFile; fileRef = A311D491171FEE19005ECEC5 /* externalsession.json */; };
+		A31381FD17414AE60065A113 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA6BBB815C6F19A00EC55BC /* libKiwi.a */; };
 		A315C1CD167B82C00020C198 /* CSBillingDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = A315C1CB167B82C00020C198 /* CSBillingDetails.h */; };
 		A315C1CE167B82C00020C198 /* CSBillingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A315C1CC167B82C00020C198 /* CSBillingDetails.m */; };
 		A315C1D8167F0CB70020C198 /* billingdetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A315C1D7167F0CB70020C198 /* billingdetails.json */; };
@@ -17,6 +18,7 @@
 		A381EBA71683080F00EA5AEB /* unconfirmed_subscribers.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBA61683080F00EA5AEB /* unconfirmed_subscribers.json */; };
 		A381EBA91683279F00EA5AEB /* campaign_spam.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBA81683279F00EA5AEB /* campaign_spam.json */; };
 		A381EBAB16846F2B00EA5AEB /* update_custom_field.json in Resources */ = {isa = PBXBuildFile; fileRef = A381EBAA16846F2A00EA5AEB /* update_custom_field.json */; };
+		A3899346174148C600D72DC0 /* libCreateSend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9122EC1563E8610089DE3C /* libCreateSend.a */; };
 		A3BE060916820D6400858A00 /* CSCampaignEmailClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BE060716820D6400858A00 /* CSCampaignEmailClient.h */; };
 		A3BE060A16820D6400858A00 /* CSCampaignEmailClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BE060816820D6400858A00 /* CSCampaignEmailClient.m */; };
 		A3BE060C1682132600858A00 /* email_client_usage.json in Resources */ = {isa = PBXBuildFile; fileRef = A3BE060B1682132600858A00 /* email_client_usage.json */; };
@@ -129,7 +131,6 @@
 		AB9122FE1563E8620089DE3C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9122FD1563E8620089DE3C /* SenTestingKit.framework */; };
 		AB9123001563E8620089DE3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9122FF1563E8620089DE3C /* UIKit.framework */; };
 		AB9123011563E8620089DE3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9122EF1563E8610089DE3C /* Foundation.framework */; };
-		AB9123041563E8620089DE3C /* libCreateSend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9122EC1563E8610089DE3C /* libCreateSend.a */; };
 		AB9BD7E815D9A77F00C8268A /* CSWebhook.h in Headers */ = {isa = PBXBuildFile; fileRef = AB9BD7E615D9A77F00C8268A /* CSWebhook.h */; };
 		AB9BD7E915D9A77F00C8268A /* CSWebhook.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9BD7E715D9A77F00C8268A /* CSWebhook.m */; };
 		ABA6B61415C6F05800EC55BC /* CreateSend.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA6B5FC15C6F05800EC55BC /* CreateSend.h */; };
@@ -161,7 +162,6 @@
 		ABA6BBA115C6F06500EC55BC /* NSObject+MethodSwizzlingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA6B95515C6F06400EC55BC /* NSObject+MethodSwizzlingAdditions.m */; };
 		ABA6BBA215C6F06500EC55BC /* NSURLConnection+StubAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA6B95715C6F06400EC55BC /* NSURLConnection+StubAdditions.m */; };
 		ABA6BBAD15C6F0D300EC55BC /* CreateSend.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA6BBAC15C6F0D300EC55BC /* CreateSend.m */; };
-		ABA6BBBE15C6F22000EC55BC /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA6BBB815C6F19A00EC55BC /* libKiwi.a */; };
 		ABB8B5C715D03E46005343D6 /* CSSSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB8B5C515D03E46005343D6 /* CSSSKeychain.h */; };
 		ABB8B5C815D03E46005343D6 /* CSSSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8B5C615D03E46005343D6 /* CSSSKeychain.m */; };
 		ABB8B5CA15D03F99005343D6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB8B5C915D03F99005343D6 /* Security.framework */; };
@@ -179,6 +179,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A31381F617414AC80065A113 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABA6BBAE15C6F19A00EC55BC /* Kiwi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F5015B9E11583A77002E9A98;
+			remoteInfo = Kiwi;
+		};
 		A315C1D4167B82C10020C198 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ABA6BBAE15C6F19A00EC55BC /* Kiwi.xcodeproj */;
@@ -407,12 +414,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A31381FD17414AE60065A113 /* libKiwi.a in Frameworks */,
+				A3899346174148C600D72DC0 /* libCreateSend.a in Frameworks */,
 				ABB8B5CA15D03F99005343D6 /* Security.framework in Frameworks */,
 				AB9122FE1563E8620089DE3C /* SenTestingKit.framework in Frameworks */,
 				AB9123001563E8620089DE3C /* UIKit.framework in Frameworks */,
 				AB9123011563E8620089DE3C /* Foundation.framework in Frameworks */,
-				AB9123041563E8620089DE3C /* libCreateSend.a in Frameworks */,
-				ABA6BBBE15C6F22000EC55BC /* libKiwi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +845,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A31381F717414AC80065A113 /* PBXTargetDependency */,
 				AB9123031563E8620089DE3C /* PBXTargetDependency */,
 			);
 			name = CreateSendTests;
@@ -996,7 +1004,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "# Launch application using ios-sim and set up environment to inject test bundle into application\n# Source: http://stackoverflow.com/a/12682617/504494\n\nif [ \"$RUN_APPLICATION_TESTS_WITH_IOS_SIM\" = \"YES\" ]; then\n  test_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\n  environment_args=\"--setenv DYLD_INSERT_LIBRARIES=/../../Library/PrivateFrameworks/IDEBundleInjection.framework/IDEBundleInjection --setenv XCInjectBundle=$test_bundle_path --setenv XCInjectBundleInto=$TEST_HOST\"\n  ios-sim launch $(dirname $TEST_HOST) $environment_args --args -SenTest All $test_bundle_path\n  echo \"Finished running tests with ios-sim\"\nelse\n  \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1073,6 +1081,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A31381F717414AC80065A113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kiwi;
+			targetProxy = A31381F617414AC80065A113 /* PBXContainerItemProxy */;
+		};
 		AB9123031563E8620089DE3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AB9122EB1563E8610089DE3C /* CreateSend */;
