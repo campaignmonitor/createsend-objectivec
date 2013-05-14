@@ -5,6 +5,11 @@ task :test do
   sh "xctool -project CreateSend.xcodeproj -scheme CreateSend clean build test"
 end
 
+desc 'Lint podspec'
+task :lint do
+  sh "pod spec lint CreateSend.podspec --verbose"
+end
+
 namespace :docs do
   
   desc 'Generate documentation'
