@@ -53,8 +53,8 @@ NSString * const CSAPICurrencyNewZealandDollars = @"NZD";
 + (NSDictionary *)paginationParametersWithPage:(NSUInteger)page pageSize:(NSUInteger)pageSize orderField:(NSString *)orderField ascending:(BOOL)ascending
 {
     return @{
-        @"page": [NSString stringWithFormat:@"%d", page],
-        @"pagesize": [NSString stringWithFormat:@"%d", pageSize],
+        @"page": [NSString stringWithFormat:@"%lu", (unsigned long)page],
+        @"pagesize": [NSString stringWithFormat:@"%lu", (unsigned long)pageSize],
         @"orderfield": orderField,
         @"orderdirection": (ascending ? @"asc" : @"desc")
     };
