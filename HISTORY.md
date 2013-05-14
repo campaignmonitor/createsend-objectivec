@@ -1,5 +1,9 @@
 # createsend-objectivec history
 
+## v1.1.1 - 14 May, 2013
+
+* Removed compilation warnings being reported for using NSUInteger as format arguments.
+
 ## v1.1.0 - 18 Apr, 2013
 
 * Added support for [single sign on](http://www.campaignmonitor.com/api/account/#single_sign_on) which allows initiation of external login sessions to Campaign Monitor.
