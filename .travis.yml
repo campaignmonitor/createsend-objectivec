@@ -1,2 +1,6 @@
 language: objective-c
+before_script:
+  - git --work-tree=/usr/local --git-dir=/usr/local/.git clean -fd
+  - brew update
+  - which xctool || brew install xctool
 script: rake test
