@@ -6,6 +6,16 @@ CreateSend Objective-C is a library for talking to the [Campaign Monitor API](ht
 
 [![Build Status](https://travis-ci.org/campaignmonitor/createsend-objectivec.png?branch=master)](https://travis-ci.org/campaignmonitor/createsend-objectivec)
 
+### Installation
+
+If you use CocoaPods in your project, you can include the [CreateSend](http://cocoapods.org/?q=CreateSend) pod in your `Podfile`:
+
+```ruby
+pod 'CreateSend', '~> X.Y.Z'
+```
+
+Otherwise, just grab the [latest version](https://github.com/campaignmonitor/createsend-objectivec/tags) of `CreateSend.xcodeproj` and add it as a dependency in your own project.
+
 ### Features
 
 - Implements the complete functionality of the API.
