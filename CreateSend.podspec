@@ -11,5 +11,6 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   s.source_files          = "CreateSend", "Vendor/**/*.{h,m}"
   s.osx.exclude_files     = "CreateSend/*iOS.*", "CreateSend/CSAuthorizationViewController.*"
+  s.frameworks            = "Security"
   s.prefix_header_file    = "CreateSend/CreateSend-Prefix.pch"
 end
