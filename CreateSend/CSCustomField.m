@@ -106,7 +106,7 @@ visibleInPreferenceCenter:(BOOL)visibleInPreferenceCenter
 @implementation CSCustomField (Private)
 + (CSCustomFieldDataType)dataTypeForDataTypeString:(NSString *)dataTypeString
 {
-    return [[gCustomFieldDataTypeMapping valueForKey:dataTypeString] integerValue];
+    return (CSCustomFieldDataType)[[gCustomFieldDataTypeMapping valueForKey:dataTypeString] integerValue];
 }
 
 + (NSString *)dataTypeStringForDataType:(CSCustomFieldDataType)dataType
