@@ -71,7 +71,7 @@
 @implementation CSAuthorizationViewController (Private)
 - (void)loadRequest
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.API.authorizationURL cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:20];
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.API.authorizationURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20];
     [self.webView loadRequest:request];
 }
 
