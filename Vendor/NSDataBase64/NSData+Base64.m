@@ -300,13 +300,17 @@ char *CSNewBase64Encode(
 	char *outputBuffer =
 		CSNewBase64Encode([self bytes], [self length], false, &outputLength);
 	
-	NSString *result =
-		[[NSString alloc]
-			initWithBytes:outputBuffer
-			length:outputLength
-			encoding:NSASCIIStringEncoding];
-	free(outputBuffer);
-	return result;
+    if (outputBuffer) {
+        NSString *result =
+        [[NSString alloc]
+         initWithBytes:outputBuffer
+         length:outputLength
+         encoding:NSASCIIStringEncoding];
+        free(outputBuffer);
+        return result;
+    }
+    
+    return nil;
 }
 
 @end
