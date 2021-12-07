@@ -1,5 +1,9 @@
 # createsend-objectivec history
 
+## 1 Dec, 2021
+
+* Categorising this wrapper as community supported - Campaign Monitor would not actively making updates on this wrapper
+
 ## v1.1.1 - 14 May, 2013
 
 * Removed compilation warnings being reported for using NSUInteger as format arguments.
